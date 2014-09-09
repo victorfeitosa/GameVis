@@ -1,0 +1,42 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="utf-8">
+
+<title>Team Detail Graph</title>
+<script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
+<script>
+$.holdReady(true);
+$.getScript('d3/d3.v3.js', function (){
+								console.log("Loaded D3 Script");
+								
+								//loads data structures after loading D3 Script
+								$.getScript('graphics.js', function (){
+									console.log("Loaded data structures script");
+									
+									//Loads main script after loading all the stuff needed
+									$.getScript('script.js', function (){
+										console.log("Executed main script");
+										
+										var PlayerC = new Player("Fido", "Beginner", "A", "Soviet Russia", 350, 410, 1);
+										var PlayerD = new Player("Purge", "Beginner", "A", "Outworld", 3250, 4100, 12);
+										var PlayerE = new Player("Domy", "Beginner", "A", "The Radiant", 120, 40, 9);
+										
+										//add players to teams
+										TeamA.addPlayer(PlayerC);
+										TeamA.addPlayer(PlayerD);
+										TeamA.addPlayer(PlayerE);
+										
+										var detailGraph = new TeamDetailGraph(canvas, TeamA, 0, 0);
+										detailGraph.append();
+									});
+								});
+							});
+$.holdReady(false);
+</script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+svg
+{
+	border-style : ridge;
+	border-color : #DDDDDD;
+}
+
+rect.bar-element
+{
+	fill-opacity : 0.7;
+	stroke : black;
+	stroke-width : 0.25;
+	stroke-opacity : 1;
+}
+
+text.bar-graph-title
+{
+	font-family : sans-serif;
+	font-size : 32px;
+}
+
+text.line-graph-title
+{
+	font-family : sans-serif;
+	font-size : 32px;
+}
+
+text.team-graph-title
+{
+	font-family : sans-serif;
+	font-size : 32px;
+}
+
+text.player-match-title
+{
+	font-family : sans-serif;
+	font-size : 32px;
+}
+
+text.team-player-info-name
+{
+	font-family : sans-serif;
+	font-size : 18;
+}
+
+text.player-match-name
+{
+	font-family : sans-serif;
+	font-size : 24;
+}
+
+text.team-player-info
+{
+	font-family : sans-serif;
+	font-size : 14;
+}
+
+text.comparsion-graph-text
+{
+	font-family : sans-serif;
+	font-size : 20px;
+}
+
+text.bar-info-text
+{
+	fill : white;
+}
+
+.time-axis text
+{
+	font-size : 8px;
+}
+
+line.line-graph-segment
+{
+	stroke : white;
+	stroke-width : 2;
+}
+
+.time-axis path.domain
+{
+	opacity : 0.7;
+}
