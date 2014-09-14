@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -12,14 +11,14 @@ $.getScript('d3/d3.v3.js', function (){
 								console.log("Loaded D3 Script");
 								
 								//loads data structures after loading D3 Script
-								$.getScript('gamevis/graphics.js', function (){
+								$.getScript('datastructures.js', function (){
 									console.log("Loaded data structures script");
 									
 									//Loads main script after loading all the stuff needed
 									$.getScript('script.js', function (){
 										console.log("Executed main script");
 										
-										var lineGraph = new ComparisonGraphLine(canvas, myMatch, "Kills", 0, 0, scaleX, scaleY);
+										var lineGraph = new ComparsionGraphLine(canvas, myMatch, "Kills", 0, 0, scaleX, scaleY);
 										lineGraph.build();
 										lineGraph.append();
 									});

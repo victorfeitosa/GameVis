@@ -1,8 +1,6 @@
-//*******************************************************************************************************************************************
-//Game stuctures*****************************************************************************************************************************
-//*******************************************************************************************************************************************
 
-//Canvas class----------------------------------------------------
+//Game stuctures*****************************************************************************************************************************
+
 function Canvas(width, height, bgcolor, label) {
 	this.Width = width;
 	this.Height = height;
@@ -10,8 +8,6 @@ function Canvas(width, height, bgcolor, label) {
 	this.Label = label;
 	this.SVGCanvas = null;
 	this.ClassType = "Canvas";
-	
-	var that = this;
 
 	this.append = function () {
 		//check missing stuff
@@ -35,7 +31,7 @@ function Canvas(width, height, bgcolor, label) {
 	};
 
 	this.remove = function () {
-		if (this.SVGCanvas !== null)
+		if (SVGCanvas !== null)
 			this.SVGCanvas.remove();
 	};
 
@@ -307,12 +303,7 @@ function Match(team1, team2, endtime) {
 	};
 }
 
-
-
-//*******************************************************************************************************************************************
 //Drawgin-related Structures*****************************************************************************************************************
-//*******************************************************************************************************************************************
-
 //class to controll a bar graph
 function Bar(canvas, x, y, width, height, fill, stroke, stroke_width, fill_op, stroke_op) {
 	//attributes
@@ -377,20 +368,12 @@ function Bar(canvas, x, y, width, height, fill, stroke, stroke_width, fill_op, s
 					return "translate(" + (mx) + ", " + (my) + ")";
 				})
 				.attr("width", this.Width)
-				.attr("height", 0)
-				.style("fill", d3.rgb(0,0,0))
+				.attr("height", this.Height)
+				.style("fill", this.Fill)
 				.style("stroke", this.Stroke)
 				.style("stroke-width", this.StrokeWidth)
 				.style("fill-opacity", this.FillOpacity)
 				.style("stroke-opacity", this.StrokeOpacity);
-				
-				//applying height transition
-				this.BarChart
-					.transition()
-					.attr("height", this.Height)
-					.style("fill", this.Fill)
-					.duration(1000)
-					.delay(100);
 		}
 	};
 
@@ -401,7 +384,7 @@ function Bar(canvas, x, y, width, height, fill, stroke, stroke_width, fill_op, s
 		}
 	};
 
-	this.update = function () {//instead of removing and re-appending, just make a transition
+	this.update = function () {
 		this.remove();
 		this.append();
 	};
@@ -544,7 +527,7 @@ function TimeAxis(canvas, y, orientation, scale, nticks) // an axis with ticks
 	};
 }
 
-function ComparisonGraphLine(canvas, match, type, x, y, scaleX, scaleY) {
+function ComparsionGraphLine(canvas, match, type, x, y, scaleX, scaleY) {
 	this.Canvas = canvas.getCanvas();
 	this.Match = match;
 	this.Type = type; //Gold, Kills or XP
@@ -568,7 +551,7 @@ function ComparisonGraphLine(canvas, match, type, x, y, scaleX, scaleY) {
 
 	this.append = function () {
 		this.LineGroup = this.Canvas.append("g")
-			.attr("class", "comparison-line-graph")
+			.attr("class", "comparsion-line-graph")
 			.attr("transform", function () {
 				return ("translate(" + this.X + ", " + this.Y + ")");
 			});
@@ -589,7 +572,7 @@ function ComparisonGraphLine(canvas, match, type, x, y, scaleX, scaleY) {
 		var mx = this.X;
 		var my = this.Y + 16;
 		var textTitle = this.Canvas.append("svg:text")
-			.text("Line comparison graph: " + this.Type)
+			.text("Line Comparsion graph: " + this.Type)
 			.attr("class", "line-graph-title")
 			.attr("transform", function () {
 				return "translate(" + mx + ", " + my + ")";
@@ -599,7 +582,7 @@ function ComparisonGraphLine(canvas, match, type, x, y, scaleX, scaleY) {
 		my = this.Y + 64;
 		var textTeam1 = this.Canvas.append("svg:text")
 			.text("Team " + this.Match.Team1.Name)
-			.attr("class", "comparison-graph-text")
+			.attr("class", "comparsion-graph-text")
 			.attr("transform", function () {
 				return "translate(" + mx + ", " + my + ")";
 			});
@@ -607,7 +590,7 @@ function ComparisonGraphLine(canvas, match, type, x, y, scaleX, scaleY) {
 		my = canvas.Height - 64 + this.Y;
 		var textTeam2 = this.Canvas.append("svg:text")
 			.text("Team " + this.Match.Team2.Name)
-			.attr("class", "comparison-graph-text")
+			.attr("class", "comparsion-graph-text")
 			.attr("transform", function () {
 				return "translate(" + canvas.Width / 2 + ", " + my + ")";
 			});
@@ -622,7 +605,7 @@ function ComparisonGraphLine(canvas, match, type, x, y, scaleX, scaleY) {
 	};
 }
 
-function ComparisonGraphBar(canvas, match, type, x, y, scaleX, scaleY) {
+function ComparsionGraphBar(canvas, match, type, x, y, scaleX, scaleY) {
 
 	this.Canvas = canvas.getCanvas();
 	this.Match = match;
@@ -651,7 +634,7 @@ function ComparisonGraphBar(canvas, match, type, x, y, scaleX, scaleY) {
 
 		//adds the group element
 		this.BarsGroup = this.Canvas.append("g")
-			.attr("class", "comparison-bar-graph")
+			.attr("class", "comparsion-bar-graph")
 			.attr("transform", function () {
 				return ("translate(" + this.X + ", " + this.Y + ")");
 			});
@@ -695,7 +678,7 @@ function ComparisonGraphBar(canvas, match, type, x, y, scaleX, scaleY) {
 		mx = this.X;
 		my = this.Y + 16;
 		var textTitle = this.Canvas.append("svg:text")
-			.text("Bar comparison graph: " + this.Type)
+			.text("Bar Comparsion graph: " + this.Type)
 			.attr("class", "bar-graph-title")
 			.attr("transform", function () {
 
@@ -706,7 +689,7 @@ function ComparisonGraphBar(canvas, match, type, x, y, scaleX, scaleY) {
 		my = 64 + this.Y;
 		var textTeam1 = this.Canvas.append("svg:text")
 			.text("Team " + this.Match.Team2.Name)
-			.attr("class", "comparison-graph-text")
+			.attr("class", "comparsion-graph-text")
 			.attr("transform", function () {
 				return "translate(" + mx + ", " + my + ")";
 			});
@@ -714,7 +697,7 @@ function ComparisonGraphBar(canvas, match, type, x, y, scaleX, scaleY) {
 		y = canvas.Height - 64 + this.Y;
 		var textTeam2 = this.Canvas.append("svg:text")
 			.text("Team " + this.Match.Team1.Name)
-			.attr("class", "comparison-graph-text")
+			.attr("class", "comparsion-graph-text")
 			.attr("transform", function () {
 				return "translate(" + canvas.Width / 2 + ", " + y + ")";
 			});

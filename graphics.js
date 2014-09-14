@@ -10,8 +10,6 @@ function Canvas(width, height, bgcolor, label) {
 	this.Label = label;
 	this.SVGCanvas = null;
 	this.ClassType = "Canvas";
-	
-	var that = this;
 
 	this.append = function () {
 		//check missing stuff
@@ -35,7 +33,7 @@ function Canvas(width, height, bgcolor, label) {
 	};
 
 	this.remove = function () {
-		if (this.SVGCanvas !== null)
+		if (SVGCanvas !== null)
 			this.SVGCanvas.remove();
 	};
 
