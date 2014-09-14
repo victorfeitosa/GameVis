@@ -3,24 +3,23 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <meta charset="utf-8">
 
-<title>Line Comparison Graph</title>
-<script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
+<title>Player Status Graph</title>
+<script type="text/javascript" src="../jquery/jquery-1.9.1.min.js"></script>
 <script>
 $.holdReady(true);
-$.getScript('d3/d3.v3.js', function (){
+$.getScript('../d3/d3.v3.js', function (){
 								console.log("Loaded D3 Script");
 								
 								//loads data structures after loading D3 Script
-								$.getScript('graphics.js', function (){
+								$.getScript('../graphics.js', function (){
 									console.log("Loaded data structures script");
 									
 									//Loads main script after loading all the stuff needed
 									$.getScript('script.js', function (){
 										console.log("Executed main script");
 										
-										var lineGraph = new ComparisonGraphLine(canvas, myMatch, "Kills", 0, 0, scaleX, scaleY);
-										lineGraph.build();
-										lineGraph.append();
+										var playerMatchGraph = new PlayerMatchGraph(canvas, myMatch, PlayerA, scaleX, 0, 0);
+										playerMatchGraph.append();
 									});
 								});
 							});
@@ -29,11 +28,6 @@ $.holdReady(false);
 </head>
 
 <body>
-<script>
-var lineGraph = new ComparsionGraphLine(canvas, myMatch, "Kills", 0, 0, scaleX, scaleY);
-lineGraph.build();
-lineGraph.append();
-</script>
 </body>
 
 </html>
