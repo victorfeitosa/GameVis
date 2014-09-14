@@ -10,21 +10,23 @@ function Canvas(width, height, bgcolor, label) {
 	this.Label = label;
 	this.SVGCanvas = null;
 	this.ClassType = "Canvas";
+	
+	var that = this;
 
 	this.append = function () {
 		//check missing stuff
 		if ($.type(this.Width) === "undefined")
-			this.Width = 640;
+			that.Width = 640;
 		if ($.type(this.Height) === "undefined")
-			this.Height = 480;
+			that.Height = 480;
 		if ($.type(this.BGColor) === "undefined")
-			this.BGColor = "0xAAAAAA";
+			that.BGColor = "0xAAAAAA";
 		if ($.type(this.Label) === "undefined")
-			this.Label = "Game Graph:";
+			that.Label = "Game Graph:";
 
 		//actual appending
 		if (this.SVGCanvas === null) {
-			this.SVGCanvas = d3.select("body").append("svg")
+			that.SVGCanvas = d3.select("body").append("svg")
 				.attr("width", this.Width)
 				.attr("height", this.Height)
 				.style("padding", 20)
@@ -33,12 +35,12 @@ function Canvas(width, height, bgcolor, label) {
 	};
 
 	this.remove = function () {
-		if (SVGCanvas !== null)
-			this.SVGCanvas.remove();
+		if (that.SVGCanvas !== null)
+			that.SVGCanvas.remove();
 	};
 
 	this.getCanvas = function () {
-		return this.SVGCanvas;
+		return that.SVGCanvas;
 	};
 }
 
