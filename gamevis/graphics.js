@@ -4,285 +4,303 @@
 
 //Canvas class----------------------------------------------------
 function Canvas(width, height, bgcolor, label) {
-	this.Width = width;
-	this.Height = height;
-	this.BGColor = bgcolor;
-	this.Label = label;
-	this.SVGCanvas = null;
-	this.ClassType = "Canvas";
+	
+	var self = this; //self variable to maintain the class auto-reference
+	
+	self.Width = width;
+	self.Height = height;
+	self.BGColor = bgcolor;
+	self.Label = label;
+	self.SVGCanvas = null;
+	self.ClassType = "Canvas";
 
-	this.append = function () {
+	self.append = function () {
 		//check missing stuff
-		if ($.type(this.Width) === "undefined")
-			this.Width = 640;
-		if ($.type(this.Height) === "undefined")
-			this.Height = 480;
-		if ($.type(this.BGColor) === "undefined")
-			this.BGColor = "0xAAAAAA";
-		if ($.type(this.Label) === "undefined")
-			this.Label = "Game Graph:";
+		if (self.Width === "undefined")
+			self.Width = 640;
+		if (self.Height === "undefined")
+			self.Height = 480;
+		if (self.BGColor === "undefined")
+			self.BGColor = "0xAAAAAA";
+		if (self.Label === "undefined")
+			self.Label = "Game Graph:";
 
 		//actual appending
-		if (this.SVGCanvas === null) {
-			this.SVGCanvas = d3.select("body").append("svg")
-				.attr("width", this.Width)
-				.attr("height", this.Height)
+		if (self.SVGCanvas === null) {
+			self.SVGCanvas = d3.select("body").append("svg")
+				.classed("canvas", true)
+				.attr("width", self.Width)
+				.attr("height", self.Height)
 				.style("padding", 20)
-				.style("background-color", this.BGColor);
+				.style("background-color", self.BGColor);
 		}
 	};
 
-	this.remove = function () {
-		if (SVGCanvas !== null)
-			this.SVGCanvas.remove();
+	self.remove = function () {
+		if (self.SVGCanvas !== null)
+			self.SVGCanvas.remove();
 	};
 
-	this.getCanvas = function () {
-		return this.SVGCanvas;
+	self.getCanvas = function () {
+		return self.SVGCanvas;
 	};
 }
 
 //Player Class-------------------------------------------------------------------------------------------------------------------------------
 function Player(name, rank, team, nation, tgold, txp, level) {
 	//Attributes------------------------------------------------------------
-
+	
+	var self = this; //self variable to maintain the class auto-reference
+	
 	//Global attributes
-	this.Name = name;
-	this.Rank = rank;
-	this.Team = team;
-	this.Nation = nation;
-	this.TotalGold = tgold;
-	this.TotalXP = txp;
-	this.Level = level;
-	this.ClassType = "Player";
+	self.Name = name;
+	self.Rank = rank;
+	self.Team = team;
+	self.Nation = nation;
+	self.TotalGold = tgold;
+	self.TotalXP = txp;
+	self.Level = level;
+	self.ClassType = "Player";
 
 	//Match attributes
-	this.CurrentGold = 0;
-	this.CurrentXP = 0;
-	this.CurrentKills = 0;
-	this.CurrentDeaths = 0;
-	this.Status = []; //frag, death, gold
+	self.CurrentGold = 0;
+	self.CurrentXP = 0;
+	self.CurrentKills = 0;
+	self.CurrentDeaths = 0;
+	self.Status = []; //frag, death, gold
 
 	//Methods------------------------------------------------------------------
-	this.print = function () {
-		console.log("Name: " + this.Name);
-		console.log("Rank: " + this.Rank);
-		console.log("Team: " + this.Team);
-		console.log("Nation: " + this.Nation);
-		console.log("Total Gold: " + this.TotalGold);
-		console.log("Total XP: " + this.TotalXP);
+	self.print = function () {
+		console.log("Name: " + self.Name);
+		console.log("Rank: " + self.Rank);
+		console.log("Team: " + self.Team);
+		console.log("Nation: " + self.Nation);
+		console.log("Total Gold: " + self.TotalGold);
+		console.log("Total XP: " + self.TotalXP);
 	};
 
-	this.addDeath = function (time) {
-		this.CurrentDeaths++;
-		if (this.CurrentGold >= 100)
-			this.CurrentGold -= 100;
-		if (this.TotalGold >= 100)
-			this.TotalGold -= 100;
-		this.Status.push([time, "Death"]);
+	self.addDeath = function (time) {
+		self.CurrentDeaths++;
+		self.CurrentGold -= 100 + time;
+		self.TotalGold -= 100 + time;
+		
+		//reality check
+		if(self.CurrentGold < 0)
+			self.CurrentGold = 0;
+		if(self.TotalGold < 0)
+			self.TotalGold = 0;
+			
+		self.Status.push([time, "Death"]);
 	};
 
-	this.addGold = function (time, amount) {
-		this.CurrentGold += amount;
-		this.TotalGold += amount;
-		this.Status.push([time, "Gold"]);
+	self.addGold = function (time, amount) {
+		self.CurrentGold += amount;
+		self.TotalGold += amount;
+		self.Status.push([time, "Gold"]);
 	};
 
-	this.addXP = function (amount) {
-		this.CurrentXP += amount;
-		this.TotalXP += amount;
+	self.addXP = function (amount) {
+		self.CurrentXP += amount;
+		self.TotalXP += amount;
 	};
 
-	this.addKill = function (time) { //adds a kill, xp and gold and informs who was killed
-		this.CurrentKills++;
-		this.addXP(200);
+	self.addKill = function (time) { //adds a kill, xp and gold and informs who was killed
+		self.CurrentKills++;
+		self.addXP(200);
 
-		this.CurrentGold += 250;
-		this.TotalGold += 250;
+		self.CurrentGold += 250;
+		self.TotalGold += 250;
 
-		this.Status.push([time, "Frag"]);
+		self.Status.push([time, "Frag"]);
 	};
 }
 
 //Team Class---------------------------------------------------------------------------------------------------------------------------------
 function Team(name, rank, nation) {
 	//Attributes-----------------------------------------------------------------
-	this.ClassType = "Team";
+	
+	var self = this;
+	
+	self.ClassType = "Team";
+	
 	//Team common attributes
-	this.Name = name;
-	this.Rank = rank;
-	this.Nation = nation;
+	self.Name = name;
+	self.Rank = rank;
+	self.Nation = nation;
 
 	//Team attributes calculated on-demand
-	this.Players = [];
-	this.Gold = 0;
-	this.NumKills = 0;
-	this.AverageLevel = 0;
+	self.Players = [];
+	self.Gold = 0;
+	self.NumKills = 0;
+	self.AverageLevel = 0;
 
 	//Methods----------------------------------------------------------------------
 
 	//Calculates the stuff
-	this.getAverageLevel = function () {
+	self.getAverageLevel = function () {
 		var n = 0;
-		for (var i in this.Players) {
-			n += this.Players[i].Level;
+		for (var i in self.Players) {
+			n += self.Players[i].Level;
 		}
 
 		n /= Players.length;
-
+		
 		return n;
 	};
 
-	this.getKills = function () {
+	self.getKills = function () {
 		var n = 0;
-		for (var i in this.Players) {
-			n += this.Players[i].CurrentKills;
+		for (var i in self.Players) {
+			n += self.Players[i].CurrentKills;
 		}
 
-		this.NumKills = n;
+		self.NumKills = n;
 
 		return n;
 	};
 
-	this.getDeaths = function () {
+	self.getDeaths = function () {
 		var n = 0;
-		for (var i in this.Players) {
-			n += this.Players[i].CurrentDeaths;
-		}
-
-		return n;
-	};
-
-	this.getXP = function () {
-		var n = 0;
-		for (var i in this.Players) {
-			n += this.Players[i].CurrentXP;
+		for (var i in self.Players) {
+			n += self.Players[i].CurrentDeaths;
 		}
 
 		return n;
 	};
 
-	this.getGold = function () {
+	self.getXP = function () {
 		var n = 0;
-		for (var i in this.Players) {
-			n += this.Players[i].CurrentGold;
+		for (var i in self.Players) {
+			n += self.Players[i].CurrentXP;
 		}
 
-		this.Gold = n;
+		return n;
+	};
+
+	self.getGold = function () {
+		var n = 0;
+		for (var i in self.Players) {
+			n += self.Players[i].CurrentGold;
+		}
+
+		self.Gold = n;
 
 		return n;
 	};
 
 	//add/remove  Players
-	this.addPlayer = function (player) {
-		this.Players.push(player);
+	self.addPlayer = function (player) {
+		self.Players.push(player);
 	};
 
-	this.removePlayer = function (ppos) {
-		this.Players.splice(ppos, 1);
+	self.removePlayer = function (ppos) {
+		self.Players.splice(ppos, 1);
 	};
 
-	this.print = function () {
-		console.log("Team " + this.Name + " profile:");
+	self.print = function () {
+		console.log("Team " + self.Name + " profile:");
 		console.log("-Players: ");
-		for (var i in this.Players) {
-			console.log("Player[" + i + 1 + "]: " + this.Players[i].Name);
+		for (var i in self.Players) {
+			console.log("Player[" + i + 1 + "]: " + self.Players[i].Name);
 		}
-		console.log("-XP: " + this.getXP());
-		console.log("-Gold: " + this.getGold());
+		console.log("-XP: " + self.getXP());
+		console.log("-Gold: " + self.getGold());
 	};
 }
 
 //Match Class--------------------------------------------------------------------------------------------------------------------------------
 function Match(team1, team2, endtime) {
 	//Attributes
-	this.ClassType = "Match";
+	
+	var self = this;
+	
+	self.ClassType = "Match";
 
-	this.Team1 = team1;
-	this.Team2 = team2;
+	self.Team1 = team1;
+	self.Team2 = team2;
 
-	this.CurrentTime = 0;
-	this.EndTime = endtime;
+	self.CurrentTime = 0;
+	self.EndTime = endtime;
 
-	this.GoldDifference = [];
-	this.XPDifference = [];
-	this.KillDifference = [];
+	self.GoldDifference = [];
+	self.XPDifference = [];
+	self.KillDifference = [];
 
 	//Methods
 
 	//init match, must be used before stuff gets computed
-	this.init = function () {
-		if (this.EndTime > 0) {
+	self.init = function () {
+		if (self.EndTime > 0) {
 			//init difference arrays and player time array
-			for (var i = 0; i < this.EndTime; i++) {
-				this.GoldDifference.push(0);
-				this.KillDifference.push(0);
-				this.XPDifference.push(0);
+			for (var i = 0; i < self.EndTime; i++) {
+				self.GoldDifference.push(0);
+				self.KillDifference.push(0);
+				self.XPDifference.push(0);
 			}
 		}
 	};
 
 	//update stuff from teams and players
-	this.addPlayerKill = function (killerTeam, victimTeam, killer, victim) {
+	self.addPlayerKill = function (killerTeam, victimTeam, killer, victim) {
 
-		if ((killer.ClassType === "Player" && victim.ClassType === "Player") && (killerTeam.ClassType === "Team" && victimTeam.ClassType === "Team") && this.CurrentTime < this.EndTime) {
-			killer.addKill(this.CurrentTime);
-			victim.addDeath(this.CurrentTime);
+		if ((killer.ClassType === "Player" && victim.ClassType === "Player") && (killerTeam.ClassType === "Team" && victimTeam.ClassType === "Team") && self.CurrentTime < self.EndTime) {
+			killer.addKill(self.CurrentTime);
+			victim.addDeath(self.CurrentTime);
 			killerTeam.getKills();
 			victimTeam.getDeaths();
 
 		}
 	};
 
-	this.addPlayerGold = function (team, player, amount) {
-		if (this.CurrentTime < this.EndTime) {
-			player.addGold(this.CurrentTime, amount);
+	self.addPlayerGold = function (team, player, amount) {
+		if (self.CurrentTime < self.EndTime) {
+			player.addGold(self.CurrentTime, amount);
 			team.getGold();
 		}
 	};
 
-	this.addPlayerXP = function (team, player, amount) {
-		if (this.CurrentTime < this.EndTime) {
+	self.addPlayerXP = function (team, player, amount) {
+		if (self.CurrentTime < self.EndTime) {
 			player.addXP(amount);
 			team.getXP();
 		}
 	};
 
-	this.getMatchTime = function (time) {
-		return this.CurrentTime;
+	self.getMatchTime = function (time) {
+		return self.CurrentTime;
 	};
 
 	//return differences according to time
-	this.calculateDifference = function (time, what) {
+	self.calculateDifference = function (time, what) {
 		var ret = 0;
 		switch (what) {
 		case "Gold":
-			ret = this.Team2.getGold() - this.Team1.getGold();
+			ret = self.Team2.getGold() - self.Team1.getGold();
 			break;
 		case "XP":
-			ret = this.Team2.getXP() - this.Team1.getXP();
+			ret = self.Team2.getXP() - self.Team1.getXP();
 			break;
 		case "Kills":
-			ret = this.Team2.getKills() - this.Team1.getKills();
+			ret = self.Team2.getKills() - self.Team1.getKills();
 			break;
 		}
 		return ret;
 	};
 
-	this.getDifference = function (time, what) {
+	self.getDifference = function (time, what) {
 		var ret = 0;
-		if (time <= this.EndTime) {
-			this.calculateDifference(time, what);
+		if (time <= self.EndTime) {
+			self.calculateDifference(time, what);
 
 			switch (what) {
 			case "Gold":
-				ret = this.GoldDifference[time];
+				ret = self.GoldDifference[time];
 				break;
 			case "XP":
-				ret = this.XPDifference[time];
+				ret = self.XPDifference[time];
 				break;
 			case "Kills":
-				ret = this.KillDifference[time];
+				ret = self.KillDifference[time];
 				break;
 			}
 		} else {
@@ -293,14 +311,14 @@ function Match(team1, team2, endtime) {
 	};
 
 	//updates the match status adding kills, gold, etc
-	this.update = function () {
-		var time = this.CurrentTime;
-		if (time <= this.EndTime) {
-			this.GoldDifference.push(this.calculateDifference(time, "Gold"));
-			this.XPDifference.push(this.calculateDifference(time, "XP"));
-			this.KillDifference.push(this.calculateDifference(time, "Kills"));
+	self.update = function () {
+		var time = self.CurrentTime;
+		if (time <= self.EndTime) {
+			self.GoldDifference.push(self.calculateDifference(time, "Gold"));
+			self.XPDifference.push(self.calculateDifference(time, "XP"));
+			self.KillDifference.push(self.calculateDifference(time, "Kills"));
 
-			this.CurrentTime++;
+			self.CurrentTime++;
 		}
 	};
 }
