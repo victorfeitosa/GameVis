@@ -360,7 +360,7 @@ function RealTimeMatch(team1, team2) {
 //*******************************************************************************************************************************************
 
 //class to controll a bar graph
-function Bar(canvas, x, y, width, height, fill1, fill2, stroke, stroke_width, fill_op, stroke_op) {
+function Bar(canvas, x, y, width, height, fill, stroke, stroke_width, fill_op, stroke_op) {
 	//attributes
 	
 	var self = this;
@@ -376,8 +376,7 @@ function Bar(canvas, x, y, width, height, fill1, fill2, stroke, stroke_width, fi
 	self.Y = y;
 	self.Width = width;
 	self.Height = height;
-	self.Fill1 = fill1;
-	self.Fill2 = fill2;
+	self.Fill = fill;
 	self.Stroke = stroke;
 	self.StrokeWidth = stroke_width;
 	self.FillOpacity = fill_op;
@@ -386,14 +385,9 @@ function Bar(canvas, x, y, width, height, fill1, fill2, stroke, stroke_width, fi
 
 	self.append = function () {
 		//Desfine default values-------------------------------------------------------------------------
-		if (self.Fill1 === undefined) //if color is undefined, assign black
+		if (self.Fill === undefined) //if color is undefined, assign black
 		{
-			self.Fill1 = d3.rgb(60, 250, 60);
-		}
-		
-		if (self.Fill2 === undefined) //if color is undefined, assign black
-		{
-			self.Fill2 = d3.rgb(250, 60, 60);
+			self.Fill = d3.rgb(60, 250, 60);
 		}
 
 
@@ -422,13 +416,13 @@ function Bar(canvas, x, y, width, height, fill1, fill2, stroke, stroke_width, fi
 		if (self.Canvas != undefined && self.BarChart === null) {
 			var mx = self.X - self.Width / 2; //defines the bar X center
 			var my = 0;
-			if (self.Height <= 0) {
+			if (self.Height < 0) {
 				my = self.Y;
 				self.Height *= -1;
 			} else
 				my = self.Y - self.Height;
 
-			self.BarChart = self.Canvas.append("rect").classed("bar-element", true)
+			self.BarChart = self.Canvas.append("rect").classed("bar-element", true)	//set initial attributes
 				.attr("transform", function () {
 					return "translate(" + (mx) + ", " + (my) + ")";
 				})
@@ -463,66 +457,118 @@ function Bar(canvas, x, y, width, height, fill1, fill2, stroke, stroke_width, fi
 	};
 }
 
+//TODO: implement this
+function ToolTip(canvas, parent, x, y, tip, fill, stroke, stroke_width, fill_op, stroke_op)
+{
+	//Attributes--------------------------------------------------------------------------
+	
+	var self = this;
+	
+	self.Canvas = canvas;
+	self.Parent = parent;
+	self.X = x;
+	self.Y = y;
+	self.Tip = tip;
+	self.Radius = radius;
+	self.Fill = fill;
+	self.Stroke = stroke;
+	self.StrokeWidth = stroke_width;
+	self.FillOpacity = fill_op;
+	self.StrokeOpacity = stroke_op;
+}
+
+
+//TODO: implement this
+//Defines a line dot token to mark something like a turning point, a tooltip, etc
+function Dot(canvas, x, y, radius, fill, stroke, stroke_width, fill_op, stroke_op)
+{
+	//Attributes--------------------------------------------------------------------------
+	
+	var self = this;
+	
+	self.Canvas = canvas;
+	self.X = x;
+	self.Y = y;
+	self.Radius = radius;
+	self.Fill = fill;
+	self.Stroke = stroke;
+	self.StrokeWidth = stroke_width;
+	self.FillOpacity = fill_op;
+	self.StrokeOpacity = stroke_op;
+}
+
+//Status Token class and color literals
+
+//to change the colors of the statuses modify this code;
+var TokenColors = [];
+TokenColors.Death = []; TokenColors.Frag = []; TokenColors.Gold = [];
+
+TokenColors.Death.Fill = "#E61820"; TokenColors.Death.Stroke = "#9D4257"; TokenColors.Death.Text = "Died";
+TokenColors.Frag.Fill = "#4BB36C"; TokenColors.Frag.Stroke = "#36814D"; TokenColors.Frag.Text = "Frag";
+TokenColors.Gold.Fill = "#EBCC28"; TokenColors.Gold.Stroke = "#D69C0A"; TokenColors.Gold.Text = "Gold";
+
 function StatusToken(canvas, type, x, y) //an ellipse rect with text and color
 {
-	this.ClassType = "StatusToken";
-	this.Canvas = canvas;
-	if (this.Canvas.ClassType === "Canvas")
-		this.Canvas = canvas.getCanvas();
-	this.Type = type;
-	this.X = x;
-	this.Y = y;
-	this.RX = 35;
-	this.RY = 30;
-	this.Fill = d3.rgb(0, 0, 0);
-	this.Stroke = d3.rgb(0, 0, 0);
-	this.StrokeWidth = 5.0;
-	this.FillOpacity = 0.85;
-	this.StrokeOpacity = 0.9;
-	this.Token = null;
+	//Attributes----------------------------------------------------------------
+	var self = this;
+	
+	self.ClassType = "StatusToken";
+	self.Canvas = canvas;
+	if (self.Canvas.ClassType === "Canvas")
+		self.Canvas = canvas.getCanvas();
+	self.Type = type;
+	self.X = x;
+	self.Y = y;
+	self.RX = 35;
+	self.RY = 30;
+	self.Fill = d3.rgb(0, 0, 0);
+	self.Stroke = d3.rgb(0, 0, 0);
+	self.StrokeWidth = 5.0;
+	self.FillOpacity = 0.85;
+	self.StrokeOpacity = 0.9;
+	self.Token = null;
 
-	switch (this.Type) {
+	switch (self.Type) {
 	case "Death":
-		this.Fill = "#E61820";
-		this.Stroke = "#9D4257";
-		this.Text = "Died";
+		self.Fill = TokenColors.Death.Fill;
+		self.Stroke = TokenColors.Death.Stroke;
+		self.Text = TokenColors.Death.Text;
 		break;
 
 	case "Frag":
-		this.Fill = "#4BB36C";
-		this.Stroke = "#36814D";
-		this.Text = "Frag";
+		self.Fill = TokenColors.Frag.Fill;
+		self.Stroke = TokenColors.Frag.Stroke;
+		self.Text = TokenColors.Frag.Text;
 		break;
 
 	case "Gold":
-		this.Fill = "#EBCC28";
-		this.Stroke = "#D69C0A";
-		this.Text = "Gold";
-		break;
+		self.Fill = TokenColors.Frag.Fill;
+		self.Stroke = TokenColors.Frag.Stroke;
+		self.Text = TokenColors.Frag.Text;
 	}
 
-	this.append = function () {
-		if ($.type(this.Canvas) != "undefined" && $.type(this.Token) === "null") {
+	self.append = function () {
+		if ($.type(self.Canvas) != "undefined" && $.type(self.Token) === "null") {
 			//magic happens (appends ellipse and text)
-			var x = this.X;
-			var y = this.Y;
-			var ry = this.RY;
-			this.Token = this.Canvas.append("g").attr("class", "status-token");
+			var x = self.X;
+			var y = self.Y;
+			var ry = self.RY;
+			self.Token = self.Canvas.append("g").attr("class", "status-token");
 
-			this.Token.append("ellipse")
+			self.Token.append("ellipse")
 			.attr("transform", function () {
 				return "translate(" + x + ", " + y + ")";
 			})
-			.attr("rx", this.RX)
-			.attr("ry", this.RY)
-			.style("fill", this.Fill)
-			.style("stroke", this.Stroke)
-			.style("stroke-width", this.StrokeWidth)
-			.style("fill-opacity", this.FillOpacity)
-			.style("stroke-opacity", this.StrokeOpacity);
+			.attr("rx", self.RX)
+			.attr("ry", self.RY)
+			.style("fill", self.Fill)
+			.style("stroke", self.Stroke)
+			.style("stroke-width", self.StrokeWidth)
+			.style("fill-opacity", self.FillOpacity)
+			.style("stroke-opacity", self.StrokeOpacity);
 
-			var text = this.Token.append("text")
-				.text(this.Text)
+			var text = self.Token.append("text")
+				.text(self.Text)
 				.attr("transform", function () {
 					return "translate(" + x + ", " + (y + ry / 5) + ")";
 				})
@@ -534,16 +580,16 @@ function StatusToken(canvas, type, x, y) //an ellipse rect with text and color
 			console.log("Error, token ellipse is null");
 	};
 
-	this.remove = function () {
-		if (this.Token !== null) {
-			this.Token.remove();
-			this.Token = null;
+	self.remove = function () {
+		if (self.Token !== null) {
+			self.Token.remove();
+			self.Token = null;
 		}
 	};
 
-	this.update = function () {
-		this.remove();
-		this.append();
+	self.update = function () {
+		self.remove();
+		self.append();
 	};
 }
 
