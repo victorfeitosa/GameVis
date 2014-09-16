@@ -16,13 +16,13 @@ function Canvas(width, height, bgcolor, label) {
 
 	self.append = function () {
 		//check missing stuff
-		if (self.Width === "undefined")
+		if (self.Width === undefined)
 			self.Width = 640;
-		if (self.Height === "undefined")
+		if (self.Height === undefined)
 			self.Height = 480;
-		if (self.BGColor === "undefined")
+		if (self.BGColor === undefined)
 			self.BGColor = "0xAAAAAA";
-		if (self.Label === "undefined")
+		if (self.Label === undefined)
 			self.Label = "Game Graph:";
 
 		//actual appending
@@ -323,6 +323,36 @@ function Match(team1, team2, endtime) {
 	};
 }
 
+//RealTimeMatch Class------------------------------------------------------------------------------------------------------------------------
+function RealTimeMatch(team1, team2) {
+	
+	//Attributes-----------------------------------------------------------------------
+	
+	var self = this;
+	
+	self.Team1 = team1;
+	self.Team2 = team2;
+	
+	self.CurrentTime = 0;
+	self.Ended = false;
+	
+	self.GoldDifference = [];
+	self.XPDifference = [];
+	self.KillDifference = [];
+	
+	
+	//Methods-------------------------------------------------------------------------
+	
+	self.getCurrentTime = function(){
+		return self.CurrentTime;
+	};
+	
+	self.update = function(){
+		
+	};
+	
+	
+}
 
 
 //*******************************************************************************************************************************************
@@ -330,96 +360,106 @@ function Match(team1, team2, endtime) {
 //*******************************************************************************************************************************************
 
 //class to controll a bar graph
-function Bar(canvas, x, y, width, height, fill, stroke, stroke_width, fill_op, stroke_op) {
+function Bar(canvas, x, y, width, height, fill1, fill2, stroke, stroke_width, fill_op, stroke_op) {
 	//attributes
-	this.ClassType = "Bar";
+	
+	var self = this;
+	
+	self.ClassType = "Bar";
 
 	//checks if it is a group or a canvas
-	this.Canvas = canvas;
-	if (this.Canvas.ClassType === "Canvas")
-		this.Canvas = canvas.getCanvas();
+	self.Canvas = canvas;
+	if (self.Canvas.ClassType === "Canvas")
+		self.Canvas = canvas.getCanvas();
 	//--------------------------------------
-	this.X = x;
-	this.Y = y;
-	this.Width = width;
-	this.Height = height;
-	this.Fill = fill;
-	this.Stroke = stroke;
-	this.StrokeWidth = stroke_width;
-	this.FillOpacity = fill_op;
-	this.StrokeOpacity = stroke_op;
-	this.BarChart = null;
+	self.X = x;
+	self.Y = y;
+	self.Width = width;
+	self.Height = height;
+	self.Fill1 = fill1;
+	self.Fill2 = fill2;
+	self.Stroke = stroke;
+	self.StrokeWidth = stroke_width;
+	self.FillOpacity = fill_op;
+	self.StrokeOpacity = stroke_op;
+	self.BarChart = null;
 
-	this.append = function () {
+	self.append = function () {
 		//Desfine default values-------------------------------------------------------------------------
-		if ($.type(fill) === "undefined") //if color is undefined, assign black
+		if (self.Fill1 === undefined) //if color is undefined, assign black
 		{
-			fill = d3.rgb(0, 0, 0);
+			self.Fill1 = d3.rgb(60, 250, 60);
+		}
+		
+		if (self.Fill2 === undefined) //if color is undefined, assign black
+		{
+			self.Fill2 = d3.rgb(250, 60, 60);
 		}
 
-		if ($.type(stroke) === "undefined") //if color is undefined, assign black
+
+		if (self.Stroke === undefined) //if color is undefined, assign black
 		{
-			stroke = d3.rgb(0, 0, 0);
+			self.Stroke = d3.rgb(0, 0, 0);
 		}
 
-		if ($.type(stroke_width) === "undefined") //if width is undefined, assign 0
+		if (self.StrokeWidth === undefined) //if width is undefined, assign 0
 		{
-			stroke_width = 0;
+			self.StrokeWidth = 0;
 		}
 
-		if ($.type(fill_op) === "undefined") //if opacity is undefined, assign 1
+		if (self.FillOpacity === undefined) //if opacity is undefined, assign 1
 		{
-			fill_op = 1;
+			self.FillOpacity = 1;
 		}
 
-		if ($.type(stroke_op) === "undefined") //if opacity is undefined, assign 1
+		if (self.StrokeOpacity === undefined) //if opacity is undefined, assign 1
 		{
-			stroke_op = 1;
+			self.StrokeOpacity = 1;
 		}
 
 		//actual appending--------------------------------------------------------
 		//appends in a canvas or group
-		if ($.type(this.Canvas) != "undefined" && $.type(this.BarChart) === "null") {
-			var mx = this.X - this.Width / 2; //var organization
+		if (self.Canvas != undefined && self.BarChart === null) {
+			var mx = self.X - self.Width / 2; //defines the bar X center
 			var my = 0;
-			if (this.Height <= 0) {
-				my = this.Y;
-				this.Height *= -1;
+			if (self.Height <= 0) {
+				my = self.Y;
+				self.Height *= -1;
 			} else
-				my = this.Y - this.Height;
+				my = self.Y - self.Height;
 
-			this.BarChart = this.Canvas.append("rect").attr("class", "bar-element")
+			self.BarChart = self.Canvas.append("rect").classed("bar-element", true)
 				.attr("transform", function () {
 					return "translate(" + (mx) + ", " + (my) + ")";
 				})
-				.attr("width", this.Width)
+				.attr("width", self.Width)
 				.attr("height", 0)
 				.style("fill", d3.rgb(0,0,0))
-				.style("stroke", this.Stroke)
-				.style("stroke-width", this.StrokeWidth)
-				.style("fill-opacity", this.FillOpacity)
-				.style("stroke-opacity", this.StrokeOpacity);
+				.style("stroke", self.Stroke)
+				.style("stroke-width", self.StrokeWidth)
+				.style("fill-opacity", self.FillOpacity)
+				.style("stroke-opacity", self.StrokeOpacity);
 				
 				//applying height transition
-				this.BarChart
+				self.BarChart
 					.transition()
-					.attr("height", this.Height)
-					.style("fill", this.Fill)
+					.attr("height", self.Height)
+					.style("fill", self.Fill)
 					.duration(1000)
 					.delay(100);
 		}
 	};
 
-	this.remove = function () {
-		if (this.BarChart !== null) {
-			this.BarChart.remove();
-			this.BarChart = null;
+	self.remove = function () {
+		if (self.BarChart !== null) {
+			self.BarChart.remove();
+			self.BarChart = null;
 		}
 	};
 
-	this.update = function () {//instead of removing and re-appending, just make a transition
-		this.remove();
-		this.append();
+	self.update = function () {//instead of removing and re-appending, just make a transition
+		self.remove();
+		self.append();
 	};
 }
 
