@@ -542,13 +542,13 @@ function StatusToken(canvas, type, x, y) //an ellipse rect with text and color
 		break;
 
 	case "Gold":
-		self.Fill = TokenColors.Frag.Fill;
-		self.Stroke = TokenColors.Frag.Stroke;
-		self.Text = TokenColors.Frag.Text;
+		self.Fill = TokenColors.Gold.Fill;
+		self.Stroke = TokenColors.Gold.Stroke;
+		self.Text = TokenColors.Gold.Text;
 	}
 
 	self.append = function () {
-		if ($.type(self.Canvas) != "undefined" && $.type(self.Token) === "null") {
+		if (self.Canvas != undefined && self.Token === null) {
 			//magic happens (appends ellipse and text)
 			var x = self.X;
 			var y = self.Y;
@@ -596,53 +596,56 @@ function StatusToken(canvas, type, x, y) //an ellipse rect with text and color
 //Time Axis Class to handle "data over time" graphs
 function TimeAxis(canvas, y, orientation, scale, nticks) // an axis with ticks
 {
-	this.Canvas = canvas;
-	if (this.Canvas.ClassType === "Canvas")
-		this.Canvas = canvas.getCanvas;
-	this.Scale = scale;
-	this.Orient = orientation;
-	this.Y = y;
-	this.Axis = null;
-	this.NTicks = nticks;
+	//Attributes------------------------------------------------------
+	var self = this;
+	
+	self.Canvas = canvas;
+	if (self.Canvas.ClassType === "Canvas")
+		self.Canvas = canvas.getCanvas;
+	self.Scale = scale;
+	self.Orient = orientation;
+	self.Y = y;
+	self.Axis = null;
+	self.NTicks = nticks;
 
-	this.append = function () {
-		if ($.type(this.Canvas) !== "undefined" && $.type(this.Axis) === "null") {
+	self.append = function () {
+		if (self.Canvas !== undefined && self.Axis === null) {
 			//check invalid arguments
-			if ($.type(this.Y) === "undefined")
-				this.Y = 0;
+			if (self.Y === undefined)
+				self.Y = 0;
 
-			if ($.type(this.Orient) === "undefined")
-				this.Orient = "bottom";
-			if ($.type(this.NTicks) === "undefined")
-				this.NTicks = 10;
-			if ($.type(this.Scale) === "undefined") {
-				this.Scale = d3.scale.linear().domain([0, 100]).range([0, 320]);
+			if (self.Orient === undefined)
+				self.Orient = "bottom";
+			if (self.NTicks === undefined)
+				self.NTicks = 10;
+			if (self.Scale === undefined) {
+				self.Scale = d3.scale.linear().domain([0, 100]).range([0, 320]);
 			}
 
 			//creates axis here
-			this.Axis = d3.svg.axis().scale(this.Scale).orient(this.Orient); //Assign axis to just created scaled axis
-			this.Axis.ticks(this.NTicks);
+			self.Axis = d3.svg.axis().scale(self.Scale).orient(self.Orient); //Assign axis to just created scaled axis
+			self.Axis.ticks(self.NTicks);
 
 			//appending happens here
-			this.Canvas.append("g")
-			.attr("class", "time-axis")
-			.call(this.Axis)
+			self.Canvas.append("g")
+			.classed("time-axis", true)
+			.call(self.Axis)
 			.attr("transform", function () {
 				return ("translate(0, " + y + ")");
 			});
 		}
 	};
 
-	this.remove = function () {
-		if (this.Axis !== null) {
-			this.Axis.remove();
-			this.Axis = null;
+	self.remove = function () {
+		if (self.Axis !== null) {
+			self.Axis.remove();
+			self.Axis = null;
 		}
 	};
 
-	this.update = function () {
-		this.remove();
-		this.append();
+	self.update = function () {
+		self.remove();
+		self.append();
 	};
 }
 

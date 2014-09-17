@@ -1,0 +1,8 @@
+##To-do stuff in the code##
+
+Graphics.js
+ * Add graphics animations with ease and coloring
+ * Add implementation of tooltips and graph dots
+ * Add scale modularity to the graphs
+ * Add implementation of the realtime match and to the realtime graphs
+ * Add more graph elements and structures
