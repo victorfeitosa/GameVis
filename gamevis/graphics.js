@@ -310,8 +310,8 @@ function Match(team1, team2, endtime) {
 		return ret;
 	};
 
-	//updates the match status adding kills, gold, etc
-	self.update = function () {
+	//reappends the match status adding kills, gold, etc
+	self.reappend = function () {
 		var time = self.CurrentTime;
 		if (time <= self.EndTime) {
 			self.GoldDifference.push(self.calculateDifference(time, "Gold"));
@@ -330,6 +330,7 @@ function RealTimeMatch(team1, team2) {
 	
 	var self = this;
 	
+	self.ClassType = "RealTimeMatch";
 	self.Team1 = team1;
 	self.Team2 = team2;
 	
@@ -347,7 +348,7 @@ function RealTimeMatch(team1, team2) {
 		return self.CurrentTime;
 	};
 	
-	self.update = function(){
+	self.reappend = function(){
 		
 	};
 	
@@ -381,7 +382,7 @@ function Bar(canvas, x, y, width, height, fill, stroke, stroke_width, fill_op, s
 	self.StrokeWidth = stroke_width;
 	self.FillOpacity = fill_op;
 	self.StrokeOpacity = stroke_op;
-	self.BarChart = null;
+	self.BarElement = null;
 
 	self.append = function () {
 		//Desfine default values-------------------------------------------------------------------------
@@ -413,7 +414,7 @@ function Bar(canvas, x, y, width, height, fill, stroke, stroke_width, fill_op, s
 
 		//actual appending--------------------------------------------------------
 		//appends in a canvas or group
-		if (self.Canvas != undefined && self.BarChart === null) {
+		if (self.Canvas != undefined && self.BarElement === null) {
 			var mx = self.X - self.Width / 2; //defines the bar X center
 			var my = 0;
 			if (self.Height < 0) {
@@ -422,7 +423,7 @@ function Bar(canvas, x, y, width, height, fill, stroke, stroke_width, fill_op, s
 			} else
 				my = self.Y - self.Height;
 
-			self.BarChart = self.Canvas.append("rect").classed("bar-element", true)	//set initial attributes
+			self.BarElement = self.Canvas.append("rect").classed("bar-element", true)	//set initial attributes
 				.attr("transform", function () {
 					return "translate(" + (mx) + ", " + (my) + ")";
 				})
@@ -435,7 +436,7 @@ function Bar(canvas, x, y, width, height, fill, stroke, stroke_width, fill_op, s
 				.style("stroke-opacity", self.StrokeOpacity);
 				
 				//applying height transition
-				self.BarChart
+				self.BarElement
 					.transition()
 					.attr("height", self.Height)
 					.style("fill", self.Fill)
@@ -445,15 +446,20 @@ function Bar(canvas, x, y, width, height, fill, stroke, stroke_width, fill_op, s
 	};
 
 	self.remove = function () {
-		if (self.BarChart !== null) {
-			self.BarChart.remove();
-			self.BarChart = null;
+		if (self.BarElement !== null) {
+			self.BarElement.remove();
+			self.BarElement = null;
 		}
 	};
 
-	self.update = function () {//instead of removing and re-appending, just make a transition
+	self.reappend = function () {//instead of removing and re-appending, just make a transition
 		self.remove();
 		self.append();
+	};
+	
+	self.getElement = function()
+	{
+		return self.BarElement;
 	};
 }
 
@@ -464,17 +470,79 @@ function ToolTip(canvas, parent, x, y, tip, fill, stroke, stroke_width, fill_op,
 	
 	var self = this;
 	
+	self.ClassType = "ToolTip";
 	self.Canvas = canvas;
 	self.Parent = parent;
 	self.X = x;
 	self.Y = y;
 	self.Tip = tip;
-	self.Radius = radius;
 	self.Fill = fill;
 	self.Stroke = stroke;
 	self.StrokeWidth = stroke_width;
 	self.FillOpacity = fill_op;
 	self.StrokeOpacity = stroke_op;
+	self.ToolTipElement = null;
+	
+	//Methods-----------------------------------------------------------------------------
+	self.append = function()
+	{
+		if (self.Tip === undefined)
+		{
+			self.Tip = "Sample ToolTip Text";
+		}
+		
+		if(self.Fill === undefined)
+		{
+			self.Fill = "#FFF";
+		}
+		
+		if(self.Stroke === undefined)
+		{
+			self.Stroke = "#FFF";
+		}
+		
+		if(self.StrokeWidth === undefined)
+		{
+			self.StrokeWidth = 1;
+		}
+		
+		if(self.FillOpacity === undefined)
+		{
+			self.FillOpacity = 1;
+		}
+		
+		if(self.StrokeOpacity === undefined)
+		{
+			self.StrokeOpacity = 1;
+		}
+		
+		//Appending
+		if(self.Canvas !== undefined)
+		{
+			
+		}
+		
+	};
+	
+	self.remove = function()
+	{
+		if(self.ToolTipElement != null)
+		{
+			self.ToolTipElement.remove();
+			self.ToolTipElement = null;
+		}
+	};
+	
+	self.reappend = function()
+	{
+		self.remove();
+		self.append();
+	};
+	
+	self.getElement = function()
+	{
+		return self.ToolTipElement;
+	};
 }
 
 
@@ -486,6 +554,8 @@ function Dot(canvas, x, y, radius, fill, stroke, stroke_width, fill_op, stroke_o
 	
 	var self = this;
 	
+	self.ClassType = "Dot";
+	
 	self.Canvas = canvas;
 	self.X = x;
 	self.Y = y;
@@ -495,6 +565,82 @@ function Dot(canvas, x, y, radius, fill, stroke, stroke_width, fill_op, stroke_o
 	self.StrokeWidth = stroke_width;
 	self.FillOpacity = fill_op;
 	self.StrokeOpacity = stroke_op;
+	self.DotElement = null;
+	
+	//Methods
+	self.append() = function()
+	{
+		if (self.Tip === undefined)
+		{
+			self.Tip = "Sample ToolTip Text";
+		}
+		
+		if (self.Radius === undefined)
+		{
+			self.Radius = 3;
+		}
+		
+		if(self.Fill === undefined)
+		{
+			self.Fill = "#FFF";
+		}
+		
+		if(self.Stroke === undefined)
+		{
+			self.Stroke = "#FFF";
+		}
+		
+		if(self.StrokeWidth === undefined)
+		{
+			self.StrokeWidth = 1;
+		}
+		
+		if(self.FillOpacity === undefined)
+		{
+			self.FillOpacity = 1;
+		}
+		
+		if(self.StrokeOpacity === undefined)
+		{
+			self.StrokeOpacity = 1;
+		}
+		
+		//Appending
+		if(self.Canvas !== undefined)
+		{
+			self.DotElement = Canvas.append("circle")
+									.attr("cx", self.X)
+									.attr("cy", self.Y)
+									.attr("r", self.Radius)
+									.attr("fill", self.Fill)
+									.attr("stroke", self.Stroke)
+									.attr("stroke-width", self.StrokeWidth)
+									.attr("fill-opacity", self.FillOpacity)
+									.attr("stroke-opacity", self.StrokeOpacity)
+									.classed("dot", true);
+		
+		}
+	};
+	
+	self.remove = function()
+	{
+		if(self.DotElement !== null)
+		{
+			self.DotElement.remove();
+			self.DotElement = null;
+		}
+	};
+	
+	self.reappend = function()
+	{
+		self.remove();
+		self.append();
+	};
+	
+	self.getElement = function()
+	{
+		return self.DotElement;
+	};
 }
 
 //Status Token class and color literals
@@ -526,7 +672,7 @@ function StatusToken(canvas, type, x, y) //an ellipse rect with text and color
 	self.StrokeWidth = 5.0;
 	self.FillOpacity = 0.85;
 	self.StrokeOpacity = 0.9;
-	self.Token = null;
+	self.TokenElement = null;
 
 	switch (self.Type) {
 	case "Death":
@@ -548,14 +694,14 @@ function StatusToken(canvas, type, x, y) //an ellipse rect with text and color
 	}
 
 	self.append = function () {
-		if (self.Canvas != undefined && self.Token === null) {
+		if (self.Canvas != undefined && self.TokenElement === null) {
 			//magic happens (appends ellipse and text)
 			var x = self.X;
 			var y = self.Y;
 			var ry = self.RY;
-			self.Token = self.Canvas.append("g").attr("class", "status-token");
+			self.TokenElement = self.Canvas.append("g").attr("class", "status-token");
 
-			self.Token.append("ellipse")
+			self.TokenElement.append("ellipse")
 			.attr("transform", function () {
 				return "translate(" + x + ", " + y + ")";
 			})
@@ -567,7 +713,7 @@ function StatusToken(canvas, type, x, y) //an ellipse rect with text and color
 			.style("fill-opacity", self.FillOpacity)
 			.style("stroke-opacity", self.StrokeOpacity);
 
-			var text = self.Token.append("text")
+			var text = self.TokenElement.append("text")
 				.text(self.Text)
 				.attr("transform", function () {
 					return "translate(" + x + ", " + (y + ry / 5) + ")";
@@ -581,15 +727,20 @@ function StatusToken(canvas, type, x, y) //an ellipse rect with text and color
 	};
 
 	self.remove = function () {
-		if (self.Token !== null) {
-			self.Token.remove();
-			self.Token = null;
+		if (self.TokenElement !== null) {
+			self.TokenElement.remove();
+			self.TokenElement = null;
 		}
 	};
 
-	self.update = function () {
+	self.reappend = function () {
 		self.remove();
 		self.append();
+	};
+	
+	self.getElement = function()
+	{
+		return self.TokenElement;
 	};
 }
 
@@ -643,217 +794,230 @@ function TimeAxis(canvas, y, orientation, scale, nticks) // an axis with ticks
 		}
 	};
 
-	self.update = function () {
+	self.reappend = function () {
 		self.remove();
 		self.append();
 	};
 }
 
 function ComparisonGraphLine(canvas, match, type, x, y, scaleX, scaleY) {
-	this.Canvas = canvas.getCanvas();
-	this.Match = match;
-	this.Type = type; //Gold, Kills or XP
-	this.X = x;
-	this.Y = y;
-	this.ScaleX = scaleX;
-	this.ScaleY = scaleY;
-	this.Lines = [];
-	this.LineGroup = null;
-	this.HalfHeight = ((canvas.Height) / 2);
+	
+	//Attributes-------------------------------------------------
+	
+	var self = this;
+	
+	self.Canvas = canvas.getCanvas();
+	self.Match = match;
+	self.Type = type; //Gold, Kills or XP
+	self.X = x;
+	self.Y = y;
+	self.ScaleX = scaleX;
+	self.ScaleY = scaleY;
+	self.Lines = [];
+	self.LineGroup = null;
+	self.HalfHeight = ((canvas.Height) / 2);
 
 	//Iterates through teams and gets interest points over time
-	this.build = function () {
+	self.build = function () {
 		//build lines
-		for (var i = 0; i < this.Match.EndTime - 1; i++) {
+		for (var i = 0; i < self.Match.EndTime - 1; i++) {
 
-			var v = [this.ScaleX(i), this.ScaleY(this.Match.getDifference(i, this.Type)), this.ScaleX(i + 1), this.ScaleY(this.Match.getDifference(i + 1, this.Type))];
-			this.Lines.push(v);
+			var v = [self.ScaleX(i), self.ScaleY(self.Match.getDifference(i, self.Type)), self.ScaleX(i + 1), self.ScaleY(self.Match.getDifference(i + 1, self.Type))];
+			self.Lines.push(v);
 		}
 	};
 
-	this.append = function () {
-		this.LineGroup = this.Canvas.append("g")
+	self.append = function () {
+		self.LineGroup = self.Canvas.append("g")
 			.attr("class", "comparison-line-graph")
 			.attr("transform", function () {
-				return ("translate(" + this.X + ", " + this.Y + ")");
+				return ("translate(" + self.X + ", " + self.Y + ")");
 			});
-		for (var i in this.Lines) {
-			this.LineGroup.append("line")
-			.attr("x1", this.Lines[i][0])
-			.attr("y1", this.Lines[i][1])
-			.attr("x2", this.Lines[i][2])
-			.attr("y2", this.Lines[i][3])
+		for (var i in self.Lines) {
+			self.LineGroup.append("line")
+			.attr("x1", self.Lines[i][0])
+			.attr("y1", self.Lines[i][1])
+			.attr("x2", self.Lines[i][2])
+			.attr("y2", self.Lines[i][3])
 			.attr("class", "line-graph-segment");
 		}
 
 		//appends time axis
-		var axis = new TimeAxis(this.Canvas, this.HalfHeight, "bottom", this.ScaleX, 5);
+		var axis = new TimeAxis(self.Canvas, self.HalfHeight, "bottom", self.ScaleX, 5);
 		axis.append();
 
 		//Text and some other stuff
-		var mx = this.X;
-		var my = this.Y + 16;
-		var textTitle = this.Canvas.append("svg:text")
-			.text("Line comparison graph: " + this.Type)
+		var mx = self.X;
+		var my = self.Y + 16;
+		var textTitle = self.Canvas.append("svg:text")
+			.text("Line comparison graph: " + self.Type)
 			.attr("class", "line-graph-title")
 			.attr("transform", function () {
 				return "translate(" + mx + ", " + my + ")";
 			});
 
-		mx = canvas.Width / 2 + this.X;
-		my = this.Y + 64;
-		var textTeam1 = this.Canvas.append("svg:text")
-			.text("Team " + this.Match.Team1.Name)
+		mx = canvas.Width / 2 + self.X;
+		my = self.Y + 64;
+		var textTeam1 = self.Canvas.append("svg:text")
+			.text("Team " + self.Match.Team1.Name)
 			.attr("class", "comparison-graph-text")
 			.attr("transform", function () {
 				return "translate(" + mx + ", " + my + ")";
 			});
 
-		my = canvas.Height - 64 + this.Y;
-		var textTeam2 = this.Canvas.append("svg:text")
-			.text("Team " + this.Match.Team2.Name)
+		my = canvas.Height - 64 + self.Y;
+		var textTeam2 = self.Canvas.append("svg:text")
+			.text("Team " + self.Match.Team2.Name)
 			.attr("class", "comparison-graph-text")
 			.attr("transform", function () {
 				return "translate(" + canvas.Width / 2 + ", " + my + ")";
 			});
 	};
 
-	this.remove = function () {
-		if (this.LineGroup !== null) {
-			this.LineGroup.remove();
-			this.LineGroup = null;
-			this.Lines = [];
+	self.remove = function () {
+		if (self.LineGroup !== null) {
+			self.LineGroup.remove();
+			self.LineGroup = null;
+			self.Lines = [];
 		}
 	};
 }
 
 function ComparisonGraphBar(canvas, match, type, x, y, scaleX, scaleY) {
 
-	this.Canvas = canvas.getCanvas();
-	this.Match = match;
-	this.Type = type;
-	this.X = x;
-	this.Y = y;
-	this.ScaleX = scaleX;
-	this.ScaleY = scaleY;
-	this.Bars = [];
-	this.BarsGroup = null;
-	this.HalfHeight = (canvas.Height) / 2;
+	//Attributes-----------------------------------------------------------------
+	
+	var self = this;
+	
+	self.Canvas = canvas.getCanvas();
+	self.Match = match;
+	self.Type = type;
+	self.X = x;
+	self.Y = y;
+	self.ScaleX = scaleX;
+	self.ScaleY = scaleY;
+	self.Bars = [];
+	self.BarsGroup = null;
+	self.HalfHeight = (canvas.Height) / 2;
 
 	//Iterates through teams and gets interest points over time
-	this.build = function () {
-		var barWidth = this.ScaleX((1 / this.Match.EndTime));
-		for (var i = 0; i < this.Match.EndTime; i++) {
+	self.build = function () {
+		var barWidth = self.ScaleX((1 / self.Match.EndTime));
+		for (var i = 0; i < self.Match.EndTime; i++) {
 			//value = [x, y, width, height]
-			var value = [this.ScaleX(i), this.HalfHeight, barWidth, this.Match.getDifference(i, this.Type) * this.HalfHeight / 10];
-			this.Bars.push(value);
+			var value = [self.ScaleX(i), self.HalfHeight, barWidth, self.Match.getDifference(i, self.Type) * self.HalfHeight / 10];
+			self.Bars.push(value);
 		}
 	};
 
-	this.append = function () {
+	self.append = function () {
 		var mx = 0;
 		var my = 0;
 
 		//adds the group element
-		this.BarsGroup = this.Canvas.append("g")
+		self.BarsGroup = self.Canvas.append("g")
 			.attr("class", "comparison-bar-graph")
 			.attr("transform", function () {
-				return ("translate(" + this.X + ", " + this.Y + ")");
+				return ("translate(" + self.X + ", " + self.Y + ")");
 			});
 
 		//adds the bars
-		for (var i in this.Bars) {
-			var tbar = this.Bars[i];
+		for (var i in self.Bars) {
+			var tbar = self.Bars[i];
 			var fill = "black";
 			if (tbar[3] < 0)
 				fill = "red";
 			else
 				fill = "green";
 
-			var bGraph = new Bar(this.BarsGroup, tbar[0], tbar[1], tbar[2], tbar[3], fill);
+			var bGraph = new Bar(self.BarsGroup, tbar[0], tbar[1], tbar[2], tbar[3], fill);
 			bGraph.append();
 		}
 
 		//adds the informative text
-		for (i in this.Bars) {
-			var tbar = this.Bars[i];
+		for (i in self.Bars) {
+			var tbar = self.Bars[i];
 			mx = tbar[0];
 			if(tbar[3] > 0)
-				my = this.HalfHeight - tbar[3] - 4;
+				my = self.HalfHeight - tbar[3] - 4;
 			else
-				my = this.HalfHeight - tbar[3] + 16;
+				my = self.HalfHeight - tbar[3] + 16;
 			
 			var mtrans = "translate(" + mx + ", " + my + ")";
-			if(this.Match.getDifference(i, this.Type) !== 0){
-			var infoT = this.BarsGroup.append("text").attr("class", "bar-info-text")
-				.text(this.Match.getDifference(i, this.Type))
+			if(self.Match.getDifference(i, self.Type) !== 0){
+			var infoT = self.BarsGroup.append("text").attr("class", "bar-info-text")
+				.text(self.Match.getDifference(i, self.Type))
 				.style("text-anchor", "middle")
 				.attr("transform", mtrans);
 				}
 		}
 
 		//appends time axis
-		var axis = new TimeAxis(this.Canvas, this.HalfHeight, "bottom", this.ScaleX, 5);
+		var axis = new TimeAxis(self.Canvas, self.HalfHeight, "bottom", self.ScaleX, 5);
 		axis.append();
 
 		//Text and some other stuff
-		mx = this.X;
-		my = this.Y + 16;
-		var textTitle = this.Canvas.append("svg:text")
-			.text("Bar comparison graph: " + this.Type)
+		mx = self.X;
+		my = self.Y + 16;
+		var textTitle = self.Canvas.append("svg:text")
+			.text("Bar comparison graph: " + self.Type)
 			.attr("class", "bar-graph-title")
 			.attr("transform", function () {
 
 				return "translate(" + mx + ", " + my + ")";
 			});
 
-		mx = canvas.Width / 2 + this.X;
-		my = 64 + this.Y;
-		var textTeam1 = this.Canvas.append("svg:text")
-			.text("Team " + this.Match.Team2.Name)
+		mx = canvas.Width / 2 + self.X;
+		my = 64 + self.Y;
+		var textTeam1 = self.Canvas.append("svg:text")
+			.text("Team " + self.Match.Team2.Name)
 			.attr("class", "comparison-graph-text")
 			.attr("transform", function () {
 				return "translate(" + mx + ", " + my + ")";
 			});
 
-		y = canvas.Height - 64 + this.Y;
-		var textTeam2 = this.Canvas.append("svg:text")
-			.text("Team " + this.Match.Team1.Name)
+		y = canvas.Height - 64 + self.Y;
+		var textTeam2 = self.Canvas.append("svg:text")
+			.text("Team " + self.Match.Team1.Name)
 			.attr("class", "comparison-graph-text")
 			.attr("transform", function () {
 				return "translate(" + canvas.Width / 2 + ", " + y + ")";
 			});
 	};
 
-	this.remove = function () {
-		this.Bars = [];
-		this.BarsGroup.remove();
-		this.BarsGroup = null;
+	self.remove = function () {
+		self.Bars = [];
+		self.BarsGroup.remove();
+		self.BarsGroup = null;
 	};
 }
 
 function TeamDetailGraph(canvas, team, x, y) { //display team name, list of players and their attributes
-	this.Canvas = canvas;
-	if (this.Canvas.ClassType === "Canvas")
-		this.Canvas = canvas.getCanvas();
-	this.Team = team;
-	this.Group = null;
-	this.X = x;
-	this.Y = y;
+	
+	//Attributes---------------------------------------------------------
+	var self = this;
+	
+	self.Canvas = canvas;
+	if (self.Canvas.ClassType === "Canvas")
+		self.Canvas = canvas.getCanvas();
+	self.Team = team;
+	self.Group = null;
+	self.X = x;
+	self.Y = y;
 
-	if ($.type(this.X) === "undefined")
-		this.X = 0;
-	if ($.type(this.Y) === "undefined")
-		this.Y = 0;
+	if (self.X === undefined)
+		self.X = 0;
+	if (self.Y === undefined)
+		self.Y = 0;
 
-	this.append = function () {
-		this.Group = this.Canvas.append("g").attr("class", "team-detail-graph")
+	self.append = function () {
+		self.Group = self.Canvas.append("g").attr("class", "team-detail-graph")
 			.attr("transform", function () {
-				return "translate(" + this.X + ", " + this.Y + ")";
+				return "translate(" + self.X + ", " + self.Y + ")";
 			});
 
-		this.Group.append("svg:text")
-		.text("Team " + this.Team.Name)
+		self.Group.append("svg:text")
+		.text("Team " + self.Team.Name)
 		.attr("class", "team-graph-title")
 		.attr("transform", function () {
 			return "translate(" + 16 + ", " + 16 + ")";
@@ -871,11 +1035,11 @@ function TeamDetailGraph(canvas, team, x, y) { //display team name, list of play
 			return "translate(32, " + y + ")";
 		}
 
-		for (var i in this.Team.Players) {
+		for (var i in self.Team.Players) {
 			//creates new group to display player info
-			var pinfo = this.Group.append("g").attr("class", "team-player-info")
+			var pinfo = self.Group.append("g").attr("class", "team-player-info")
 				.attr("transform", getTranslate(i));
-			var mplayer = this.Team.Players[i];
+			var mplayer = self.Team.Players[i];
 
 			pinfo.append("svg:text").attr("class", "team-player-info-name").text(mplayer.Name).attr("transform", textTranslate(4));
 			pinfo.append("svg:text").attr("class", "team-player-info").text("Total Gold: " + mplayer.TotalGold).attr("transform", textTranslate(20));
@@ -886,56 +1050,59 @@ function TeamDetailGraph(canvas, team, x, y) { //display team name, list of play
 
 	};
 
-	this.remove = function () {
-		this.Group.remove();
-		this.Group = null;
+	self.remove = function () {
+		self.Group.remove();
+		self.Group = null;
 	};
 }
 
 function PlayerMatchGraph(canvas, match, player, scale, x, y) {
-	this.Canvas = canvas;
-	if (this.Canvas.ClassType === "Canvas")
-		this.Canvas = canvas.getCanvas();
-	this.Player = player;
-	this.Scale = scale;
-	this.X = x;
-	this.Y = y;
-	this.Group = null;
-	this.StatusTokensGroup = null;
+	//Attributes---------------------------------------------------------------
+	var self = this;
+	
+	self.Canvas = canvas;
+	if (self.Canvas.ClassType === "Canvas")
+		self.Canvas = canvas.getCanvas();
+	self.Player = player;
+	self.Scale = scale;
+	self.X = x;
+	self.Y = y;
+	self.Group = null;
+	self.StatusTokensGroup = null;
 
-	if ($.type(this.X) === "undefined")
-		this.X = 0;
-	if ($.type(this.Y) === "undefined")
-		this.Y = 0;
+	if ($.type(self.X) === "undefined")
+		self.X = 0;
+	if ($.type(self.Y) === "undefined")
+		self.Y = 0;
 
-	this.append = function () {
-		var gX = this.X;
-		var gY = this.Y;
+	self.append = function () {
+		var gX = self.X;
+		var gY = self.Y;
 
-		this.Group = this.Canvas.append("g")
+		self.Group = self.Canvas.append("g")
 			.attr("class", "player-match-graph")
 			.attr("transform", function () {
 				return "translate(" + gX + ", " + gY + ")";
 			});
 
-		this.Group.append("svg:text").text("Player Match History")
+		self.Group.append("svg:text").text("Player Match History")
 		.attr("class", "player-match-title")
 		.attr("transform", function () {
 			return "translate(4, 32)";
 		});
 
-		this.Group.append("svg:text").text(this.Player.Name)
+		self.Group.append("svg:text").text(self.Player.Name)
 		.attr("class", "player-match-name")
 		.attr("transform", function () {
 			return "translate(32, 96)";
 		});
 
 		//Append status tokens
-		this.StatusTokensGroup = this.Group.append("g").attr("class", "status-tokens-group");
+		self.StatusTokensGroup = self.Group.append("g").attr("class", "status-tokens-group");
 
-		for (var i in this.Player.Status) {
-			var status = this.Player.Status[i];
-			var tx = this.Scale(status[0]);
+		for (var i in self.Player.Status) {
+			var status = self.Player.Status[i];
+			var tx = self.Scale(status[0]);
 			var ty = 0;
 			switch (status[1]) {
 			case "Frag":
@@ -949,12 +1116,12 @@ function PlayerMatchGraph(canvas, match, player, scale, x, y) {
 				break;
 			}
 			console.log("Status: " + status);
-			var token = new StatusToken(this.StatusTokensGroup, status[1], tx, ty);
+			var token = new StatusToken(self.StatusTokensGroup, status[1], tx, ty);
 			token.append();
 		}
 
 		//put status token group on a feasible position
-		this.StatusTokensGroup.attr("transform", function () {
+		self.StatusTokensGroup.attr("transform", function () {
 			var stgX = 0;
 			var stgY = gY + 180;
 
@@ -962,12 +1129,12 @@ function PlayerMatchGraph(canvas, match, player, scale, x, y) {
 		});
 
 		//put the axis
-		var axis = new TimeAxis(this.Group, gY + 380, "bottom", this.Scale, 5);
+		var axis = new TimeAxis(self.Group, gY + 380, "bottom", self.Scale, 5);
 		axis.append();
 	};
 
-	this.remove = function () {
-		this.Group.remove();
-		this.Group = null;
+	self.remove = function () {
+		self.Group.remove();
+		self.Group = null;
 	};
 }
