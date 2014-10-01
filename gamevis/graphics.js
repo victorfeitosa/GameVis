@@ -321,6 +321,18 @@ function Match(team1, team2, endtime) {
 			self.CurrentTime++;
 		}
 	};
+	
+	self.update = function () {
+		//TODO: update this so instead os pushing values, just set the values for the given time
+		var time = self.CurrentTime;
+		if (time <= self.EndTime) {
+			self.GoldDifference.push(self.calculateDifference(time, "Gold"));
+			self.XPDifference.push(self.calculateDifference(time, "XP"));
+			self.KillDifference.push(self.calculateDifference(time, "Kills"));
+
+			self.CurrentTime++;
+		}
+	};
 }
 
 //RealTimeMatch Class------------------------------------------------------------------------------------------------------------------------

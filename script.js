@@ -25,11 +25,13 @@ myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
 myMatch.addPlayerGold(TeamA, PlayerA, 300);
 myMatch.update();
 
+
 myMatch.addPlayerGold(TeamA, PlayerA, 300);
 myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
 myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
 myMatch.update();
 
+
 myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
 myMatch.addPlayerGold(TeamA, PlayerA, 300);
 myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
@@ -49,4 +51,3 @@ myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
 myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
 
 myMatch.update();
-
