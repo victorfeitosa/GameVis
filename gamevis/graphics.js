@@ -2,8 +2,39 @@
 //Game stuctures*****************************************************************************************************************************
 //*******************************************************************************************************************************************
 
+//Graphics Package Globals--------------------------------------------------------
+GRAPH_STYLE_SOURCE = 'CSS';
+
+function isStyleSourceCSS(){
+	return GRAPH_STYLE_SOURCE === 'CSS';
+}
+
+function isStyleSourceCode(){
+	return GRAPH_STYLE_SOURCE === 'CODE';
+}
+
+function setGraphStyleSource(source){
+	if(source === 'CSS' || source === 'CODE')
+		GRAPH_STYLE_SOURCE = source;
+	else{
+		console.error("ERROR: STYLE SOURCE IS NOT VALID!");
+	}
+}
+
+function setGraphStyleSourceasCSS(b){
+	if(b){
+		setGraphStyleSource('CSS');
+	}
+}
+
+function setGraphStyleSourceasCode(b){
+	if(b){
+		setGraphStyleSource('CODE');
+	}
+}
+
 //Canvas class----------------------------------------------------
-function Canvas(width, height, bgcolor, label) {
+function Canvas(width, height, label, bgcolor) {
 	
 	var self = this; //self variable to maintain the class auto-reference
 	
@@ -20,19 +51,22 @@ function Canvas(width, height, bgcolor, label) {
 			self.Width = 640;
 		if (self.Height === undefined)
 			self.Height = 480;
-		if (self.BGColor === undefined)
-			self.BGColor = "0xAAAAAA";
 		if (self.Label === undefined)
 			self.Label = "Game Graph:";
 
 		//actual appending
 		if (self.SVGCanvas === null) {
 			self.SVGCanvas = d3.select("body").append("svg")
-				.classed("canvas", true)
 				.attr("width", self.Width)
 				.attr("height", self.Height)
-				.style("padding", 20)
-				.style("background-color", self.BGColor);
+				.classed("canvas", true);
+				
+				if(isStyleSourceCSS())
+				{
+					//TODO: define code style
+					if (self.BGColor === undefined)
+						self.BGColor = "0xAAAAAA";
+				}
 		}
 	};
 
