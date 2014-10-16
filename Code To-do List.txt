@@ -1,7 +1,7 @@
 ##To-do stuff in the code##
 
 Graphics.js
- * Every style-related option should be converted to css
+ * Every style-related option should be converted to css [PARTIALLY DONE]
  * Add graphics animations with ease and coloring
  * Add implementation of tooltips and graph dots
  * Add scale modularity to the graphs

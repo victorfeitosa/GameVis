@@ -61,7 +61,7 @@ function Canvas(width, height, label, bgcolor) {
 				.attr("height", self.Height)
 				.classed("canvas", true);
 				
-				if(isStyleSourceCSS())
+				if(isStyleSourceCode())
 				{
 					//TODO: define code style
 					if (self.BGColor === undefined)
@@ -356,8 +356,19 @@ function Match(team1, team2, endtime) {
 		}
 	};
 	
+	self.build = function() {
+		//TODO: For this to work we have to change the methods of adding kills and gold so the-----
+		//		build works properly, building the graphics with values on the correct timestamps--
+		//		and not always on '0'.-------------------------------------------------------------
+		
+		for(var time = 0; time < self.EndTime; time++){
+			self.GoldDifference.push(self.calculateDifference(time, "Gold"));
+			self.XPDifference.push(self.calculateDifference(time, "XP"));
+			self.KillDifference.push(self.calculateDifference(time, "Kills"));
+		}
+	};
+	
 	self.update = function () {
-		//TODO: update this so instead os pushing values, just set the values for the given time
 		var time = self.CurrentTime;
 		if (time <= self.EndTime) {
 			self.GoldDifference.push(self.calculateDifference(time, "Gold"));
@@ -475,13 +486,18 @@ function Bar(canvas, x, y, width, height, fill, stroke, stroke_width, fill_op, s
 				})
 				.attr("width", self.Width)
 				.attr("height", 0)
-				.style("fill", d3.rgb(0,0,0))
-				.style("stroke", self.Stroke)
-				.style("stroke-width", self.StrokeWidth)
-				.style("fill-opacity", self.FillOpacity)
-				.style("stroke-opacity", self.StrokeOpacity);
+				.style("fill", d3.rgb(0,0,0));
+				
+				if(isStyleSourceCode())
+				{
+					self.BarElement.style("stroke", self.Stroke)
+									.style("stroke-width", self.StrokeWidth)
+									.style("fill-opacity", self.FillOpacity)
+									.style("stroke-opacity", self.StrokeOpacity);
+				}
 				
 				//applying height transition
+				//TODO: adjust this so the animation of the style coloring can be achieved through CSS as well
 				self.BarElement
 					.transition()
 					.attr("height", self.Height)
