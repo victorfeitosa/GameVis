@@ -145,7 +145,7 @@ function Player(name, rank, team, nation, tgold, txp, level) {
 		self.CurrentGold += 250;
 		self.TotalGold += 250;
 
-		self.Status.push([time, "Frag"]);
+		self.Status.push([time, "frag"]);
 	};
 }
 
@@ -582,6 +582,9 @@ function ToolTip(canvas, parent, x, y, tip, fill, stroke, stroke_width, fill_op,
 		if(self.Canvas !== undefined)
 		{
 			
+			if(isStyleSourceCode()){
+				
+			}			
 		}
 		
 	};
@@ -674,12 +677,16 @@ function Dot(canvas, x, y, radius, fill, stroke, stroke_width, fill_op, stroke_o
 									.attr("cx", self.X)
 									.attr("cy", self.Y)
 									.attr("r", self.Radius)
-									.attr("fill", self.Fill)
-									.attr("stroke", self.Stroke)
-									.attr("stroke-width", self.StrokeWidth)
-									.attr("fill-opacity", self.FillOpacity)
-									.attr("stroke-opacity", self.StrokeOpacity)
 									.classed("dot", true);
+									
+			if(isStyleSourceCode())
+			{
+				self.DotElement.attr("fill", self.Fill)
+								.attr("stroke", self.Stroke)
+								.attr("stroke-width", self.StrokeWidth)
+								.attr("fill-opacity", self.FillOpacity)
+								.attr("stroke-opacity", self.StrokeOpacity);
+			}
 		
 		}
 	};
@@ -711,9 +718,9 @@ function Dot(canvas, x, y, radius, fill, stroke, stroke_width, fill_op, stroke_o
 var TokenColors = [];
 TokenColors.Death = []; TokenColors.Frag = []; TokenColors.Gold = [];
 
-TokenColors.Death.Fill = "#E61820"; TokenColors.Death.Stroke = "#9D4257"; TokenColors.Death.Text = "Died";
-TokenColors.Frag.Fill = "#4BB36C"; TokenColors.Frag.Stroke = "#36814D"; TokenColors.Frag.Text = "Frag";
-TokenColors.Gold.Fill = "#EBCC28"; TokenColors.Gold.Stroke = "#D69C0A"; TokenColors.Gold.Text = "Gold";
+TokenColors.Death.Fill = "#E61820"; TokenColors.Death.Stroke = "#9D4257"; TokenColors.Death.Text = "death";
+TokenColors.Frag.Fill = "#4BB36C"; TokenColors.Frag.Stroke = "#36814D"; TokenColors.Frag.Text = "frag";
+TokenColors.Gold.Fill = "#EBCC28"; TokenColors.Gold.Stroke = "#D69C0A"; TokenColors.Gold.Text = "gold";
 
 function StatusToken(canvas, type, x, y) //an ellipse rect with text and color
 {
@@ -737,19 +744,19 @@ function StatusToken(canvas, type, x, y) //an ellipse rect with text and color
 	self.TokenElement = null;
 
 	switch (self.Type) {
-	case "Death":
+	case "death":
 		self.Fill = TokenColors.Death.Fill;
 		self.Stroke = TokenColors.Death.Stroke;
 		self.Text = TokenColors.Death.Text;
 		break;
 
-	case "Frag":
+	case "frag":
 		self.Fill = TokenColors.Frag.Fill;
 		self.Stroke = TokenColors.Frag.Stroke;
 		self.Text = TokenColors.Frag.Text;
 		break;
 
-	case "Gold":
+	case "gold":
 		self.Fill = TokenColors.Gold.Fill;
 		self.Stroke = TokenColors.Gold.Stroke;
 		self.Text = TokenColors.Gold.Text;
@@ -768,22 +775,34 @@ function StatusToken(canvas, type, x, y) //an ellipse rect with text and color
 				return "translate(" + x + ", " + y + ")";
 			})
 			.attr("rx", self.RX)
-			.attr("ry", self.RY)
-			.style("fill", self.Fill)
-			.style("stroke", self.Stroke)
-			.style("stroke-width", self.StrokeWidth)
-			.style("fill-opacity", self.FillOpacity)
-			.style("stroke-opacity", self.StrokeOpacity);
+			.attr("ry", self.RY);
+			
+			var tokenkind = "status-token-" + type;
+			self.TokenElement.classed(tokenkind, true);
+			
+			if(isStyleSourceCode()){
+				//Token Styling
+				self.TokenElement.style("fill", self.Fill)
+								.style("stroke", self.Stroke)
+								.style("stroke-width", self.StrokeWidth)
+								.style("fill-opacity", self.FillOpacity)
+								.style("stroke-opacity", self.StrokeOpacity);
+			}
 
 			var text = self.TokenElement.append("text")
 				.text(self.Text)
 				.attr("transform", function () {
 					return "translate(" + x + ", " + (y + ry / 5) + ")";
 				})
-				.attr("font-family", "sans-serif")
-				.attr("font-size", 18)
-				.style("fill", "white")
-				.style("text-anchor", "middle");
+				.classed("status-token-text", true);
+				
+			if(isStyleSourceCode())
+			{
+				text.attr("font-family", "sans-serif")
+					.attr("font-size", 18)
+					.style("fill", "white")
+					.style("text-anchor", "middle");
+			}
 		} else
 			console.log("Error, token ellipse is null");
 	};
@@ -1167,13 +1186,13 @@ function PlayerMatchGraph(canvas, match, player, scale, x, y) {
 			var tx = self.Scale(status[0]);
 			var ty = 0;
 			switch (status[1]) {
-			case "Frag":
+			case "frag":
 				ty = 4;
 				break;
-			case "Gold":
+			case "gold":
 				ty = 64;
 				break;
-			case "Death":
+			case "death":
 				ty = 124;
 				break;
 			}
