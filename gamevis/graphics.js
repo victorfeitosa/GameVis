@@ -2,6 +2,13 @@
 //Game stuctures*****************************************************************************************************************************
 //*******************************************************************************************************************************************
 
+//TODO: Every style-related option should be converted to css [PARTIALLY DONE]
+//TODO: Add graphics animations with ease and coloring
+//TODO: Add implementation of tooltips and graph dots
+//TODO: Add scale modularity to the graphs
+//TODO: Add implementation of the realtime match and to the realtime graphs (make this easier to read)
+//TODO: Add more graph elements and structures
+
 //Graphics Package Globals--------------------------------------------------------
 GRAPH_STYLE_SOURCE = 'CSS';
 
@@ -910,7 +917,7 @@ function ComparisonGraphLine(canvas, match, type, x, y, scaleX, scaleY) {
 
 	self.append = function () {
 		self.LineGroup = self.Canvas.append("g")
-			.attr("class", "comparison-line-graph")
+			.classed("comparison-line-graph", true)
 			.attr("transform", function () {
 				return ("translate(" + self.X + ", " + self.Y + ")");
 			});
@@ -920,7 +927,7 @@ function ComparisonGraphLine(canvas, match, type, x, y, scaleX, scaleY) {
 			.attr("y1", self.Lines[i][1])
 			.attr("x2", self.Lines[i][2])
 			.attr("y2", self.Lines[i][3])
-			.attr("class", "line-graph-segment");
+			.classed("line-graph-segment", true);
 		}
 
 		//appends time axis
@@ -932,7 +939,7 @@ function ComparisonGraphLine(canvas, match, type, x, y, scaleX, scaleY) {
 		var my = self.Y + 16;
 		var textTitle = self.Canvas.append("svg:text")
 			.text("Line comparison graph: " + self.Type)
-			.attr("class", "line-graph-title")
+			.classed("line-graph-title", true)
 			.attr("transform", function () {
 				return "translate(" + mx + ", " + my + ")";
 			});
@@ -941,7 +948,7 @@ function ComparisonGraphLine(canvas, match, type, x, y, scaleX, scaleY) {
 		my = self.Y + 64;
 		var textTeam1 = self.Canvas.append("svg:text")
 			.text("Team " + self.Match.Team1.Name)
-			.attr("class", "comparison-graph-text")
+			.classed("comparison-graph-text", true)
 			.attr("transform", function () {
 				return "translate(" + mx + ", " + my + ")";
 			});
@@ -949,7 +956,7 @@ function ComparisonGraphLine(canvas, match, type, x, y, scaleX, scaleY) {
 		my = canvas.Height - 64 + self.Y;
 		var textTeam2 = self.Canvas.append("svg:text")
 			.text("Team " + self.Match.Team2.Name)
-			.attr("class", "comparison-graph-text")
+			.classed("comparison-graph-text", true)
 			.attr("transform", function () {
 				return "translate(" + canvas.Width / 2 + ", " + my + ")";
 			});
@@ -997,7 +1004,7 @@ function ComparisonGraphBar(canvas, match, type, x, y, scaleX, scaleY) {
 
 		//adds the group element
 		self.BarsGroup = self.Canvas.append("g")
-			.attr("class", "comparison-bar-graph")
+			.classed("comparison-bar-graph", true)
 			.attr("transform", function () {
 				return ("translate(" + self.X + ", " + self.Y + ")");
 			});
@@ -1099,7 +1106,7 @@ function TeamDetailGraph(canvas, team, x, y) { //display team name, list of play
 
 		self.Group.append("svg:text")
 		.text("Team " + self.Team.Name)
-		.attr("class", "team-graph-title")
+		.classed("team-graph-title", true)
 		.attr("transform", function () {
 			return "translate(" + 16 + ", " + 16 + ")";
 		});
@@ -1118,15 +1125,15 @@ function TeamDetailGraph(canvas, team, x, y) { //display team name, list of play
 
 		for (var i in self.Team.Players) {
 			//creates new group to display player info
-			var pinfo = self.Group.append("g").attr("class", "team-player-info")
+			var pinfo = self.Group.append("g").classed("team-player-info", true)
 				.attr("transform", getTranslate(i));
 			var mplayer = self.Team.Players[i];
 
-			pinfo.append("svg:text").attr("class", "team-player-info-name").text(mplayer.Name).attr("transform", textTranslate(4));
-			pinfo.append("svg:text").attr("class", "team-player-info").text("Total Gold: " + mplayer.TotalGold).attr("transform", textTranslate(20));
-			pinfo.append("svg:text").attr("class", "team-player-info").text("Total XP: " + mplayer.TotalXP).attr("transform", textTranslate(36));
-			pinfo.append("svg:text").attr("class", "team-player-info").text("Level: " + mplayer.Level).attr("transform", textTranslate(52));
-			pinfo.append("svg:text").attr("class", "team-player-info").text("Nation: " + mplayer.Nation).attr("transform", textTranslate(68));
+			pinfo.append("svg:text").classed("team-player-info-name", true).text(mplayer.Name).attr("transform", textTranslate(4));
+			pinfo.append("svg:text").classed("team-player-info", true).text("Total Gold: " + mplayer.TotalGold).attr("transform", textTranslate(20));
+			pinfo.append("svg:text").classed("team-player-info", true).text("Total XP: " + mplayer.TotalXP).attr("transform", textTranslate(36));
+			pinfo.append("svg:text").classed("team-player-info", true).text("Level: " + mplayer.Level).attr("transform", textTranslate(52));
+			pinfo.append("svg:text").classed("team-player-info", true).text("Nation: " + mplayer.Nation).attr("transform", textTranslate(68));
 		}
 
 	};
@@ -1161,31 +1168,32 @@ function PlayerMatchGraph(canvas, match, player, scale, x, y) {
 		var gY = self.Y;
 
 		self.Group = self.Canvas.append("g")
-			.attr("class", "player-match-graph")
+			.classed("player-match-graph", true)
 			.attr("transform", function () {
 				return "translate(" + gX + ", " + gY + ")";
 			});
 
 		self.Group.append("svg:text").text("Player Match History")
-		.attr("class", "player-match-title")
+		.classed("player-match-title", true)
 		.attr("transform", function () {
 			return "translate(4, 32)";
 		});
 
 		self.Group.append("svg:text").text(self.Player.Name)
-		.attr("class", "player-match-name")
+		.classed("player-match-name", true)
 		.attr("transform", function () {
 			return "translate(32, 96)";
 		});
 
 		//Append status tokens
-		self.StatusTokensGroup = self.Group.append("g").attr("class", "status-tokens-group");
+		self.StatusTokensGroup = self.Group.append("g").classed("status-tokens-group", true);
 
 		for (var i in self.Player.Status) {
 			var status = self.Player.Status[i];
 			var tx = self.Scale(status[0]);
 			var ty = 0;
 			switch (status[1]) {
+				//TODO: adjust this to adapt to the canvas size
 			case "frag":
 				ty = 4;
 				break;
