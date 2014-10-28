@@ -6,8 +6,13 @@
 //TODO: Add graphics animations with ease and coloring
 //TODO: Add implementation of tooltips and graph dots
 //TODO: Add scale modularity to the graphs
+//--IMPORTANT--
 //TODO: Add implementation of the realtime match and to the realtime graphs (make this easier to read)
 //TODO: Add more graph elements and structures
+//TODO: Geerate unique id for each player
+//TODO: Create a game data sctructure
+//TODO: Modularize the data format exchange to read/write JSON for every graph data
+//TODO: Create a 'plugin' class to read the data formats and translate them to the graphs
 
 //Graphics Package Globals--------------------------------------------------------
 GRAPH_STYLE_SOURCE = 'CSS';
