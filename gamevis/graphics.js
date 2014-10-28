@@ -2,7 +2,8 @@
 //Game stuctures*****************************************************************************************************************************
 //*******************************************************************************************************************************************
 
-//TODO: Every style-related option should be converted to css [PARTIALLY DONE]
+//DONE: Every style-related option should be converted to CSS
+
 //TODO: Add graphics animations with ease and coloring
 //TODO: Add implementation of tooltips and graph dots
 //TODO: Add scale modularity to the graphs
