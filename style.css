@@ -18,21 +18,36 @@ text.bar-graph-title {
 }
 
 .status-token-death {
-	
+	fill : #E61820;
+	fill-opacity : 0.85;
+	stroke : #9D4257;
+	stroke-width : 5;
+	stroke-opacity : 0.9;
 }
 
 .status-token-gold {
-	
+	fill : #EBCC28;
+	fill-opacity : 0.85;
+	stroke : #D69C0A;
+	stroke-width : 5;
+	stroke-opacity : 0.9;
 }
 
 
 .status-token-frag {
-	
+	fill : #4BB36C;
+	fill-opacity : 0.85;
+	stroke : #36814D;
+	stroke-width : 5;
+	stroke-opacity : 0.9;
 }
 
 
 .status-token-text {
-	
+	font-family : sans-serif;
+	font-size : 18;
+	fill : white;
+	text-anchor : middle;
 }
 
 text.line-graph-title {
