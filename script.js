@@ -51,3 +51,5 @@ myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
 myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
 
 myMatch.update();
+
+console.log(BaseDriver);
