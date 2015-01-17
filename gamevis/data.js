@@ -15,12 +15,10 @@
 DEBUG = false;
 
 //Import DRIVER stuff, import the driver you want to use here
-$.holdReady(true);
 $.getScript("gamevis/drivers/driver.js", function () {
-  if (DEBUG == true)
+  if (DEBUG === true)
     alert("BaseDriver script loaded and executed.");
 });
-$.holdReady(false);
 
 //'Globals'=====================================================================
 CurrentPlayerID = 0;
@@ -79,31 +77,31 @@ function GameData() {
 
   self.setGameName = function (name) {
     self.GameName = name;
-  }
+  };
 
   self.setGameID = function (id) {
     self.GameId = id;
-  }
+  };
 
   self.setGameCategory = function (cat) {
     self.GameCategory = cat;
-  }
+  };
 
   self.setGameDescription = function (desc) {
     self.GameDescription = desc;
-  }
+  };
 
   self.addGameTeam = function (team) {
     self.GameTeams.push(team);
-  }
+  };
 
   self.addGamePlayer = function (player) {
     self.GamePlayers.push(player);
-  }
+  };
 
   self.addGameMatch = function (match) {
     self.GameMatchs.push(match);
-  }
+  };
 }
 
 //Canvas class----------------------------------------------------
@@ -139,16 +137,16 @@ function Canvas(width, height, label, bgcolor) {
           self.BGColor = "0xAAAAAA";
       }
     }
-  }
+  };
 
   self.remove = function () {
     if (self.SVGCanvas !== null)
       self.SVGCanvas.remove();
-  }
+  };
 
   self.getCanvas = function () {
     return self.SVGCanvas;
-  }
+  };
 }
 
 

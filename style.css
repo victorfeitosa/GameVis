@@ -1,18 +1,18 @@
-svg.canvas {
+.canvas {
 	border-style: ridge;
 	border-color: #DDDDDD;
 	background-color: #332B38;
 	padding: 20px;
 }
 
-rect.bar-element {
+.bar-element {
 	fill-opacity: 0.7;
 	stroke: black;
 	stroke-width: 0.25;
 	stroke-opacity: 1;
 }
 
-text.bar-graph-title {
+.bar-graph-title {
 	font-family: sans-serif;
 	font-size: 32px;
 }

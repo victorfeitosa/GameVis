@@ -9,7 +9,8 @@ scaleY.domain([-15, 15]).range([20, 460]);
 
 //Create the Players to test the stuff
 var PlayerA = new Player("Moai", "Beginner", "A", "Fire-Nation", 3250, 4100, 3);
-var PlayerB = new Player("Johnny", "Beginner", "B", "Minas Tirith", 3100, 4150, 3);
+var PlayerB = new Player("Johnny", "Beginner", "B", "Minas Tirith", 3100, 4150,
+	3);
 
 //Create Teams to test the stuff
 var TeamA = new Team("BadWolfs", "Beginner", "Avatar");
@@ -51,5 +52,3 @@ myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
 myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
 
 myMatch.update();
-
-console.log(BaseDriver);
