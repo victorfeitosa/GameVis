@@ -15,7 +15,7 @@
 DEBUG = false;
 
 //Import DRIVER stuff, import the driver you want to use here
-$.getScript("gamevis/drivers/driver.js", function () {
+require(["gamevis/drivers/driver.js"], function () {
   if (DEBUG === true)
     alert("BaseDriver script loaded and executed.");
 });

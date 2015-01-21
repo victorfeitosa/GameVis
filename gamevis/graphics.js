@@ -1,17 +1,3 @@
-//Import drivers and data stuff
-$.getScript('gamevis/data.js', function() {
-  if (DEBUG === true)
-    alert('DATA script loaded and executed.');
-});
-$.getScript('gamevis/drivers/driver.js', function() {
-  if (DEBUG === true)
-    alert('BaseDriver script loaded and executed.');
-  });
-$.getScript('gamevis/drivers/dotadriver.js', function() {
-  if (DEBUG === true)
-    alert('DotaDriver script loaded and executed.');
-});
-
 //--IMPORTANT--
 //TODO: Add more graph elements and structures
 

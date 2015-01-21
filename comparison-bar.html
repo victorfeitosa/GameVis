@@ -5,27 +5,16 @@
 <meta charset="utf-8">
 
 <title>Bar Comparison Graph</title>
+<script type="text/javascript" src="require.js"></script>
 <script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
 <script>
-$.holdReady(true);
-$.getScript('d3/d3.v3.js', function (){
-								console.log("Loaded D3 Script");
+require(["/d3/d3.v3.js","/gamevis/data.js","/gamevis/graphics.js","script.js"], function (){
+	console.log("Executed main script");
 
-								//loads data structures after loading D3 Script
-								$.getScript('gamevis/graphics.js', function (){
-									console.log("Loaded data structures script");
-
-									//Loads main script after loading all the stuff needed
-									$.getScript('script.js', function (){
-										console.log("Executed main script");
-
-										var barGraph = new ComparisonGraphBar(canvas, myMatch, "Kills", 0, 0, scaleX, scaleY);
-										barGraph.build();
-										barGraph.append();
-									});
-								});
-							});
-$.holdReady(false);
+	var barGraph = new ComparisonGraphBar(canvas, myMatch, "Kills", 0, 0, scaleX, scaleY);
+	barGraph.build();
+	barGraph.append();
+});
 </script>
 </head>
 
