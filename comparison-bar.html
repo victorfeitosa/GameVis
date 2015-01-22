@@ -8,8 +8,10 @@
 <script type="text/javascript" src="require.js"></script>
 <script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
 <script>
-require(["/d3/d3.v3.js","/gamevis/data.js","/gamevis/graphics.js","script.js"], function (){
-	console.log("Executed main script");
+require(["d3/d3.v3","gamevis/data","gamevis/drivers/driver","gamevis/drivers/dotadriver","gamevis/graphics","script"], function (){
+	if(DEBUG === true){
+		console.log("Executed main script");
+	}
 
 	var barGraph = new ComparisonGraphBar(canvas, myMatch, "Kills", 0, 0, scaleX, scaleY);
 	barGraph.build();

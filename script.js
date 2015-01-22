@@ -52,3 +52,22 @@ myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
 myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
 
 myMatch.update();
+
+var d = new DotaDriver();
+var j = d.buildData('/matchs/match.json');
+// console.log();
+
+// var l = [];
+//
+// l.push(parseInt(d.convertID(89394976)));
+// l.push(parseInt(d.convertID(2917861)));
+// l.push(parseInt(d.convertID(87543472)));
+// l.push(parseInt(d.convertID(93072686)));
+// l.push(parseInt(d.convertID(90775042)));
+// l.push(parseInt(d.convertID(53764543)));
+// l.push(parseInt(d.convertID(135870975)));
+// l.push(parseInt(d.convertID(4294967295)));
+// l.push(parseInt(d.convertID(4294967295)));
+// l.push(parseInt(d.convertID(131919910)));
+//
+// console.log(l);

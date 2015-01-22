@@ -8,7 +8,7 @@
 <script type="text/javascript" src="require.js"></script>
 <script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
 <script>
-require(["/d3/d3.v3.js","/gamevis/data.js","/gamevis/graphics.js","script.js"], function (){
+require(["d3/d3.v3","gamevis/data","gamevis/graphics","script"], function (){
 	console.log("Executed main script");
 
 	var lineGraph = new ComparisonGraphLine(canvas, myMatch, "Kills", 0, 0, scaleX, scaleY);

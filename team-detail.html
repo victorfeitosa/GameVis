@@ -7,7 +7,7 @@
 <script type="text/javascript" src="require.js"></script>
 <script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
 <script>
-require(["/d3/d3.v3.js","/gamevis/data.js","/gamevis/graphics.js","script.js"], function (){
+require(["d3/d3.v3","gamevis/data","gamevis/graphics","script"], function (){
 
 	var PlayerC = new Player("Fido", "Beginner", "A", "Soviet Russia", 350, 410, 1);
 	var PlayerD = new Player("Purge", "Beginner", "A", "Outworld", 3250, 4100, 12);

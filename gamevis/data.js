@@ -12,13 +12,7 @@
 //***TODO: Add implementation of the realtime match and to the realtime graphs
 //(make this easier to read).
 
-DEBUG = false;
-
-//Import DRIVER stuff, import the driver you want to use here
-require(["gamevis/drivers/driver.js"], function () {
-  if (DEBUG === true)
-    alert("BaseDriver script loaded and executed.");
-});
+DEBUG = true;
 
 //'Globals'=====================================================================
 CurrentPlayerID = 0;
