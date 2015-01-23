@@ -7,6 +7,7 @@
 //DONE: Implement LoadDB and SaveDB global functions
 
 //--IMPORTANT--
+//TODO: convert data classes to classes with prototypes
 //*****TODO: Create a 'plugin' class to read the data formats and translate them
 // in graphs.
 //***TODO: Add implementation of the realtime match and to the realtime graphs
@@ -56,52 +57,51 @@ function loadGameData(stringdata, format) {
 }
 
 
-//Game data structure
+//Game data structure, can be inherited and overridden if the user needs a custom game data format
 function GameData() {
-
-  var self = this;
-
-  self.GameId = 0;
-  self.GameName = '';
-  self.GameCategory = '';
-  self.GameDescription = '';
-  self.GameTeams = [];
-  self.GameMatchs = [];
-  self.GamePlayers = [];
-
-  self.setGameName = function (name) {
-    self.GameName = name;
-  };
-
-  self.setGameID = function (id) {
-    self.GameId = id;
-  };
-
-  self.setGameCategory = function (cat) {
-    self.GameCategory = cat;
-  };
-
-  self.setGameDescription = function (desc) {
-    self.GameDescription = desc;
-  };
-
-  self.addGameTeam = function (team) {
-    self.GameTeams.push(team);
-  };
-
-  self.addGamePlayer = function (player) {
-    self.GamePlayers.push(player);
-  };
-
-  self.addGameMatch = function (match) {
-    self.GameMatchs.push(match);
-  };
+  self = this;
 }
+
+GameData.prototype.GameId = 0;
+GameData.prototype.GameName = '';
+GameData.prototype.GameCategory = '';
+GameData.prototype.GameDescription = '';
+GameData.prototype.GameTeams = [];
+GameData.prototype.GameMatchs = [];
+GameData.prototype.GamePlayers = [];
+
+GameData.prototype.setGameName = function (name) {
+  self.GameName = name;
+};
+
+GameData.prototype.setGameID = function (id) {
+  self.GameId = id;
+};
+
+GameData.prototype.setGameCategory = function (cat) {
+  self.GameCategory = cat;
+};
+
+GameData.prototype.setGameDescription = function (desc) {
+  self.GameDescription = desc;
+};
+
+GameData.prototype.addGameTeam = function (team) {
+  self.GameTeams.push(team);
+};
+
+GameData.prototype.addGamePlayer = function (player) {
+  self.GamePlayers.push(player);
+};
+
+GameData.prototype.addGameMatch = function (match) {
+  self.GameMatchs.push(match);
+};
 
 //Canvas class----------------------------------------------------
 function Canvas(width, height, label, bgcolor) {
 
-  var self = this; //self variable to maintain the class auto-reference
+  self = this; //self variable to maintain the class auto-reference
 
   self.Width = width;
   self.Height = height;

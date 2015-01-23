@@ -1,3 +1,4 @@
+
 var canvas = new Canvas(640, 480, "#666666", "TEXT");
 canvas.append();
 
@@ -54,8 +55,9 @@ myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
 myMatch.update();
 
 var d = new DotaDriver();
-var j = d.buildData('/matchs/match.json');
-// console.log();
+
+//var j = d.buildData("gamevis/matchs/match.json");
+//console.log(j);
 
 // var l = [];
 //
