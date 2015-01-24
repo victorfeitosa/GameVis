@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
-<meta charset="utf-8">
 
-<title>Bar Comparison Graph</title>
-<script type="text/javascript" src="require.js"></script>
-<script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
-<script>
-require(["d3/d3.v3","gamevis/data","gamevis/drivers/driver",
-				"gamevis/drivers/dotadriver","gamevis/graphics","script"], function (){
-	if(DEBUG === true){
-		console.log("Executed main script");
-	}
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="utf-8">
 
-	var barGraph = new ComparisonGraphBar(canvas, myMatch, "Kills", 0, 0, scaleX,
-																					scaleY);
-	barGraph.build();
-	barGraph.append();
-});
-</script>
+	<title>Bar Comparison Graph</title>
+
+	<script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" data-main="comparison-bar" src="require.js"></script>
+
 </head>
 
 <body>
