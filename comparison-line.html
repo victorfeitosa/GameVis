@@ -5,18 +5,8 @@
 <meta charset="utf-8">
 
 <title>Line Comparison Graph</title>
-<script type="text/javascript" src="require.js"></script>
 <script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
-<script>
-require(["d3/d3.v3","gamevis/data","gamevis/graphics","script"], function (){
-	console.log("Executed main script");
-
-	var lineGraph = new ComparisonGraphLine(canvas, myMatch, "Kills", 0, 0, scaleX, scaleY);
-	lineGraph.build();
-	lineGraph.append();
-
-});
-</script>
+<script type="text/javascript" data-main="comparison-line" src="require.js"></script>
 </head>
 
 <body>

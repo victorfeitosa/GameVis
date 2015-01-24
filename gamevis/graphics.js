@@ -363,7 +363,7 @@ define(function (require) {
 
 					self.TokenElement.classed('status-token', true);
 
-					if (isStyleSourceCode()) {
+					if (data.isStyleSourceCode()) {
 						//Token Styling
 						self.TokenElement.style('fill', self.Fill)
 							.style('stroke', self.Stroke)
@@ -379,7 +379,7 @@ define(function (require) {
 						})
 						.classed('status-token-text', true);
 
-					if (isStyleSourceCode()) {
+					if (data.isStyleSourceCode()) {
 						text.attr('font-family', 'sans-serif')
 							.attr('font-size', 18)
 							.style('fill', 'white')

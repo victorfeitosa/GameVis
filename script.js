@@ -17,17 +17,17 @@ define(function (require) {
   scaleY.domain([-15, 15]).range([20, 460]);
 
   //Create the Players to test the stuff
-  var PlayerA = new gamevis.data.Player("Moai", "Beginner", "A",
+  PlayerA = new gamevis.data.Player("Moai", "Beginner", "A",
     "Fire-Nation", 3250,
     4100, 3);
-  var PlayerB = new gamevis.data.Player("Johnny", "Beginner", "B",
+  PlayerB = new gamevis.data.Player("Johnny", "Beginner", "B",
     "Minas Tirith", 3100,
     4150,
     3);
 
   //Create Teams to test the stuff
-  var TeamA = new gamevis.data.Team("BadWolfs", "Beginner", "Avatar");
-  var TeamB = new gamevis.data.Team("RisingDudes", "Beginner", "LOTR");
+  TeamA = new gamevis.data.Team("BadWolfs", "Beginner", "Avatar");
+  TeamB = new gamevis.data.Team("RisingDudes", "Beginner", "LOTR");
   //add players to teams
   TeamA.addPlayer(PlayerA);
   TeamB.addPlayer(PlayerB);
