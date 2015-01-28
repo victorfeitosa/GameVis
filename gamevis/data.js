@@ -265,7 +265,8 @@ define(function (require) {
 				n += self.Players[i].Level;
 			}
 
-			n /= Players.length;
+			n /= self.Players.length;
+      self.AverageLevel = n;
 
 			return n;
 		};
