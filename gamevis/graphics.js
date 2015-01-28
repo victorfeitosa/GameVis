@@ -7,7 +7,8 @@
 
 define(function (require) {
 
-	var data = require('gamevis/data');
+	data = require('gamevis/data');
+
 
 	//*******************************************************************************************************************************************
 	//Drawgin-related Structures*****************************************************************************************************************
@@ -24,6 +25,7 @@ define(function (require) {
 
 		//checks if it is a group or a canvas
 		self.Canvas = canvas;
+
 		if (self.Canvas.ClassType === 'Canvas')
 			self.Canvas = canvas.getCanvas();
 		//--------------------------------------
@@ -552,7 +554,6 @@ define(function (require) {
 	function ComparisonGraphBar(canvas, match, type, x, y, scaleX, scaleY) {
 
 		//Attributes-----------------------------------------------------------------
-
 		var self = this;
 
 		self.Canvas = canvas.getCanvas();

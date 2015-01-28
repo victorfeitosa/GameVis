@@ -80,7 +80,6 @@ define(function (require) {
 
 	//Game data structure, can be inherited and overridden if the user needs a custom game data format
 	function GameData() {
-		self = this;
 	}
 
 	GameData.prototype.GameId = 0;
@@ -92,37 +91,37 @@ define(function (require) {
 	GameData.prototype.GamePlayers = [];
 
 	GameData.prototype.setGameName = function (name) {
-		self.GameName = name;
+		this.GameName = name;
 	};
 
-	GameData.prototype.setGameID = function (id) {
-		self.GameId = id;
+	GameData.prototype.setGameId = function (id) {
+		this.GameId = id;
 	};
 
 	GameData.prototype.setGameCategory = function (cat) {
-		self.GameCategory = cat;
+		this.GameCategory = cat;
 	};
 
 	GameData.prototype.setGameDescription = function (desc) {
-		self.GameDescription = desc;
+		this.GameDescription = desc;
 	};
 
 	GameData.prototype.addGameTeam = function (team) {
-		self.GameTeams.push(team);
+		this.GameTeams.push(team);
 	};
 
 	GameData.prototype.addGamePlayer = function (player) {
-		self.GamePlayers.push(player);
+		this.GamePlayers.push(player);
 	};
 
 	GameData.prototype.addGameMatch = function (match) {
-		self.GameMatchs.push(match);
+		this.GameMatchs.push(match);
 	};
 
 	//Canvas class----------------------------------------------------
 	function Canvas(width, height, label, bgcolor) {
 
-		self = this; //self variable to maintain the class auto-reference
+		var self = this; //self variable to maintain the class auto-reference
 
 		self.Width = width;
 		self.Height = height;
@@ -502,6 +501,8 @@ define(function (require) {
 
 		};
 	}
+
+  self = null;
 
   //returns all globals and classes in a gamevis.data object
   return {
