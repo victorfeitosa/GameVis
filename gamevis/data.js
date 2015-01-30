@@ -14,7 +14,7 @@ define(function (require) {
 	//***TODO: Add implementation of the realtime match and to the realtime graphs
 	//(make this easier to read).
 
-  require('d3/d3.v3');
+	require('d3/d3.v3');
 
 	DEBUG = true;
 
@@ -26,23 +26,23 @@ define(function (require) {
 	//GameDataFormat enum
 	GameDataFormat = 'JSON';
 
-  GRAPH_STYLE_SOURCE = 'CSS';
+	GRAPH_STYLE_SOURCE = 'CSS';
 
-  function isStyleSourceCSS() {
-    return GRAPH_STYLE_SOURCE === 'CSS';
-  }
+	function isStyleSourceCSS() {
+		return GRAPH_STYLE_SOURCE === 'CSS';
+	}
 
-  function isStyleSourceCode() {
-    return GRAPH_STYLE_SOURCE === 'CODE';
-  }
+	function isStyleSourceCode() {
+		return GRAPH_STYLE_SOURCE === 'CODE';
+	}
 
-  function setGraphStyleSource(source) {
-    if (source === 'CSS' || source === 'CODE')
-      GRAPH_STYLE_SOURCE = source;
-      else {
-        console.error('ERROR: STYLE SOURCE IS NOT VALID!');
-      }
-    }
+	function setGraphStyleSource(source) {
+		if (source === 'CSS' || source === 'CODE')
+			GRAPH_STYLE_SOURCE = source;
+		else {
+			console.error('ERROR: STYLE SOURCE IS NOT VALID!');
+		}
+	}
 
 	//Classes=======================================================================
 
@@ -79,8 +79,7 @@ define(function (require) {
 
 
 	//Game data structure, can be inherited and overridden if the user needs a custom game data format
-	function GameData() {
-	}
+	function GameData() {}
 
 	GameData.prototype.GameId = 0;
 	GameData.prototype.GameName = '';
@@ -163,8 +162,17 @@ define(function (require) {
 		};
 	}
 
+  //Resouce Class---------------------------------------------------------------
+  function Resource(id, name, value, iconuri) {
+    var self = this;
 
-	//Player Class-------------------------------------------------------------------------------------------------------------------------------
+    self.ID = id;
+    self.Name = name;
+    self.Value = value; //can be a category or an agregated value, or even a tuple!
+    self.IconURI = iconuri;
+  }
+
+	//Player Class------------------------------------------------------
 	function Player(name, rank, team, nation, tgold, txp, level) {
 		//Attributes------------------------------------------------------------
 
@@ -188,6 +196,7 @@ define(function (require) {
 		self.CurrentKills = 0;
 		self.CurrentDeaths = 0;
 		self.Status = []; //frag, death, gold
+		self.Resources = {};
 
 		//Methods------------------------------------------------------------------
 		self.print = function () {
@@ -233,6 +242,26 @@ define(function (require) {
 
 			self.Status.push([time, "frag"]);
 		};
+
+		self.addResourceGroup = function (group) {
+			self.Resources[group] = {};
+		};
+    self.removeResourceGroup = function(group) {
+      self.Resources[group] = undefined;
+    };
+		self.addResource = function (group, resource, time) {
+      if(self.Resources[group] !== undefined && time >=0){
+        self.Resources[group][time] = resource;
+      }
+      else if(self.Resources[group] !== undefined && time == -1){
+        self.Resources[group] = resource;
+      }
+		};
+    self.removeResource = function (group, resource, time) {
+      if(self.Resources[group] !== undefined){
+        self.Resources[group][time] = null;
+      }
+    };
 	}
 
 	//Team Class---------------------------------------------------------------------------------------------------------------------------------
@@ -266,7 +295,7 @@ define(function (require) {
 			}
 
 			n /= self.Players.length;
-      self.AverageLevel = n;
+			self.AverageLevel = n;
 
 			return n;
 		};
@@ -503,30 +532,31 @@ define(function (require) {
 		};
 	}
 
-  self = null;
+	self = null;
 
-  //returns all globals and classes in a gamevis.data object
-  return {
-    //variables
-    DEBUG: DEBUG,
-    CurrentPlayerID: CurrentPlayerID,
-    CurrentTeamID: CurrentTeamID,
-    CurrentMatchID: CurrentMatchID,
-    GameDataFormat: GameDataFormat,
-    GRAPH_STYLE_SOURCE :GRAPH_STYLE_SOURCE,
+	//returns all globals and classes in a gamevis.data object
+	return {
+		//variables
+		DEBUG: DEBUG,
+		CurrentPlayerID: CurrentPlayerID,
+		CurrentTeamID: CurrentTeamID,
+		CurrentMatchID: CurrentMatchID,
+		GameDataFormat: GameDataFormat,
+		GRAPH_STYLE_SOURCE: GRAPH_STYLE_SOURCE,
 
-    //functions
-    isStyleSourceCSS: isStyleSourceCSS,
-    isStyleSourceCode: isStyleSourceCode,
-    setGraphStyleSource: setGraphStyleSource,
-    saveGameData: saveGameData,
-    loadGameData: loadGameData,
-    //classes
-    GameData: GameData,
-    Canvas: Canvas,
-    Player: Player,
-    Team: Team,
-    Match: Match,
-    RealTimeMatch: RealTimeMatch
-    };
+		//functions
+		isStyleSourceCSS: isStyleSourceCSS,
+		isStyleSourceCode: isStyleSourceCode,
+		setGraphStyleSource: setGraphStyleSource,
+		saveGameData: saveGameData,
+		loadGameData: loadGameData,
+		//classes
+		GameData: GameData,
+		Canvas: Canvas,
+    Resource: Resource,
+		Player: Player,
+		Team: Team,
+		Match: Match,
+		RealTimeMatch: RealTimeMatch
+	};
 });
