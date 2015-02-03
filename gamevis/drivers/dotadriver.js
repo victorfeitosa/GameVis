@@ -60,18 +60,18 @@ define(function (require) {
     var gamedata = new data.GameData();
 
     //Since this is a mockup driver, the src is not used, instead this is hardcoded
-    var jsonmatch = JSON.parse(this.httpGet('/gamevis/matchs/match.json'))
+    var jsonmatch = JSON.parse(this.httpGet('/gamevis/matches/match.json'))
       .result;
     var jsonplayers = JSON.parse(this.httpGet(
-        '/gamevis/matchs/players.json'))
+        '/gamevis/matches/players.json'))
       .response;
     //gets heroes and items list
     var jsonitems = JSON.parse(this.httpGet(
-      '/gamevis/matchs/items.json'));
+      '/gamevis/matches/items.json'));
     var jsonheroes = JSON.parse(this.httpGet(
-      '/gamevis/matchs/heroes.json'));
+      '/gamevis/matches/heroes.json'));
     var jsonabilities = JSON.parse(this.httpGet(
-      '/gamevis/matchs/abilities.json'));
+      '/gamevis/matches/abilities.json'));
 
     //TODO: parse json objecta to gamedata object
     gamedata.setGameName('Dota2 Match ' + jsonmatch.match_id);
@@ -82,7 +82,7 @@ define(function (require) {
       "\nIt is the sequel to the Warcraft 3 mod " +
       "Defense Of The Ancients and it's one of " +
       "the most popular game of all time.");
-    //add players, teams and matchs
+    //add players, teams and matches
     var radiant = new data.Team('Radiant', 0, 'radiant');
     var dire = new data.Team('Dire', 0, 'dire');
     for (var i in jsonmatch.players) {
@@ -99,6 +99,7 @@ define(function (require) {
           p.Name = jsonplayers.players[j].personaname;
           p.Rank = jsonplayers.players[j].communityvisibilitystate;
           p.Nation = jsonplayers.players[j].loccountrycode;
+          p.Thumbnail = jsonplayers.players[j].avatarfull;
 
           break;
         }

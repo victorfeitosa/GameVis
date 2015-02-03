@@ -68,7 +68,7 @@ define(function (require) {
 	myMatch.update();
 
 	var d = new gamevis.driver();
-	console.log(d.buildData('./gamevis/matchs/players.json'));
+	//console.log(d.buildData('./gamevis/matches/players.json'));
 
 	// var l = [];
 	//

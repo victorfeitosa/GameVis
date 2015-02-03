@@ -3,17 +3,6 @@
 //******************************************************************************
 
 define(function (require) {
-  //DONE: Geerate unique id for each pl ayer
-  //DONE: Create a game data sctructure (XML/JSON)
-  //DONE: Implement LoadDB and SaveDB global functions
-
-  //--IMPORTANT--
-  //TODO: convert data classes to classes with prototypes
-  //*****TODO: Create a 'plugin' class to read the data formats and translate them
-  // in graphs.
-  //***TODO: Add implementation of the realtime match and to the realtime graphs
-  //(make this easier to read).
-
   require('d3/d3.v3');
 
   DEBUG = false;
@@ -26,19 +15,19 @@ define(function (require) {
   //GameDataFormat enum
   GameDataFormat = 'JSON';
 
-  GRAPH_STYLE_SOURCE = 'CSS';
+  CHART_STYLE_SOURCE = 'CSS';
 
   function isStyleSourceCSS() {
-    return GRAPH_STYLE_SOURCE === 'CSS';
+    return CHART_STYLE_SOURCE === 'CSS';
   }
 
   function isStyleSourceCode() {
-    return GRAPH_STYLE_SOURCE === 'CODE';
+    return CHART_STYLE_SOURCE === 'CODE';
   }
 
-  function setGraphStyleSource(source) {
+  function setChartStyleSource(source) {
     if (source === 'CSS' || source === 'CODE')
-      GRAPH_STYLE_SOURCE = source;
+      CHART_STYLE_SOURCE = source;
     else {
       console.error('ERROR: STYLE SOURCE IS NOT VALID!');
     }
@@ -86,7 +75,7 @@ define(function (require) {
   GameData.prototype.GameCategory = '';
   GameData.prototype.GameDescription = '';
   GameData.prototype.GameTeams = [];
-  GameData.prototype.GameMatchs = [];
+  GameData.prototype.GameMatches = [];
   GameData.prototype.GamePlayers = [];
 
   GameData.prototype.setGameName = function (name) {
@@ -114,7 +103,7 @@ define(function (require) {
   };
 
   GameData.prototype.addGameMatch = function (match) {
-    this.GameMatchs.push(match);
+    this.GameMatches.push(match);
   };
 
   //Canvas class----------------------------------------------------
@@ -138,7 +127,7 @@ define(function (require) {
     if (this.Height === undefined)
       this.Height = 480;
     if (this.Label === undefined)
-      this.Label = "Game Graph:";
+      this.Label = "Game Chart:";
 
     //actual appending
     if (this.SVGCanvas === null) {
@@ -174,30 +163,29 @@ define(function (require) {
   }
 
   //Player Class------------------------------------------------------
-  function Player(name, rank, team, nation, tgold, txp, level) {
+  function Player(name, rank, team, nation, tgold, txp, level, thumbnail) {
     //Attributes------------------------------------------------------------
-
-    var self = this; //self variable to maintain the class auto-reference
 
     //Global attributes
     CurrentPlayerID = CurrentPlayerID + 1;
-    self.ID = CurrentPlayerID;
-    self.Name = name;
-    self.Rank = rank;
-    self.Team = team;
-    self.Nation = nation;
-    self.TotalGold = tgold;
-    self.TotalXP = txp;
-    self.Level = level;
-    self.ClassType = "Player";
+    this.ID = CurrentPlayerID;
+    this.Name = name;
+    this.Rank = rank;
+    this.Team = team;
+    this.Nation = nation;
+    this.TotalGold = tgold;
+    this.TotalXP = txp;
+    this.Level = level;
+    this.Thumbnail = thumbnail;
+    this.ClassType = "Player";
 
     //Match attributes
-    self.CurrentGold = 0;
-    self.CurrentXP = 0;
-    self.CurrentKills = 0;
-    self.CurrentDeaths = 0;
-    self.Status = []; //frag, death, gold
-    self.Resources = {};
+    this.CurrentGold = 0;
+    this.CurrentXP = 0;
+    this.CurrentKills = 0;
+    this.CurrentDeaths = 0;
+    this.Status = []; //frag, death, gold
+    this.Resources = {};
   }
 
   //Methods------------------------------------------------------------------
@@ -208,6 +196,7 @@ define(function (require) {
     console.log("Nation: " + this.Nation);
     console.log("Total Gold: " + this.TotalGold);
     console.log("Total XP: " + this.TotalXP);
+    console.log("Thumbnail: " + this.Thumbnail);
   };
 
   Player.prototype.addDeath = function (time) {
@@ -362,8 +351,8 @@ define(function (require) {
 
   //Match Class---------------------------------------------------------------
   function Match(team1, team2, endtime) {
+    //This match can be either a result-only match or a event-result match
     //Attributes
-
     var self = this;
 
     CurrentMatchID = CurrentMatchID + 1;
@@ -542,12 +531,12 @@ define(function (require) {
     CurrentTeamID: CurrentTeamID,
     CurrentMatchID: CurrentMatchID,
     GameDataFormat: GameDataFormat,
-    GRAPH_STYLE_SOURCE: GRAPH_STYLE_SOURCE,
+    CHART_STYLE_SOURCE: CHART_STYLE_SOURCE,
 
     //functions
     isStyleSourceCSS: isStyleSourceCSS,
     isStyleSourceCode: isStyleSourceCode,
-    setGraphStyleSource: setGraphStyleSource,
+    setChartStyleSource: setChartStyleSource,
     saveGameData: saveGameData,
     loadGameData: loadGameData,
     //classes
