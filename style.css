@@ -50,42 +50,42 @@
 	text-anchor : middle;
 }
 
-text.line-graph-title {
+.line-graph-title {
 	font-family: sans-serif;
 	font-size: 32px;
 }
 
-text.team-graph-title {
+.team-graph-title {
 	font-family: sans-serif;
 	font-size: 32px;
 }
 
-text.player-match-title {
+.player-match-title {
 	font-family: sans-serif;
 	font-size: 32px;
 }
 
-text.team-player-info-name {
+.team-player-info-name {
 	font-family: sans-serif;
 	font-size: 18;
 }
 
-text.player-match-name {
+.player-match-name {
 	font-family: sans-serif;
 	font-size: 24;
 }
 
-text.team-player-info {
+.team-player-info {
 	font-family: sans-serif;
 	font-size: 14;
 }
 
-text.comparsion-graph-text {
+.comparsion-graph-text {
 	font-family: sans-serif;
 	font-size: 20px;
 }
 
-text.bar-info-text {
+.bar-info-text {
 	fill: white;
 }
 

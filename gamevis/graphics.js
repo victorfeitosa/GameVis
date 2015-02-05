@@ -847,14 +847,22 @@ define(function (require) {
 		this.Group = null;
 	};
 
-	function ResourceListGraph(canvas, match, resource, scale, x, y) {
+	function ResourceListGraph(canvas, team, resource, scaleX, scaleY, x, y) {
 		//Attributes------------
 		this.Canvas = canvas;
-		this.Match = match;
+		this.Team = team;
 		this.Resource = resource;
 		this.Scale = scale;
 		this.X = x;
 		this.Y = y;
+		this.TeamResGroup = null;
+
+		//parent resource, if any (like a player thumbnail or so. Usualy a single resource)
+		this.ParentResource = '';
+		//interest resource, mandatory (the actual resource, like items, etc. Usualy a list)
+		this.InterestResource = '';
+
+
     this.ClassType = 'ResourceListGraph';
 
 		if (this.X === undefined)
@@ -866,21 +874,50 @@ define(function (require) {
 	}
 
 	//Methods------------------
+	ResourceListGraph.prototype.setInterest = function(interest, parent){
+		this.ParentResource = parent;
+		this.InterestResource = interest;
+	};
 	ResourceListGraph.prototype.append = function () {
+		var self = this;
 
+		//apply X,Y transformation according to the scale
+		self.X = self.ScaleX(self.X);
+		self.Y = self.ScaleY(self.Y);
+
+		self.TeamResGroup = self.Canvas.append('g')
+														.classed('team-resource-group', true)
+														.attr('transform', function(){
+															return 'translate(' + self.X + ',' + self.Y + ')';
+														});
+		var nPlayers = self.Team.Players.length;
+		for(var i in self.Team.Players){//loops through players to show resources
+			var resGroup = self.TeamResGroup.append('g')
+													.classed('player-resource-group', true);
+			//appends player name text
+			var ptext = resGroup.append('text')
+													.classed('team-player-info', true)
+													.text(self.Team.Players[i].Name);
+
+			var interestGroup = resGroup.append('g')
+																	.classed('resource-interest-group', true);
+			//TODO: appends player parent resource
+			//TODO: appends interest resources in a row
+		}
 	};
 
 	ResourceListGraph.prototype.remove = function () {
 
 	};
 
-	function MatchResultsGraph(canvas, match, scale, x, y) {
+	function MatchResultsGraph(canvas, match, scaleX, scaleY, x, y) {
 		//Attributes
 		this.Canvas = canvas;
 		this.Match = match;
 		this.Scale = scale;
 		this.X = x;
 		this.Y = y;
+
     this.ClassType = 'MatchResultsGraph';
 
 		if (this.X === undefined)
