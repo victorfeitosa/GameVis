@@ -68,6 +68,7 @@
 .team-player-info-name {
 	font-family: sans-serif;
 	font-size: 18;
+	padding: 4px;
 }
 
 .player-match-name {
@@ -75,9 +76,11 @@
 	font-size: 24;
 }
 
-.team-player-info {
+text.team-player-info {
 	font-family: sans-serif;
 	font-size: 14;
+	fill: white;
+	padding: 4;
 }
 
 .comparsion-graph-text {
@@ -100,4 +103,9 @@ line.line-graph-segment {
 
 .time-axis path.domain {
 	opacity: 0.7;
+}
+
+.parent-resource {
+	stroke: black;
+	stroke-width: 5;
 }

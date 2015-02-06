@@ -103,6 +103,12 @@ define(function (require) {
 
           break;
         }
+
+        if(p.Name === undefined){
+          var pslot = jsonmatch.players[i].player_slot + 1;
+          pslot = pslot > 128 ? pslot-123:pslot;
+          p.Name = 'Player ' + pslot;
+        }
       }
       if (jsonmatch.players[i].player_slot < 5) {
         p.Team = 'Radiant';
