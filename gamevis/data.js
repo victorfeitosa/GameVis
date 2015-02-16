@@ -36,7 +36,7 @@ define(function (require) {
   //Classes=======================================================================
 
   //load and save gamedata functions
-  function saveGameData(gamedata, format) {
+  function saveGameData(gamedata, format) { //object = {gamedata, format}
     var str = "";
     format.toUpperCase();
 
@@ -184,6 +184,7 @@ define(function (require) {
     this.CurrentXP = 0;
     this.CurrentKills = 0;
     this.CurrentDeaths = 0;
+    this.CurrentAssists = 0;
     this.Status = []; //frag, death, gold
     this.Resources = {};
   }
@@ -257,22 +258,21 @@ define(function (require) {
   function Team(name, rank, nation) {
     //Attributes----------------------------------------------------------------
 
-    var self = this;
-
     CurrentTeamID = CurrentTeamID + 1;
-    self.ID = CurrentTeamID;
-    self.ClassType = "Team";
+    this.ID = CurrentTeamID;
+    this.ClassType = "Team";
 
     //Team common attributes
-    self.Name = name;
-    self.Rank = rank;
-    self.Nation = nation;
+    this.Name = name;
+    this.Rank = rank;
+    this.Nation = nation;
 
     //Team attributes calculated on-demand
-    self.Players = [];
-    self.Gold = 0;
-    self.NumKills = 0;
-    self.AverageLevel = 0;
+    this.Players = [];
+    this.Gold = 0;
+    this.NumKills = 0;
+    this.AverageLevel = 0;
+    this.Resources = [];
   }
 
   //Methods-------------------------------------------------------------------
@@ -348,6 +348,24 @@ define(function (require) {
     console.log("-XP: " + this.getXP());
     console.log("-Gold: " + this.getGold());
   };
+  Team.prototype.addResourceGroup = function (group) {
+    this.Resources[group] = {};
+  };
+  Team.prototype.removeResourceGroup = function (group) {
+    this.Resources[group] = undefined;
+  };
+  Team.prototype.addResource = function (group, resource, time) {
+    if (this.Resources[group] !== undefined && time >= 0) {
+      this.Resources[group][time] = resource;
+    } else if (this.Resources[group] !== undefined && time == -1) {
+      this.Resources[group] = resource;
+    }
+  };
+  Team.prototype.removeResource = function (group, resource, time) {
+    if (this.Resources[group] !== undefined) {
+      this.Resources[group][time] = null;
+    }
+  };
 
   //Match Class---------------------------------------------------------------
   function Match(team1, team2, endtime) {
@@ -359,8 +377,9 @@ define(function (require) {
     self.ID = CurrentMatchID;
     self.ClassType = "Match";
 
-    self.Team1 = team1;
-    self.Team2 = team2;
+    self.Team = [];
+    self.Team[0] = team1;
+    self.Team[1] = team2;
 
     self.CurrentTime = 0;
     self.EndTime = endtime;
@@ -423,13 +442,13 @@ define(function (require) {
     var ret = 0;
     switch (what) {
     case "Gold":
-      ret = this.Team2.getGold() - this.Team1.getGold();
+      ret = this.Team[1].getGold() - this.Team[0].getGold();
       break;
     case "XP":
-      ret = this.Team2.getXP() - this.Team1.getXP();
+      ret = this.Team[1].getXP() - this.Team[0].getXP();
       break;
     case "Kills":
-      ret = this.Team2.getKills() - this.Team1.getKills();
+      ret = this.Team[1].getKills() - this.Team[0].getKills();
       break;
     }
     return ret;

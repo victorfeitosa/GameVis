@@ -126,6 +126,7 @@ define(function (require) {
       p.CurrentXP = p.TotalXP;
       p.CurrentKills = jsonmatch.players[i].kills;
       p.CurrentDeaths = jsonmatch.players[i].deaths;
+      p.CurrentAssists = jsonmatch.players[i].assists;
 
       //add skills/level progression and heroes stuff
       p.addResourceGroup('Hero');

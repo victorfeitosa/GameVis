@@ -537,7 +537,7 @@ define(function (require) {
     mx = canvas.Width / 2 + self.X;
     my = self.Y + 64;
     var textTeam1 = self.Canvas.append('svg:text')
-      .text('Team ' + self.Match.Team1.Name)
+      .text('Team ' + self.Match.Team[0].Name)
       .classed('comparison-graph-text', true)
       .attr('transform', function () {
         return 'translate(' + mx + ', ' + my + ')';
@@ -545,7 +545,7 @@ define(function (require) {
 
     my = canvas.Height - 64 + self.Y;
     var textTeam2 = self.Canvas.append('svg:text')
-      .text('Team ' + self.Match.Team2.Name)
+      .text('Team ' + self.Match.Team[1].Name)
       .classed('comparison-graph-text', true)
       .attr('transform', function () {
         return 'translate(' + canvas.Width / 2 + ', ' + my + ')';
@@ -656,7 +656,7 @@ define(function (require) {
     mx = canvas.Width / 2 + self.X;
     my = 64 + self.Y;
     var textTeam1 = self.Canvas.append('svg:text')
-      .text('Team ' + self.Match.Team2.Name)
+      .text('Team ' + self.Match.Team[0].Name)
       .classed('comparison-graph-text', true)
       .attr('transform', function () {
         return 'translate(' + mx + ', ' + my + ')';
@@ -664,7 +664,7 @@ define(function (require) {
 
     y = canvas.Height - 64 + self.Y;
     var textTeam2 = self.Canvas.append('svg:text')
-      .text('Team ' + self.Match.Team1.Name)
+      .text('Team ' + self.Match.Team[1].Name)
       .classed('comparison-graph-text', true)
       .attr('transform', function () {
         return 'translate(' + canvas.Width / 2 + ', ' + y + ')';
@@ -732,7 +732,7 @@ define(function (require) {
         .attr('transform', getTranslate(i));
       var mplayer = self.Team.Players[i];
 
-      pinfo.append('svg:text').classed('team-player-info-name', true)
+      pinfo.append('svg:text').classed('team-player-info-title', true)
         .text(
           mplayer.Name).attr('transform', textTranslate(4));
       pinfo.append('svg:text').classed('team-player-info', true).text(
@@ -853,25 +853,20 @@ define(function (require) {
     if (this.Canvas.ClassType === 'Canvas')
       this.Canvas = canvas.getCanvas();
     this.Team = team;
-    this.Resource = resource;
     this.ScaleX = scaleX;
     this.ScaleY = scaleY;
-    this.X = x;
-    this.Y = y;
+    this.X = x || 0;
+    this.Y = y || 0;
     this.TeamResGroup = null;
 
     //parent resource, if any (like a player thumbnail or so. Usualy a single resource)
     this.ParentResource = '';
     //interest resource, mandatory (the actual resource, like items, etc. Usualy a list)
-    this.InterestResource = '';
+    this.InterestResource = resource || '';
 
 
     this.ClassType = 'ResourceListGraph';
 
-    if (this.X === undefined)
-      this.X = 0;
-    if (this.Y === undefined)
-      this.Y = 0;
     if (canvas === undefined || team === undefined || resource ===
       undefined)
       console.error("ERROR, required param is undefined in " + this + "!");
@@ -902,7 +897,7 @@ define(function (require) {
         });
       //appends player name text
       var ptext = resGroup.append('text')
-        .classed('team-player-info', true)
+        .classed('team-player-info-title', true)
         .text(self.Team.Players[i].Name);
       //appends player parent resource
       if (self.ParentResource !== undefined) {
@@ -914,53 +909,142 @@ define(function (require) {
           .attr('y', 4)
           .attr('xlink:href', src);
       }
-      //TODO: appends interest resources accordingly if no parent resource is set
+      //appends interest resources accordingly if no parent resource is set
       var interestGroup = resGroup.append('g')
         .classed('resource-interest-group', true)
         .attr('transform', function () {
-          var sx = self.ParentResource === undefined ? self.ScaleX(-0.6) : self.ScaleX(0.2);
+          var sx = self.ParentResource === undefined ? self.ScaleX(-0.6) :
+            self.ScaleX(
+              0.2);
           return 'translate(' + sx + ',0)';
         });
-      for(var j in self.Team.Players[i].Resources[self.InterestResource]){
-				var src = self.Team.Players[i].Resources[self.InterestResource][j].IconURI;
-				var img = interestGroup.append('image')
-					.classed('parent-resource', true)
-					.attr('width', self.ScaleX(0.4))
-					.attr('height', self.ScaleY(0.4))
-					.attr('x', self.ScaleX(j/2))
-					.attr('y', 4)
-					.attr('xlink:href', src);
-			}
+      for (var j in self.Team.Players[i].Resources[self.InterestResource]) {
+        var src = self.Team.Players[i].Resources[self.InterestResource][j]
+          .IconURI;
+        var img = interestGroup.append('image')
+          .classed('parent-resource', true)
+          .attr('width', self.ScaleX(0.4))
+          .attr('height', self.ScaleY(0.4))
+          .attr('x', self.ScaleX(j / 2))
+          .attr('y', 4)
+          .attr('xlink:href', src);
+      }
     }
   };
 
   ResourceListGraph.prototype.remove = function () {
-
+    this.TeamResGroup.remove();
   };
 
   function MatchResultsGraph(canvas, match, scaleX, scaleY, x, y) {
     //Attributes
     this.Canvas = canvas;
+    if (this.Canvas.ClassType === 'Canvas')
+      this.Canvas = canvas.getCanvas();
     this.Match = match;
-    this.Scale = scale;
-    this.X = x;
-    this.Y = y;
+    this.ScaleX = scaleX;
+    this.ScaleY = scaleY;
+    this.X = x || 0;
+    this.Y = y || 0;
+    this.ResultsGroup = null;
 
     this.ClassType = 'MatchResultsGraph';
 
-    if (this.X === undefined)
-      this.X = 0;
-    if (this.Y === undefined)
-      this.Y = 0;
-    if (canvas === undefined || match === undefined || resource ===
-      undefined)
+    if (canvas === undefined || match === undefined || scaleX ===
+      undefined || scaleY === undefined)
       console.error("ERROR, required param is undefined in " + this.ClassType +
         "!");
   }
 
   //Methods----------
   MatchResultsGraph.prototype.append = function () {
+    var self = this;
+    //append results group
+    self.ResultsGroup = self.Canvas.append('g')
+      .classed('end-results', true)
+      .attr('transform', function () {
+        return 'translate(' + self.X + ',' + self.Y + ')';
+      });
+    //appends team info and data
+    var teamGroup = self.ResultsGroup.selectAll('g')
+      .data([self.Match.Team[0], self.Match.Team[1]])
+      .enter()
+      .append('g')
+      .classed('team-result-group', true)
+      .attr('transform', function (d, i) {
+        //TODO: fix this fixed value scale
+        var y = i === 0 ? 0 : 3.5;
+        return 'translate(' + self.ScaleX(0) + ',' + self.ScaleY(y) +
+          ')';
+      });
+		//TODO: FIX THIS TO BE RELATIVE (TSPANS)
+    teamGroup.append('text')
+				      .classed('team-player-info-title', true)
+				      .text(function (d) {return d.Name + ' Team -';});
+		teamGroup.append('text')
+							.classed('team-player-info', true)
+							.text('Average Level:')
+							.attr('transform', function(d){
+								return 'translate('+self.ScaleX(0.8)+',0)';
+							});
+		teamGroup.append('text')
+							.classed('team-player-info-value', true)
+							.text(function(d, i){
+								return self.Match.Team[i].AverageLevel;
+								})
+							.attr('transform', function(){
+								return 'translate('+self.ScaleX(1.7)+',0)';
+							});
+		teamGroup.append('text')
+							.classed('team-player-info', true)
+							.text('Gold:')
+							.attr('transform', function(d){
+								return 'translate('+self.ScaleX(2.3)+',0)';
+							});
+		teamGroup.append('text')
+							.classed('team-player-info-value', true)
+							.text(function(d, i){
+								return self.Match.Team[i].Gold;
+								})
+							.attr('transform', function(){
+								return 'translate('+self.ScaleX(2.65)+',0)';
+							});
+		teamGroup.append('text')
+							.classed('team-player-info', true)
+							.text('Kills:')
+							.attr('transform', function(d){
+								return 'translate('+self.ScaleX(3.3)+',0)';
+							});
+		teamGroup.append('text')
+							.classed('team-player-info-value', true)
+							.text(function(d, i){
+								return self.Match.Team[i].NumKills;
+								})
+							.attr('transform', function(){
+								return 'translate('+self.ScaleX(3.7)+',0)';
+							});
+    //append player names (and thumbnail if available TODO) and group of info
+		var texts = teamGroup.append('text').attr('transform', function(){return 'translate(12,0)';});
+		var names = texts.selectAll('text')
+											.data(function(d,i){return self.Match.Team[i].Players;})
+											.enter()
+											.append('tspan')
+											.classed('team-player-info-value', true)
+											.text(function(d,i){
+												var str = d.Name.substr(0, 24);
+												if(d.Name.length > 24)
+													str += '...';
+												return str;
+											})
+											.attr('dy', '3em')
+											.attr('x', '0');
 
+		//append info requested in a text fashion
+		names.append('tspan').text(function(d){return 'Gold: ' + d.CurrentGold;}).attr('x', '18em');
+		names.append('tspan').text(function(d){return 'Level: ' + d.Level;}).attr('x', '26em');
+		names.append('tspan').text(function(d){return 'K:  ' + d.CurrentKills;}).attr('x', '36em');
+		names.append('tspan').text(function(d){return 'D: ' + d.CurrentDeaths;}).attr('x', '40em');
+		names.append('tspan').text(function(d){return 'A: ' + d.CurrentAssists;}).attr('x', '44em');
   };
 
   MatchResultsGraph.prototype.remove = function () {
