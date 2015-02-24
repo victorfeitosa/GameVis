@@ -17,9 +17,9 @@ define(function (require) {
 	scaleY.domain([0, 6]).range([20, 460]);
 
 	d = new gamevis.driver();
-	data = d.buildData('./gamevis/matches/players.json');
+	gdata = d.buildData('./gamevis/matches/players.json');
 
-	console.log(data);
+	console.log(gdata);
 
 	console.log('Successfully loaded the stuff needed\n');
 });

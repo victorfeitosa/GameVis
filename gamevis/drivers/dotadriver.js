@@ -138,7 +138,7 @@ define(function (require) {
       for (var j in jsonheroes.heroes) {
         if (jsonmatch.players[i].hero_id === jsonheroes.heroes[j].id) {
           var iconuri = 'http://cdn.dota2.com/apps/dota2/images/heroes/' +
-            jsonheroes.heroes[i].name + '_hphover.png';
+            (jsonheroes.heroes[i].name.replace('npc_dota_hero_', '')) + '_full.png';
           p.addResource('Hero', new data.Resource(jsonheroes.heroes[j].id,
             jsonheroes.heroes[i].localized_name, 'hero', iconuri), -1);
         }

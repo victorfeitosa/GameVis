@@ -12,7 +12,7 @@ requirejs.config({
 //Executes some stuff
 requirejs(['script2'], function () {
 
-  var resourceChart = new gamevis.graphics.ResourceListGraph(canvas, data.GameTeams[0], 'Item', scaleX, scaleY, 0, 0);
+  var resourceChart = new gamevis.graphics.ResourceListGraph(canvas, gdata.GameTeams[0], 'Item', scaleX, scaleY, 0, 0);
   resourceChart.setInterest('Item', 'Hero');
 
 

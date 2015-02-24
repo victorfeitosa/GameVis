@@ -1,13 +1,14 @@
 //Graphics module
 //Responsible for graphic structures and drawing charts
 define(function (require) {
+  var gamevis = {};
 
-  data = require('gamevis/data');
+  gamevis.data = require('gamevis/data');
 
 
-  //*******************************************************************************************************************************************
-  //Drawgin-related Structures*****************************************************************************************************************
-  //*******************************************************************************************************************************************
+  //****************************************************************************
+  //Drawgin-related Structures**************************************************
+  //****************************************************************************
   //class to controll a bar graph
   function Bar(canvas, x, y, width, height, fill, stroke, stroke_width,
     fill_op,
@@ -88,7 +89,7 @@ define(function (require) {
         .attr('height', 0)
         .style('fill', d3.rgb(0, 0, 0));
 
-      if (data.isStyleSourceCode()) {
+      if (gamevis.data.isStyleSourceCode()) {
         self.BarElement.style('stroke', self.Stroke)
           .style('stroke-width', self.StrokeWidth)
           .style('fill-opacity', self.FillOpacity)
@@ -122,80 +123,196 @@ define(function (require) {
     return this.BarElement;
   };
 
-  //TODO: implement this
-  function ToolTip(canvas, parent, x, y, tip, fill, stroke, stroke_width,
-    fill_op,
-    stroke_op) {
+  //TODO: implement the polygon graph element
+  function StatPolygon(canvas, stats, radius, maxVal, x, y, fill, stroke, stroke_width, fill_op, stroke_op){
     //Attributes------------------------------------------------------------
+    this.ClassType='StatPolygon';
+    this.Stats = stats;
+    this.Radius = radius || 10;
+    this.X = x || 0;
+    this.Y = y || 0;
+    this.Fill = fill || 'blue';
+    this.Stroke = stroke || 'dark-blue';
+    this.StrokeWidth = stroke_width || 1;
+    this.FillOpacity = fill_op || 255;
+    this.StrokeOpacity = stroke_op || 255;
+    this.NSides = 0;
+    this.MaxVal = maxVal || 100;
+    this.Group = null;
+    this.Polygon = null;
+    this.Poly = null;
+    this.Ticks = null;
+    this.CircleArea = null;
 
+    if(canvas.ClassType === 'Canvas')
+      this.Canvas = canvas.getCanvas();
+
+    for(var i in this.Stats){
+      if(this.Stats.hasOwnProperty(i))
+        ++this.NSides;
+    }
+  }
+
+  //Methods------------------------------------------------------------------
+  StatPolygon.prototype.append = function(){
     var self = this;
 
-    self.ClassType = 'ToolTip';
-    self.Canvas = canvas;
-    self.Parent = parent;
-    self.X = x;
-    self.Y = y;
-    self.Tip = tip;
-    self.Fill = fill;
-    self.Stroke = stroke;
-    self.StrokeWidth = stroke_width;
-    self.FillOpacity = fill_op;
-    self.StrokeOpacity = stroke_op;
-    self.ToolTipElement = null;
+    self.Group = self.Canvas.append('g').classed('stat-polygon-group', true);
+    self.CircleArea = self.Group.append('g').classed('stat-polygon-circlegroup', true);
+    self.Polygon = self.Group.append('g').classed('stat-polygon-polygroup', true);
+    self.Poly = self.Polygon.append('g');
+    self.Ticks = self.Polygon.append('g').classed('stat-polygon-ticks', true);
+
+    //attatch the outter circle area with its stroke (fill maybe?)
+    var circle = this.CircleArea.append('circle')
+                      .attr('cx', this.X)
+                      .attr('cy', this.Y)
+                      .attr('r', this.Radius);
+    self.CircleArea.append('circle')
+              .attr('cx', this.X)
+              .attr('cy', this.Y)
+              .attr('r', 2 * (this.Radius / 3));
+    self.CircleArea.append('circle')
+              .attr('cx', this.X)
+              .attr('cy', this.Y)
+              .attr('r', this.Radius / 3);
+    self.CircleArea.append('circle')
+              .attr('cx', this.X)
+              .attr('cy', this.Y)
+              .attr('r', 2);
+
+    //attatch the polygon points lines
+    var i = 0;
+    for(var j in self.Stats){
+      var linegroup = self.CircleArea.append('g')
+                                .append('line')
+                                .attr('x1', 0)
+                                .attr('y1', 0)
+                                .attr('x2', self.Radius)
+                                .attr('y2', 0);
+      linegroup.attr('transform', function(){
+        var angle = (360/self.NSides) * i;
+        angle += 90;
+        return 'translate(' + self.X + ',' + self.Y + ')' + 'rotate(' + angle + ')';
+      });
+      i++;
+    }
+
+    //TODO: attatch the inner polygon area with fill and stroke
+    var points = [];
+    i = 0;
+    for(var j in self.Stats){
+      var angle = (360/self.NSides) * i;
+      angle += 90;
+      angle = (angle*Math.PI)/180; //conversion to radian
+      var val = (self.Stats[j] * self.Radius) / self.MaxVal;
+
+      var px = Math.cos(angle) * val;
+      var py = Math.sin(angle) * val;
+
+      points.push(px);
+      points.push(py);
+
+      var tick = self.Ticks.append('circle')
+                .attr('cx', px + self.X)
+                .attr('cy', py + self.Y)
+                .attr('r', 2)
+                .classed('point' + i, true);
+
+      i++;
+    }
+
+    self.Poly.attr('transform', function(){
+                return 'translate(' + self.X + ',' + self.Y + ')';
+              })
+              .append('polygon')
+              .attr('points', points);
+
+    // var mytooltip = new ToolTip(self.Poly, '<p>This is a tooltip that was created successfully! SVGs and charts are also possible to be appended here.</p>', 32, 32)
+    //                             .classed('mytooltip', true)
+    //                             .classed('wordwrap', true);
+    //
+    // mytooltip.on('mouseover', function(){
+    //   mytooltip.transition().style('opacity', 0.9);
+    // }).on('mouseout', function(){
+    //   mytooltip.transition().style('opacity', 0);
+    // });
+
+    //TODO: find a better way to attatch tooltips
+    var ticks = self.Ticks.selectAll('circle').data(Object.keys(self.Stats))
+                          .each(function(d, i){
+                            var tick = d3.select(this);
+                            var tip = new ToolTip(tick, d, tick.attr('cx'), tick.attr('cy'))
+                                      .classed('mytooltip', true)
+                                      .on('mouseover', function(){
+                                        tip.transition().style('opacity', 0.9);
+                                      }).on('mouseout', function(){
+                                        tip.transition().style('opacity', 0);
+                                      });
+                          });
+
+    if(gamevis.data.isStyleSourceCode()){
+      //TODO:set resources color and all
+    }
+    else{
+      self.Group.selectAll('circle').classed('stat-polygon-circle', true);
+      self.Group.selectAll('line').classed('stat-polygon-line', true);
+      self.Group.selectAll('polygon').classed('stat-polygon-poly', true);
+    }
+  };
+
+  StatPolygon.prototype.remove = function(){
+
+  };
+
+  //Tooltips, they are attachable to any graphic structure, even within themselves
+  function ToolTip(parent, tiphtml, x, y, fill, stroke, stroke_width, fill_op, stroke_op, transIn, transOut) {
+    //Attributes------------------------------------------------------------
+    this.ClassType = 'ToolTip';
+
+    if(canvas.ClassType === 'Canvas')
+      this.Canvas = canvas.getCanvas();
+
+    this.Parent = parent || d3.select('body');
+    this.X = x || parent.X + x|| 0;
+    this.Y = y || parent.Y + y || 0;
+    this.Fill = fill || '#FFF';
+    this.Stroke = stroke || '#FFF';
+    this.StrokeWidth = stroke_width || 1;
+    this.FillOpacity = fill_op || 1;
+    this.StrokeOpacity = stroke_op || 1;
+
+    this.TransitionIn = transIn;
+    this.TransitionOut = transOut;
+
+    this.Html = tiphtml;
+    //appends div and sets transition
+    this.Div = d3.select('body').append('div')
+                          .style('left', this.X + 'px')
+                          .style('top', this.Y + 'px')
+                          .style('opacity', 0)
+                          .style('position', 'absolute');
+    this.Div.html(this.Html);
   }
 
   //Methods---------------------------------------------------------------
-  ToolTip.prototype.append = function () {
-    if (this.Tip === undefined) {
-      this.Tip = 'Sample ToolTip Text';
-    }
-
-    if (this.Fill === undefined) {
-      this.Fill = '#FFF';
-    }
-
-    if (this.Stroke === undefined) {
-      this.Stroke = '#FFF';
-    }
-
-    if (this.StrokeWidth === undefined) {
-      this.StrokeWidth = 1;
-    }
-
-    if (this.FillOpacity === undefined) {
-      this.FillOpacity = 1;
-    }
-
-    if (this.StrokeOpacity === undefined) {
-      this.StrokeOpacity = 1;
-    }
-
-    //Appending
-    if (this.Canvas !== undefined) {
-
-      if (this.isStyleSourceCode()) {
-
-      }
-    }
-
+  ToolTip.prototype.transition = function(){
+    return this.Div.transition();
   };
 
-  ToolTip.prototype.remove = function () {
-    if (this.ToolTipElement !== null) {
-      this.ToolTipElement.remove();
-      this.ToolTipElement = null;
-    }
+  ToolTip.prototype.on = function(e, func){
+    this.Parent.on(e, func);
+    return this;
   };
 
-  ToolTip.prototype.reappend = function () {
-    this.remove();
-    this.append();
+  ToolTip.prototype.classed = function(cssClass, classBool){
+    this.Div.classed(cssClass, classBool);
+    return this;
   };
 
-  ToolTip.prototype.getElement = function () {
-    return self.ToolTipElement;
+  ToolTip.prototype.html = function(str){
+    return this.Div.html(str);
   };
-
 
   //TODO: implement this
   //Defines a line dot token to mark something like a turning point, a tooltip, etc
@@ -257,7 +374,7 @@ define(function (require) {
         .attr('r', this.Radius)
         .classed('dot', true);
 
-      if (data.isStyleSourceCode()) {
+      if (gamevis.data.isStyleSourceCode()) {
         this.DotElement.attr('fill', this.Fill)
           .attr('stroke', this.Stroke)
           .attr('stroke-width', this.StrokeWidth)
@@ -367,7 +484,7 @@ define(function (require) {
 
       self.TokenElement.classed('status-token', true);
 
-      if (data.isStyleSourceCode()) {
+      if (gamevis.data.isStyleSourceCode()) {
         //Token Styling
         self.TokenElement.style('fill', self.Fill)
           .style('stroke', self.Stroke)
@@ -383,14 +500,14 @@ define(function (require) {
         })
         .classed('status-token-text', true);
 
-      if (data.isStyleSourceCode()) {
+      if (gamevis.data.isStyleSourceCode()) {
         text.attr('font-family', 'sans-serif')
           .attr('font-size', 18)
           .style('fill', 'white')
           .style('text-anchor', 'middle');
       }
     } else
-    if (data.DEBUG === true)
+    if (gamevis.data.DEBUG === true)
       console.log('Error, token ellipse is null');
   };
 
@@ -821,7 +938,7 @@ define(function (require) {
         ty = 124;
         break;
       }
-      if (data.DEBUG === true)
+      if (gamevis.data.DEBUG === true)
         console.log('Status: ' + status);
       var token = new StatusToken(self.StatusTokensGroup, status[1],
         tx, ty);
@@ -1056,6 +1173,7 @@ define(function (require) {
     //classes
     Bar: Bar,
     ToolTip: ToolTip,
+    StatPolygon: StatPolygon,
     Dot: Dot,
     StatusToken: StatusToken,
     TimeAxis: TimeAxis,
