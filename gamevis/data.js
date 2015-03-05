@@ -36,13 +36,18 @@ define(function (require) {
   //Classes=======================================================================
 
   //load and save gamedata functions
-  function saveGameData(gamedata, format) { //object = {gamedata, format}
+  //@params: gamedata, format
+  function saveGameData(obj) {
     var str = "";
+    if(!object.format || !object.gamedata){
+      console.error('ERROR: object format could not be saved.', obj);
+      return null;
+    }
     format.toUpperCase();
 
-    switch (format) {
+    switch (obj.format) {
     case "JSON":
-      str = JSON.stringify(gamedata);
+      str = JSON.stringify(obj.gamedata);
       break;
     case "XML":
       break;
@@ -51,13 +56,18 @@ define(function (require) {
     return str;
   }
 
-  function loadGameData(stringdata, format) {
+  //@params: stringdata, format
+  function loadGameData(obj) {
+    if(!obj.stringdata || !obj.format){
+      console.error('ERROR: object format could not be loaded.', obj);
+      return null;
+    }
     var gamedata = {};
-    format.toUpperCase();
+    obj.format.toUpperCase();
 
-    switch (format) {
+    switch (obj.format) {
     case "JSON":
-      gamedata = JSON.parse(stringdata);
+      gamedata = JSON.parse(obj.stringdata);
       break;
     case "XML":
       break;
@@ -107,16 +117,16 @@ define(function (require) {
   };
 
   //Canvas class----------------------------------------------------
-  function Canvas(width, height, label, bgcolor) {
+  //@params: width, height, label, bgcolor
+  function Canvas(obj) {
 
-    var self = this; //self variable to maintain the class auto-reference
+    this.Width = obj.width || 640;
+    this.Height = obj.height || 480;
+    this.BGColor = obj.bgcolor || '#444444';
+    this.Label = obj.label || 'Canvas';
 
-    self.Width = width;
-    self.Height = height;
-    self.BGColor = bgcolor;
-    self.Label = label;
-    self.SVGCanvas = null;
-    self.ClassType = "Canvas";
+    this.SVGCanvas = null;
+    this.ClassType = "Canvas";
   }
 
   //Methods---
@@ -152,31 +162,33 @@ define(function (require) {
     return this.SVGCanvas;
   };
 
+  //@params: id, name, value, iconuri
   //Resouce Class---------------------------------------------------------------
-  function Resource(id, name, value, iconuri) {
-    var self = this;
-
-    self.ID = id;
-    self.Name = name;
-    self.Value = value; //can be a category or an agregated value, or even a tuple!
-    self.IconURI = iconuri;
+  function Resource(obj) {
+    this.ID = obj.id;
+    this.Name = obj.name;
+    this.Value = obj.value;
+    this.IconURI = obj.iconuri;
   }
 
   //Player Class------------------------------------------------------
-  function Player(name, rank, team, nation, tgold, txp, level, thumbnail) {
+  //@attributesname, rank, team, nation, tgold, txp, level, thumbnail
+  function Player(obj) {
     //Attributes------------------------------------------------------------
 
     //Global attributes
     CurrentPlayerID = CurrentPlayerID + 1;
     this.ID = CurrentPlayerID;
-    this.Name = name;
-    this.Rank = rank;
-    this.Team = team;
-    this.Nation = nation;
-    this.TotalGold = tgold;
-    this.TotalXP = txp;
-    this.Level = level;
-    this.Thumbnail = thumbnail;
+    if(obj){
+      this.Name = obj.name;
+      this.Rank = obj.rank;
+      this.Team = obj.team;
+      this.Nation = obj.nation;
+      this.TotalGold = obj.tgold;
+      this.TotalXP = obj.txp;
+      this.Level = obj.level;
+      this.Thumbnail = obj.thumbnail;
+    }
     this.ClassType = "Player";
 
     //Match attributes
@@ -254,8 +266,9 @@ define(function (require) {
     }
   };
 
+  //@params: name, rank, nation
   //Team Class------------------------------------------------------------------
-  function Team(name, rank, nation) {
+  function Team(obj) {
     //Attributes----------------------------------------------------------------
 
     CurrentTeamID = CurrentTeamID + 1;
@@ -263,9 +276,9 @@ define(function (require) {
     this.ClassType = "Team";
 
     //Team common attributes
-    this.Name = name;
-    this.Rank = rank;
-    this.Nation = nation;
+    this.Name = obj.name;
+    this.Rank = obj.rank;
+    this.Nation = obj.nation;
 
     //Team attributes calculated on-demand
     this.Players = [];
@@ -275,8 +288,7 @@ define(function (require) {
     this.Resources = [];
   }
 
-  //Methods-------------------------------------------------------------------
-
+  //Methods---------------------------------------------------------------------
   //Calculates the stuff
   Team.prototype.getAverageLevel = function () {
     var n = 0;
@@ -367,31 +379,29 @@ define(function (require) {
     }
   };
 
+  //@params: team1, team2, endtime
   //Match Class---------------------------------------------------------------
-  function Match(team1, team2, endtime) {
+  function Match(obj) {
     //This match can be either a result-only match or a event-result match
     //Attributes
-    var self = this;
 
     CurrentMatchID = CurrentMatchID + 1;
-    self.ID = CurrentMatchID;
-    self.ClassType = "Match";
+    this.ID = CurrentMatchID;
+    this.ClassType = "Match";
 
-    self.Team = [];
-    self.Team[0] = team1;
-    self.Team[1] = team2;
+    this.Team = [];
+    this.Team[0] = obj.team1;
+    this.Team[1] = obj.team2;
 
-    self.CurrentTime = 0;
-    self.EndTime = endtime;
+    this.CurrentTime = 0;
+    this.EndTime = obj.endtime || 100;
 
-    self.GoldDifference = [];
-    self.XPDifference = [];
-    self.KillDifference = [];
+    this.GoldDifference = [];
+    this.XPDifference = [];
+    this.KillDifference = [];
   }
 
-  //Methods-----
-
-  //init match, must be used before stuff gets computed
+  //Methods---------------------------------------------------------------------
   Match.prototype.init = function () {
     if (this.EndTime > 0) {
       //init difference arrays and player time array
@@ -403,7 +413,7 @@ define(function (require) {
     }
   };
 
-  //update stuff from teams and players
+  //update stuff from teams and players-----------------------------------------
   Match.prototype.addPlayerKill = function (killerTeam, victimTeam, killer,
     victim) {
 
@@ -512,24 +522,23 @@ define(function (require) {
     }
   };
 
-  //RealTimeMatch Class----------------------------------
-  function RealTimeMatch(team1, team2) {
+  //@params: team1, team2
+  //RealTimeMatch Class---------------------------------------------------------
+  function RealTimeMatch() {
 
-    //Attributes-----------------------------------------------------------------------
-
-    var self = this;
+    //Attributes----------------------------------------------------------------
     CurrentMatchID = CurrentMatchID + 1;
-    self.ID = CurrentMatchID;
-    self.ClassType = "RealTimeMatch";
-    self.Team1 = team1;
-    self.Team2 = team2;
+    this.ID = CurrentMatchID;
+    this.ClassType = "RealTimeMatch";
+    this.Team1 = obj.team1;
+    this.Team2 = obj.team2;
 
-    self.CurrentTime = 0;
-    self.Ended = false;
+    this.CurrentTime = 0;
+    this.Ended = false;
 
-    self.GoldDifference = [];
-    self.XPDifference = [];
-    self.KillDifference = [];
+    this.GoldDifference = [];
+    this.XPDifference = [];
+    this.KillDifference = [];
   }
 
 	//Methods-------------------------------------------------------------
@@ -558,6 +567,7 @@ define(function (require) {
     setChartStyleSource: setChartStyleSource,
     saveGameData: saveGameData,
     loadGameData: loadGameData,
+
     //classes
     GameData: GameData,
     Canvas: Canvas,

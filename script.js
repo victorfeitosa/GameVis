@@ -7,7 +7,7 @@ define(function (require) {
 	gamevis.graphics = require('./gamevis/graphics');
 	gamevis.driver = require('drivers/dotadriver');
 
-	canvas = new gamevis.data.Canvas(640, 480, "#666666", "TEXT");
+	canvas = new gamevis.data.Canvas({width: 640, height: 480});
 	canvas.append();
 
 	//Creates scales for this canvas
@@ -18,23 +18,20 @@ define(function (require) {
 	scaleY.domain([-15, 15]).range([20, 460]);
 
 	//Create the Players to test the stuff
-	PlayerA = new gamevis.data.Player("Moai", "Beginner", "A",
-	"Fire-Nation", 3250,
-	4100, 3);
-	PlayerB = new gamevis.data.Player("Johnny", "Beginner", "B",
-	"Minas Tirith", 3100,
-	4150,
-	3);
+	PlayerA = new gamevis.data.Player({name: "Moai", rank: "Beginner", team: "A",
+	nation: "Fire-Nation", tgold: 3250, txp: 4100, level: 3});
+	PlayerB = new gamevis.data.Player({name: "Johnny", rank: "Beginner", team: "B",
+	nation: "Minas Tirith", tgold: 3100, txp: 4150, level: 3});
 
 	//Create Teams to test the stuff
-	TeamA = new gamevis.data.Team("BadWolfs", "Beginner", "Avatar");
-	TeamB = new gamevis.data.Team("RisingDudes", "Beginner", "LOTR");
+	TeamA = new gamevis.data.Team({name: "BadWolfs", rank: "Beginner", nation: "Avatar"});
+	TeamB = new gamevis.data.Team({name: "RisingDudes", rank: "Beginner", nation: "LOTR"});
 	//add players to teams
 	TeamA.addPlayer(PlayerA);
 	TeamB.addPlayer(PlayerB);
 
 	//Create Match to test the stuff
-	myMatch = new gamevis.data.Match(TeamA, TeamB, 5);
+	myMatch = new gamevis.data.Match({team1: TeamA, team2: TeamB, endtime: 5});
 
 	myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
 	myMatch.addPlayerGold(TeamA, PlayerA, 300);

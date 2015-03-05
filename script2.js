@@ -6,7 +6,7 @@ define(function (require) {
 	gamevis.graphics = require('gamevis/graphics');
 	gamevis.driver = require('drivers/dotadriver');
 
-	canvas = new gamevis.data.Canvas(640, 480, "#666666", "TEXT");
+	canvas = new gamevis.data.Canvas({width: 640, height: 480});
 	canvas.append();
 
 	//Creates scales for this canvas
