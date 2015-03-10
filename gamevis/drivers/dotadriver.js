@@ -10,12 +10,11 @@ define(function (require) {
 	DotaDriver.prototype.constructor = DotaDriver;
 
 	function DotaDriver() {
-		var self = this;
 
-		self.ID = 1;
-		self.SourceGame = 'Dota 2';
+		this.ID = 1;
+		this.SourceGame = 'Dota 2';
 
-		self.httpGet = function (theUrl) {
+		this.httpGet = function (theUrl) {
 			var xmlHttp = null;
 
 			xmlHttp = new XMLHttpRequest();
@@ -26,7 +25,7 @@ define(function (require) {
 		};
 
 		//Converts 32bit ids of Steam to 64bit ids used in most cases...
-		self.convertId = function (id) {
+		this.convertId = function (id) {
 			var converted = '';
 
 			if (id.length === 17) {

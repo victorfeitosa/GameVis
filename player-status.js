@@ -16,6 +16,6 @@ requirejs(['script'], function (require) {
     console.log("Executed main script");
   }
 
-  var playerMatchGraph = new gamevis.graphics.PlayerMatchGraph(canvas, myMatch, PlayerA, scaleX, 0, 0);
+  var playerMatchGraph = new gamevis.graphics.PlayerMatchGraph({canvas: canvas, match: myMatch, player: PlayerA, scale: scaleX, x: 0, y: 0});
   playerMatchGraph.append();
 });

@@ -12,7 +12,7 @@ requirejs.config({
 //Executes some stuff
 requirejs(['script2'], function () {
 
-  var graph = new gamevis.graphics.MatchResultsGraph(canvas, gdata.GameMatches[0], scaleX, scaleY, 0, 0);
+  var graph = new gamevis.graphics.MatchResultsGraph({canvas: canvas, match: gdata.GameMatches[0], scaleX: scaleX, scaleY: scaleY, x: 0, y: 0});
   graph.append();
 
     var poly = new gamevis.graphics.StatPolygon({canvas: canvas, stats: {'Strength': 72, 'Agility': 10, 'Inteligence': 62, 'Constitution' : 43, 'Charisma': 55}, radius: 80, maxval: 80, x: 80, y: 80});

@@ -1,23 +1,30 @@
 //Import configuration and paths
 requirejs.config({
-	baseUrl: './',
-	paths: {
-		d3: './d3',
-		gamevis: './gamevis',
-		drivers: './gamevis/drivers',
-		matchs: './gamevis/matchs'
-	}
+  baseUrl: './',
+  paths: {
+    d3: './d3',
+    gamevis: './gamevis',
+    drivers: './gamevis/drivers',
+    matchs: './gamevis/matchs'
+  }
 });
 
 //Loads the game script
 requirejs(['script'], function (require) {
 
-	if (DEBUG === true) {
-		console.log("Executed main script");
-	}
+  if (DEBUG === true) {
+    console.log("Executed main script");
+  }
 
-	var lineGraph = new gamevis.graphics.ComparisonGraphLine(canvas, myMatch, "Kills", 0, 0,
-		scaleX, scaleY);
-	lineGraph.build();
-	lineGraph.append();
+  var lineGraph = new gamevis.graphics.ComparisonGraphLine({
+    canvas: canvas,
+    match: myMatch,
+    type: "Kills",
+    x: 0,
+    y: 0,
+    scaleX: scaleX,
+    scaleY: scaleY
+  });
+  lineGraph.build();
+  lineGraph.append();
 });

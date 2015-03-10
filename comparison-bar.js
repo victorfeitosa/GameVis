@@ -17,8 +17,8 @@ requirejs(['script'], function (require) {
 		console.log("Executed main script");
 	}
 
-	var barGraph = new gamevis.graphics.ComparisonGraphBar(canvas, myMatch,
-		"Kills", 0, 0, scaleX, scaleY);
+	var barGraph = new gamevis.graphics.ComparisonGraphBar({canvas: canvas, match: myMatch,
+		type: "Kills", x: 0, y: 0, scaleX: scaleX, scaleY: scaleY});
 	barGraph.build();
 	barGraph.append();
 });
