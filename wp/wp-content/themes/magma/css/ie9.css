@@ -1,0 +1,53 @@
+.showbiz {
+    cursor: url(https://mail.google.com/mail/images/2/openhand.cur), move;
+}
+
+.showbiz:active {
+    cursor: url(https://mail.google.com/mail/images/2/closedhand.cur), move;
+}
+
+.navbar-default .navbar-nav > .active > a {
+    filter: none;
+}
+
+.st-effect-3.st-menu {
+    -ms-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+}
+
+.st-effect-3.st-menu-open .st-effect-3.st-menu {
+    -ms-transition: -ms-transform 0.5s;
+    transition: transform 0.5s;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    background-color: transparent;
+}
+
+.products .product a.button:hover,
+ul.products li.product .added_to_cart:hover,
+.products .product a.button.slide {
+    top: 0;
+    bottom: auto;
+}
+
+ul.products li.product .added_to_cart.slide {
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.woocommerce-ordering {
+    background: none;
+}
+
+#container .dropdown-menu > li > a:hover,
+#container .dropdown-menu > li > a:focus,
+#container li.current-menu-item a {
+    -ms-filter: none;
+    filter: none;
+}
+
+ul.products li.product > a h3 {
+    display: none;
+}

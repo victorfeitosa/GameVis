@@ -1,0 +1,16 @@
+/*
+Theme Name: Bloggap
+Support URI: http://www.themeskingdom.com/support/
+Description: Looking to give your visitors a fun new way to browse your latest posts, display loads of content in a beautifully simple and cool way then Bloggap is great choice for you. The theme is responsive, meaning it will look and work great on all screen resolutions and mobile devices as well.
+Author: Themeskingdom
+Author URI: http://www.themeskingdom.com/
+Version: 1.8.1
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Theme URI: http://www.themeskingdom.com/
+Tags: black, white, two-columns, flexible-width, custom-colors, post-format, theme-options, translation-ready
+*/
+
+
+@import url("style/reset.css");
+@import url("style/style.css");

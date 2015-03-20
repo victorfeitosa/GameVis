@@ -1,0 +1,16 @@
+/*
+Theme Name: Cosily
+Support URI: http://www.themeskingdom.com/support/
+Description: The Cosily WordPress theme is an excellent for hotels, hostels, resort, private villas, holiday homes, holiday apartments or other types of service which requires a booking type system.
+Author: Themeskingdom
+Author URI: http://www.themeskingdom.com/support/
+Version: 1.2.4
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Theme URI: http://www.themeskingdom.com/
+Tags: one-column, two-columns, three-columns, four-columns, featured-images, post-formats, theme-options, threaded-comments, translation-ready
+*/
+
+@import url("style/reset.css");
+@import url("style/style.css");
+@import url("style/shortcodes.css");

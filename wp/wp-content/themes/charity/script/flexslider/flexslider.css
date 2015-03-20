@@ -1,0 +1,341 @@
+/*
+ * jQuery FlexSlider v1.8
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* Browser Resets */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider { margin: 0; padding: 0; }
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {max-width: 100%; /*display: block;*/}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider {
+    background: #fff; 
+    position: relative;
+    zoom: 1;
+    float: left; 
+    width: 100%;
+    overflow: hidden;
+}
+.flexslider .slides {zoom: 1;}
+.flexslider .slides > li {position: relative;}
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+.flex-container {zoom: 1; position: relative;}
+
+/* Caption style */
+/* IE rgba() hack */
+.flex-caption {background:none; -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); zoom: 1;}
+.flex-caption {width: 96%; padding: 2%; margin: 0; position: absolute; left: 0; bottom: 0; background: rgba(0,0,0,.3); color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 18px;}
+
+/* Direction Nav */
+.flex-direction-nav { height: 0; }
+.flex-direction-nav li a {width: 32px; height: 32px; margin: -16px 0 0; display: block; position: absolute; top: 50%; cursor: pointer; text-indent: -999em;}
+.flex-direction-nav li .next { background: url(theme/next.png) no-repeat top left; right: 55px;}
+.flex-direction-nav li .prev { background: url(theme/prev.png) no-repeat top left; left: 55px;}
+.flex-direction-nav li .prev:hover { background-position: bottom; }
+.flex-direction-nav li .disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
+
+/* Control Nav */
+.flex-control-nav {width: 100%; position: absolute; bottom: 10px; text-align: center;}
+.flex-control-nav li {margin: 0 0 0 5px; display: inline-block; zoom: 1; *display: inline;}
+
+.flex-control-nav li a {width: 7px; height: 7px; display: block; cursor: pointer; text-indent: -999em;}
+.flex-control-nav li a:hover {background-position: bottom;}
+.flex-control-nav li a.active,
+.flex-control-nav li a.flex-active {
+    background-position: bottom; 
+    cursor: default;
+}
+
+
+
+
+/* Additional styles 
+---------------------------------------- */
+.flexslider-part .flexslider {
+    background: none;
+}
+.flexslider-part {
+    float:left;
+    width:100%;
+    position:relative;
+    padding:0;
+    margin:0 0 0px 0;
+}
+
+.row-fluid .flex-direction-nav{
+    min-width: 74px;
+    position: absolute;
+    right: -10px;
+    top: -60px;
+    background: #FFF;
+    height: 35px;
+}
+
+.row-fluid .team .flex-direction-nav{
+    right: -6px;
+}
+.row-fluid .team .wider .flex-direction-nav{
+    top: -60px;
+}
+
+
+/* Arrows */
+.flexslider-part .flex-prev, 
+.tab-pane .flex-prev{
+    background: url('../../style/images/prev.png') no-repeat scroll 0 0 transparent;
+    width:25px;
+    height:26px;
+    border: none;
+    -webkit-transition: .5s;
+       -moz-transition: .5s;
+            transition: .5s;
+    left:10px;
+}
+
+.row-fluid .flexslider-part .flex-next,
+.tab-pane .flex-next {
+    right:10px;
+    border: none;
+    -webkit-transition: .5s;
+       -moz-transition: .5s;
+            transition: .5s;    
+    background: url('../../style/images/next.png') no-repeat scroll 0 0 transparent;
+    width:25px;
+    height:26px;
+}
+
+.row-fluid .flexslider-part .flex-next:hover,
+.tab-pane .flex-next:hover{
+    background: url('../../style/images/next-hover.png') no-repeat scroll 0 0 transparent;
+}
+.row-fluid .flexslider-part .flex-prev:hover,
+.tab-pane .flex-prev:hover{
+    background: url('../../style/images/prev-hover.png') no-repeat scroll 0 0 transparent;
+}
+
+.flexslider-part .flex-disabled {
+    cursor: default;
+}
+.flexslider-part .flexslider li {
+    text-align: center;
+}
+.span6 .flexslider-part .flexslider li{
+    margin-right: 10px;
+}
+.span4 .flexslider-part .flexslider li,
+.flexslider-part.testimonials li{
+    margin-right: 0;
+}
+
+.flex-viewport{
+    width: 100%;
+}
+
+.span12.news .flexslider-part .flexslider li,
+.span6.news .flexslider-part .flexslider li,
+.span4.news .flexslider-part .flexslider li,
+.flexslider-part.testimonials li{
+    text-align: left;
+}
+
+/* News two columns */
+.flexslider-part .flexslider li .vertical_tabs_content {
+    padding-right: 10px;
+}
+.flexslider-part .flexslider li:nth-child(2n+2) .vertical_tabs_content {
+    padding-right: 0;
+}
+
+
+/* Home Page flexslider - Tabs */
+.tab-pane .flex-direction-nav{
+    position: relative;
+    float: right;
+}
+
+.flexslider-part .back h3,  
+.flexslider-part .back h3 a{
+    margin: 0;
+}
+
+.flexslider-news {
+    background:none;
+}
+
+.fullwidth-flex .flex-direction-nav .flex-next, 
+.span6 .flex-direction-nav .flex-next{
+    margin-left:5px;
+}
+
+.events-page .flex-control-nav li a {
+    transition: 0s;
+    -webkit-transition: 0s;
+    -moz-transition: 0s;
+    -webkit-transition: 0s;
+    -moz-transition: 0s;
+    width: 22px;
+    height: 22px;
+    display: block;
+    background: url(theme/bg_control_nav.png) no-repeat top left;
+    cursor: pointer;
+    text-indent: -999em;
+    z-index: 9999;
+    position: relative;
+}
+
+.events-page .flex-control-nav li a.flex-active{
+    background-position: bottom;
+    cursor: default;
+}
+
+@media (max-width: 979px) and (min-width: 768px){
+    .flexslider-part .back p{
+        display: none;
+    }
+    
+    /* Normal flexslider */
+    .flexslider-part .flip-container{
+        min-height: 138px;
+    }
+
+    .flexslider-part .back h3, .flexslider-part .back h3 a {
+      font-size:14px;
+    }
+
+    .flexslider-part.wider .back h3 {
+        font-size:14px;
+    }
+}
+
+
+/* iPad portrait */
+@media (max-width: 767px){
+    .flexslider-part .back p{
+        display: block;
+    }
+
+
+    .span12 .flexslider-part .back h3, 
+    .span12 .flexslider-part .back h3 a {
+        font-size:14px;
+    }
+
+    .span6 .flexslider-part .back h3, 
+    .span6 .flexslider-part .back h3 a {
+        font-size:14px;
+    }
+    .span4 .flexslider-part .back h3, 
+    .span4 .flexslider-part .back h3 a {
+        font-size:14px;
+    }
+    .span4 .flexslider-part .flexslider li {
+        margin-right:10px;
+    }
+}
+
+/* iPhone 5 - landscape */
+@media screen and (max-width: 568px){
+    .span12 .flexslider-part .back h3, 
+    .span12 .flexslider-part .back h3 a {
+        font-size:14px;        
+    }
+
+    .span6 .flexslider-part .back h3, 
+    .span6 .flexslider-part .back h3 a {
+        font-size:14px;
+    }
+
+    .span4 .flexslider-part .back h3, 
+    .span4 .flexslider-part .back h3 a {
+        font-size:14px;
+    }
+}
+
+/* iPhone 2G-4S in landscape */
+@media only screen and (max-width : 480px){
+
+    .span6 .flexslider-part .back h3, 
+    .span6 .flexslider-part .back h3 a {
+      
+    }
+
+    .span4 .flexslider-part .back h3, 
+    .span4 .flexslider-part .back h3 a {
+       font-size:14px;
+    }
+}
+
+/* iPhone 2G-4S in portrait */
+@media only screen and (max-width : 320px){
+    .flexslider-part{
+        width: 99%;
+    }
+    .span12 .flexslider-part .flip-container, 
+    .span12 .flexslider-part .front {
+        min-height: 250px;
+    }
+    .span12 .flexslider-part .back {
+        min-width: 248px;
+        min-height: 200px;
+    }
+    .span12 .flexslider-part .back h3, 
+    .span12 .flexslider-part .back h3 a {
+        margin: 4.5em 0 0.2em 0;
+    }
+
+    .span6 .flexslider-part .flip-container, 
+    .span6 .flexslider-part .front {
+        min-height: 250px;
+    }
+    .span6 .flexslider-part .back {
+        min-width: 248px;
+        min-height: 200px;
+    }
+    .span6 .flexslider-part .back h3, 
+    .span6 .flexslider-part .back h3 a {
+        margin: 4.5em 0 0.2em 0;
+    }
+
+    .span4 .flexslider-part .flip-container, 
+    .span4 .flexslider-part .front {
+        min-height: 250px;
+    }
+    .span4 .flexslider-part .back {
+        min-width: 248px;
+        min-height: 200px;
+    }
+    .span4 .flexslider-part .back h3, 
+    .span4 .flexslider-part .back h3 a {
+        margin: 4.5em 0 0.2em 0;
+    }
+}

@@ -19,7 +19,7 @@ define(function (require) {
 	d = new gamevis.driver();
 	gdata = d.buildData('./gamevis/matches/players.json');
 
-	console.log(gdata);
+	// console.log(gdata);
 
 	console.log('Successfully loaded the stuff needed\n');
 });

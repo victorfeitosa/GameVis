@@ -1,0 +1,12 @@
+.stars-rater{display: block!important;}
+.main-slider{display: block!important;}
+.design-home-images-one-img{display: block!important;}
+.design-home-images-one .work-slider{display: none!important;}
+#main-slider{display: none!important;}
+.flexslider{display: block!important;}
+#contactname, #contactemail, .search-input, #author, #comment-email, .search-input, .input-newsletter{height: 25px!important;padding-top: 8px!important;}
+.design-home-images-one-img-hover p{display: none!important}
+.horisontal-images p{display: none!important}
+.fans-home{
+    background: url("img/slider-magic-pixel2.png") repeat;
+}

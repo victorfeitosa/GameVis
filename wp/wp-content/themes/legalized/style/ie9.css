@@ -1,0 +1,101 @@
+.rev_slider img {
+    height: auto!important;
+    width: auto!important;
+}
+
+textarea {overflow: auto;}
+
+.ca-menu .ca-item a.more_link,
+.center.ca-menu .ca-item a.more_link{
+	margin-top: 70% !important;
+}
+.left.ca-menu .ca-item a.more_link,
+.center.ca-menu .ca-item a.more_link,
+.right.ca-menu .ca-item a.more_link{
+	margin-top: 80% !important;
+}
+
+
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover{
+	filter:none;
+}
+
+
+
+.flip-container {
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    perspective: 1000;
+}
+.flip-container:hover .flipper, 
+.flip-container.hover .flipper {
+        transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+}
+.flip-container > div{
+    position: relative;
+}
+.flip-container, .front{
+    width:100%;
+    min-height: 230px;
+    overflow: hidden;
+}
+
+.flip-container:hover .flipper .front{
+	
+}
+
+.flipper {
+    -webkit-transition: none;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: none;
+    -moz-transform-style: preserve-3d;
+    transition: none;
+    transform-style: preserve-3d;
+    position: relative;
+}
+.front, .back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.front {
+    z-index: 2;
+}
+.front img{
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+    -webkit-transition: .4s;
+       -moz-transition: .4s;
+            transition: .4s;
+}
+.flip-container:hover .flipper .front{
+	display:none;
+}
+.back {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    padding:20px;
+    background: #f3f3f3;
+}
+.back.fixed{
+    -webkit-transform: none;
+    -moz-transform: none;
+    transform: none;
+}
+
+.flexslider-part .back,
+.four-up .work-content-one .back{
+	width: 180px;
+}
+
+.blog_img_hover,
+.team_img_hover{    
+    background-color:#fff;
+}

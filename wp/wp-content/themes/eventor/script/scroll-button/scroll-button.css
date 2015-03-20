@@ -1,0 +1,39 @@
+/*--- SCROLL TOP ---*/
+.scroll-top{
+    float: right;
+    width: 128px;
+    height: 47px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+#back-top {
+    width: 128px;
+    height: 47px;
+}
+
+#back-top { margin: 0; }
+
+#back-top a {
+    float: right;
+    width: 42px;
+    height: 42px;
+    position: relative;
+    margin: 3px 7px 0 0;
+    z-index: 99;
+}
+
+#back-top span {
+    float: right;
+    width: 42px;
+    height: 42px;
+    display: block;
+    background: url(img/scroll-top.png) no-repeat;
+    margin: 1px 0 0 0;
+    position: relative;
+    z-index: 999;
+}
+
+.scroll-top:hover .soc-icon-bg {
+    background: #ff6825
+}

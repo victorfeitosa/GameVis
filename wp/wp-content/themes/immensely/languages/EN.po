@@ -1,0 +1,540 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: InCare Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-04 14:21+0100\n"
+"PO-Revision-Date: 2012-12-04 14:24+0100\n"
+"Last-Translator: Danko Dubajic <danko@themeskingdom.com>\n"
+"Language-Team: ThemesKingdom <info@themeskingdom.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: /Volumes/Storage/01_localhost/01_develop/wp-content/themes/\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: incare\n"
+
+#: incare/404.php:8
+msgid "404 - Error"
+msgstr ""
+
+#: incare/404.php:23
+msgid "Looks like the page you were looking for does not exist. Sorry about that."
+msgstr ""
+
+#: incare/404.php:24
+msgid "Check the web address for typos, or go to"
+msgstr ""
+
+#: incare/404.php:24
+msgid "HOME PAGE"
+msgstr ""
+
+#: incare/_contact.php:190
+msgid "Say Hello"
+msgstr ""
+
+#: incare/_contact.php:192
+msgid "Required fields are marked *"
+msgstr ""
+
+#: incare/_contact.php:196
+msgid "Name *"
+msgstr ""
+
+#: incare/_contact.php:197
+msgid "Email *"
+msgstr ""
+
+#: incare/_contact.php:200
+#: incare/comments.php:102
+msgid "Message"
+msgstr ""
+
+#: incare/_contact.php:203
+#: incare/comments.php:106
+msgid "Send Message"
+msgstr ""
+
+#: incare/_gallery.php:38
+msgid "Filter:"
+msgstr ""
+
+#: incare/_gallery.php:41
+msgid "All"
+msgstr ""
+
+#: incare/comments.php:13
+msgid "- Your comment is awaiting moderation."
+msgstr ""
+
+#: incare/comments.php:13
+msgid " - Edit - "
+msgstr ""
+
+#: incare/comments.php:27
+msgid "No comments so far!"
+msgstr ""
+
+#: incare/comments.php:30
+#: incare/index.php:156
+msgid "Comments"
+msgstr ""
+
+#: incare/comments.php:40
+msgid "You must be"
+msgstr ""
+
+#: incare/comments.php:40
+msgid "logged in"
+msgstr ""
+
+#: incare/comments.php:40
+msgid "to post a comment."
+msgstr ""
+
+#: incare/comments.php:91
+msgid "Leave a Reply"
+msgstr ""
+
+#: incare/comments.php:91
+msgid "Leave a Comment"
+msgstr ""
+
+#: incare/comments.php:98
+msgid "Name (required)"
+msgstr ""
+
+#: incare/comments.php:99
+msgid "E-mail (required)"
+msgstr ""
+
+#: incare/comments.php:119
+msgid "Comments are closed"
+msgstr ""
+
+#: incare/functions.php:30
+msgid "Primary Menu"
+msgstr ""
+
+#: incare/header.php:23
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: incare/header.php:131
+msgid "Follow us: "
+msgstr ""
+
+#: incare/header.php:135
+msgid "Twitter"
+msgstr ""
+
+#: incare/header.php:144
+msgid "Facebook"
+msgstr ""
+
+#: incare/header.php:154
+msgid "Google Plus"
+msgstr ""
+
+#: incare/header.php:164
+msgid "RSS"
+msgstr ""
+
+#: incare/header.php:176
+msgid "LinkedIn"
+msgstr ""
+
+#: incare/header.php:186
+msgid "Pinterest"
+msgstr ""
+
+#: incare/header.php:280
+msgid "Search:"
+msgstr ""
+
+#: incare/index.php:90
+msgid "Latest News "
+msgstr ""
+
+#: incare/index.php:92
+#: incare/index.php:207
+#: incare/index.php:260
+msgid "View All"
+msgstr ""
+
+#: incare/index.php:199
+msgid "TESTIMONIALS"
+msgstr ""
+
+#: incare/index.php:202
+msgid "Prev"
+msgstr ""
+
+#: incare/index.php:204
+msgid "Next"
+msgstr ""
+
+#: incare/index.php:258
+msgid "From The Gallery"
+msgstr ""
+
+#: incare/search.php:157
+msgid "No posts found. Try a different search?"
+msgstr ""
+
+#: incare/single-events.php:99
+#: incare/single.php:164
+msgid "Share This :"
+msgstr ""
+
+#: incare/single-gallery.php:66
+msgid "By:"
+msgstr ""
+
+#: incare/inc/custom-taxonomies.php:10
+msgid "Search Gallery Categories"
+msgstr ""
+
+#: incare/inc/custom-taxonomies.php:11
+msgid "All Gallery Categories"
+msgstr ""
+
+#: incare/inc/custom-taxonomies.php:12
+#: incare/inc/custom-taxonomies.php:13
+msgid "Parent Gallery Category"
+msgstr ""
+
+#: incare/inc/custom-taxonomies.php:14
+msgid "Edit Gallery Category"
+msgstr ""
+
+#: incare/inc/custom-taxonomies.php:15
+msgid "Update Gallery Category"
+msgstr ""
+
+#: incare/inc/custom-taxonomies.php:16
+msgid "Add New Gallery Category"
+msgstr ""
+
+#: incare/inc/custom-taxonomies.php:17
+msgid "New Gallery Category"
+msgstr ""
+
+#: incare/inc/custom-taxonomies.php:18
+msgid "Gallery Categories"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:10
+#: incare/inc/meta-boxes.php:17
+msgid "VIdeo Link"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:29
+msgid "Slider Fields"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:48
+#: incare/inc/meta-boxes.php:55
+msgid "Audio Link"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:67
+#: incare/inc/meta-boxes.php:74
+msgid "Quote Text"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:82
+msgid "Quote Author"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:94
+msgid "Link"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:101
+msgid "Link Text"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:108
+msgid "Link Url"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:120
+msgid "Author Info"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:127
+msgid "Author Name"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:134
+msgid "Project Url"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:148
+msgid "Event Date"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:155
+msgid "Date Of Event"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:167
+msgid "Testimonial"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:175
+msgid "Job Position"
+msgstr ""
+
+#: incare/inc/meta-boxes.php:183
+msgid "E-mail"
+msgstr ""
+
+#: incare/inc/post-types.php:11
+#: incare/inc/post-types.php:12
+#: incare/inc/post-types.php:23
+msgid "Gallery"
+msgstr ""
+
+#: incare/inc/post-types.php:13
+#: incare/inc/post-types.php:52
+#: incare/inc/post-types.php:90
+msgid "Add New"
+msgstr ""
+
+#: incare/inc/post-types.php:14
+msgid "Add New Gallery Item"
+msgstr ""
+
+#: incare/inc/post-types.php:15
+msgid "Edit Gallery Item"
+msgstr ""
+
+#: incare/inc/post-types.php:16
+msgid "New Gallery Item"
+msgstr ""
+
+#: incare/inc/post-types.php:17
+msgid "All Gallery Items"
+msgstr ""
+
+#: incare/inc/post-types.php:18
+msgid "View this Gallery Item"
+msgstr ""
+
+#: incare/inc/post-types.php:19
+msgid "Search Gallery Items"
+msgstr ""
+
+#: incare/inc/post-types.php:20
+msgid "No Gallery Items"
+msgstr ""
+
+#: incare/inc/post-types.php:21
+msgid "No Gallery Items in Trash"
+msgstr ""
+
+#: incare/inc/post-types.php:50
+#: incare/inc/post-types.php:51
+#: incare/inc/post-types.php:62
+msgid "Events"
+msgstr ""
+
+#: incare/inc/post-types.php:53
+msgid "Add New Event"
+msgstr ""
+
+#: incare/inc/post-types.php:54
+msgid "Edit Event"
+msgstr ""
+
+#: incare/inc/post-types.php:55
+msgid "New Event"
+msgstr ""
+
+#: incare/inc/post-types.php:56
+msgid "All Events"
+msgstr ""
+
+#: incare/inc/post-types.php:57
+msgid "View this Event"
+msgstr ""
+
+#: incare/inc/post-types.php:58
+msgid "Search Events"
+msgstr ""
+
+#: incare/inc/post-types.php:59
+msgid "No Events"
+msgstr ""
+
+#: incare/inc/post-types.php:60
+msgid "No Events in Trash"
+msgstr ""
+
+#: incare/inc/post-types.php:88
+#: incare/inc/post-types.php:89
+#: incare/inc/post-types.php:100
+msgid "Testimonials"
+msgstr ""
+
+#: incare/inc/post-types.php:91
+msgid "Add New Testimonial"
+msgstr ""
+
+#: incare/inc/post-types.php:92
+msgid "Edit Testimonial"
+msgstr ""
+
+#: incare/inc/post-types.php:93
+msgid "New Testimonial"
+msgstr ""
+
+#: incare/inc/post-types.php:94
+msgid "All Testimonials"
+msgstr ""
+
+#: incare/inc/post-types.php:95
+msgid "View this Testimonial"
+msgstr ""
+
+#: incare/inc/post-types.php:96
+msgid "Search Testimonials"
+msgstr ""
+
+#: incare/inc/post-types.php:97
+msgid "No Testimonials"
+msgstr ""
+
+#: incare/inc/post-types.php:98
+msgid "No Testimonials in Trash"
+msgstr ""
+
+#: incare/inc/shortcodes/popup.php:20
+msgid "Insert Shortcode"
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:12
+msgid "Button URL"
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:13
+msgid "Add the button's url eg http://example.com"
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:17
+msgid "Button's Style"
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:18
+msgid "Select the button's style, ie the buttons colour"
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:33
+msgid "Button's Text"
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:34
+msgid "Add the button's text"
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:44
+msgid "Type of list"
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:45
+msgid "Select the list type"
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:57
+msgid "List Text"
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:58
+msgid "Add the list text"
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:68
+msgid "Column Type"
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:69
+msgid "Select the type of the column."
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:79
+msgid "Last Column"
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:80
+msgid "Pick if column is last."
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:89
+msgid "Column Content"
+msgstr ""
+
+#: incare/inc/shortcodes/settings.php:90
+msgid "Add the column content."
+msgstr ""
+
+#: incare/inc/widgets/widget-newsletter.php:10
+msgid " - Newsletter"
+msgstr ""
+
+#: incare/inc/widgets/widget-newsletter.php:129
+#: incare/inc/widgets/widget-twitter.php:58
+msgid "Title:"
+msgstr ""
+
+#: incare/inc/widgets/widget-newsletter.php:133
+msgid "Newsletter Text:"
+msgstr ""
+
+#: incare/inc/widgets/widget-newsletter.php:137
+msgid "Chose Service:"
+msgstr ""
+
+#: incare/inc/widgets/widget-newsletter.php:142
+msgid "MailChimp API Key:"
+msgstr ""
+
+#: incare/inc/widgets/widget-newsletter.php:147
+msgid "MailChimp API List:"
+msgstr ""
+
+#: incare/inc/widgets/widget-newsletter.php:152
+msgid "Sendloop Username:"
+msgstr ""
+
+#: incare/inc/widgets/widget-newsletter.php:157
+msgid "Sendloop List ID:"
+msgstr ""
+
+#: incare/inc/widgets/widget-twitter.php:9
+msgid " - Twitter Stream"
+msgstr ""
+
+#: incare/inc/widgets/widget-twitter.php:62
+msgid "Username:"
+msgstr ""
+
+#: incare/inc/widgets/widget-twitter.php:66
+msgid "Number of tweets:"
+msgstr ""
+
+#: incare/script/revslider/inc_php/revslider_widget.class.php:8
+msgid "Displays a revolution slider on the page"
+msgstr ""
+
+#: incare/script/revslider/inc_php/revslider_widget.class.php:9
+msgid "Revolution Slider"
+msgstr ""
+
+#: incare/script/revslider/inc_php/revslider_widget.class.php:24
+msgid "No sliders found, Please create a slider"
+msgstr ""
+

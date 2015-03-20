@@ -1,0 +1,1341 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Charity\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-25 15:43+0100\n"
+"PO-Revision-Date: 2013-10-25 15:43+0100\n"
+"Last-Translator: ThemesKingdom <info@themeskingdom.com>\n"
+"Language-Team: ThemesKingdom <info@themeskingdom.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: /Users/justdot/Desktop/htdocs/!bitbucket/wp-content/"
+"themes/\n"
+"X-Generator: Poedit 1.5.3\n"
+"X-Poedit-SearchPath-0: charity\n"
+
+#: charity/404.php:5
+msgid "40"
+msgstr ""
+
+#: charity/404.php:6
+msgid "404"
+msgstr ""
+
+#: charity/404.php:7
+msgid "04"
+msgstr ""
+
+#: charity/404.php:11
+msgid "The page you are looking for does not exist"
+msgstr ""
+
+#: charity/404.php:13
+msgid "Go to"
+msgstr ""
+
+#: charity/404.php:13
+msgid "Home Page"
+msgstr ""
+
+#: charity/archive.php:18 charity/author.php:18 charity/category.php:18
+#: charity/tag.php:9
+msgid "Archive"
+msgstr ""
+
+#: charity/archive.php:22 charity/author.php:22 charity/category.php:22
+#: charity/tag.php:13
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: charity/archive.php:24 charity/author.php:24 charity/tag.php:15
+#, php-format
+msgid "Taxonomy Archive: %s"
+msgstr ""
+
+#: charity/archive.php:26 charity/author.php:26 charity/category.php:24
+#: charity/tag.php:17
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: charity/archive.php:29 charity/author.php:29 charity/category.php:27
+#: charity/tag.php:20
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: charity/archive.php:32 charity/author.php:32 charity/category.php:30
+#: charity/tag.php:23
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: charity/archive.php:34 charity/author.php:34 charity/category.php:32
+#: charity/tag.php:25
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: charity/archive.php:36 charity/author.php:36 charity/category.php:34
+#: charity/tag.php:27
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: charity/archive.php:38 charity/author.php:38 charity/category.php:36
+#: charity/tag.php:29
+msgid "Archives"
+msgstr ""
+
+#: charity/archive.php:57 charity/author.php:57 charity/category.php:56
+#: charity/search.php:38 charity/tag.php:48
+msgid "No Results Found"
+msgstr ""
+
+#: charity/archive.php:69 charity/author.php:69 charity/category.php:68
+#: charity/tag.php:60 charity/functions/functions.php:158
+msgid "Previous"
+msgstr ""
+
+#: charity/archive.php:70 charity/author.php:70 charity/category.php:69
+#: charity/tag.php:61 charity/functions/functions.php:159
+msgid "Next"
+msgstr ""
+
+#: charity/comments.php:49
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: charity/comments.php:58
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: charity/comments.php:60
+msgid "(Edit)"
+msgstr ""
+
+#: charity/comments.php:116
+msgid "&larr; Older comments"
+msgstr ""
+
+#: charity/comments.php:119
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: charity/comments.php:127 charity/comments.php:142
+msgid "Comments are closed."
+msgstr ""
+
+#: charity/comments.php:158
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: charity/comments.php:164
+#, php-format
+msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
+msgstr ""
+
+#: charity/comments.php:165
+msgid "Log out of this account"
+msgstr ""
+
+#: charity/comments.php:165
+msgid "Log out &raquo;"
+msgstr ""
+
+#: charity/comments.php:168
+msgid "Leave a comment"
+msgstr ""
+
+#: charity/comments.php:172
+msgid "Name"
+msgstr ""
+
+#: charity/comments.php:178
+msgid "Email"
+msgstr ""
+
+#: charity/comments.php:185 charity/templates/template-contact.php:128
+msgid "Message"
+msgstr ""
+
+#: charity/comments.php:190
+msgid "Submit Comment"
+msgstr ""
+
+#: charity/comments.php:190
+msgid "POST COMMENT"
+msgstr ""
+
+#: charity/footer.php:42
+msgid ""
+"&copy; Copyright Information Goes Here &copy; 2013. All Rights Reserved."
+msgstr ""
+
+#: charity/header.php:28
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: charity/search.php:20
+msgid "Search Result"
+msgstr ""
+
+#: charity/search.php:21
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: charity/sendcontact.php:33 charity/sendcontact.php:53
+msgid "You received e-mail from "
+msgstr ""
+
+#: charity/sendcontact.php:33 charity/sendcontact.php:53
+msgid " using "
+msgstr ""
+
+#: charity/single-events.php:63 charity/single-events.php:82
+#: charity/templates/parts/format-gallery.php:131
+#: charity/templates/parts/format-image.php:62
+#: charity/templates/parts/format-standard.php:175
+msgid "days"
+msgstr ""
+
+#: charity/single-events.php:63 charity/single-events.php:82
+#: charity/templates/parts/format-gallery.php:131
+#: charity/templates/parts/format-image.php:62
+#: charity/templates/parts/format-standard.php:175
+msgid "hours"
+msgstr ""
+
+#: charity/single-events.php:63 charity/single-events.php:82
+#: charity/templates/parts/format-gallery.php:131
+#: charity/templates/parts/format-image.php:62
+#: charity/templates/parts/format-standard.php:175
+msgid "minutes"
+msgstr ""
+
+#: charity/single-events.php:63 charity/single-events.php:82
+#: charity/templates/parts/format-gallery.php:131
+#: charity/templates/parts/format-image.php:62
+#: charity/templates/parts/format-standard.php:175
+msgid "seconds"
+msgstr ""
+
+#: charity/single-services.php:68
+#: charity/templates/parts/format-gallery.php:69
+#: charity/templates/parts/format-standard.php:75
+#: charity/templates/parts/format-video.php:58
+msgid "Make Donation"
+msgstr ""
+
+#: charity/single-services.php:70
+#: charity/templates/parts/format-gallery.php:71
+#: charity/templates/parts/format-standard.php:77
+#: charity/templates/parts/format-video.php:60
+msgid "Collected money so far:"
+msgstr ""
+
+#: charity/single-team-members.php:51
+#: charity/templates/parts/format-standard.php:114
+msgid "PHONE:"
+msgstr ""
+
+#: charity/single-team-members.php:52
+#: charity/templates/parts/format-standard.php:115
+msgid "Email:"
+msgstr ""
+
+#: charity/single-team-members.php:53
+#: charity/templates/parts/format-standard.php:116
+msgid "OTHER:"
+msgstr ""
+
+#: charity/config/builder-block-config.php:115
+msgid "Builder Block 1"
+msgstr ""
+
+#: charity/config/builder-block-config.php:118
+#: charity/config/meta-box-config.php:115
+#: charity/config/meta-box-config.php:121
+msgid "Advertisement Link"
+msgstr ""
+
+#: charity/config/builder-block-config.php:125
+#: charity/config/meta-box-config.php:128
+msgid "Custom Banner Code"
+msgstr ""
+
+#: charity/config/builder-block-config.php:139
+msgid "Builder Block 2"
+msgstr ""
+
+#: charity/config/builder-block-config.php:142
+#: charity/config/meta-box-config.php:148
+msgid "Banner Stats"
+msgstr ""
+
+#: charity/config/localize-script-config.php:35
+msgid "All fields are required"
+msgstr ""
+
+#: charity/config/meta-box-config.php:142
+msgid "Advertisement"
+msgstr ""
+
+#: charity/config/meta-box-config.php:166
+msgid "Sidebar Position"
+msgstr ""
+
+#: charity/config/meta-box-config.php:172
+msgid "Name of Field"
+msgstr ""
+
+#: charity/config/meta-box-config.php:173
+msgid "Short description"
+msgstr ""
+
+#: charity/config/meta-box-config.php:183
+msgid "Select sidebar"
+msgstr ""
+
+#: charity/config/meta-box-config.php:202
+msgid "Slider Fields"
+msgstr ""
+
+#: charity/config/meta-box-config.php:218
+msgid "Link"
+msgstr ""
+
+#: charity/config/meta-box-config.php:224
+msgid "Link Text"
+msgstr ""
+
+#: charity/config/meta-box-config.php:231
+msgid "Link Url"
+msgstr ""
+
+#: charity/config/meta-box-config.php:241
+#: charity/config/meta-box-config.php:247
+msgid "Quote Text"
+msgstr ""
+
+#: charity/config/meta-box-config.php:254
+msgid "Quote Author"
+msgstr ""
+
+#: charity/config/meta-box-config.php:264
+#: charity/config/meta-box-config.php:270
+msgid "Video Link"
+msgstr ""
+
+#: charity/config/meta-box-config.php:280
+msgid "Audio Options"
+msgstr ""
+
+#: charity/config/meta-box-config.php:286
+msgid "Audio Link"
+msgstr ""
+
+#: charity/config/meta-box-config.php:303
+msgid "Page Settings"
+msgstr ""
+
+#: charity/config/meta-box-config.php:309
+msgid "Disable Title and Breadcrumbs"
+msgstr ""
+
+#: charity/config/meta-box-config.php:310
+msgid ""
+"Check this box if you want to disable page title and breadcrumbs only on "
+"this page."
+msgstr ""
+
+#: charity/config/meta-box-config.php:315
+msgid "Use Slider on this page"
+msgstr ""
+
+#: charity/config/meta-box-config.php:316
+msgid "Check this box if you want to show main slider on this page"
+msgstr ""
+
+#: charity/config/meta-box-config.php:321
+msgid "Use Latest News on this page"
+msgstr ""
+
+#: charity/config/meta-box-config.php:322
+msgid "Check this box if you want to show latest news ribbon on this page"
+msgstr ""
+
+#: charity/config/meta-box-config.php:330
+msgid "Team Member Info"
+msgstr ""
+
+#: charity/config/meta-box-config.php:336
+msgid "Member Phone"
+msgstr ""
+
+#: charity/config/meta-box-config.php:343
+msgid "Member Email"
+msgstr ""
+
+#: charity/config/meta-box-config.php:350
+msgid "Member Other Information"
+msgstr ""
+
+#: charity/config/meta-box-config.php:361
+msgid "Services  Info"
+msgstr ""
+
+#: charity/config/meta-box-config.php:367
+msgid "Donation URL"
+msgstr ""
+
+#: charity/config/meta-box-config.php:374
+msgid "Collected amount"
+msgstr ""
+
+#: charity/config/meta-box-config.php:385
+msgid "Event Info"
+msgstr ""
+
+#: charity/config/meta-box-config.php:391
+msgid "Event Start Date"
+msgstr ""
+
+#: charity/config/meta-box-config.php:392
+msgid "Select start date for this event."
+msgstr ""
+
+#: charity/config/meta-box-config.php:398
+msgid "Event Start Time"
+msgstr ""
+
+#: charity/config/meta-box-config.php:399
+msgid ""
+"Select start time for this event. Default value of this field will be 00:00."
+msgstr ""
+
+#: charity/config/meta-box-config.php:405
+msgid "Event Address"
+msgstr ""
+
+#: charity/config/meta-box-config.php:406
+msgid ""
+"Insert address for this event. Leave empty if you don't want to use this."
+msgstr ""
+
+#: charity/config/meta-box-config.php:412
+msgid "Event Duration"
+msgstr ""
+
+#: charity/config/meta-box-config.php:413
+msgid ""
+"Insert duration of this event (10:00 a.m. - 01:00 p.m.). Leave empty if you "
+"don't want to use this."
+msgstr ""
+
+#: charity/config/meta-box-config.php:427
+msgid "Slider Options"
+msgstr ""
+
+#: charity/config/meta-box-config.php:434
+msgid "Slider Link"
+msgstr ""
+
+#: charity/config/meta-box-config.php:442
+msgid "Background Color"
+msgstr ""
+
+#: charity/config/meta-box-config.php:451
+msgid "Slider Heading Color"
+msgstr ""
+
+#: charity/config/meta-box-config.php:460
+msgid "Slider Heading Hover Color"
+msgstr ""
+
+#: charity/config/meta-box-config.php:469
+msgid "Slider Paragraph Color"
+msgstr ""
+
+#: charity/config/meta-box-config.php:478
+msgid "Pattern Upload"
+msgstr ""
+
+#: charity/functions/add-wordpress-suports.php:62
+msgid "Primary Menu"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:164
+#: charity/functions/functions.php:1286
+msgid "Install Required Plugins"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:165
+#: charity/functions/functions.php:1287
+msgid "Install Plugins"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:166
+#: charity/functions/functions.php:1288
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:167
+msgid "Something went wrong."
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:178
+#: charity/functions/class-tgm-plugin-activation.php:490
+#: charity/functions/functions.php:1300
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:179
+#: charity/functions/class-tgm-plugin-activation.php:1846
+#: charity/functions/functions.php:1301
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:180
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:517
+#: charity/functions/class-tgm-plugin-activation.php:2058
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:545
+#, php-format
+msgid "The following plugin was activated successfully: %s."
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:704
+msgid "Dismiss this notice"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1091
+msgid "External Link"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1096
+msgid "Private Repository"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1099
+msgid "Pre-Packaged"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1103
+msgid "WordPress Repository"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1106
+msgid "Required"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1106
+msgid "Recommended"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1109
+msgid "Not Installed"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1111
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1281
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1297
+msgid "Plugin"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1298
+msgid "Source"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1299
+msgid "Type"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1300
+msgid "Status"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1318
+msgid "Install"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1319
+msgid "Activate"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1829
+msgid "Install package not available."
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1830
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1831
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1832
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1833
+msgid "Plugin install failed."
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1834
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1845
+msgid "Plugin activation failed."
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1955
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1956
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1956
+#: charity/functions/class-tgm-plugin-activation.php:1965
+msgid "Show Details"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1956
+#: charity/functions/class-tgm-plugin-activation.php:1965
+msgid "Hide Details"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1957
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1958
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1962
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1963
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1964
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1965
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1966
+msgid "All installations have been completed."
+msgstr ""
+
+#: charity/functions/class-tgm-plugin-activation.php:1967
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: charity/functions/functions.php:1246
+msgid "ThemesKingdom Shortcodes"
+msgstr ""
+
+#: charity/functions/functions.php:1256
+msgid "Aqua Page Builder"
+msgstr ""
+
+#: charity/functions/functions.php:1289
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: charity/functions/functions.php:1302
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: charity/functions/functions.php:1454
+msgid "Page"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:18
+#: charity/functions/post-types-and-taxonomies.php:19
+#: charity/functions/post-types-and-taxonomies.php:30
+msgid "Sidebars"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:20
+#: charity/functions/post-types-and-taxonomies.php:58
+#: charity/functions/post-types-and-taxonomies.php:94
+#: charity/functions/post-types-and-taxonomies.php:131
+#: charity/functions/post-types-and-taxonomies.php:168
+#: charity/functions/post-types-and-taxonomies.php:205
+#: charity/functions/post-types-and-taxonomies.php:242
+msgid "Add New"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:21
+msgid "Add New Sidebar"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:22
+msgid "Edit Sidebar"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:23
+msgid "New Sidebar"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:24
+msgid "All Sidebars"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:25
+msgid "View this Sidebar"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:26
+msgid "Search Sidebars"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:27
+msgid "No Sidebars"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:28
+msgid "No Sidebars in Trash"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:56
+#: charity/functions/post-types-and-taxonomies.php:57
+#: charity/functions/post-types-and-taxonomies.php:68
+msgid "Advertising"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:59
+msgid "Add New Ad"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:60
+msgid "Edit Ad"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:61
+msgid "New Ad"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:62
+msgid "All Ads"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:63
+msgid "View this Ad"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:64
+msgid "Search Ads"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:65
+msgid "No Ads"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:66
+msgid "No Ads in Trash"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:92
+#: charity/functions/post-types-and-taxonomies.php:93
+#: charity/functions/post-types-and-taxonomies.php:104
+msgid "Gallery"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:95
+msgid "Add New Gallery Item"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:96
+msgid "Edit Gallery Item"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:97
+msgid "New Gallery Item"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:98
+msgid "All Gallery Items"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:99
+msgid "View this Gallery Item"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:100
+msgid "Search Gallery Items"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:101
+msgid "No Gallery Items"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:102
+msgid "No Gallery Items in Trash"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:129
+#: charity/functions/post-types-and-taxonomies.php:130
+#: charity/functions/post-types-and-taxonomies.php:141
+msgid "Events"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:132
+msgid "Add New Event"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:133
+msgid "Edit Event"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:134
+msgid "New Event"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:135
+msgid "All Event"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:136
+msgid "View this Event"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:137
+msgid "Search Events"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:138
+msgid "No Events"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:139
+msgid "No Events in Trash"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:166
+#: charity/functions/post-types-and-taxonomies.php:167
+msgid "Team"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:169
+msgid "Add New Team Member"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:170
+msgid "Edit Team Member"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:171
+msgid "New Team Member"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:172
+msgid "All Team Members"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:173
+msgid "View this Team Member"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:174
+msgid "Search Team Members"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:175
+msgid "No Team Members"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:176
+msgid "No Team Members in Trash"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:178
+msgid "Team Members"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:203
+#: charity/functions/post-types-and-taxonomies.php:204
+#: charity/functions/post-types-and-taxonomies.php:215
+msgid "Causes"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:206
+msgid "Add New Cause"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:207
+msgid "Edit Cause"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:208
+msgid "New Cause"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:209
+msgid "All Causes"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:210
+msgid "View this Cause"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:211
+msgid "Search Cause"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:212
+msgid "No Causes"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:213
+msgid "No Causes in Trash"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:240
+#: charity/functions/post-types-and-taxonomies.php:241
+#: charity/functions/post-types-and-taxonomies.php:252
+msgid "Slider"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:243
+msgid "Add New Slide"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:244
+msgid "Edit Slide"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:245
+msgid "New Slide"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:246
+msgid "All Slides"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:247
+msgid "View this Slide"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:248
+msgid "Search Slides"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:249
+msgid "No Slides"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:250
+msgid "No Slides in Trash"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:286
+msgid "Search Events Categories"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:287
+msgid "All Events Categories"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:288
+#: charity/functions/post-types-and-taxonomies.php:289
+msgid "Parent Events Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:290
+msgid "Edit Events Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:291
+msgid "Update Events Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:292
+msgid "Add New Events Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:293
+msgid "New Events Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:294
+msgid "Events Categories"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:304
+msgid "Search Causes Categories"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:305
+msgid "All Causes Categories"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:306
+#: charity/functions/post-types-and-taxonomies.php:307
+msgid "Parent Causes Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:308
+msgid "Edit Causes Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:309
+msgid "Update Causes Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:310
+msgid "Add New Causes Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:311
+msgid "New Causes Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:312
+msgid "Causes Categories"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:323
+msgid "Search Gallery Categories"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:324
+msgid "All Gallery Categories"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:325
+#: charity/functions/post-types-and-taxonomies.php:326
+msgid "Parent Gallery Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:327
+msgid "Edit Gallery Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:328
+msgid "Update Gallery Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:329
+msgid "Add New Gallery Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:330
+msgid "New Gallery Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:331
+msgid "Gallery Categories"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:342
+msgid "Search Team Categories"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:343
+msgid "All Team Categories"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:344
+#: charity/functions/post-types-and-taxonomies.php:345
+msgid "Parent Team Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:346
+msgid "Edit Team Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:347
+msgid "Update Team Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:348
+msgid "Add New Team Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:349
+msgid "New Team Category"
+msgstr ""
+
+#: charity/functions/post-types-and-taxonomies.php:350
+msgid "Team Categories"
+msgstr ""
+
+#: charity/functions/theme-settings.php:743
+msgid "All Categories"
+msgstr ""
+
+#: charity/functions/widgets.php:11
+msgid " - Facebook"
+msgstr ""
+
+#: charity/functions/widgets.php:61
+msgid "Facebook link:"
+msgstr ""
+
+#: charity/functions/widgets.php:81
+msgid " - Advertising Widget"
+msgstr ""
+
+#: charity/functions/widgets.php:166
+msgid "Fullwidth"
+msgstr ""
+
+#: charity/functions/widgets.php:167
+msgid "Halfwidth"
+msgstr ""
+
+#: charity/functions/widgets.php:185
+msgid " - Newsletter"
+msgstr ""
+
+#: charity/functions/widgets.php:285 charity/functions/widgets.php:374
+#: charity/functions/widgets.php:478
+msgid "Title:"
+msgstr ""
+
+#: charity/functions/widgets.php:289
+msgid "Newsletter Text:"
+msgstr ""
+
+#: charity/functions/widgets.php:293
+msgid "Chose Service:"
+msgstr ""
+
+#: charity/functions/widgets.php:302
+msgid "MailChimp API Key:"
+msgstr ""
+
+#: charity/functions/widgets.php:307
+msgid "MailChimp API List:"
+msgstr ""
+
+#: charity/functions/widgets.php:309
+msgid "Grab your Lists Unique Id by going to "
+msgstr ""
+
+#: charity/functions/widgets.php:309 charity/functions/widgets.php:314
+msgid "here"
+msgstr ""
+
+#: charity/functions/widgets.php:309
+msgid ""
+" Click the \"settings\" link for the list - the Unique Id is at the bottom "
+"of that page."
+msgstr ""
+
+#: charity/functions/widgets.php:312
+msgid "MadMimi Unique Number:"
+msgstr ""
+
+#: charity/functions/widgets.php:314
+msgid "Insert your MadMimi unique number.Click "
+msgstr ""
+
+#: charity/functions/widgets.php:314
+msgid ""
+" or you can find this number when you log in into your MadMimi account, "
+"under WEBFORM click on SHARE and you will get link like this http://mad.ly/"
+"signups/<strong>XXXXX</strong>/join. Insert this number here."
+msgstr ""
+
+#: charity/functions/widgets.php:334
+msgid " - Twitter Stream"
+msgstr ""
+
+#: charity/functions/widgets.php:379
+msgid "Number of tweets:"
+msgstr ""
+
+#: charity/functions/widgets.php:384
+msgid "Twitter will not work unless you have set up Twitter authentication at "
+msgstr ""
+
+#: charity/functions/widgets.php:384
+msgid "theme administration"
+msgstr ""
+
+#: charity/functions/widgets.php:403
+msgid " - Donate Widget"
+msgstr ""
+
+#: charity/functions/widgets.php:423
+msgid "Donated"
+msgstr ""
+
+#: charity/functions/widgets.php:424
+msgid "Target"
+msgstr ""
+
+#: charity/functions/widgets.php:432
+msgid "Donate Here"
+msgstr ""
+
+#: charity/functions/widgets.php:483
+msgid "Widget Text"
+msgstr ""
+
+#: charity/functions/widgets.php:488
+msgid "Current amount of donations"
+msgstr ""
+
+#: charity/functions/widgets.php:493
+msgid "Target amount of donations"
+msgstr ""
+
+#: charity/functions/widgets.php:498
+msgid "Donate URL"
+msgstr ""
+
+#: charity/templates/template-contact.php:116
+msgid "Name*"
+msgstr ""
+
+#: charity/templates/template-contact.php:122
+msgid "Email*"
+msgstr ""
+
+#: charity/templates/template-contact.php:141
+msgid "Cant read? Refresh Image: "
+msgstr ""
+
+#: charity/templates/template-contact.php:165
+msgid "Invalid Captcha!"
+msgstr ""
+
+#: charity/templates/template-contact.php:181
+msgid "Send a Message"
+msgstr ""
+
+#: charity/templates/template_gallery.php:56
+msgid "All"
+msgstr ""
+
+#: charity/templates/parts/content-front-page.php:5
+#, php-format
+msgid "Permanent Link to %s"
+msgstr ""
+
+#: charity/templates/parts/content-front-page.php:11
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: charity/templates/parts/content-none.php:15
+#: charity/templates/parts/content-none.php:26
+msgid "Posted:"
+msgstr ""
+
+#: charity/templates/parts/content-none.php:16
+#: charity/templates/parts/content-none.php:27
+msgid "By:"
+msgstr ""
+
+#: charity/templates/parts/content-none.php:17
+#: charity/templates/parts/content-none.php:28
+msgid "Categories:"
+msgstr ""
+
+#: charity/templates/parts/content-none.php:18
+#: charity/templates/parts/content-none.php:29
+msgid "Comments:"
+msgstr ""
+
+#: charity/templates/parts/entry-meta.php:24
+#: charity/templates/parts/format-gallery.php:78
+#: charity/templates/parts/format-standard.php:84
+#: charity/templates/parts/format-video.php:67
+msgid "Read More"
+msgstr ""
+
+#: charity/templates/parts/entry-meta.php:34
+msgid "Featured Post"
+msgstr ""
+
+#: charity/templates/parts/entry-social.php:34
+msgid "Facebook"
+msgstr ""
+
+#: charity/templates/parts/entry-social.php:43
+msgid "Twitter"
+msgstr ""
+
+#: charity/templates/parts/entry-social.php:52
+msgid "Google+"
+msgstr ""
+
+#: charity/templates/parts/entry-social.php:61
+msgid "LinkedIn"
+msgstr ""
+
+#: charity/templates/parts/entry-social.php:71
+msgid "Pinterest"
+msgstr ""
+
+#: charity/templates/parts/entry-social.php:80
+msgid "Stumbleupon"
+msgstr ""
+
+#: charity/templates/parts/format-audio.php:104
+#: charity/templates/parts/format-gallery.php:169
+#: charity/templates/parts/format-image.php:96
+#: charity/templates/parts/format-quote.php:73
+#: charity/templates/parts/format-standard.php:210
+#: charity/templates/parts/format-video.php:152
+msgid "Continue Reading"
+msgstr ""
+
+#: charity/templates/parts/header-news.php:19
+msgid "LATEST NEWS:"
+msgstr ""
+
+#: charity/templates/parts/navigation.php:44
+msgid "Type and hit enter..."
+msgstr ""

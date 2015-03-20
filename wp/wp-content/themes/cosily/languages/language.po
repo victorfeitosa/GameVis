@@ -1,0 +1,1632 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cosily\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-15 12:21+0100\n"
+"PO-Revision-Date: 2013-08-15 12:21+0100\n"
+"Last-Translator: ThemesKingdom <info@themeskingdom.com>\n"
+"Language-Team: ThemesKingdom <info@themeskingdom.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: /Users/justdot/Desktop/htdocs/!bitbucket/wp-content/"
+"themes/\n"
+"X-Generator: Poedit 1.5.3\n"
+"X-Poedit-SearchPath-0: cosily\n"
+
+#: cosily/404.php:12
+msgid "404 - Error"
+msgstr ""
+
+#: cosily/404.php:13
+msgid "Page not found"
+msgstr ""
+
+#: cosily/404.php:26
+msgid ""
+"Looks like the page you were looking for does not exist. Sorry about that."
+msgstr ""
+
+#: cosily/404.php:27
+msgid "Check the web address for typos, or go to"
+msgstr ""
+
+#: cosily/404.php:27
+msgid "HOME PAGE"
+msgstr ""
+
+#: cosily/ajax.php:37 cosily/ajax.php:118 cosily/single-rooms.php:161
+msgid "Book Now"
+msgstr ""
+
+#: cosily/ajax.php:117 cosily/single-rooms.php:102
+msgid "Per Night"
+msgstr ""
+
+#: cosily/ajax.php:131
+msgid "More about this room"
+msgstr ""
+
+#: cosily/ajax.php:133
+msgid "Policies"
+msgstr ""
+
+#: cosily/archive.php:12
+msgid "Archive"
+msgstr ""
+
+#: cosily/comments.php:13
+msgid "- Your comment is awaiting moderation."
+msgstr ""
+
+#: cosily/comments.php:13
+msgid " - Edit - "
+msgstr ""
+
+#: cosily/comments.php:27
+msgid "No comments so far!"
+msgstr ""
+
+#: cosily/comments.php:29
+msgid "Comments"
+msgstr ""
+
+#: cosily/comments.php:41
+msgid "You must be"
+msgstr ""
+
+#: cosily/comments.php:41
+msgid "logged in"
+msgstr ""
+
+#: cosily/comments.php:41
+msgid "to post a comment."
+msgstr ""
+
+#: cosily/comments.php:92
+msgid "Leave a Reply"
+msgstr ""
+
+#: cosily/comments.php:92
+msgid "Leave a Comment"
+msgstr ""
+
+#: cosily/comments.php:99
+msgid "Name (required)"
+msgstr ""
+
+#: cosily/comments.php:100
+msgid "E-mail (required)"
+msgstr ""
+
+#: cosily/comments.php:103 cosily/inc/room-options.php:127
+#: cosily/page-templates/_reservations.php:589
+msgid "Message"
+msgstr ""
+
+#: cosily/comments.php:107
+msgid "Post Comment"
+msgstr ""
+
+#: cosily/comments.php:120
+msgid "Comments are closed"
+msgstr ""
+
+#: cosily/functions.php:38
+msgid "Primary Menu"
+msgstr ""
+
+#: cosily/functions.php:39
+msgid "Right Menu"
+msgstr ""
+
+#: cosily/functions.php:176
+msgid "Select Sidebar"
+msgstr ""
+
+#: cosily/functions.php:210
+msgid "Select sidebar for this category."
+msgstr ""
+
+#: cosily/functions.php:1596
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:164
+msgid "Install Required Plugins"
+msgstr ""
+
+#: cosily/functions.php:1597
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:165
+msgid "Install Plugins"
+msgstr ""
+
+#: cosily/functions.php:1598
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:166
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: cosily/functions.php:1599
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: cosily/functions.php:1610
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:178
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:490
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: cosily/functions.php:1611
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:179
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1846
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: cosily/functions.php:1612
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: cosily/header.php:24
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: cosily/search.php:12 cosily/page-templates/_reservations.php:115
+#: cosily/page-templates/front-page.php:171
+msgid "Search"
+msgstr ""
+
+#: cosily/search.php:37
+msgid "No posts found. Try a different search?"
+msgstr ""
+
+#: cosily/single-rooms.php:101
+msgid "From "
+msgstr ""
+
+#: cosily/single-rooms.php:112 cosily/inc/room-options.php:125
+#: cosily/page-templates/_reservations.php:90
+#: cosily/page-templates/front-page.php:148
+msgid "Arrival Date"
+msgstr ""
+
+#: cosily/single-rooms.php:116 cosily/inc/room-options.php:126
+#: cosily/page-templates/_reservations.php:93
+#: cosily/page-templates/front-page.php:152
+msgid "Departure Date"
+msgstr ""
+
+#: cosily/single-rooms.php:121
+msgid "Check Availability"
+msgstr ""
+
+#: cosily/single.php:169 cosily/page-templates/_part_loop.php:120
+msgid "Posted: "
+msgstr ""
+
+#: cosily/single.php:173 cosily/page-templates/_part_loop.php:124
+msgid "By:"
+msgstr ""
+
+#: cosily/single.php:177 cosily/page-templates/_part_loop.php:130
+msgid "Categories:"
+msgstr ""
+
+#: cosily/single.php:195 cosily/page-templates/_part_loop.php:150
+msgid "Comments: "
+msgstr ""
+
+#: cosily/inc/admin-settings.php:364
+msgid ""
+"Page builder allows you to create unique homepage in just few clicks. </"
+"br>Simply add and drag-and-drop elements on desired position."
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:10
+msgid "Search Gallery Categories"
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:11
+msgid "All Gallery Categories"
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:12 cosily/inc/custom-taxonomies.php:13
+msgid "Parent Gallery Category"
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:14
+msgid "Edit Gallery Category"
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:15
+msgid "Update Gallery Category"
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:16
+msgid "Add New Gallery Category"
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:17
+msgid "New Gallery Category"
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:18
+msgid "Gallery Categories"
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:28
+msgid "Search Room Categories"
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:29
+msgid "All Rooms Categories"
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:30 cosily/inc/custom-taxonomies.php:31
+msgid "Parent Room Category"
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:32
+msgid "Edit Room Category"
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:33
+msgid "Update Room Category"
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:34
+msgid "Add New Room Category"
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:35
+msgid "New Room Category"
+msgstr ""
+
+#: cosily/inc/custom-taxonomies.php:36
+msgid "Room Categories"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:11 cosily/inc/meta-boxes.php:17
+msgid "Advertisement Link"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:25
+msgid "Custom Banner Code"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:39 cosily/inc/post-types.php:100
+#: cosily/inc/post-types.php:101 cosily/inc/post-types.php:112
+msgid "Advertisement"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:45
+msgid "Banner Stats"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:59 cosily/inc/meta-boxes.php:66
+msgid "VIdeo Link"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:78
+msgid "Slider Fields"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:97
+msgid "Audio Options"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:104
+msgid "Audio Link"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:112
+msgid "Artist/Song Name"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:124 cosily/inc/meta-boxes.php:131
+msgid "Quote Text"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:139
+msgid "Quote Author"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:151
+msgid "Link"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:158
+msgid "Link Text"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:165
+msgid "Link Url"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:177
+msgid "Page Settings"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:184
+msgid "SubHeadline"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:199 cosily/inc/meta-boxes.php:205
+msgid "Sidebar Position"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:211
+msgid "Select sidebar"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:225
+msgid "Testimonial"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:233
+msgid "Job Position"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:241
+msgid "E-mail"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:254
+msgid "Slider Options"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:261
+msgid "Slider Link"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:268 cosily/inc/meta-boxes.php:388
+#: cosily/inc/shortcodes/settings.php:214
+#: cosily/inc/shortcodes/settings.php:341
+msgid "Background Color"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:276
+msgid "Slider Heading Color"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:284
+msgid "Slider Heading Hover Color"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:292
+msgid "Slider Paragraph Color"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:300
+msgid "Pattern Upload"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:313
+msgid "Room Options"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:320
+msgid "Price per night"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:328
+msgid "Number of beds"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:336
+msgid "Room Description"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:348
+msgid "Room Policy"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:360
+msgid "External Link Reservation"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:368
+msgid "External Link Text"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:381
+msgid "Heading Colors"
+msgstr ""
+
+#: cosily/inc/meta-boxes.php:396
+msgid "Headline Color"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:87
+msgid "Room Reservation:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:173 cosily/inc/room-options.php:68
+msgid "The room option already exists"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:225
+msgid "Select Room:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:229
+msgid "Select Room"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:244
+#: cosily/page-templates/_reservations.php:83
+#: cosily/page-templates/_reservations.php:356
+msgid "Arrival Date:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:249
+#: cosily/page-templates/_reservations.php:84
+#: cosily/page-templates/_reservations.php:357
+msgid "Departure Date:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:255
+msgid "Message:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:261
+msgid "E-Mail:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:267
+#: cosily/inc/widgets/widget-newsletter.php:131
+#: cosily/inc/widgets/widget-twitter.php:49
+msgid "Title:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:271 cosily/inc/room-options.php:212
+#: cosily/page-templates/_reservations.php:560
+msgid "Mr."
+msgstr ""
+
+#: cosily/inc/new-reservation.php:272 cosily/inc/room-options.php:213
+#: cosily/page-templates/_reservations.php:561
+msgid "Mrs."
+msgstr ""
+
+#: cosily/inc/new-reservation.php:273 cosily/inc/room-options.php:214
+#: cosily/page-templates/_reservations.php:562
+msgid "Ms"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:281
+msgid "First Name:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:287
+msgid "Last Name:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:293
+msgid "Country:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:299
+msgid "Address:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:305
+msgid "City:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:311
+msgid "State:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:316
+msgid "Postal Code:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:321
+msgid "Phone:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:326
+msgid "Price:"
+msgstr ""
+
+#: cosily/inc/new-reservation.php:332
+msgid "Add"
+msgstr ""
+
+#: cosily/inc/post-types.php:14 cosily/inc/post-types.php:15
+#: cosily/inc/post-types.php:26
+msgid "Sidebars"
+msgstr ""
+
+#: cosily/inc/post-types.php:16 cosily/inc/post-types.php:59
+#: cosily/inc/post-types.php:102 cosily/inc/post-types.php:145
+#: cosily/inc/post-types.php:183 cosily/inc/post-types.php:223
+#: cosily/inc/post-types.php:263
+msgid "Add New"
+msgstr ""
+
+#: cosily/inc/post-types.php:17
+msgid "Add New Sidebar"
+msgstr ""
+
+#: cosily/inc/post-types.php:18
+msgid "Edit Sidebar"
+msgstr ""
+
+#: cosily/inc/post-types.php:19
+msgid "New Sidebar"
+msgstr ""
+
+#: cosily/inc/post-types.php:20
+msgid "All Sidebars"
+msgstr ""
+
+#: cosily/inc/post-types.php:21
+msgid "View this Sidebar"
+msgstr ""
+
+#: cosily/inc/post-types.php:22
+msgid "Search Sidebars"
+msgstr ""
+
+#: cosily/inc/post-types.php:23
+msgid "No Sidebars"
+msgstr ""
+
+#: cosily/inc/post-types.php:24
+msgid "No Sidebars in Trash"
+msgstr ""
+
+#: cosily/inc/post-types.php:57 cosily/inc/post-types.php:69
+msgid "Rooms"
+msgstr ""
+
+#: cosily/inc/post-types.php:58
+msgid "Room"
+msgstr ""
+
+#: cosily/inc/post-types.php:60
+msgid "Add New Room"
+msgstr ""
+
+#: cosily/inc/post-types.php:61
+msgid "Edit Room"
+msgstr ""
+
+#: cosily/inc/post-types.php:62
+msgid "New Room"
+msgstr ""
+
+#: cosily/inc/post-types.php:63
+msgid "All Rooms"
+msgstr ""
+
+#: cosily/inc/post-types.php:64
+msgid "View this Room"
+msgstr ""
+
+#: cosily/inc/post-types.php:65
+msgid "Search Rooms"
+msgstr ""
+
+#: cosily/inc/post-types.php:66
+msgid "No Rooms"
+msgstr ""
+
+#: cosily/inc/post-types.php:67
+msgid "No Rooms in Trash"
+msgstr ""
+
+#: cosily/inc/post-types.php:103
+msgid "Add New Ad"
+msgstr ""
+
+#: cosily/inc/post-types.php:104
+msgid "Edit Ad"
+msgstr ""
+
+#: cosily/inc/post-types.php:105
+msgid "New Ad"
+msgstr ""
+
+#: cosily/inc/post-types.php:106
+msgid "All Ads"
+msgstr ""
+
+#: cosily/inc/post-types.php:107
+msgid "View this Ad"
+msgstr ""
+
+#: cosily/inc/post-types.php:108
+msgid "Search Ads"
+msgstr ""
+
+#: cosily/inc/post-types.php:109
+msgid "No Ads"
+msgstr ""
+
+#: cosily/inc/post-types.php:110
+msgid "No Ads in Trash"
+msgstr ""
+
+#: cosily/inc/post-types.php:143 cosily/inc/post-types.php:144
+#: cosily/inc/post-types.php:155
+msgid "Slides"
+msgstr ""
+
+#: cosily/inc/post-types.php:146
+msgid "Add New Slide"
+msgstr ""
+
+#: cosily/inc/post-types.php:147
+msgid "Edit Slide"
+msgstr ""
+
+#: cosily/inc/post-types.php:148
+msgid "New Slide"
+msgstr ""
+
+#: cosily/inc/post-types.php:149
+msgid "All Slides"
+msgstr ""
+
+#: cosily/inc/post-types.php:150
+msgid "View this Slide"
+msgstr ""
+
+#: cosily/inc/post-types.php:151
+msgid "Search Slides"
+msgstr ""
+
+#: cosily/inc/post-types.php:152
+msgid "No Slides"
+msgstr ""
+
+#: cosily/inc/post-types.php:153
+msgid "No Slides in Trash"
+msgstr ""
+
+#: cosily/inc/post-types.php:181 cosily/inc/post-types.php:182
+#: cosily/inc/post-types.php:193
+msgid "Gallery"
+msgstr ""
+
+#: cosily/inc/post-types.php:184
+msgid "Add New Gallery Item"
+msgstr ""
+
+#: cosily/inc/post-types.php:185
+msgid "Edit Gallery Item"
+msgstr ""
+
+#: cosily/inc/post-types.php:186
+msgid "New Gallery Item"
+msgstr ""
+
+#: cosily/inc/post-types.php:187
+msgid "All Gallery Items"
+msgstr ""
+
+#: cosily/inc/post-types.php:188
+msgid "View this Gallery Item"
+msgstr ""
+
+#: cosily/inc/post-types.php:189
+msgid "Search Gallery Items"
+msgstr ""
+
+#: cosily/inc/post-types.php:190
+msgid "No Gallery Items"
+msgstr ""
+
+#: cosily/inc/post-types.php:191
+msgid "No Gallery Items in Trash"
+msgstr ""
+
+#: cosily/inc/post-types.php:221 cosily/inc/post-types.php:222
+#: cosily/inc/post-types.php:233
+msgid "Testimonials"
+msgstr ""
+
+#: cosily/inc/post-types.php:224
+msgid "Add New Testimonial"
+msgstr ""
+
+#: cosily/inc/post-types.php:225
+msgid "Edit Testimonial"
+msgstr ""
+
+#: cosily/inc/post-types.php:226
+msgid "New Testimonial"
+msgstr ""
+
+#: cosily/inc/post-types.php:227
+msgid "All Testimonials"
+msgstr ""
+
+#: cosily/inc/post-types.php:228
+msgid "View this Testimonial"
+msgstr ""
+
+#: cosily/inc/post-types.php:229
+msgid "Search Testimonials"
+msgstr ""
+
+#: cosily/inc/post-types.php:230
+msgid "No Testimonials"
+msgstr ""
+
+#: cosily/inc/post-types.php:231
+msgid "No Testimonials in Trash"
+msgstr ""
+
+#: cosily/inc/post-types.php:261 cosily/inc/post-types.php:262
+#: cosily/inc/post-types.php:273
+msgid "Page Builder"
+msgstr ""
+
+#: cosily/inc/post-types.php:264
+msgid "Add New Page Builder"
+msgstr ""
+
+#: cosily/inc/post-types.php:265
+msgid "Edit Page Builder"
+msgstr ""
+
+#: cosily/inc/post-types.php:266
+msgid "New Page Builder"
+msgstr ""
+
+#: cosily/inc/post-types.php:267
+msgid "All Page Builder"
+msgstr ""
+
+#: cosily/inc/post-types.php:268
+msgid "View this Page Builder"
+msgstr ""
+
+#: cosily/inc/post-types.php:269
+msgid "Search Page Builder"
+msgstr ""
+
+#: cosily/inc/post-types.php:270
+msgid "No Page Builder"
+msgstr ""
+
+#: cosily/inc/post-types.php:271
+msgid "No Page Builder in Trash"
+msgstr ""
+
+#: cosily/inc/room-options.php:123
+msgid "No"
+msgstr ""
+
+#: cosily/inc/room-options.php:124
+msgid "Room Name"
+msgstr ""
+
+#: cosily/inc/room-options.php:128
+msgid "E-Mail"
+msgstr ""
+
+#: cosily/inc/room-options.php:129
+msgid "Title"
+msgstr ""
+
+#: cosily/inc/room-options.php:130
+msgid "First Name"
+msgstr ""
+
+#: cosily/inc/room-options.php:131
+msgid "Last Name"
+msgstr ""
+
+#: cosily/inc/room-options.php:132
+msgid "Country"
+msgstr ""
+
+#: cosily/inc/room-options.php:133
+msgid "Address"
+msgstr ""
+
+#: cosily/inc/room-options.php:134
+msgid "City"
+msgstr ""
+
+#: cosily/inc/room-options.php:135
+msgid "State"
+msgstr ""
+
+#: cosily/inc/room-options.php:136
+msgid "Postal Code"
+msgstr ""
+
+#: cosily/inc/room-options.php:137
+msgid "Phone"
+msgstr ""
+
+#: cosily/inc/room-options.php:138
+msgid "Price"
+msgstr ""
+
+#: cosily/inc/room-options.php:139 cosily/page-templates/_reservations.php:69
+#: cosily/page-templates/_reservations.php:187
+#: cosily/page-templates/_reservations.php:218
+#: cosily/page-templates/_reservations.php:314
+msgid "Confirmation"
+msgstr ""
+
+#: cosily/inc/room-options.php:140
+msgid "Edit Reservation"
+msgstr ""
+
+#: cosily/inc/room-options.php:189
+msgid "Confirm"
+msgstr ""
+
+#: cosily/inc/room-options.php:192
+msgid "Edit "
+msgstr ""
+
+#: cosily/inc/room-options.php:193
+msgid " Delete"
+msgstr ""
+
+#: cosily/inc/room-options.php:212
+msgid "mr."
+msgstr ""
+
+#: cosily/inc/room-options.php:213
+msgid "mrs."
+msgstr ""
+
+#: cosily/inc/room-options.php:214 cosily/page-templates/_reservations.php:562
+msgid "ms"
+msgstr ""
+
+#: cosily/inc/room-options.php:227
+msgid "Save"
+msgstr ""
+
+#: cosily/inc/room-options.php:239
+msgid "items"
+msgstr ""
+
+#: cosily/inc/theme-settings.php:868 cosily/inc/theme-settings.php:1018
+msgid "All Categories"
+msgstr ""
+
+#: cosily/inc/theme-settings.php:944
+msgid "This room option already exists"
+msgstr ""
+
+#: cosily/inc/shortcodes/popup.php:20
+msgid "Insert Shortcode"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:13
+#: cosily/inc/shortcodes/settings.php:254
+#: cosily/inc/shortcodes/settings.php:361
+msgid "Button URL"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:14
+#: cosily/inc/shortcodes/settings.php:255
+#: cosily/inc/shortcodes/settings.php:362
+msgid "Add the button's url eg http://example.com"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:21
+#: cosily/inc/shortcodes/settings.php:262
+#: cosily/inc/shortcodes/settings.php:369
+msgid "Button's Style"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:22
+#: cosily/inc/shortcodes/settings.php:370
+msgid "Select the button's style, ie the buttons colour"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:36
+#: cosily/inc/shortcodes/settings.php:277
+#: cosily/inc/shortcodes/settings.php:384
+msgid "Button's Text"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:37
+#: cosily/inc/shortcodes/settings.php:278
+#: cosily/inc/shortcodes/settings.php:385
+msgid "Add the button's text"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:51
+msgid "Type of list"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:52
+msgid "Select the list type"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:64
+msgid "List Text"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:65
+msgid "Add the list text"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:80
+#: cosily/inc/shortcodes/settings.php:302
+msgid "Column Type"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:81
+#: cosily/inc/shortcodes/settings.php:303
+msgid "Select the type of the column."
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:91
+#: cosily/inc/shortcodes/settings.php:314
+msgid "Last Column"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:92
+#: cosily/inc/shortcodes/settings.php:315
+msgid "Pick if column is last."
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:101
+msgid "Column Content"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:102
+msgid "Add the column content."
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:117
+msgid "Toggle Title"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:127
+msgid "Toggle Content"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:128
+msgid "Add the toggle content."
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:137
+msgid "Default Value"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:138
+msgid "Chose to show either open or closed toggle content."
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:146
+msgid "Insert Toggle Content Shortcode"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:158
+msgid "Tabbed Title"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:168
+msgid "Tabbed Content"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:169
+msgid "Add the tabbed content."
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:180
+#: cosily/inc/shortcodes/settings.php:417
+msgid "Insert Tabbed Content Shortcode"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:188
+msgid "Type of dropcap"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:189
+msgid "Select the dropcap type"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:199
+#: cosily/inc/shortcodes/settings.php:228
+msgid "Insert starting letter to use as dropcap."
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:220
+#: cosily/inc/shortcodes/settings.php:346
+msgid "Text Color"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:227
+msgid "Insert yor text"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:244
+#: cosily/inc/shortcodes/settings.php:351
+msgid "Use Button"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:245
+msgid "Chose if you want to use Button inside Call To Action"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:263
+msgid "Select the button's style, ie the buttons color"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:286
+msgid "Call To Action Text"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:287
+msgid "Add Call To Action Text"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:324
+msgid "Table Title"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:325
+msgid "Price table title."
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:333
+msgid "Table Subtitle"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:334
+msgid "Price table subtitle."
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:352
+msgid "Chose if you want to use Button inside Price Table"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:395
+msgid "Price Row Text"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:405
+msgid "Price Row Price"
+msgstr ""
+
+#: cosily/inc/shortcodes/settings.php:406
+msgid "Add the price to the element."
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:167
+msgid "Something went wrong."
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:180
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:517
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2058
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:545
+#, php-format
+msgid "The following plugin was activated successfully: %s."
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:704
+msgid "Dismiss this notice"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1091
+msgid "External Link"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1096
+msgid "Private Repository"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1099
+msgid "Pre-Packaged"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1103
+msgid "WordPress Repository"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1106
+msgid "Required"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1106
+msgid "Recommended"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1109
+msgid "Not Installed"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1111
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1281
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1297
+msgid "Plugin"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1298
+msgid "Source"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1299
+msgid "Type"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1300
+msgid "Status"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1318
+msgid "Install"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1319
+msgid "Activate"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1829
+msgid "Install package not available."
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1830
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1831
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1832
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1833
+msgid "Plugin install failed."
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1834
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1845
+msgid "Plugin activation failed."
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1955
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1956
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1956
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1965
+msgid "Show Details"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1956
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1965
+msgid "Hide Details"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1957
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1958
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1962
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1963
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1964
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1965
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1966
+msgid "All installations have been completed."
+msgstr ""
+
+#: cosily/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1967
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: cosily/inc/widgets/widget-ad.php:9
+msgid " - Advertising Widget"
+msgstr ""
+
+#: cosily/inc/widgets/widget-ad.php:122
+msgid "Fullwidth"
+msgstr ""
+
+#: cosily/inc/widgets/widget-ad.php:123
+msgid "Halfwidth"
+msgstr ""
+
+#: cosily/inc/widgets/widget-facebook.php:9
+msgid " - Facebook"
+msgstr ""
+
+#: cosily/inc/widgets/widget-facebook.php:59
+msgid "Facebook link:"
+msgstr ""
+
+#: cosily/inc/widgets/widget-newsletter.php:10
+msgid " - Newsletter"
+msgstr ""
+
+#: cosily/inc/widgets/widget-newsletter.php:135
+msgid "Newsletter Text:"
+msgstr ""
+
+#: cosily/inc/widgets/widget-newsletter.php:139
+msgid "Chose Service:"
+msgstr ""
+
+#: cosily/inc/widgets/widget-newsletter.php:148
+msgid "MailChimp API Key:"
+msgstr ""
+
+#: cosily/inc/widgets/widget-newsletter.php:153
+msgid "MailChimp API List:"
+msgstr ""
+
+#: cosily/inc/widgets/widget-newsletter.php:155
+msgid "Grab your Lists Unique Id by going to "
+msgstr ""
+
+#: cosily/inc/widgets/widget-newsletter.php:155
+#: cosily/inc/widgets/widget-newsletter.php:160
+msgid "here"
+msgstr ""
+
+#: cosily/inc/widgets/widget-newsletter.php:155
+msgid ""
+" Click the \"settings\" link for the list - the Unique Id is at the bottom "
+"of that page."
+msgstr ""
+
+#: cosily/inc/widgets/widget-newsletter.php:158
+msgid "MadMimi Unique Number:"
+msgstr ""
+
+#: cosily/inc/widgets/widget-newsletter.php:160
+msgid "Insert your MadMimi unique number.Click "
+msgstr ""
+
+#: cosily/inc/widgets/widget-newsletter.php:160
+msgid ""
+" or you can find this number when you log in into your MadMimi account, "
+"under WEBFORM click on SHARE and you will get link like this http://mad.ly/"
+"signups/<strong>XXXXX</strong>/join. Insert this number here."
+msgstr ""
+
+#: cosily/inc/widgets/widget-twitter.php:9
+msgid " - Twitter Stream"
+msgstr ""
+
+#: cosily/inc/widgets/widget-twitter.php:54
+msgid "Number of tweets:"
+msgstr ""
+
+#: cosily/inc/widgets/widget-twitter.php:59
+msgid "Twitter will not work unless you have set up Twitter authentication at "
+msgstr ""
+
+#: cosily/inc/widgets/widget-twitter.php:59
+msgid "theme administration"
+msgstr ""
+
+#: cosily/page-templates/_contact.php:61
+msgid "View on Google Maps"
+msgstr ""
+
+#: cosily/page-templates/_contact.php:251
+msgid "Say Hello"
+msgstr ""
+
+#: cosily/page-templates/_contact.php:254
+msgid "Name *"
+msgstr ""
+
+#: cosily/page-templates/_contact.php:255
+#: cosily/page-templates/_reservations.php:565
+msgid "Email *"
+msgstr ""
+
+#: cosily/page-templates/_contact.php:258
+msgid "Message *"
+msgstr ""
+
+#: cosily/page-templates/_contact.php:266
+msgid "Cant read? Refresh Image: "
+msgstr ""
+
+#: cosily/page-templates/_contact.php:276
+msgid "Send Message"
+msgstr ""
+
+#: cosily/page-templates/_contact.php:293
+msgid "Invalid Captcha!"
+msgstr ""
+
+#: cosily/page-templates/_gallery_3_columns.php:63
+#: cosily/page-templates/_gallery_4_columns.php:62
+msgid "Filter"
+msgstr ""
+
+#: cosily/page-templates/_gallery_3_columns.php:66
+#: cosily/page-templates/_gallery_4_columns.php:65
+msgid "All"
+msgstr ""
+
+#: cosily/page-templates/_part_loop.php:89
+#: cosily/page-templates/_part_loop.php:99
+#: cosily/page-templates/_part_loop.php:109
+#: cosily/page-templates/_part_loop.php:160
+#: cosily/page-templates/_part_onecolumn.php:76
+#: cosily/page-templates/_part_threecolumns.php:70
+#: cosily/page-templates/_part_threecolumns.php:385
+#: cosily/page-templates/_part_threecolumns.php:690
+#: cosily/page-templates/_part_twocolumns.php:69
+#: cosily/page-templates/_part_twocolumns.php:382
+msgid "Read More"
+msgstr ""
+
+#: cosily/page-templates/_part_onecolumn.php:71
+#: cosily/page-templates/_part_threecolumns.php:60
+#: cosily/page-templates/_part_threecolumns.php:375
+#: cosily/page-templates/_part_threecolumns.php:682
+#: cosily/page-templates/_part_twocolumns.php:64
+#: cosily/page-templates/_part_twocolumns.php:377
+msgid "Posted:"
+msgstr ""
+
+#: cosily/page-templates/_part_onecolumn.php:108
+#: cosily/page-templates/_part_onecolumn.php:169
+#: cosily/page-templates/_part_threecolumns.php:97
+#: cosily/page-templates/_part_threecolumns.php:284
+#: cosily/page-templates/_part_threecolumns.php:411
+#: cosily/page-templates/_part_threecolumns.php:593
+#: cosily/page-templates/_part_threecolumns.php:717
+#: cosily/page-templates/_part_threecolumns.php:899
+#: cosily/page-templates/_part_twocolumns.php:102
+#: cosily/page-templates/_part_twocolumns.php:288
+#: cosily/page-templates/_part_twocolumns.php:414
+#: cosily/page-templates/_part_twocolumns.php:602
+msgid "View all"
+msgstr ""
+
+#: cosily/page-templates/_part_onecolumn.php:239
+#: cosily/page-templates/_part_threecolumns.php:166
+#: cosily/page-templates/_part_threecolumns.php:477
+#: cosily/page-templates/_part_threecolumns.php:783
+#: cosily/page-templates/_part_twocolumns.php:189
+#: cosily/page-templates/_part_twocolumns.php:486
+msgid "Prev"
+msgstr ""
+
+#: cosily/page-templates/_part_onecolumn.php:240
+#: cosily/page-templates/_part_threecolumns.php:167
+#: cosily/page-templates/_part_threecolumns.php:478
+#: cosily/page-templates/_part_threecolumns.php:784
+#: cosily/page-templates/_part_twocolumns.php:190
+#: cosily/page-templates/_part_twocolumns.php:487
+#: cosily/page-templates/front-page.php:103
+msgid "Next"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:55
+#: cosily/page-templates/_reservations.php:204
+#: cosily/page-templates/_reservations.php:300
+msgid "Choose your room"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:56
+#: cosily/page-templates/_reservations.php:205
+#: cosily/page-templates/_reservations.php:301
+msgid "-  Step 1  -"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:62
+#: cosily/page-templates/_reservations.php:211
+#: cosily/page-templates/_reservations.php:283
+#: cosily/page-templates/_reservations.php:307
+#: cosily/page-templates/_reservations.php:600
+msgid "Submit Reservation"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:63
+#: cosily/page-templates/_reservations.php:212
+#: cosily/page-templates/_reservations.php:308
+msgid "-  Step 2  -"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:70
+#: cosily/page-templates/_reservations.php:219
+#: cosily/page-templates/_reservations.php:315
+msgid "-  Step 3  -"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:97
+#: cosily/page-templates/front-page.php:157
+msgid "Guests"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:125
+msgid "Please select arrival date, departure date and number of guests."
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:188
+msgid "Step 3"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:228
+msgid "Your reservation has been submitted"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:229
+msgid "We will let you know soon if your reservation has been approved."
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:243
+#: cosily/page-templates/_reservations.php:373
+msgid "Room Price"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:248
+#: cosily/page-templates/_reservations.php:377
+msgid "Room Taxes"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:252
+msgid "Total (incl. tax)"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:260
+msgid "Go back to Home Page"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:284
+msgid "Step 2"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:326
+msgid "Reservation Summary"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:359
+msgid "Change Date"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:388
+msgid "Grand Total:"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:389
+msgid "incl tax"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:485
+#: cosily/page-templates/_reservations.php:585
+msgid "Postal Code *"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:490
+#: cosily/page-templates/_reservations.php:584
+msgid "City *"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:495
+#: cosily/page-templates/_reservations.php:579
+msgid "Country *"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:500
+#: cosily/page-templates/_reservations.php:575
+msgid "Address *"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:505
+#: cosily/page-templates/_reservations.php:574
+msgid "Phone *"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:510
+msgid "Last Name *"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:515
+#: cosily/page-templates/_reservations.php:569
+msgid "First Name *"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:554
+msgid "PERSONAL INFORMATION"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:559
+msgid "Title *"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:560
+msgid "mr"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:561
+msgid "mrs"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:580
+msgid "State/Province"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:607
+msgid "By clicking this button, I accept Terms & Conditions"
+msgstr ""
+
+#: cosily/page-templates/_reservations.php:614
+#: cosily/page-templates/_reservations.php:617
+msgid "Terms and Conditions"
+msgstr ""
+
+#: cosily/page-templates/_rooms.php:69
+msgid "From"
+msgstr ""
+
+#: cosily/page-templates/_rooms.php:70
+msgid "/ Per Night"
+msgstr ""
+
+#: cosily/page-templates/_rooms.php:122
+msgid "Details"
+msgstr ""
+
+#: cosily/page-templates/front-page.php:102
+msgid "Previous"
+msgstr ""

@@ -1,0 +1,124 @@
+a.btn-large {
+    padding: 14px 25px 13px;
+}
+
+.tk_sc_block_toggle h5.tab-head, 
+.tk_sc_block_accordion h5.tab-head {
+    font-size: 14px;
+}
+
+.tk_sc_block_toggle .icon-plus {
+    margin-top: 12px;
+}
+
+.tk_sc_block_tabs.nav {
+    margin-bottom: 0;
+}
+
+.tk_sc_block_tabs.nav h5 {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.tab-pane {
+    margin-top: -1px;
+}
+
+#content .tk-shortcode-tabs .tab-content p {
+    margin-bottom: 0;
+}
+
+.tk-shortcode-tabs {
+    margin-bottom: 20px;
+}
+
+.icon-drop-d {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.dropcap-background {
+    padding: 1px 9px 2px 9px;
+    margin: 3px 8px 0 0!important; 
+}
+
+.dropcap-no-background {
+    padding: 13px 8px 10px 0;
+}
+
+.alert-block.tk-infobox {
+    padding: 8px 35px 8px 14px;
+}
+
+body .progress .bar {
+    background: #d25555;
+}
+
+.container-narrow {
+    overflow: hidden;
+}
+
+#content .shortcodes-fullwidth p:last-child {
+    margin-bottom: 0;
+}
+
+.tk-shortcode-tabs li,
+.tk-shortcode-tabs ul li a {
+    -webkit-border-top-left-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+    -moz-border-radius-topright: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.tk-shortcode-tabs .tab-content .tab-pane,
+.tk-shortcode-tabs .tab-content {
+    -webkit-border-bottom-right-radius: 6px;
+    -webkit-border-bottom-left-radius: 6px;
+    -moz-border-radius-bottomright: 6px;
+    -moz-border-radius-bottomleft: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+#content .pricing-button a.price_btn {
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body .progress,
+.tk_sc_block_toggle,
+.progress.active .bar,
+.pricing-table-one-border,
+.tk_sc_block_accordion_wrapper,
+#content .pricing-button a.price_btn {
+    overflow: hidden;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.tk-infobox {
+    -webkit-border-radius: 6px!important;
+    -moz-border-radius: 6px!important;
+    border-radius: 6px!important;    
+}
+
+.tk_sc_block_accordion i {
+    top: 21px;
+}
+
+.pricing-table-one-top h4 {
+    margin: 6px 0;
+}
+
+.pricing-table-one-center p {
+    padding: 12px 0 0;
+}

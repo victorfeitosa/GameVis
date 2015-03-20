@@ -1,0 +1,546 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Themetick Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-13 15:42+0100\n"
+"PO-Revision-Date: 2012-06-13 15:42+0100\n"
+"Last-Translator: Danko Dubajic <dubajicd@gmail.com>\n"
+"Language-Team: ThemesKingdom <info@themeskingdom.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: /Volumes/Storage/01_localhost/01_develop/wp-content/themes/\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: Themetick\n"
+
+#: Themetick/404.php:12
+msgid "404"
+msgstr ""
+
+#: Themetick/404.php:22
+msgid "Looks like the page you were looking for does not exist. Sorry about that."
+msgstr ""
+
+#: Themetick/404.php:23
+msgid "Check the web address for typos, or go to"
+msgstr ""
+
+#: Themetick/404.php:23
+msgid "Home page"
+msgstr ""
+
+#: Themetick/_blog.php:46
+#: Themetick/archive.php:48
+msgid "Posted on: "
+msgstr ""
+
+#: Themetick/_blog.php:47
+#: Themetick/archive.php:49
+msgid "Categories:"
+msgstr ""
+
+#: Themetick/_blog.php:48
+#: Themetick/archive.php:50
+msgid "By:"
+msgstr ""
+
+#: Themetick/_blog.php:69
+#: Themetick/archive.php:71
+msgid "More info"
+msgstr ""
+
+#: Themetick/_contact.php:178
+msgid "Name *"
+msgstr ""
+
+#: Themetick/_contact.php:179
+msgid "Mail (will not be published)"
+msgstr ""
+
+#: Themetick/_gallery.php:50
+#: Themetick/_speakers.php:50
+msgid "All"
+msgstr ""
+
+#: Themetick/comments.php:13
+msgid "- Your comment is awaiting moderation."
+msgstr ""
+
+#: Themetick/comments.php:13
+msgid " - Edit - "
+msgstr ""
+
+#: Themetick/comments.php:26
+msgid "No comments so far!"
+msgstr ""
+
+#: Themetick/comments.php:49
+msgid "You must be"
+msgstr ""
+
+#: Themetick/comments.php:49
+msgid "logged in"
+msgstr ""
+
+#: Themetick/comments.php:49
+msgid "to post a comment."
+msgstr ""
+
+#: Themetick/comments.php:94
+msgid "Name (required)"
+msgstr ""
+
+#: Themetick/comments.php:95
+msgid "URL"
+msgstr ""
+
+#: Themetick/comments.php:96
+msgid "E-mail (required)"
+msgstr ""
+
+#: Themetick/comments.php:105
+msgid "Add Comment"
+msgstr ""
+
+#: Themetick/comments.php:119
+msgid "Comments are closed"
+msgstr ""
+
+#: Themetick/footer.php:73
+msgid "To the Top"
+msgstr ""
+
+#: Themetick/functions.php:26
+msgid "Primary Menu"
+msgstr ""
+
+#: Themetick/header.php:424
+msgid "Stay tuned"
+msgstr ""
+
+#: Themetick/index.php:44
+#: Themetick/index.php:261
+#: Themetick/index.php:307
+#: Themetick/index.php:341
+#: Themetick/index.php:369
+#: Themetick/index.php:417
+#: Themetick/index.php:453
+msgid "More Info"
+msgstr ""
+
+#: Themetick/index.php:191
+msgid "Days"
+msgstr ""
+
+#: Themetick/index.php:192
+msgid "Hours"
+msgstr ""
+
+#: Themetick/index.php:193
+msgid "Minutes"
+msgstr ""
+
+#: Themetick/index.php:257
+#: Themetick/index.php:365
+msgid "Program Schedule"
+msgstr ""
+
+#: Themetick/index.php:303
+#: Themetick/index.php:413
+msgid "Speaker Lineup"
+msgstr ""
+
+#: Themetick/search.php:24
+msgid "Search result:"
+msgstr ""
+
+#: Themetick/search.php:73
+msgid "No posts found. Try a different search?"
+msgstr ""
+
+#: Themetick/searchform.php:5
+msgid "Search"
+msgstr ""
+
+#: Themetick/single-pt_speakers.php:21
+msgid "Speaker"
+msgstr ""
+
+#: Themetick/single-pt_speakers.php:45
+msgid "Follow:"
+msgstr ""
+
+#: Themetick/single-pt_speakers.php:50
+msgid "Site:"
+msgstr ""
+
+#: Themetick/single.php:18
+msgid "Slide"
+msgstr ""
+
+#: Themetick/single.php:32
+#: Themetick/tags.php:45
+msgid "Posted:"
+msgstr ""
+
+#: Themetick/tags.php:53
+msgid "Comments:"
+msgstr ""
+
+#: Themetick/tags.php:59
+msgid "Read more"
+msgstr ""
+
+#: Themetick/inc/meta-boxes.php:10
+#: Themetick/inc/meta-boxes.php:30
+msgid "Post Details"
+msgstr ""
+
+#: Themetick/inc/meta-boxes.php:17
+msgid "Video Link"
+msgstr ""
+
+#: Themetick/inc/meta-boxes.php:37
+msgid "Sponsors Link"
+msgstr ""
+
+#: Themetick/inc/meta-boxes.php:50
+msgid "Speaker Informations"
+msgstr ""
+
+#: Themetick/inc/meta-boxes.php:57
+msgid "Job position"
+msgstr ""
+
+#: Themetick/inc/meta-boxes.php:65
+msgid "Twitter username"
+msgstr ""
+
+#: Themetick/inc/meta-boxes.php:73
+msgid "Facebook username"
+msgstr ""
+
+#: Themetick/inc/meta-boxes.php:81
+msgid "Speaker URL"
+msgstr ""
+
+#: Themetick/inc/meta-boxes.php:93
+msgid "Page Settings"
+msgstr ""
+
+#: Themetick/inc/meta-boxes.php:100
+msgid "Sidebar position"
+msgstr ""
+
+#: Themetick/inc/post-types.php:11
+#: Themetick/inc/post-types.php:12
+#: Themetick/inc/post-types.php:23
+msgid "Slides"
+msgstr ""
+
+#: Themetick/inc/post-types.php:13
+#: Themetick/inc/post-types.php:51
+#: Themetick/inc/post-types.php:90
+#: Themetick/inc/post-types.php:131
+#: Themetick/inc/post-types.php:172
+msgid "Add New"
+msgstr ""
+
+#: Themetick/inc/post-types.php:14
+msgid "Add New Slide"
+msgstr ""
+
+#: Themetick/inc/post-types.php:15
+msgid "Edit Slide"
+msgstr ""
+
+#: Themetick/inc/post-types.php:16
+msgid "New Slide"
+msgstr ""
+
+#: Themetick/inc/post-types.php:17
+msgid "All Slide"
+msgstr ""
+
+#: Themetick/inc/post-types.php:18
+msgid "View this Slide"
+msgstr ""
+
+#: Themetick/inc/post-types.php:19
+msgid "Search Slide"
+msgstr ""
+
+#: Themetick/inc/post-types.php:20
+msgid "No Slides"
+msgstr ""
+
+#: Themetick/inc/post-types.php:21
+msgid "No Slides in Trash"
+msgstr ""
+
+#: Themetick/inc/post-types.php:49
+#: Themetick/inc/post-types.php:50
+#: Themetick/inc/post-types.php:61
+msgid "Speakers"
+msgstr ""
+
+#: Themetick/inc/post-types.php:52
+msgid "Add New Speaker"
+msgstr ""
+
+#: Themetick/inc/post-types.php:53
+msgid "Edit Speaker"
+msgstr ""
+
+#: Themetick/inc/post-types.php:54
+msgid "New Speaker"
+msgstr ""
+
+#: Themetick/inc/post-types.php:55
+msgid "All Speakers"
+msgstr ""
+
+#: Themetick/inc/post-types.php:56
+msgid "View this Speaker"
+msgstr ""
+
+#: Themetick/inc/post-types.php:57
+msgid "Search Speakers"
+msgstr ""
+
+#: Themetick/inc/post-types.php:58
+msgid "No Speakers"
+msgstr ""
+
+#: Themetick/inc/post-types.php:59
+msgid "No Speakers in Trash"
+msgstr ""
+
+#: Themetick/inc/post-types.php:88
+#: Themetick/inc/post-types.php:89
+#: Themetick/inc/post-types.php:100
+msgid "Program"
+msgstr ""
+
+#: Themetick/inc/post-types.php:91
+msgid "Add New Program Item"
+msgstr ""
+
+#: Themetick/inc/post-types.php:92
+msgid "Edit Program Item"
+msgstr ""
+
+#: Themetick/inc/post-types.php:93
+msgid "New Program Item"
+msgstr ""
+
+#: Themetick/inc/post-types.php:94
+msgid "All Program Items"
+msgstr ""
+
+#: Themetick/inc/post-types.php:95
+msgid "View this Program Item"
+msgstr ""
+
+#: Themetick/inc/post-types.php:96
+msgid "Search Program Items"
+msgstr ""
+
+#: Themetick/inc/post-types.php:97
+msgid "No Program Items"
+msgstr ""
+
+#: Themetick/inc/post-types.php:98
+msgid "No Program Items in Trash"
+msgstr ""
+
+#: Themetick/inc/post-types.php:129
+#: Themetick/inc/post-types.php:130
+#: Themetick/inc/post-types.php:141
+msgid "Sponsors"
+msgstr ""
+
+#: Themetick/inc/post-types.php:132
+msgid "Add New Sponsor"
+msgstr ""
+
+#: Themetick/inc/post-types.php:133
+msgid "Edit Sponsor"
+msgstr ""
+
+#: Themetick/inc/post-types.php:134
+msgid "New Sponsor"
+msgstr ""
+
+#: Themetick/inc/post-types.php:135
+msgid "All Sponsor"
+msgstr ""
+
+#: Themetick/inc/post-types.php:136
+msgid "View this Sponsor"
+msgstr ""
+
+#: Themetick/inc/post-types.php:137
+msgid "Search Sponsors"
+msgstr ""
+
+#: Themetick/inc/post-types.php:138
+msgid "No Sponsors"
+msgstr ""
+
+#: Themetick/inc/post-types.php:139
+msgid "No Sponsors in Trash"
+msgstr ""
+
+#: Themetick/inc/post-types.php:170
+#: Themetick/inc/post-types.php:171
+#: Themetick/inc/post-types.php:182
+msgid "Gallery"
+msgstr ""
+
+#: Themetick/inc/post-types.php:173
+msgid "Add New Gallery Item"
+msgstr ""
+
+#: Themetick/inc/post-types.php:174
+msgid "Edit Gallery Item"
+msgstr ""
+
+#: Themetick/inc/post-types.php:175
+msgid "New Gallery Item"
+msgstr ""
+
+#: Themetick/inc/post-types.php:176
+msgid "All Gallery Items"
+msgstr ""
+
+#: Themetick/inc/post-types.php:177
+msgid "View this Gallery Item"
+msgstr ""
+
+#: Themetick/inc/post-types.php:178
+msgid "Search Gallery Items"
+msgstr ""
+
+#: Themetick/inc/post-types.php:179
+msgid "No Gallery Items"
+msgstr ""
+
+#: Themetick/inc/post-types.php:180
+msgid "No Gallery Items in Trash"
+msgstr ""
+
+#: Themetick/inc/shortcodes/popup.php:20
+msgid "Insert Shortcode"
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:12
+msgid "Button URL"
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:13
+msgid "Add the button's url eg http://example.com"
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:17
+msgid "Button's Style"
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:18
+msgid "Select the button's style, ie the buttons colour"
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:29
+msgid "Button's Text"
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:30
+msgid "Add the button's text"
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:40
+msgid "Type of list"
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:41
+msgid "Select the list type"
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:53
+msgid "List Text"
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:54
+msgid "Add the list text"
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:64
+msgid "Column Type"
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:65
+msgid "Select the type of the column."
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:75
+msgid "Last Column"
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:76
+msgid "Check this box if this column is last."
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:85
+msgid "Column Content"
+msgstr ""
+
+#: Themetick/inc/shortcodes/settings.php:86
+msgid "Add the column content."
+msgstr ""
+
+#: Themetick/inc/widgets/widget-newsletter.php:10
+msgid " - Newsletter"
+msgstr ""
+
+#: Themetick/inc/widgets/widget-newsletter.php:89
+#: Themetick/inc/widgets/widget-twitter.php:44
+msgid "Title:"
+msgstr ""
+
+#: Themetick/inc/widgets/widget-newsletter.php:93
+msgid "Newsletter Text:"
+msgstr ""
+
+#: Themetick/inc/widgets/widget-newsletter.php:97
+msgid "Chose Service:"
+msgstr ""
+
+#: Themetick/inc/widgets/widget-newsletter.php:102
+msgid "MailChimp API Key:"
+msgstr ""
+
+#: Themetick/inc/widgets/widget-newsletter.php:107
+msgid "MailChimp API List:"
+msgstr ""
+
+#: Themetick/inc/widgets/widget-newsletter.php:112
+msgid "Sendloop Username:"
+msgstr ""
+
+#: Themetick/inc/widgets/widget-newsletter.php:117
+msgid "Sendloop List ID:"
+msgstr ""
+
+#: Themetick/inc/widgets/widget-twitter.php:9
+msgid "Themetick - Twitter Stream"
+msgstr ""
+
+#: Themetick/inc/widgets/widget-twitter.php:48
+msgid "Username:"
+msgstr ""
+
+#: Themetick/inc/widgets/widget-twitter.php:52
+msgid "Number of tweets:"
+msgstr ""
+

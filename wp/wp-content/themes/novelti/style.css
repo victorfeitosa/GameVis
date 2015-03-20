@@ -1,0 +1,15 @@
+/*
+Theme Name: Novelti
+Support URI: http://www.themeskingdom.com/support/
+Description: Theme is suitable for personal bloggers, newspapers, online magazines… With great look and very useful features you’ll leave a lasting impression upon your public.
+Author: Themeskingdom
+Author URI: http://www.themeskingdom.com/support/
+Version: 1.8
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Theme URI: http://www.themeskingdom.com/
+Tags: one-column, two-columns, three-columns, four-columns, featured-images, post-formats, theme-options, threaded-comments, translation-ready
+*/
+@import url("style/reset.css");
+@import url("style/style.css");
+@import url("style/shortcodes.css");

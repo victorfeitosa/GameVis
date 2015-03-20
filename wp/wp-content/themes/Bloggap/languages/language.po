@@ -1,0 +1,577 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Bloggap\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-14 10:01+0100\n"
+"PO-Revision-Date: 2013-02-14 10:01+0100\n"
+"Last-Translator: ThemesKingdom <info@themeskingdom.com>\n"
+"Language-Team: ThemesKingdom <info@themeskingdom.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: /Users/justdot/Desktop/htdocs/development/Develop/wp-"
+"content/themes\n"
+"X-Generator: Poedit 1.5.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: Bloggap\n"
+
+#: Bloggap/404.php:5
+msgid "404 - Error"
+msgstr ""
+
+#: Bloggap/404.php:7
+msgid ""
+"Looks like the page you were looking for does not exist. Sorry about that."
+msgstr ""
+
+#: Bloggap/404.php:9
+msgid "Check the web address for typos, or go to"
+msgstr ""
+
+#: Bloggap/404.php:9
+msgid "HOME PAGE"
+msgstr ""
+
+#: Bloggap/_contact.php:156
+msgid "Say Hello"
+msgstr ""
+
+#: Bloggap/_contact.php:159
+msgid "Name*"
+msgstr ""
+
+#: Bloggap/_contact.php:160
+msgid "Email*"
+msgstr ""
+
+#: Bloggap/_contact.php:170
+msgid "Cant read? Refresh Image: "
+msgstr ""
+
+#: Bloggap/_contact.php:178 Bloggap/comments.php:96
+msgid "Send"
+msgstr ""
+
+#: Bloggap/_gallery.php:40
+msgid "All"
+msgstr ""
+
+#: Bloggap/archive.php:212 Bloggap/index.php:226 Bloggap/search.php:112
+#: Bloggap/single.php:188
+msgid "No Comments"
+msgstr ""
+
+#: Bloggap/archive.php:212 Bloggap/index.php:226 Bloggap/search.php:112
+#: Bloggap/single.php:188
+msgid "One Comment"
+msgstr ""
+
+#: Bloggap/archive.php:212 Bloggap/index.php:226 Bloggap/search.php:112
+#: Bloggap/single.php:188
+msgid "% Comments"
+msgstr ""
+
+#: Bloggap/archive.php:239 Bloggap/index.php:253 Bloggap/search.php:139
+msgid "Read more..."
+msgstr ""
+
+#: Bloggap/comments.php:14
+msgid "- Your comment is awaiting moderation."
+msgstr ""
+
+#: Bloggap/comments.php:14
+msgid " - Edit - "
+msgstr ""
+
+#: Bloggap/comments.php:41
+msgid "You must be"
+msgstr ""
+
+#: Bloggap/comments.php:41
+msgid "logged in"
+msgstr ""
+
+#: Bloggap/comments.php:41
+msgid "to post a comment."
+msgstr ""
+
+#: Bloggap/comments.php:80
+msgid "Leave a Reply"
+msgstr ""
+
+#: Bloggap/comments.php:80
+msgid "Leave a Comment"
+msgstr ""
+
+#: Bloggap/comments.php:88
+msgid "Name (required)"
+msgstr ""
+
+#: Bloggap/comments.php:89
+msgid "E-mail (required)"
+msgstr ""
+
+#: Bloggap/comments.php:92
+msgid "Message"
+msgstr ""
+
+#: Bloggap/comments.php:109
+msgid "Comments are closed"
+msgstr ""
+
+#: Bloggap/functions.php:29
+msgid "Primary Menu"
+msgstr ""
+
+#: Bloggap/header.php:23
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: Bloggap/search.php:151
+msgid "No posts found. Try a different search?"
+msgstr ""
+
+#: Bloggap/single-gallery.php:112 Bloggap/single.php:260
+msgid "Previous Post"
+msgstr ""
+
+#: Bloggap/single-gallery.php:126 Bloggap/single.php:274
+msgid "Next Post"
+msgstr ""
+
+#: Bloggap/inc/colors.php:75
+msgid "Background Color"
+msgstr ""
+
+#: Bloggap/inc/colors.php:87
+msgid "Headline Colors"
+msgstr ""
+
+#: Bloggap/inc/colors.php:99
+msgid "Paragraph Colors"
+msgstr ""
+
+#: Bloggap/inc/colors.php:111
+msgid "Footer Background"
+msgstr ""
+
+#: Bloggap/inc/colors.php:123
+msgid "Footer Headlines"
+msgstr ""
+
+#: Bloggap/inc/colors.php:135
+msgid "Footer Text Color"
+msgstr ""
+
+#: Bloggap/inc/colors.php:147
+msgid "Footer Link Color"
+msgstr ""
+
+#: Bloggap/inc/colors.php:159
+msgid "Footer Border Color"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:10
+msgid "Search Gallery Categories"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:11
+msgid "All Gallery Categories"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:12 Bloggap/inc/custom-taxonomies.php:13
+msgid "Parent Gallery Category"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:14
+msgid "Edit Gallery Category"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:15
+msgid "Update Gallery Category"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:16
+msgid "Add New Gallery Category"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:17
+msgid "New Gallery Category"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:18
+msgid "Gallery Categories"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:29
+msgid "Search Team Members Categories"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:30
+msgid "All Team Members Categories"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:31 Bloggap/inc/custom-taxonomies.php:32
+msgid "Parent Team Members Category"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:33
+msgid "Edit Team Members Category"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:34
+msgid "Update Team Members Category"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:35
+msgid "Add New Team Members Category"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:36
+msgid "New Team Members Category"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:37
+msgid "Team Members Categories"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:49
+msgid "Search Services Categories"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:50
+msgid "All Services Categories"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:51 Bloggap/inc/custom-taxonomies.php:52
+msgid "Parent Service Category"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:53
+msgid "Edit Service Category"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:54
+msgid "Update Services Category"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:55
+msgid "Add New Services Category"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:56
+msgid "New Services Category"
+msgstr ""
+
+#: Bloggap/inc/custom-taxonomies.php:57
+msgid "Services Categories"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:10
+msgid "VIdeo Link"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:17
+msgid "Video Link"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:29
+msgid "Slider Fields"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:48 Bloggap/inc/meta-boxes.php:55
+msgid "Audio Link"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:67 Bloggap/inc/meta-boxes.php:74
+msgid "Quote Text"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:82
+msgid "Quote Author"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:94
+msgid "Link"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:101
+msgid "Link Text"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:108
+msgid "Link Url"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:122
+msgid "Event Date"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:129
+msgid "Date Of Event"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:141
+msgid "Testimonial"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:149
+msgid "Job Position"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:157
+msgid "E-mail"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:168
+msgid "Service Info"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:176
+msgid "Services"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:188
+msgid "Member Info"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:196
+msgid "Team Member Title"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:204
+msgid "Facebook Account"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:212
+msgid "Twitter account"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:221
+msgid "Linkedin account"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:230
+msgid "Google+ Account"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:238
+msgid "E-Mail"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:254
+msgid "Headline Text and color"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:261
+msgid "Undertitle"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:269
+msgid "Post Color"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:277
+msgid "Headline Color"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:285
+msgid "Headline Hover Color"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:293
+msgid "Undertitle Color"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:301
+msgid "Paragraph Color"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:309
+msgid "Read More Color"
+msgstr ""
+
+#: Bloggap/inc/meta-boxes.php:317
+msgid "Read More Hover Color"
+msgstr ""
+
+#: Bloggap/inc/post-types.php:11 Bloggap/inc/post-types.php:12
+#: Bloggap/inc/post-types.php:23
+msgid "Gallery"
+msgstr ""
+
+#: Bloggap/inc/post-types.php:13
+msgid "Add New"
+msgstr ""
+
+#: Bloggap/inc/post-types.php:14
+msgid "Add New Gallery Item"
+msgstr ""
+
+#: Bloggap/inc/post-types.php:15
+msgid "Edit Gallery Item"
+msgstr ""
+
+#: Bloggap/inc/post-types.php:16
+msgid "New Gallery Item"
+msgstr ""
+
+#: Bloggap/inc/post-types.php:17
+msgid "All Gallery Items"
+msgstr ""
+
+#: Bloggap/inc/post-types.php:18
+msgid "View this Gallery Item"
+msgstr ""
+
+#: Bloggap/inc/post-types.php:19
+msgid "Search Gallery Items"
+msgstr ""
+
+#: Bloggap/inc/post-types.php:20
+msgid "No Gallery Items"
+msgstr ""
+
+#: Bloggap/inc/post-types.php:21
+msgid "No Gallery Items in Trash"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/popup.php:20
+msgid "Insert Shortcode"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:13
+msgid "Button URL"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:14
+msgid "Add the button's url eg http://example.com"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:21
+msgid "Button's Style"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:22
+msgid "Select the button's style, ie the buttons colour"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:36
+msgid "Button's Text"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:37
+msgid "Add the button's text"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:51
+msgid "Type of list"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:52
+msgid "Select the list type"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:64
+msgid "List Text"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:65
+msgid "Add the list text"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:80
+msgid "Column Type"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:81
+msgid "Select the type of the column."
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:91
+msgid "Last Column"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:92
+msgid "Pick if column is last."
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:101
+msgid "Column Content"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:102
+msgid "Add the column content."
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:117
+msgid "Toggle Title"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:127
+msgid "Toggle Content"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:128
+msgid "Add the toggle content."
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:137
+msgid "Default Value"
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:138
+msgid "Chose to show either open or closed toggle content."
+msgstr ""
+
+#: Bloggap/inc/shortcodes/settings.php:146
+msgid "Insert Toggle Content Shortcode"
+msgstr ""
+
+#: Bloggap/inc/widgets/widget-newsletter.php:10
+msgid " - Newsletter"
+msgstr ""
+
+#: Bloggap/inc/widgets/widget-newsletter.php:128
+#: Bloggap/inc/widgets/widget-twitter.php:58
+msgid "Title:"
+msgstr ""
+
+#: Bloggap/inc/widgets/widget-newsletter.php:132
+msgid "Newsletter Text:"
+msgstr ""
+
+#: Bloggap/inc/widgets/widget-newsletter.php:136
+msgid "Chose Service:"
+msgstr ""
+
+#: Bloggap/inc/widgets/widget-newsletter.php:141
+msgid "MailChimp API Key:"
+msgstr ""
+
+#: Bloggap/inc/widgets/widget-newsletter.php:146
+msgid "MailChimp API List:"
+msgstr ""
+
+#: Bloggap/inc/widgets/widget-newsletter.php:151
+msgid "Sendloop Username:"
+msgstr ""
+
+#: Bloggap/inc/widgets/widget-newsletter.php:156
+msgid "Sendloop List ID:"
+msgstr ""
+
+#: Bloggap/inc/widgets/widget-twitter.php:9
+msgid " - Twitter Stream"
+msgstr ""
+
+#: Bloggap/inc/widgets/widget-twitter.php:62
+msgid "Username:"
+msgstr ""
+
+#: Bloggap/inc/widgets/widget-twitter.php:66
+msgid "Number of tweets:"
+msgstr ""

@@ -14,8 +14,9 @@ define(function (require) {
   canvas.append();
 
   //Creates scales for this canvas
-  scaleX = d3.scale.linear();
-  scaleX.domain([0, 4]).range([40, 600]);
+  scaleX = d3.scale.linear()
+                    .domain([-1, 5])
+                    .range([40, 600]);
 
   scaleY = d3.scale.linear();
   scaleY.domain([-15, 15]).range([20, 460]);
@@ -94,5 +95,4 @@ define(function (require) {
   myMatch.update();
 
   var d = new gamevis.driver();
-  console.log(d.buildData('./gamevis/matches/players.json'));
 });

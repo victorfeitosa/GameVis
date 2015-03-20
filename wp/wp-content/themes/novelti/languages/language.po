@@ -1,0 +1,740 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Novelti Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-10 16:51+0100\n"
+"PO-Revision-Date: 2013-04-10 16:51+0100\n"
+"Last-Translator: Danko Dubajic <danko@themeskingdom.com>\n"
+"Language-Team: ThemesKingdom <info@themeskingdom.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: /Users/dankodubajic/99 Work Files/01_localhost/06_server/"
+"wp-content/themes/\n"
+"X-Generator: Poedit 1.5.3\n"
+"X-Poedit-SearchPath-0: novelti\n"
+
+#: novelti/404.php:21
+msgid "404 - Error"
+msgstr ""
+
+#: novelti/404.php:22
+msgid ""
+"Looks like the page you were looking for does not exist. Sorry about that."
+msgstr ""
+
+#: novelti/404.php:23
+msgid "Check the web address for typos, or go to"
+msgstr ""
+
+#: novelti/404.php:23
+msgid "HOME PAGE"
+msgstr ""
+
+#: novelti/_archive_template.php:54
+msgid "Last 30 Posts:"
+msgstr ""
+
+#: novelti/_archive_template.php:77
+msgid "Archives by Month:"
+msgstr ""
+
+#: novelti/_archive_template.php:90
+msgid "Archives by Subject:"
+msgstr ""
+
+#: novelti/_blog_one_column.php:105 novelti/_part_one_cat_side.php:79
+#: novelti/_part_one_cat_top.php:76 novelti/_part_one_column_loop.php:56
+#: novelti/_part_sticky_post.php:76 novelti/_part_two_col_side_one_cat.php:56
+#: novelti/_part_two_col_side_two_cat.php:64
+#: novelti/_part_two_col_side_two_cat.php:139
+#: novelti/_part_two_col_top_one_cat.php:80
+#: novelti/_part_two_col_top_two_cat.php:91
+#: novelti/_part_two_col_top_two_cat.php:195
+#: novelti/_part_two_column_loop.php:55
+msgid "by "
+msgstr ""
+
+#: novelti/_blog_one_column.php:107 novelti/_part_one_cat_side.php:81
+#: novelti/_part_one_cat_top.php:78 novelti/_part_one_column_loop.php:58
+#: novelti/_part_sticky_post.php:78 novelti/_part_two_col_side_one_cat.php:58
+#: novelti/_part_two_col_side_two_cat.php:66
+#: novelti/_part_two_col_side_two_cat.php:141
+#: novelti/_part_two_col_top_one_cat.php:82
+#: novelti/_part_two_col_top_two_cat.php:93
+#: novelti/_part_two_col_top_two_cat.php:197
+#: novelti/_part_two_column_loop.php:57
+msgid " comments"
+msgstr ""
+
+#: novelti/_blog_one_column.php:117 novelti/_part_one_cat_side.php:87
+#: novelti/_part_one_cat_top.php:84 novelti/_part_one_column_loop.php:68
+#: novelti/_part_sticky_post.php:88 novelti/_part_two_col_top_one_cat.php:88
+#: novelti/_part_two_col_top_two_cat.php:99
+#: novelti/_part_two_col_top_two_cat.php:203
+#: novelti/_part_two_column_loop.php:67
+msgid "Read More"
+msgstr ""
+
+#: novelti/_contact.php:221
+msgid "Say Hello"
+msgstr ""
+
+#: novelti/_contact.php:222
+msgid "Your email address will not be published. Required fields are marked *"
+msgstr ""
+
+#: novelti/_contact.php:225
+msgid "Name*"
+msgstr ""
+
+#: novelti/_contact.php:226
+msgid "Email*"
+msgstr ""
+
+#: novelti/_contact.php:227
+msgid "Website"
+msgstr ""
+
+#: novelti/_contact.php:238
+msgid " Cant read? Refresh Image: "
+msgstr ""
+
+#: novelti/_contact.php:245
+msgid "Send Message"
+msgstr ""
+
+#: novelti/_part_followers.php:47 novelti/_part_main_slider.php:124
+msgid "Followers / Fans / Subscribers"
+msgstr ""
+
+#: novelti/_part_followers.php:50 novelti/_part_main_slider.php:127
+#: novelti/single.php:319
+msgid "Twitter"
+msgstr ""
+
+#: novelti/_part_followers.php:52 novelti/_part_main_slider.php:131
+#: novelti/single.php:308
+msgid "Facebook"
+msgstr ""
+
+#: novelti/_part_followers.php:53 novelti/_part_main_slider.php:135
+#: novelti/single.php:330
+msgid "Google+"
+msgstr ""
+
+#: novelti/_part_main_slider.php:65 novelti/comments.php:31
+msgid "Comments"
+msgstr ""
+
+#: novelti/_part_rating_box.php:16 novelti/_part_rating_box.php:32
+#: novelti/_part_two_col_side_two_cat.php:53
+#: novelti/_part_two_col_side_two_cat.php:128
+#: novelti/_part_two_col_top_two_cat.php:80
+#: novelti/_part_two_col_top_two_cat.php:184
+msgid "rating "
+msgstr ""
+
+#: novelti/_part_sticky_post.php:72
+msgid "Featured Post"
+msgstr ""
+
+#: novelti/comments.php:13
+msgid "- Your comment is awaiting moderation."
+msgstr ""
+
+#: novelti/comments.php:13
+msgid " - Edit - "
+msgstr ""
+
+#: novelti/comments.php:29
+msgid "No comments so far!"
+msgstr ""
+
+#: novelti/comments.php:41
+msgid "You must be"
+msgstr ""
+
+#: novelti/comments.php:41
+msgid "logged in"
+msgstr ""
+
+#: novelti/comments.php:41
+msgid "to post a comment."
+msgstr ""
+
+#: novelti/comments.php:49
+msgid "Leave a Reply"
+msgstr ""
+
+#: novelti/comments.php:49
+msgid "Leave a Comment"
+msgstr ""
+
+#: novelti/comments.php:56
+msgid "Name (required)"
+msgstr ""
+
+#: novelti/comments.php:57
+msgid "E-mail (required)"
+msgstr ""
+
+#: novelti/comments.php:60
+msgid "Message"
+msgstr ""
+
+#: novelti/comments.php:64
+msgid "Post Comment"
+msgstr ""
+
+#: novelti/comments.php:77
+msgid "Comments are closed"
+msgstr ""
+
+#: novelti/functions.php:45
+msgid "Primary Menu"
+msgstr ""
+
+#: novelti/functions.php:46
+msgid "Category Menu"
+msgstr ""
+
+#: novelti/functions.php:47
+msgid "Footer Menu"
+msgstr ""
+
+#: novelti/functions.php:103
+msgid "Select Sidebar"
+msgstr ""
+
+#: novelti/functions.php:137
+msgid "Select sidebar for this category."
+msgstr ""
+
+#: novelti/functions.php:158
+msgid "Category Color"
+msgstr ""
+
+#: novelti/functions.php:165
+msgid "Select color for this category."
+msgstr ""
+
+#: novelti/functions.php:169
+msgid "Category Display"
+msgstr ""
+
+#: novelti/functions.php:176
+msgid "One Column"
+msgstr ""
+
+#: novelti/functions.php:181
+msgid "Two Columns"
+msgstr ""
+
+#: novelti/functions.php:184
+msgid "Select how to display this category."
+msgstr ""
+
+#: novelti/functions.php:871 novelti/single.php:192 novelti/single.php:229
+msgid "User Rating: "
+msgstr ""
+
+#: novelti/functions.php:871 novelti/single.php:192 novelti/single.php:229
+msgid " votes)"
+msgstr ""
+
+#: novelti/header.php:23
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: novelti/header.php:162
+msgid "Navigation"
+msgstr ""
+
+#: novelti/search.php:32
+msgid "No posts found. Try a different search?"
+msgstr ""
+
+#: novelti/single.php:115
+msgid "By:"
+msgstr ""
+
+#: novelti/single.php:117
+msgid " Comments"
+msgstr ""
+
+#: novelti/single.php:298
+msgid "Shares"
+msgstr ""
+
+#: novelti/single.php:341
+msgid "LinkedIn"
+msgstr ""
+
+#: novelti/single.php:353
+msgid "Pinterest"
+msgstr ""
+
+#: novelti/single.php:364
+msgid "Stumbleupon"
+msgstr ""
+
+#: novelti/single.php:449
+msgid "Related Posts"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:28 novelti/inc/meta-boxes.php:34
+msgid "Advertisement Link"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:44 novelti/inc/post-types.php:11
+#: novelti/inc/post-types.php:12 novelti/inc/post-types.php:23
+msgid "Advertisement"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:50
+msgid "Banner Stats"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:61 novelti/inc/meta-boxes.php:67
+msgid "VIdeo Link"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:78
+msgid "Slider Fields"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:94
+msgid "Page Settings"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:100 novelti/inc/meta-boxes.php:184
+msgid "Select sidebar"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:108
+msgid "Page Subheadline"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:122
+msgid "Rating"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:128
+msgid "Enable post Rating"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:129
+msgid "Check this if you want to enable rating system on this post. "
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:135
+msgid "Rating Position"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:136
+msgid "Chose position of your rating system."
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:142
+msgid "Rating type"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:143
+msgid "Chose visual apperance of rating sysyem."
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:149
+msgid "Post Rating"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:156
+msgid "Total Score Label"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:167
+msgid "Enable Reader Post Rating"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:168
+msgid "Check this if you want to enable users/readers to rate this post. "
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:178
+msgid "Sidebar Settings"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:462 novelti/inc/meta-boxes.php:474
+msgid "Rating Criteria: "
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:468 novelti/inc/meta-boxes.php:478
+msgid "Title of this criteria"
+msgstr ""
+
+#: novelti/inc/meta-boxes.php:468 novelti/inc/meta-boxes.php:478
+msgid "Rate this criteria from 0 to 20"
+msgstr ""
+
+#: novelti/inc/post-types.php:13 novelti/inc/post-types.php:54
+#: novelti/inc/post-types.php:97
+msgid "Add New"
+msgstr ""
+
+#: novelti/inc/post-types.php:14
+msgid "Add New Ad"
+msgstr ""
+
+#: novelti/inc/post-types.php:15
+msgid "Edit Ad"
+msgstr ""
+
+#: novelti/inc/post-types.php:16
+msgid "New Ad"
+msgstr ""
+
+#: novelti/inc/post-types.php:17
+msgid "All Ads"
+msgstr ""
+
+#: novelti/inc/post-types.php:18
+msgid "View this Ad"
+msgstr ""
+
+#: novelti/inc/post-types.php:19
+msgid "Search Ads"
+msgstr ""
+
+#: novelti/inc/post-types.php:20
+msgid "No Ads"
+msgstr ""
+
+#: novelti/inc/post-types.php:21
+msgid "No Ads in Trash"
+msgstr ""
+
+#: novelti/inc/post-types.php:52 novelti/inc/post-types.php:53
+#: novelti/inc/post-types.php:64
+msgid "Sidebars"
+msgstr ""
+
+#: novelti/inc/post-types.php:55
+msgid "Add New Sidebar"
+msgstr ""
+
+#: novelti/inc/post-types.php:56
+msgid "Edit Sidebar"
+msgstr ""
+
+#: novelti/inc/post-types.php:57
+msgid "New Sidebar"
+msgstr ""
+
+#: novelti/inc/post-types.php:58
+msgid "All Sidebars"
+msgstr ""
+
+#: novelti/inc/post-types.php:59
+msgid "View this Sidebar"
+msgstr ""
+
+#: novelti/inc/post-types.php:60
+msgid "Search Sidebars"
+msgstr ""
+
+#: novelti/inc/post-types.php:61
+msgid "No Widget"
+msgstr ""
+
+#: novelti/inc/post-types.php:62
+msgid "No Sidebars in Trash"
+msgstr ""
+
+#: novelti/inc/post-types.php:95 novelti/inc/post-types.php:96
+#: novelti/inc/post-types.php:107
+msgid "Page Builder"
+msgstr ""
+
+#: novelti/inc/post-types.php:98
+msgid "Add New Page Builder"
+msgstr ""
+
+#: novelti/inc/post-types.php:99
+msgid "Edit Page Builder"
+msgstr ""
+
+#: novelti/inc/post-types.php:100
+msgid "New Page Builder"
+msgstr ""
+
+#: novelti/inc/post-types.php:101
+msgid "All Page Builder"
+msgstr ""
+
+#: novelti/inc/post-types.php:102
+msgid "View this Page Builder"
+msgstr ""
+
+#: novelti/inc/post-types.php:103
+msgid "Search Page Builder"
+msgstr ""
+
+#: novelti/inc/post-types.php:104
+msgid "No Page Builder"
+msgstr ""
+
+#: novelti/inc/post-types.php:105
+msgid "No Page Builder in Trash"
+msgstr ""
+
+#: novelti/inc/theme-settings.php:973
+msgid ""
+"Page builder allows you to create unique homepage in just few clicks. </"
+"br>Simply add and drag-and-drop elements on desired position."
+msgstr ""
+
+#: novelti/inc/theme-settings.php:1082
+msgid "Please select Category for Flex Slider"
+msgstr ""
+
+#: novelti/inc/theme-settings.php:1101
+msgid "Enter Number of Post to show in Flex Slider"
+msgstr ""
+
+#: novelti/inc/theme-settings.php:1113
+msgid "Slider pause time"
+msgstr ""
+
+#: novelti/inc/theme-settings.php:1125 novelti/inc/theme-settings.php:1283
+msgid "Slider animation time"
+msgstr ""
+
+#: novelti/inc/theme-settings.php:1134 novelti/inc/theme-settings.php:1291
+msgid "Chose slider easing effect"
+msgstr ""
+
+#: novelti/inc/theme-settings.php:1219
+msgid "Chose Flex Slider Effect"
+msgstr ""
+
+#: novelti/inc/theme-settings.php:1254
+msgid "Please select Category for Carousel Slider"
+msgstr ""
+
+#: novelti/inc/theme-settings.php:1272
+msgid "Enter Number of Post to show in Carousel Slider"
+msgstr ""
+
+#: novelti/inc/theme-settings.php:1392
+msgid "Please select Ad"
+msgstr ""
+
+#: novelti/inc/theme-settings.php:1432
+msgid "Select from which page to show content"
+msgstr ""
+
+#: novelti/inc/theme-settings.php:1463 novelti/inc/theme-settings.php:1506
+#: novelti/inc/theme-settings.php:1549 novelti/inc/theme-settings.php:1593
+#: novelti/inc/theme-settings.php:1621 novelti/inc/theme-settings.php:1666
+#: novelti/inc/theme-settings.php:1710 novelti/inc/theme-settings.php:1738
+msgid "Select Category"
+msgstr ""
+
+#: novelti/inc/theme-settings.php:1481 novelti/inc/theme-settings.php:1524
+#: novelti/inc/theme-settings.php:1567 novelti/inc/theme-settings.php:1611
+#: novelti/inc/theme-settings.php:1639 novelti/inc/theme-settings.php:1684
+#: novelti/inc/theme-settings.php:1728 novelti/inc/theme-settings.php:1756
+msgid "Enter Number of Post to show"
+msgstr ""
+
+#: novelti/inc/shortcodes/popup.php:24
+msgid "Insert Shortcode"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:13
+msgid "Button URL"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:14
+msgid "Add the button's url eg http://example.com"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:21
+msgid "Button's Style"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:22
+msgid "Select the button's style, ie the buttons colour"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:36
+msgid "Button's Text"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:37
+msgid "Add the button's text"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:51
+msgid "Type of list"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:52
+msgid "Select the list type"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:64
+msgid "List Text"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:65
+msgid "Add the list text"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:80
+msgid "Column Type"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:81
+msgid "Select the type of the column."
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:91
+msgid "Last Column"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:92
+msgid "Pick if column is last."
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:101
+msgid "Column Content"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:102
+msgid "Add the column content."
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:117
+msgid "Toggle Title"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:127
+msgid "Toggle Content"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:128
+msgid "Add the toggle content."
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:137
+msgid "Default Value"
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:138
+msgid "Chose to show either open or closed toggle content."
+msgstr ""
+
+#: novelti/inc/shortcodes/settings.php:146
+msgid "Insert Toggle Content Shortcode"
+msgstr ""
+
+#: novelti/inc/widgets/widget-ad.php:9
+msgid " - Advertising Widget"
+msgstr ""
+
+#: novelti/inc/widgets/widget-ad.php:110
+msgid "Fullwidth"
+msgstr ""
+
+#: novelti/inc/widgets/widget-ad.php:111
+msgid "Halfwidth"
+msgstr ""
+
+#: novelti/inc/widgets/widget-facebook.php:9
+msgid " - Facebook"
+msgstr ""
+
+#: novelti/inc/widgets/widget-facebook.php:64
+msgid "Facebook link:"
+msgstr ""
+
+#: novelti/inc/widgets/widget-newsletter.php:10
+msgid " - Newsletter"
+msgstr ""
+
+#: novelti/inc/widgets/widget-newsletter.php:137
+#: novelti/inc/widgets/widget-twitter.php:60
+msgid "Title:"
+msgstr ""
+
+#: novelti/inc/widgets/widget-newsletter.php:141
+msgid "Newsletter Text:"
+msgstr ""
+
+#: novelti/inc/widgets/widget-newsletter.php:145
+msgid "Chose Service:"
+msgstr ""
+
+#: novelti/inc/widgets/widget-newsletter.php:154
+msgid "MailChimp API Key:"
+msgstr ""
+
+#: novelti/inc/widgets/widget-newsletter.php:159
+msgid "MailChimp API List:"
+msgstr ""
+
+#: novelti/inc/widgets/widget-newsletter.php:164
+msgid "Sendloop Username:"
+msgstr ""
+
+#: novelti/inc/widgets/widget-newsletter.php:169
+msgid "Sendloop List ID:"
+msgstr ""
+
+#: novelti/inc/widgets/widget-tabbed.php:9
+msgid " - Tabbed Widgets"
+msgstr ""
+
+#: novelti/inc/widgets/widget-tabbed.php:26
+msgid "Popular"
+msgstr ""
+
+#: novelti/inc/widgets/widget-tabbed.php:27
+msgid "Recent"
+msgstr ""
+
+#: novelti/inc/widgets/widget-tabbed.php:28
+msgid "Categories"
+msgstr ""
+
+#: novelti/inc/widgets/widget-tabbed.php:28
+msgid "Tags"
+msgstr ""
+
+#: novelti/inc/widgets/widget-tabbed.php:190
+msgid "Number of popular posts:"
+msgstr ""
+
+#: novelti/inc/widgets/widget-tabbed.php:195
+msgid "Number of recent posts:"
+msgstr ""
+
+#: novelti/inc/widgets/widget-tabbed.php:200
+msgid "Taxonomy Select:"
+msgstr ""
+
+#: novelti/inc/widgets/widget-twitter.php:10
+msgid " - Twitter Stream"
+msgstr ""
+
+#: novelti/inc/widgets/widget-twitter.php:64
+msgid "Username:"
+msgstr ""
+
+#: novelti/inc/widgets/widget-twitter.php:68
+msgid "Number of tweets:"
+msgstr ""

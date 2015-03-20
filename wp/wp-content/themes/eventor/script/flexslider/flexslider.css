@@ -1,0 +1,195 @@
+/*
+ * jQuery FlexSlider v1.8
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* Browser Resets */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider { margin: 0; padding: 0; }
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {max-width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider {
+    background: #fff; 
+    position: relative;
+    zoom: 1;
+    float: left; 
+    width: 100%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.flexslider .slides {zoom: 1;}
+.flexslider .slides > li {position: relative;}
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+.flex-container {zoom: 1; position: relative;}
+
+/* Caption style */
+/* IE rgba() hack */
+.flex-caption {background:none; -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); zoom: 1;}
+.flex-caption {width: 96%; padding: 2%; margin: 0; position: absolute; left: 0; bottom: 0; background: rgba(0,0,0,.3); color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 18px;}
+
+/* Direction Nav */
+.flex-direction-nav { height: 0; }
+.flex-direction-nav li a {width: 32px; height: 32px; margin: -16px 0 0; display: block; position: absolute; top: 50%; cursor: pointer; text-indent: -999em;}
+.flex-direction-nav li .next { background: url(theme/next.png) no-repeat top left; right: 55px;}
+.flex-direction-nav li .prev { background: url(theme/prev.png) no-repeat top left; left: 55px;}
+.flex-direction-nav li .prev:hover { background-position: bottom; }
+.flex-direction-nav li .disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
+
+/* Control Nav */
+.flex-control-nav {width: 100%; position: absolute; bottom: 10px; text-align: center;}
+.flex-control-nav li {margin: 0 0 0 5px; display: inline-block; zoom: 1; *display: inline;}
+.flex-control-nav li:first-child {margin: 0;}
+.flex-control-nav li a {width: 7px; height: 7px; display: block; background: url(theme/bg_control_nav.png) no-repeat top left; cursor: pointer; text-indent: -999em;}
+.flex-control-nav li a:hover {background-position: bottom;}
+.flex-control-nav li a.active {background-position: bottom; cursor: default;}
+
+.flexslider-part .flex-prev { 
+    background: url('../../style/img/part-arrows.png') no-repeat  #7bcfbb 13px 11px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    border-bottom: 2px solid #69b09f;
+    width:34px;
+    height:34px;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    left:10px;
+}
+
+.wrapper-content  .flexslider-part .flex-next {
+    right:10px;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;    
+    background: url('../../style/img/part-arrows.png') no-repeat  #7bcfbb -40px 11px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    border-bottom: 2px solid #69b09f;
+    width:34px;
+    height:34px;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+}
+
+.flexslider-part .flex-prev:hover, .flexslider-part .flex-next:hover, .wrapper-content .flexslider-part .flex-disabled {
+    background-color:#69b09f;
+}
+
+.flexslider-part .flex-disabled {
+    cursor:auto;
+}
+
+.flexslider-part .flexslider {
+    background:none;
+}
+
+.flexslider-part {
+    float:left;
+    width:96%;
+    position:relative;
+    background-color:#eaeaea;
+    border-radius:2px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    padding:23px 2%;
+    margin:0 0 30px 0;
+}
+
+.half-width .flexslider-part {
+    padding:23px 5%;
+    width:90%;
+}
+
+.third-width .flexslider-part {
+    padding:23px 7%;
+    width:86%;
+}
+
+.third-width .flexslider-part .flexslider li {
+    margin-right:0;
+}
+
+.flexslider-part .flexslider li {
+    margin-right:20px;
+}
+
+.half-width .flexslider-part .flexslider li {
+    margin-right:10px;
+}
+
+.half-width .flexslider-part .flex-next {
+    right:-5px;
+}
+
+.half-width .flexslider-part .flex-prev {
+    left:-5px;
+}
+
+.flexslider-news {
+    background:none;
+}
+
+.fullwidth-flex .home-latest-news-one, .half-width .home-latest-news-one, .third-width .flexslider, third-width .home-latest-news-one, .flexslider-news-left {
+    background:none;
+}
+
+.flex-news-slide .flex-direction-nav li a, .flex-news-slide .flex-direction-nav li a, .flex-news-slide .flex-direction-nav li a  {
+ top:auto;
+ text-indent:0;
+ width:auto;
+ height:auto;
+ position:static;
+ float:left;
+ margin: 0;
+}
+
+.fullwidth-flex .flex-direction-nav, .half-width .flex-direction-nav, .third-width .flex-direction-nav {
+    min-width:130px;
+}
+
+.fullwidth-flex .flex-direction-nav .flex-next, .half-width .flex-direction-nav .flex-next, .third-width .flex-direction-nav .flex-next {
+    margin-left:5px;
+}

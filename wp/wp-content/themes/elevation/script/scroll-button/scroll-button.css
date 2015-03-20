@@ -1,0 +1,36 @@
+/*--- SCROLL TOP ---*/
+.scroll-top{
+    float: left;
+    width: auto;
+    margin: 2px 0 0 3px;
+}
+
+#back-top {
+    width: auto;
+}
+
+#back-top a {
+    float: right;
+    display: inline-block;
+    width: auto;
+    position: relative;
+    color: #323232;
+    font-size: 12px;
+    font-family:"Helvetica Neue", Helvetica, serif;
+    min-width: 90px;
+    text-align: left;
+}
+
+#back-top span {
+    float: right;
+    display: inline-block;
+    width: 16px;
+    height: 18px;
+    display: block;
+    background: url(img/scroll-top.png) no-repeat top right;
+    margin: -1px 0 0 0;
+    text-align: right;
+}
+
+#back-top a:hover,
+#back-top a:hover span{ color: #F7DD35; background-position: bottom; }

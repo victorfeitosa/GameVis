@@ -1,0 +1,205 @@
+/* CSS From Shortcodes */
+
+.aq_block_tabs li:hover{
+    opacity: 0.85;
+    filter: alpha(opacity= 85);
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    cursor: pointer;
+}
+
+.aq_block_toggle h5.tab-head {
+    text-decoration: none;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    cursor: pointer;
+}
+
+.aq_block_toggle h5:hover {
+    color: #5d5d5d;
+}
+
+.aq_block_toggle div.arrow {
+    float: left;
+    width: 20px;
+    height: 15px;
+    background: url("img/Arrow.png") no-repeat top left;
+    padding: 0;
+    margin: 8px 4px 0 0;
+}
+
+.aq_block_toggle .tab-body {
+    border: none;
+    padding: 0 15px 25px 15px;
+    opacity: 1;
+    filter: alpha(opacity= 100);
+
+}
+
+.aq_block_toggle .tab-body p {
+    opacity: 1;
+    filter: alpha(opacity= 100);
+}
+
+.aq_block_toggle .close{
+    float: none;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    text-shadow: none;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.aq_block_toggle p, .aq_block_accordion p, .tk-infobox p{
+    margin-bottom: 0!important;
+}
+
+.aq_block_accordion .tab-body p{margin-bottom: 10px!important}
+
+.aq_block_toggle {
+    float: none;
+    width: 100%;
+    background: #fff;
+    margin: 10px 0 10px;
+    position: relative;
+}
+
+.aq_block_accordion  {
+    float: none;
+    width: 100%;
+    background: #fff;
+    margin: 10px 0 10px;
+    position: relative;
+}
+
+.aq_block_toggle i,
+.aq_block_accordion i {
+    position: absolute;
+    top: 17px;
+    right: 9px;
+    font-size: 18px;
+    color: #8b8b8b;
+    cursor: pointer;
+}
+
+.aq_block_toggle .icon-minus {
+    display: none;
+}
+
+.aq_block_toggle.opened .icon-plus {
+    display: none;
+}
+
+.aq_block_toggle.opened .icon-minus {
+    display: block;
+}
+
+.aq_block_toggles_wrapper { margin: 0 0 20px; }
+.aq_block_accordion {
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    border-top: none;
+    margin: 0;
+}
+.aq_block_accordion_wrapper .aq_block_accordion:first-child {
+
+}
+.aq_block_accordion_wrapper .aq_block_accordion:last-child {
+
+}
+
+.aq_block_toggle div.arrow,
+.aq_block_accordion div.arrow {
+    display: block;
+    float: right;
+    position: absolute;
+    right: 15px;
+    top: 13px;
+}
+.aq_block_toggle h5.tab-head,
+.aq_block_accordion h5.tab-head {
+    margin: 0;
+    padding: 15px 70px 15px 15px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.aq_block_accordion_wrapper {
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+.aq_block_accordion_wrapper .aq_block_accordion:last-child .tab-head {
+    border-bottom: none !important;
+}
+
+.aq_block_toggle h5.tab-head a,
+.aq_block_accordion h5.tab-head a {  }
+.aq_block_toggle:hover div.arrow,
+.aq_block_accordion:hover div.arrow { }
+.aq_block_toggle .tab-body,
+.aq_block_accordion .tab-body {
+    display: none;
+    overflow: hidden;
+    padding: 15px 15px 15px;
+}
+
+.aq_block_toggle .tab-body.open,
+.aq_block_accordion_wrapper .aq_block_accordion:first-child .tab-body{
+    display: block;
+}
+
+.aq_block_toggle .tab-body {
+    padding: 0 !important;
+}
+
+.aq_block_accordion.last-child .tab-body {
+    border-bottom: 0;
+}
+
+.aq_block_toggle .tab-body p {
+    padding: 0 15px 15px 15px;
+}
+
+/*  End CSS From Shortcodes */
+
+a.btn {
+	font-weight: bold;
+	color: #fff;
+	margin: 10px 0;
+	background-image: none;
+	background-repeat: no-repeat;
+	border: none;
+	border-color: transparent;
+	border-bottom-color: transparent;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+a.btn-warning {
+	background: #e3850c;
+	text-shadow: none;
+}
+
+a.btn {
+	padding: 9px 20px 8px;
+	font-size: 16px;
+}
+
+a.btn-large {
+	padding: 14px 25px 13px;
+	font-size: 18px;
+}

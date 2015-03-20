@@ -1,0 +1,19 @@
+.sidebar_widget_holder #calendar_wrap { float: left; width: 100%; margin: 70px 0 0 -6px; }
+
+.sidebar_widget_holder #wp-calendar caption { margin-bottom: -600px; }
+
+
+.portfolio-home-category {
+    width: 99.8%;
+    height: 45px;
+    margin-bottom: 45px;
+    border: 1px solid #000;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.portfolio-home-category ul { float: right; width: 90%; }

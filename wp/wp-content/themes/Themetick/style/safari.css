@@ -1,0 +1,16 @@
+.bg-business-days ul li { padding: 6px 5px 0px; }
+
+.business-button-center { height: 45px; padding-top: 11px;  }
+
+.gallery-filter ul li { background:url("../style/img/gallery-line.png") no-repeat right 3px; }
+
+.form input.search-submit-button { padding: 0 12px 0; }
+
+.sidebar_widget_holder #s input.search-input { width: 156px; }
+
+.sidebar_widget_holder .newsletter .input-newsletter { width: 173px; }
+
+.business-button-content a:hover div { background-position: bottom; }
+.business-button-content a:hover .business-button-center { background-position: bottom; padding-top: 11px; height: 44px; }
+
+.sidebar_widget_holder #s input.search-input {margin: 10px 0 0 15px; }

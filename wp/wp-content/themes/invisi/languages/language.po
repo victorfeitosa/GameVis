@@ -1,0 +1,276 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Invisi Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-01 11:44+0100\n"
+"PO-Revision-Date: 2012-08-01 11:46+0100\n"
+"Last-Translator: Danko Dubajic <dubajicd@gmail.com>\n"
+"Language-Team: ThemesKingdom <info@themeskingdom.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: /Volumes/Storage/01_localhost/01_develop/wp-content/themes/\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: invisi\n"
+
+#: invisi/404.php:10
+msgid "404 error"
+msgstr ""
+
+#: invisi/404.php:22
+msgid "Looks like the page you were looking for does not exist. Sorry about that."
+msgstr ""
+
+#: invisi/404.php:23
+msgid "Check the web address for typos, or go to"
+msgstr ""
+
+#: invisi/404.php:23
+msgid "Home page"
+msgstr ""
+
+#: invisi/_contact.php:77
+msgid "Find us  on a map"
+msgstr ""
+
+#: invisi/_contact.php:176
+msgid "Say Hello"
+msgstr ""
+
+#: invisi/_contact.php:180
+msgid "Name"
+msgstr ""
+
+#: invisi/_contact.php:181
+msgid "E-mail"
+msgstr ""
+
+#: invisi/_contact.php:188
+#: invisi/comments.php:96
+msgid "Send"
+msgstr ""
+
+#: invisi/archive.php:67
+#: invisi/author.php:68
+#: invisi/category.php:64
+#: invisi/category.php:150
+#: invisi/index.php:64
+#: invisi/index.php:163
+#: invisi/index.php:266
+#: invisi/search.php:68
+#: invisi/single.php:72
+msgid "COMMENTS"
+msgstr ""
+
+#: invisi/category.php:73
+#: invisi/index.php:71
+#: invisi/index.php:171
+#: invisi/index.php:281
+msgid "More info"
+msgstr ""
+
+#: invisi/comments.php:14
+msgid "- Your comment is awaiting moderation."
+msgstr ""
+
+#: invisi/comments.php:14
+msgid " - Edit - "
+msgstr ""
+
+#: invisi/comments.php:30
+msgid "No comments so far!"
+msgstr ""
+
+#: invisi/comments.php:32
+msgid "Comments"
+msgstr ""
+
+#: invisi/comments.php:45
+msgid "You must be"
+msgstr ""
+
+#: invisi/comments.php:45
+msgid "logged in"
+msgstr ""
+
+#: invisi/comments.php:45
+msgid "to post a comment."
+msgstr ""
+
+#: invisi/comments.php:83
+msgid "Leave a Comment"
+msgstr ""
+
+#: invisi/comments.php:88
+msgid "Name (required)"
+msgstr ""
+
+#: invisi/comments.php:89
+msgid "E-mail (required)"
+msgstr ""
+
+#: invisi/comments.php:108
+msgid "Comments are closed"
+msgstr ""
+
+#: invisi/functions.php:29
+msgid "Primary Menu"
+msgstr ""
+
+#: invisi/functions.php:87
+msgid "Views"
+msgstr ""
+
+#: invisi/header.php:271
+#: invisi/single.php:129
+msgid "Get in touch"
+msgstr ""
+
+#: invisi/index.php:108
+msgid "Recent News"
+msgstr ""
+
+#: invisi/search.php:76
+msgid "No posts found. Try a different search?"
+msgstr ""
+
+#: invisi/searchform.php:3
+msgid "Enter search keyword"
+msgstr ""
+
+#: invisi/single.php:90
+msgid "Share this:"
+msgstr ""
+
+#: invisi/single.php:112
+msgid "About the author"
+msgstr ""
+
+#: invisi/single.php:147
+msgid "All articles"
+msgstr ""
+
+#: invisi/inc/meta-boxes.php:10
+#: invisi/inc/meta-boxes.php:17
+msgid "VIdeo Link"
+msgstr ""
+
+#: invisi/inc/shortcodes/popup.php:20
+msgid "Insert Shortcode"
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:12
+msgid "Button URL"
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:13
+msgid "Add the button's url eg http://example.com"
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:17
+msgid "Button's Style"
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:18
+msgid "Select the button's style, ie the buttons colour"
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:33
+msgid "Button's Text"
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:34
+msgid "Add the button's text"
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:44
+msgid "Type of list"
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:45
+msgid "Select the list type"
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:57
+msgid "List Text"
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:58
+msgid "Add the list text"
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:68
+msgid "Column Type"
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:69
+msgid "Select the type of the column."
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:79
+msgid "Last Column"
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:80
+msgid "Check this box if this column is last."
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:89
+msgid "Column Content"
+msgstr ""
+
+#: invisi/inc/shortcodes/settings.php:90
+msgid "Add the column content."
+msgstr ""
+
+#: invisi/inc/widgets/widget-advert.php:9
+msgid " - Advertising widget"
+msgstr ""
+
+#: invisi/inc/widgets/widget-advert.php:51
+#: invisi/inc/widgets/widget-newsletter.php:89
+#: invisi/inc/widgets/widget-twitter.php:44
+msgid "Title:"
+msgstr ""
+
+#: invisi/inc/widgets/widget-newsletter.php:10
+msgid " - Newsletter"
+msgstr ""
+
+#: invisi/inc/widgets/widget-newsletter.php:93
+msgid "Newsletter Text:"
+msgstr ""
+
+#: invisi/inc/widgets/widget-newsletter.php:97
+msgid "Chose Service:"
+msgstr ""
+
+#: invisi/inc/widgets/widget-newsletter.php:102
+msgid "MailChimp API Key:"
+msgstr ""
+
+#: invisi/inc/widgets/widget-newsletter.php:107
+msgid "MailChimp API List:"
+msgstr ""
+
+#: invisi/inc/widgets/widget-newsletter.php:112
+msgid "Sendloop Username:"
+msgstr ""
+
+#: invisi/inc/widgets/widget-newsletter.php:117
+msgid "Sendloop List ID:"
+msgstr ""
+
+#: invisi/inc/widgets/widget-twitter.php:9
+msgid " - Twitter Stream"
+msgstr ""
+
+#: invisi/inc/widgets/widget-twitter.php:48
+msgid "Username:"
+msgstr ""
+
+#: invisi/inc/widgets/widget-twitter.php:52
+msgid "Number of tweets:"
+msgstr ""
+

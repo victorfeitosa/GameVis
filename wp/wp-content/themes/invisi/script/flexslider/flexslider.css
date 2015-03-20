@@ -1,0 +1,135 @@
+/*
+ * jQuery FlexSlider v1.8
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* Browser Resets */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {margin: 0; padding: 0;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.slider-images { width: 64%; max-width: 629px; height: 398px; position: relative; }
+.white-triangle { width: 13px; height: 35px; background: url(theme/white-triangle.png) no-repeat right top; position: absolute; z-index: 999; top: 25px; right: 0; }
+.flexslider .slides img { width: 100%; height: 398px; display: block; margin: 0 auto; text-align: left; }
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider { position: relative; background-color: #fff; }
+.flexslider .slides {zoom: 1;}
+.flexslider .slides > li {position: relative;}
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+.flex-container {zoom: 1; position: relative;}
+
+/* Caption style */
+/* IE rgba() hack */
+.flex-caption {background:none; zoom: 1;}
+.flex-caption { width: 34%; max-width: 300px; padding: 0; margin: 25px 25px 0 0; position: relative; left: 0; bottom: 0; }
+
+/* Direction Nav */
+.flex-direction-nav { display: inline-block; height: 51px; position: absolute; bottom: 48%; width: 123px; max-width: 580px; text-align: center; background: url(theme/bg-pointer-new.png) repeat top left; }
+.single-slider-fix .flex-direction-nav{bottom: 0}
+.flex-direction-nav li { display: inline-block; }
+.flex-direction-nav li a {margin: -28px 0 0 0; display: inline-block; position: absolute; top: 100%; cursor: pointer; font-family: 'LatoBold'; color: #fff; font-size: 10px;     text-transform: uppercase;}
+.flex-direction-nav li a:hover { color: #F95625; }
+.flex-direction-nav li .next { display: inline-block;  float: left; width: auto; padding: 0; right: 25px; }
+.flex-direction-nav li .prev { display: inline-block; float: left; width: auto; padding: 0; left: 25px; }
+.flex-direction-nav li .disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
+
+/* Control Nav */
+.flex-control-nav { display: none!important; }
+
+/*-- SLIDER TEXT --*/
+.slider-title { width: 100%; height: 90px; overflow: hidden; margin-bottom: 15px; }
+
+.slider-title a {
+    float: left;
+    width: auto;
+    color: #ff5926;
+    font-size: 26px;
+    font-family: 'LatoBold';
+    text-transform: uppercase;
+    line-height: 30px;
+}
+
+.slider-title a:hover { color: #464646; } 
+
+.slider-comments { width: 100%; margin-bottom: 10px; }
+
+.slider-comments span {
+    float: left;
+    width: 100%;
+    height: 20px; 
+    overflow: hidden; 
+    color: #464646;
+    font-size: 13px;
+    font-family: 'LatoLight';
+    text-transform: uppercase;
+    line-height: 20px;
+} 
+
+.slider-text {
+    float: left;
+    width: 100%;
+    height: 90px; 
+    overflow: hidden; 
+    color: #464646;
+    font-size: 14px;
+    font-family: 'NoticiaTextRegular';
+    line-height: 21px;
+     margin-bottom: 20px;
+}
+
+.slider-more-info { width: 100%; height: 16px; overflow: hidden; background: url(theme/bg-pointer15.png) repeat-x left 1px; }
+
+.white-bg-more-info { width: auto; background-color: #fff; padding-left: 18px; }
+
+.white-bg-more-info a { float: left; width: auto; }
+
+.button-left-16 {
+    width: 4px;
+    height: 16px;
+    background: url("../../style/img/button-left-16.png") no-repeat left top;
+}
+
+.button-center-16 {
+    height: 12px;
+    background: url("../../style/img/button-center-16.png") repeat-x left top;
+    padding: 4px 4px 0;
+    color: #ffffff;
+    font-size: 9px;
+    font-family: 'LatoBold';
+    text-transform: uppercase;
+}
+
+.button-right-16 {
+    width: 16px;
+    height: 16px;
+    background: url("../../style/img/button-right-16.png") no-repeat left top;
+}
+
+.slider-more-info a:hover div { background-position: bottom; }
+

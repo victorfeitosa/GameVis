@@ -33,6 +33,22 @@ define(function (require) {
 		}
 	}
 
+	function getAspect() {
+		var canvas = d3.select('svg');
+		var width = canvas.attr('width');
+		var height = canvas.attr('height');
+
+		return (width/height);
+	}
+
+	function getResolution(){
+		var canvas = d3.select('svg');
+		var width = canvas.attr('width');
+		var height = canvas.attr('height');
+
+		return {w: width, h: height};
+	}
+
 	//Classes=======================================================================
 
 	//load and save gamedata functions
@@ -507,10 +523,6 @@ define(function (require) {
 	};
 
 	Match.prototype.build = function () {
-		//TODO: For this to work we have to change the methods of adding kills and gold so the-----
-		//		build works properly, building the graphics with values on the correct timestamps--
-		//		and not always on '0'.-------------------------------------------------------------
-
 		for (var time = 0; time < this.EndTime; time++) {
 			this.GoldDifference.push(this.calculateDifference(time, "Gold"));
 			this.XPDifference.push(this.calculateDifference(time, "XP"));
@@ -573,6 +585,8 @@ define(function (require) {
 		isStyleSourceCSS: isStyleSourceCSS,
 		isStyleSourceCode: isStyleSourceCode,
 		setChartStyleSource: setChartStyleSource,
+		getAspect: getAspect,
+		getResolution: getResolution,
 		saveGameData: saveGameData,
 		loadGameData: loadGameData,
 

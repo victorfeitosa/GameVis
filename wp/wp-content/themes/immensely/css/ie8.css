@@ -1,0 +1,36 @@
+.navbar .nav > li > a {font-size: 0.83em; margin-top: 7px}
+
+.navbar .nav > li a i {top: 3px}
+
+.header-divider {position: relative; top: 5px}
+
+.search-header {margin-top: 7px;}
+
+.post-opt-wrapper {display: none}
+
+#newsleter-form-footer .input-newsletter,
+#searchform .search-input {background: #E0E0E0}
+
+.collapse {overflow: visible;}
+
+.blog .img-post-big img {margin-bottom: 10px;}
+
+.quote-post-big blockquote p {border-left: 3px solid #BCBEC0;}
+
+.pricing-table-one-border {border: 1px solid #dfdfdf}
+
+.span3 .pricing-table-one-center {width: 89%}
+.span4 .pricing-table-one-center {width: 85.2%}
+.span6 .pricing-table-one-center {width: 87%}
+.span12 .pricing-table-one-center {width: 97.7%}
+
+#sidebar .block ul li {border-bottom: none;}
+
+.row-fluid .span2 {width:12%;}
+.row-fluid .span3 {width:21%;}
+.row-fluid .span4 {width:30%;}
+.row-fluid .span5 {width:38%;}
+.row-fluid .span6 {width:43%;}
+.row-fluid .span7 {width: 55%;}
+.row-fluid .span9 {width:70%;}
+

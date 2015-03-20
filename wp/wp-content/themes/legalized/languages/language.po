@@ -1,0 +1,1216 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Legalized\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-09 15:14+0100\n"
+"PO-Revision-Date: 2013-07-09 15:14+0100\n"
+"Last-Translator: ThemesKingdom <info@themeskingdom.com>\n"
+"Language-Team: ThemesKingdom <info@themeskingdom.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: /Users/justdot/Desktop/htdocs/!bitbucket/wp-content/"
+"themes\n"
+"X-Generator: Poedit 1.5.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: legalized\n"
+
+#: legalized/404.php:16
+msgid "404 - Error"
+msgstr ""
+
+#: legalized/404.php:17
+msgid "Page does not exist"
+msgstr ""
+
+#: legalized/404.php:34
+msgid ""
+"Looks like the page you were looking for does not exist. Sorry about that."
+msgstr ""
+
+#: legalized/404.php:40
+msgid "Check the web address for typos, or go to"
+msgstr ""
+
+#: legalized/404.php:40
+msgid "HOME PAGE"
+msgstr ""
+
+#: legalized/archive.php:29
+msgid "Archive"
+msgstr ""
+
+#: legalized/comments.php:11
+msgid "- Your comment is awaiting moderation."
+msgstr ""
+
+#: legalized/comments.php:11
+msgid " · Edit "
+msgstr ""
+
+#: legalized/comments.php:21
+msgid "No comments so far!"
+msgstr ""
+
+#: legalized/comments.php:23 legalized/page-templates/_part_loop.php:183
+#: legalized/page-templates/_part_onecolumn.php:156
+#: legalized/page-templates/_part_tabs.php:169
+#: legalized/page-templates/_part_tabs.php:351
+#: legalized/page-templates/_part_tabs.php:535
+#: legalized/page-templates/_part_threecolumns.php:209
+#: legalized/page-templates/_part_threecolumns.php:808
+#: legalized/page-templates/_part_threecolumns.php:1408
+#: legalized/page-templates/_part_twocolumns.php:182
+#: legalized/page-templates/_part_twocolumns.php:723
+msgid "Comments"
+msgstr ""
+
+#: legalized/comments.php:36
+msgid "You must be"
+msgstr ""
+
+#: legalized/comments.php:37
+msgid "logged in"
+msgstr ""
+
+#: legalized/comments.php:38
+msgid "to post a comment."
+msgstr ""
+
+#: legalized/comments.php:54
+msgid "Leave a Reply"
+msgstr ""
+
+#: legalized/comments.php:54
+msgid "Leave a Comment"
+msgstr ""
+
+#: legalized/comments.php:58
+msgid "Name (required)"
+msgstr ""
+
+#: legalized/comments.php:59
+msgid "E-mail (required)"
+msgstr ""
+
+#: legalized/comments.php:61 legalized/page-templates/_contact.php:216
+msgid "Message"
+msgstr ""
+
+#: legalized/comments.php:64 legalized/page-templates/_contact.php:234
+msgid "Send a Message"
+msgstr ""
+
+#: legalized/comments.php:76
+msgid "Comments are closed"
+msgstr ""
+
+#: legalized/footer.php:59
+msgid ""
+"&copy; Copyright 2013. Powered by WordPress. Legalized Theme by Themes "
+"Kingdom"
+msgstr ""
+
+#: legalized/functions.php:23
+msgid "Primary Menu"
+msgstr ""
+
+#: legalized/functions.php:183
+msgid "All fields are required"
+msgstr ""
+
+#: legalized/functions.php:2011
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:164
+msgid "Install Required Plugins"
+msgstr ""
+
+#: legalized/functions.php:2012
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:165
+msgid "Install Plugins"
+msgstr ""
+
+#: legalized/functions.php:2013
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:166
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: legalized/functions.php:2014
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: legalized/functions.php:2025
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:178
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:490
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: legalized/functions.php:2026
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:179
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1846
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: legalized/functions.php:2027
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: legalized/header.php:23
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: legalized/search.php:28
+msgid "Search"
+msgstr ""
+
+#: legalized/search.php:64
+msgid "No posts found. Try a different search?"
+msgstr ""
+
+#: legalized/search.php:80 legalized/page-templates/_blog.php:96
+msgid "Prev"
+msgstr ""
+
+#: legalized/search.php:81 legalized/page-templates/_blog.php:97
+msgid "Next"
+msgstr ""
+
+#: legalized/sendcontact.php:33 legalized/sendcontact.php:53
+msgid "You received e-mail from "
+msgstr ""
+
+#: legalized/sendcontact.php:33 legalized/sendcontact.php:53
+msgid " using "
+msgstr ""
+
+#: legalized/single-services.php:148 legalized/single-work.php:138
+#: legalized/single.php:301
+msgid "Facebook"
+msgstr ""
+
+#: legalized/single-services.php:159 legalized/single-work.php:149
+#: legalized/single.php:312
+msgid "Twitter"
+msgstr ""
+
+#: legalized/single-services.php:170 legalized/single-work.php:160
+#: legalized/single.php:323
+msgid "Google+"
+msgstr ""
+
+#: legalized/single-services.php:181 legalized/single-work.php:171
+#: legalized/single.php:334
+msgid "LinkedIn"
+msgstr ""
+
+#: legalized/single-services.php:193 legalized/single-work.php:183
+#: legalized/single.php:346
+msgid "Pinterest"
+msgstr ""
+
+#: legalized/single-services.php:204 legalized/single-work.php:194
+#: legalized/single.php:357
+msgid "Stumbleupon"
+msgstr ""
+
+#: legalized/single.php:231
+msgid "Comments / "
+msgstr ""
+
+#: legalized/inc/admin-settings.php:568
+msgid ""
+"Page builder allows you to create unique homepage in just few clicks. </"
+"br>Simply add and drag-and-drop elements on desired position."
+msgstr ""
+
+#: legalized/inc/custom-taxonomies.php:10
+msgid "Search Work Categories"
+msgstr ""
+
+#: legalized/inc/custom-taxonomies.php:11
+msgid "All Work Categories"
+msgstr ""
+
+#: legalized/inc/custom-taxonomies.php:12
+#: legalized/inc/custom-taxonomies.php:13
+msgid "Parent Work Category"
+msgstr ""
+
+#: legalized/inc/custom-taxonomies.php:14
+msgid "Edit Work Category"
+msgstr ""
+
+#: legalized/inc/custom-taxonomies.php:15
+msgid "Update Work Category"
+msgstr ""
+
+#: legalized/inc/custom-taxonomies.php:16
+msgid "Add New Work Category"
+msgstr ""
+
+#: legalized/inc/custom-taxonomies.php:17
+msgid "New Work Category"
+msgstr ""
+
+#: legalized/inc/custom-taxonomies.php:18
+msgid "Work Categories"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:10 legalized/inc/meta-boxes.php:16
+msgid "Advertisement Link"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:24
+msgid "Custom Banner Code"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:38 legalized/inc/post-types.php:60
+msgid "Advertisement"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:44
+msgid "Banner Stats"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:58 legalized/inc/meta-boxes.php:65
+msgid "VIdeo Link"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:77
+msgid "Slider Fields"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:96
+msgid "Audio Options"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:103
+msgid "Audio Link"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:111
+msgid "Artist/Song Name"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:123 legalized/inc/meta-boxes.php:130
+msgid "Quote Text"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:138
+msgid "Quote Author"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:150
+msgid "Link"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:157
+msgid "Link Text"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:164
+msgid "Link Url"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:176
+msgid "Page Settings"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:183
+msgid "SubHeadline"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:198 legalized/inc/meta-boxes.php:204
+msgid "Sidebar Position"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:210
+msgid "Select sidebar"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:224
+msgid "Testimonial"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:232
+msgid "Job Position"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:240
+msgid "E-mail"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:251
+msgid "Team Member Info"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:259
+msgid "Float Featured Image Right"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:267
+msgid "Member Title"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:275
+msgid "Flickr Account"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:283
+msgid "Instagram Account"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:291
+msgid "Twitter Account"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:299
+msgid "Facebook Account"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:307
+msgid "LinkedIn Account"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:319
+msgid "Services  Colors"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:326 legalized/inc/shortcodes/settings.php:204
+#: legalized/inc/shortcodes/settings.php:331
+msgid "Background Color"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:334
+msgid "Background Hover Color"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:343
+msgid "Headline Color"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:350
+msgid "Subheadline Color"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:357 legalized/inc/shortcodes/settings.php:210
+#: legalized/inc/shortcodes/settings.php:336
+msgid "Text Color"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:364
+msgid "Hover Color"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:371
+msgid "Small featured image"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:414
+msgid "Partners link"
+msgstr ""
+
+#: legalized/inc/meta-boxes.php:421
+msgid "Partners Website"
+msgstr ""
+
+#: legalized/inc/post-types.php:14 legalized/inc/post-types.php:15
+#: legalized/inc/post-types.php:26
+msgid "Sidebars"
+msgstr ""
+
+#: legalized/inc/post-types.php:16 legalized/inc/post-types.php:61
+#: legalized/inc/post-types.php:101 legalized/inc/post-types.php:141
+#: legalized/inc/post-types.php:181 legalized/inc/post-types.php:220
+#: legalized/inc/post-types.php:260
+msgid "Add New"
+msgstr ""
+
+#: legalized/inc/post-types.php:17
+msgid "Add New Sidebar"
+msgstr ""
+
+#: legalized/inc/post-types.php:18
+msgid "Edit Sidebar"
+msgstr ""
+
+#: legalized/inc/post-types.php:19
+msgid "New Sidebar"
+msgstr ""
+
+#: legalized/inc/post-types.php:20
+msgid "All Sidebars"
+msgstr ""
+
+#: legalized/inc/post-types.php:21
+msgid "View this Sidebar"
+msgstr ""
+
+#: legalized/inc/post-types.php:22
+msgid "Search Sidebars"
+msgstr ""
+
+#: legalized/inc/post-types.php:23
+msgid "No Sidebars"
+msgstr ""
+
+#: legalized/inc/post-types.php:24
+msgid "No Sidebars in Trash"
+msgstr ""
+
+#: legalized/inc/post-types.php:59 legalized/inc/post-types.php:71
+msgid "Advertising"
+msgstr ""
+
+#: legalized/inc/post-types.php:62
+msgid "Add New Ad"
+msgstr ""
+
+#: legalized/inc/post-types.php:63
+msgid "Edit Ad"
+msgstr ""
+
+#: legalized/inc/post-types.php:64
+msgid "New Ad"
+msgstr ""
+
+#: legalized/inc/post-types.php:65
+msgid "All Ads"
+msgstr ""
+
+#: legalized/inc/post-types.php:66
+msgid "View this Ad"
+msgstr ""
+
+#: legalized/inc/post-types.php:67
+msgid "Search Ads"
+msgstr ""
+
+#: legalized/inc/post-types.php:68
+msgid "No Ads"
+msgstr ""
+
+#: legalized/inc/post-types.php:69
+msgid "No Ads in Trash"
+msgstr ""
+
+#: legalized/inc/post-types.php:99 legalized/inc/post-types.php:100
+#: legalized/inc/post-types.php:111
+msgid "Work"
+msgstr ""
+
+#: legalized/inc/post-types.php:102
+msgid "Add New Work Item"
+msgstr ""
+
+#: legalized/inc/post-types.php:103
+msgid "Edit Work Item"
+msgstr ""
+
+#: legalized/inc/post-types.php:104
+msgid "New Work Item"
+msgstr ""
+
+#: legalized/inc/post-types.php:105
+msgid "All Work Items"
+msgstr ""
+
+#: legalized/inc/post-types.php:106
+msgid "View this Work Item"
+msgstr ""
+
+#: legalized/inc/post-types.php:107
+msgid "Search Work Items"
+msgstr ""
+
+#: legalized/inc/post-types.php:108
+msgid "No Work Items"
+msgstr ""
+
+#: legalized/inc/post-types.php:109
+msgid "No Work Items in Trash"
+msgstr ""
+
+#: legalized/inc/post-types.php:139 legalized/inc/post-types.php:140
+msgid "Team"
+msgstr ""
+
+#: legalized/inc/post-types.php:142
+msgid "Add New Team Member"
+msgstr ""
+
+#: legalized/inc/post-types.php:143
+msgid "Edit Team Member"
+msgstr ""
+
+#: legalized/inc/post-types.php:144
+msgid "New Team Member"
+msgstr ""
+
+#: legalized/inc/post-types.php:145
+msgid "All Team Members"
+msgstr ""
+
+#: legalized/inc/post-types.php:146
+msgid "View this Team Member"
+msgstr ""
+
+#: legalized/inc/post-types.php:147
+msgid "Search Team Members"
+msgstr ""
+
+#: legalized/inc/post-types.php:148
+msgid "No Team Members"
+msgstr ""
+
+#: legalized/inc/post-types.php:149
+msgid "No Team Members in Trash"
+msgstr ""
+
+#: legalized/inc/post-types.php:151
+msgid "Team Members"
+msgstr ""
+
+#: legalized/inc/post-types.php:179 legalized/inc/post-types.php:180
+#: legalized/inc/post-types.php:191
+msgid "Services"
+msgstr ""
+
+#: legalized/inc/post-types.php:182
+msgid "Add New Service"
+msgstr ""
+
+#: legalized/inc/post-types.php:183
+msgid "Edit Service"
+msgstr ""
+
+#: legalized/inc/post-types.php:184
+msgid "New Service"
+msgstr ""
+
+#: legalized/inc/post-types.php:185
+msgid "All Services"
+msgstr ""
+
+#: legalized/inc/post-types.php:186
+msgid "View this Service"
+msgstr ""
+
+#: legalized/inc/post-types.php:187
+msgid "Search Services"
+msgstr ""
+
+#: legalized/inc/post-types.php:188
+msgid "No Services"
+msgstr ""
+
+#: legalized/inc/post-types.php:189
+msgid "No Services in Trash"
+msgstr ""
+
+#: legalized/inc/post-types.php:218 legalized/inc/post-types.php:219
+#: legalized/inc/post-types.php:230
+msgid "Testimonials"
+msgstr ""
+
+#: legalized/inc/post-types.php:221
+msgid "Add New Testimonial"
+msgstr ""
+
+#: legalized/inc/post-types.php:222
+msgid "Edit Testimonial"
+msgstr ""
+
+#: legalized/inc/post-types.php:223
+msgid "New Testimonial"
+msgstr ""
+
+#: legalized/inc/post-types.php:224
+msgid "All Testimonials"
+msgstr ""
+
+#: legalized/inc/post-types.php:225
+msgid "View this Testimonial"
+msgstr ""
+
+#: legalized/inc/post-types.php:226
+msgid "Search Testimonials"
+msgstr ""
+
+#: legalized/inc/post-types.php:227
+msgid "No Testimonials"
+msgstr ""
+
+#: legalized/inc/post-types.php:228
+msgid "No Testimonials in Trash"
+msgstr ""
+
+#: legalized/inc/post-types.php:258 legalized/inc/post-types.php:259
+#: legalized/inc/post-types.php:270
+msgid "Page Builder"
+msgstr ""
+
+#: legalized/inc/post-types.php:261
+msgid "Add New Page Builder"
+msgstr ""
+
+#: legalized/inc/post-types.php:262
+msgid "Edit Page Builder"
+msgstr ""
+
+#: legalized/inc/post-types.php:263
+msgid "New Page Builder"
+msgstr ""
+
+#: legalized/inc/post-types.php:264
+msgid "All Page Builder"
+msgstr ""
+
+#: legalized/inc/post-types.php:265
+msgid "View this Page Builder"
+msgstr ""
+
+#: legalized/inc/post-types.php:266
+msgid "Search Page Builder"
+msgstr ""
+
+#: legalized/inc/post-types.php:267
+msgid "No Page Builder"
+msgstr ""
+
+#: legalized/inc/post-types.php:268
+msgid "No Page Builder in Trash"
+msgstr ""
+
+#: legalized/inc/theme-settings.php:858 legalized/inc/theme-settings.php:1008
+msgid "All Categories"
+msgstr ""
+
+#: legalized/inc/theme-settings.php:934
+msgid "This room option already exists"
+msgstr ""
+
+#: legalized/inc/shortcodes/popup.php:20
+msgid "Insert Shortcode"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:13
+#: legalized/inc/shortcodes/settings.php:244
+#: legalized/inc/shortcodes/settings.php:351
+msgid "Button URL"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:14
+#: legalized/inc/shortcodes/settings.php:245
+#: legalized/inc/shortcodes/settings.php:352
+msgid "Add the button's url eg http://example.com"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:21
+#: legalized/inc/shortcodes/settings.php:252
+#: legalized/inc/shortcodes/settings.php:359
+msgid "Button's Style"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:22
+#: legalized/inc/shortcodes/settings.php:360
+msgid "Select the button's style, ie the buttons colour"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:36
+#: legalized/inc/shortcodes/settings.php:267
+#: legalized/inc/shortcodes/settings.php:374
+msgid "Button's Text"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:37
+#: legalized/inc/shortcodes/settings.php:268
+#: legalized/inc/shortcodes/settings.php:375
+msgid "Add the button's text"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:51
+msgid "Type of list"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:52
+msgid "Select the list type"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:64
+msgid "List Text"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:65
+msgid "Add the list text"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:80
+#: legalized/inc/shortcodes/settings.php:292
+msgid "Column Type"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:81
+#: legalized/inc/shortcodes/settings.php:293
+msgid "Select the type of the column."
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:91
+msgid "Column Content"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:92
+msgid "Add the column content."
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:107
+msgid "Toggle Title"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:117
+msgid "Toggle Content"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:118
+msgid "Add the toggle content."
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:127
+msgid "Default Value"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:128
+msgid "Chose to show either open or closed toggle content."
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:136
+msgid "Insert Toggle Content Shortcode"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:148
+msgid "Tabbed Title"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:158
+msgid "Tabbed Content"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:159
+msgid "Add the tabbed content."
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:170
+#: legalized/inc/shortcodes/settings.php:407
+msgid "Insert Tabbed Content Shortcode"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:178
+msgid "Type of dropcap"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:179
+msgid "Select the dropcap type"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:189
+msgid "Insert starting letter to use as dropcap."
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:217
+msgid "Insert yor text"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:218
+msgid "Insert info box."
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:234
+#: legalized/inc/shortcodes/settings.php:341
+msgid "Use Button"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:235
+msgid "Chose if you want to use Button inside Call To Action"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:253
+msgid "Select the button's style, ie the buttons color"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:276
+msgid "Call To Action Text"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:277
+msgid "Add Call To Action Text"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:304
+msgid "Last Column"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:305
+msgid "Pick if column is last."
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:314
+msgid "Table Title"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:315
+msgid "Price table title."
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:323
+msgid "Table Subtitle"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:324
+msgid "Price table subtitle."
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:342
+msgid "Chose if you want to use Button inside Price Table"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:385
+msgid "Price Row Text"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:395
+msgid "Price Row Price"
+msgstr ""
+
+#: legalized/inc/shortcodes/settings.php:396
+msgid "Add the price to the element."
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:167
+msgid "Something went wrong."
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:180
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:517
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2058
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:545
+#, php-format
+msgid "The following plugin was activated successfully: %s."
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:704
+msgid "Dismiss this notice"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1091
+msgid "External Link"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1096
+msgid "Private Repository"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1099
+msgid "Pre-Packaged"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1103
+msgid "WordPress Repository"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1106
+msgid "Required"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1106
+msgid "Recommended"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1109
+msgid "Not Installed"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1111
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1281
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1297
+msgid "Plugin"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1298
+msgid "Source"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1299
+msgid "Type"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1300
+msgid "Status"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1318
+msgid "Install"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1319
+msgid "Activate"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1829
+msgid "Install package not available."
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1830
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1831
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1832
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1833
+msgid "Plugin install failed."
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1834
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1845
+msgid "Plugin activation failed."
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1955
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1956
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1956
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1965
+msgid "Show Details"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1956
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1965
+msgid "Hide Details"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1957
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1958
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1962
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1963
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1964
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1965
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1966
+msgid "All installations have been completed."
+msgstr ""
+
+#: legalized/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1967
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: legalized/inc/widgets/widget-ad.php:9
+msgid " - Advertising Widget"
+msgstr ""
+
+#: legalized/inc/widgets/widget-ad.php:122
+msgid "Fullwidth"
+msgstr ""
+
+#: legalized/inc/widgets/widget-ad.php:123
+msgid "Halfwidth"
+msgstr ""
+
+#: legalized/inc/widgets/widget-facebook.php:9
+msgid " - Facebook"
+msgstr ""
+
+#: legalized/inc/widgets/widget-facebook.php:59
+msgid "Facebook link:"
+msgstr ""
+
+#: legalized/inc/widgets/widget-newsletter.php:10
+msgid " - Newsletter"
+msgstr ""
+
+#: legalized/inc/widgets/widget-newsletter.php:131
+#: legalized/inc/widgets/widget-twitter.php:49
+msgid "Title:"
+msgstr ""
+
+#: legalized/inc/widgets/widget-newsletter.php:135
+msgid "Newsletter Text:"
+msgstr ""
+
+#: legalized/inc/widgets/widget-newsletter.php:139
+msgid "Chose Service:"
+msgstr ""
+
+#: legalized/inc/widgets/widget-newsletter.php:148
+msgid "MailChimp API Key:"
+msgstr ""
+
+#: legalized/inc/widgets/widget-newsletter.php:153
+msgid "MailChimp API List:"
+msgstr ""
+
+#: legalized/inc/widgets/widget-newsletter.php:155
+msgid "Grab your Lists Unique Id by going to "
+msgstr ""
+
+#: legalized/inc/widgets/widget-newsletter.php:155
+#: legalized/inc/widgets/widget-newsletter.php:160
+msgid "here"
+msgstr ""
+
+#: legalized/inc/widgets/widget-newsletter.php:155
+msgid ""
+" Click the \"settings\" link for the list - the Unique Id is at the bottom "
+"of that page."
+msgstr ""
+
+#: legalized/inc/widgets/widget-newsletter.php:158
+msgid "MadMimi Unique Number:"
+msgstr ""
+
+#: legalized/inc/widgets/widget-newsletter.php:160
+msgid "Insert your MadMimi unique number.Click "
+msgstr ""
+
+#: legalized/inc/widgets/widget-newsletter.php:160
+msgid ""
+" or you can find this number when you log in into your MadMimi account, "
+"under WEBFORM click on SHARE and you will get link like this http://mad.ly/"
+"signups/<strong>XXXXX</strong>/join. Insert this number here."
+msgstr ""
+
+#: legalized/inc/widgets/widget-twitter.php:9
+msgid " - Twitter Stream"
+msgstr ""
+
+#: legalized/inc/widgets/widget-twitter.php:54
+msgid "Number of tweets:"
+msgstr ""
+
+#: legalized/inc/widgets/widget-twitter.php:59
+msgid "Twitter will not work unless you have set up Twitter authentication at "
+msgstr ""
+
+#: legalized/inc/widgets/widget-twitter.php:59
+msgid "theme administration"
+msgstr ""
+
+#: legalized/page-templates/_contact.php:211
+msgid "Say Hello"
+msgstr ""
+
+#: legalized/page-templates/_contact.php:214
+msgid "Name*"
+msgstr ""
+
+#: legalized/page-templates/_contact.php:215
+msgid "Email*"
+msgstr ""
+
+#: legalized/page-templates/_contact.php:224
+msgid "Cant read? Refresh Image: "
+msgstr ""
+
+#: legalized/page-templates/_contact.php:252
+msgid "Invalid Captcha!"
+msgstr ""
+
+#: legalized/page-templates/_part_loop.php:228
+#: legalized/page-templates/_part_onecolumn.php:92
+#: legalized/page-templates/_part_threecolumns.php:106
+#: legalized/page-templates/_part_threecolumns.php:705
+#: legalized/page-templates/_part_threecolumns.php:1305
+#: legalized/page-templates/_part_twocolumns.php:110
+#: legalized/page-templates/_part_twocolumns.php:651
+#: legalized/page-templates/_services.php:96
+msgid "Read More"
+msgstr ""
+
+#: legalized/page-templates/_part_loop.php:234
+msgid "Feautred Post"
+msgstr ""
+
+#: legalized/page-templates/_part_tabs.php:172
+#: legalized/page-templates/_part_tabs.php:354
+#: legalized/page-templates/_part_tabs.php:538
+#: legalized/page-templates/_part_threecolumns.php:212
+#: legalized/page-templates/_part_threecolumns.php:811
+#: legalized/page-templates/_part_threecolumns.php:1411
+#: legalized/page-templates/_part_twocolumns.php:185
+#: legalized/page-templates/_part_twocolumns.php:726
+msgid "Read more"
+msgstr ""
+
+#: legalized/page-templates/_team-members.php:87
+msgid "Meet me here:"
+msgstr ""
+
+#: legalized/page-templates/_work_3_columns.php:42
+#: legalized/page-templates/_work_4_columns.php:44
+msgid "Filter:"
+msgstr ""
+
+#: legalized/page-templates/_work_3_columns.php:45
+#: legalized/page-templates/_work_4_columns.php:47
+msgid "All"
+msgstr ""

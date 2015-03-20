@@ -1,0 +1,18 @@
+.bg-input input, .footer_box #s .search-input {
+    padding:10px 0 10px 10px;
+    height:20px;
+}
+
+.gallery-images-content {
+    height:1000px;
+    opacity:1 !important;
+}
+
+.nav ul li a:link, .nav ul li a:visited {
+    color:#fff !important;
+}
+
+body .gallery-images-content {
+    display:block !important;
+}
+

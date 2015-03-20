@@ -1,0 +1,29 @@
+.bg-business-days ul li { padding: 3px 5px 0px; }
+
+.business-button-center { height: 47px; padding-top: 9px;  }
+
+.gallery-filter ul li { background:url("../style/img/gallery-line.png") no-repeat right 3px; } 
+
+.form input.search-submit-button { padding: 0 12px 8px; }
+
+.orange-center,
+.black-center,
+.silver-center,
+.blue-center,
+.red-center,
+.green-center,
+.yellow-center,
+.brown-center,
+.sidebar_widget_holder .tag-center,
+.pagination-center { height: 29px; padding: 7px 12px 0; }
+
+.sidebar_widget_holder #s input.search-input { width: 158px; }
+
+.sidebar_widget_holder .newsletter .input-newsletter { width: 173px; }
+
+.jcounter {
+    margin:0 0 0 11px;
+}
+.program-title .headline {
+    line-height: 35px;
+}

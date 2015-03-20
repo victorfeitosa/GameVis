@@ -1,0 +1,27 @@
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-top: 1px;
+    line-height: 14px;
+    vertical-align: text-top;
+    background-image: none;
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+}
+
+.ico-holder {    
+    float: left;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.ico-holder .fa {font-size: 1.5em}
+
+.ico-holder.active,
+.ico-holder:hover {background-color: #CECECE; border-radius: 2px}
+
+.icon-option {
+    width: 100%;
+    height: auto;
+}

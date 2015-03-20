@@ -23,7 +23,8 @@ requirejs(['script'], function (require) {
     x: 0,
     y: 0,
     scaleX: scaleX,
-    scaleY: scaleY
+    scaleY: scaleY,
+    ticks: true
   });
   lineGraph.build();
   lineGraph.append();

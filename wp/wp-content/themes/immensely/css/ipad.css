@@ -1,0 +1,7 @@
+.quantity .plus {-webkit-border-radius: 0} 
+.quantity .minus {
+    -webkit-border-top-right-radius: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-border-top-left-radius: 0;
+}

@@ -1,0 +1,30 @@
+/*--- SCROLL TOP ---*/
+.scroll-top{
+    float: right;
+    width: 128px;
+    height: 47px;
+    background: url(img/bg-scroll-top.png) no-repeat top left;
+}
+
+#back-top {
+    width: 128px;
+    height: 47px;
+}
+
+#back-top a {
+    float: right;
+    width: 42px;
+    height: 42px;
+    position: relative;
+    margin: -9px 7px 0 0;
+}
+
+#back-top span {
+    float: right;
+    width: 42px;
+    height: 42px;
+    display: block;
+    background: url(img/scroll-top.png) no-repeat top left;
+    margin: 0;
+}
+#back-top span:hover { background-position: bottom; }

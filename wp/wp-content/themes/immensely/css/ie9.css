@@ -1,0 +1,11 @@
+.navbar .nav > li a i {top: 3px}
+
+.search-header button {top: -5px}
+
+.related-work .img-post figure .post-options i.fa-plus,
+.gallery-wrapper .img-post figure .post-options i.fa-plus,
+.img-post-big figure .post-options i {top: 3px}
+
+.related-work .img-post figure .post-options i,
+.gallery-wrapper .img-post figure .post-options i.fa-level-up,
+.img-post-big figure .post-options .fa-level-up {top: 1px}

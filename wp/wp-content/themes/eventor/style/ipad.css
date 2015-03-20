@@ -1,0 +1,6 @@
+.reservation-bar-wrap {position:static !important;}
+
+* {
+    -webkit-appearance: none;
+    border-radius:0;
+}

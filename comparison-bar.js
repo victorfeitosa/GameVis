@@ -21,4 +21,6 @@ requirejs(['script'], function (require) {
 		type: "Kills", x: 0, y: 0, scaleX: scaleX, scaleY: scaleY});
 	barGraph.build();
 	barGraph.append();
+
+	barGraph.toolTips(['Zero', 'One', 'Two']);
 });

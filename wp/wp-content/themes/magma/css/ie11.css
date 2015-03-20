@@ -1,0 +1,15 @@
+.showbiz {
+	    cursor: url(http://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default;
+}
+
+.aq-block-aq_allslider_block .flex-direction-nav .flex-next, .aq-block-aq_allslider_block .flex-direction-nav .flex-prev {
+	background-position: center 15px;
+}
+
+.aq-block-aq_allslider_block .flex-direction-nav li:hover .flex-next, .aq-block-aq_allslider_block .flex-direction-nav li:hover .flex-prev {
+	background-position: center -19px;
+}
+
+.tk-header-cart-holder a.cart-contents span {
+	line-height: 21px;
+}

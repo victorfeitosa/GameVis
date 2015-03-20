@@ -1,0 +1,112 @@
+/*
+ * jQuery FlexSlider v1.8
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* Browser Resets */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {float: left; width: 100%; display: inline-block; text-align: center; margin: 0 auto; }
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden; width: 840px!important; margin-left: 60px!IMPORTANT; } /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {max-width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider {position: relative; zoom: 1;}
+.flexslider .slides {zoom: 1;}
+.flexslider .slides > li {position: relative; text-align: center; }
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+.flex-container {zoom: 1; position: relative;}
+
+/* Caption style */
+/* IE rgba() hack */
+.flex-caption {background:none; -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); zoom: 1;}
+.flex-caption {width: 96%; padding: 2%; margin: 0; position: absolute; left: 0; bottom: 0; background: rgba(0,0,0,.3); color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 18px;}
+
+/* Direction Nav */
+.flex-direction-nav { position: relative; width: 79px; height: 32px; display: inline-block; text-align: center; margin: 20px auto 0; background:url("./theme/line-slider.png") no-repeat 37px 13px; }
+.flex-direction-nav li a {width: 32px; height: 32px; margin: -13px 0 0; display: block; position: absolute; top: 50%; cursor: pointer; text-indent: -999em;}
+.flex-direction-nav li .next { right: 0; background:url("./theme/forward.png") no-repeat top left;  }
+.flex-direction-nav li .next:hover { background-position: bottom; }
+.flex-direction-nav li .prev { left: 0; background:url("./theme/back.png") no-repeat top left;  }
+.flex-direction-nav li .prev:hover { background-position: bottom; }
+.flex-direction-nav li .disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
+
+/* Control Nav */
+.flex-control-nav {width: 100%; position: relative; text-align: center; display: none!important; }
+.flex-control-nav li {margin: 0 0 0 18px; display: inline-block; zoom: 1; *display: inline;}
+.flex-control-nav li:first-child {margin: 0;}
+.flex-control-nav li a {width: 9px; height: 9px; display: block; background: url(theme/bg_control_nav.png) no-repeat bottom left; cursor: pointer; text-indent: -999em;}
+.flex-control-nav li a:hover {background-position: top;}
+.flex-control-nav li a.active {background-position: top; cursor: default;}
+
+
+
+.slide-holder { width: 100%; float: left; text-align: center; }
+
+.slide-holder a {
+    width: auto;
+    color: #272323;
+    font-size: 30px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing:-1px;
+    font-weight: bold;
+    line-height: 42px;
+}
+
+.slide-holder .header {
+    width: auto;
+    color: #272323;
+    font-size: 30px;
+    font-family: 'Helvetica';
+    font-weight: bold;
+    line-height: 42px;
+}
+
+
+.slide-holder a:hover { color: #F78249; }
+
+.slide-holder span {
+    float: left;
+    width: 100%;
+    color: #f78249;
+    font-size: 14px;
+    font-family: 'Dosis';
+    font-weight: bold;
+    line-height: 26px;
+    text-transform: uppercase;
+}
+
+.slide-holder p {
+    float: left;
+    width: 100%;
+    color: #555147;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 22px;
+}

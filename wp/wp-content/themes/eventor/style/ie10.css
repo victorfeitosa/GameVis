@@ -1,0 +1,13 @@
+.rev_slider img {
+    height: auto!important;
+    width: auto!important;
+}
+
+.gallery4-single-content .home-gallery-one {max-height: 160px}
+
+textarea {overflow: auto;}
+
+.select-services {height: 34px}
+.select-team-member {height: 34px}
+
+.content-top-image {margin-bottom: -1px}

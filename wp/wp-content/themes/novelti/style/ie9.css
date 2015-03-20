@@ -1,0 +1,21 @@
+.footer_box #calendar_wrap { float: left; width: 100%; margin: 0 0 0 -6px; }
+
+.sidebar_widget_holder #wp-calendar { margin-top: 0px; }
+
+.bg-slider-fans .flexslider .flex-direction-nav li a.next {
+	right: 0;
+	visibility: visible;
+}
+
+.bg-slider-fans .flexslider:hover .flex-direction-nav li a.next {
+	visibility: visible;
+}
+
+.bg-slider-fans .flexslider .flex-direction-nav li a.prev {
+	left: 0;
+	visibility: visible;
+}
+
+.bg-slider-fans .flexslider:hover .flex-direction-nav li a.prev {
+	visibility: visible;
+}

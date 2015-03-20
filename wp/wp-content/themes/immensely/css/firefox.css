@@ -1,0 +1,28 @@
+.navbar .nav > li a i {top: -1px}
+
+.footer-top .twit-author a {line-height: 26px}
+
+.post-big .featured-post.button-small {
+    top: -4px;
+}
+
+#calendar_wrap #wp-calendar tbody td a {padding: 4px 0 3px;}
+
+.breadcrumb > .divider, .breadcrumb .divider {bottom: 9px}
+
+.shortcodes .dropcap-background {line-height: 32px !important;}
+.dropcap-background {padding: 4px 9px 0;}
+
+.comment-form input, .comment-form textarea {padding: 13px;}
+
+.woocommerce .product figure.flexslider-8 ol.flex-control-nav {bottom: 40px !important;}
+.woocommerce-page .woocommerce-ordering select {padding-top: 11px; padding-bottom: 11px;}
+.add_review a, .products .product a:last-child, .add_to_cart_button, .woocommerce-message a.button {padding: 6px 10px;}
+
+ul.soc-icon li {padding-top: 1px;}
+.footer-top .twit-author a {height: 25px;}
+
+.footer-widgets .block .tagcloud a {padding: 5px 8px;}
+
+.woocommerce form .form-row input.input-text {height: 30px!important;}
+.woocommerce .addresses .address a:before {left: 15px;}

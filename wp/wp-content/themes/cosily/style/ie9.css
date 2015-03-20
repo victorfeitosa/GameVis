@@ -1,0 +1,16 @@
+.footer_box #calendar_wrap { float: left; width: 100%; margin: -25px 0 0 -6px; }
+
+.footer_box #wp-calendar caption { margin-bottom: -630px; }
+
+.sidebar_widget_holder #wp-calendar { margin-top: 0px; }
+
+.sidebar_widget_holder #calendar_wrap { margin-top: -15px; }
+
+.sidebar_widget_holder #wp-calendar caption { margin-bottom: -630px; }
+
+.home-action-select select {width:255px; height:33px;}
+
+#tabs .ui-state-default a, #tabs .ui-state-default a:link, #tabs .ui-state-default a:visited {padding:23px 45px; margin-bottom:30px;}
+
+.ui-tabs-nav { margin:0 0 21px 0;}
+textarea { overflow: auto; }

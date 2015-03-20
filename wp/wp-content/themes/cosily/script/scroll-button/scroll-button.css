@@ -1,0 +1,36 @@
+/*--- SCROLL TOP ---*/
+.scroll-top{
+    float: right;
+    width: 44px;
+    height: 43px;
+}
+
+#back-top {
+    width: 44px;
+    height: 43px;
+}
+
+#back-top a {
+    float: right;
+    width: 44px;
+    height: 43px;
+    position: relative;
+}
+
+#back-top span {
+    float: right;
+    width: 44px;
+    height: 43px;
+    display: block;
+    background: url(img/scroll-top.png) no-repeat top left;
+    margin: 0;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    opacity:0.2;
+    filter: alpha(opacity= 20);
+}
+#back-top span:hover { 
+    opacity:1;
+    filter: alpha(opacity= 100);
+}

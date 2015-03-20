@@ -1,0 +1,138 @@
+.showbiz {
+    cursor: url(https://mail.google.com/mail/images/2/openhand.cur), move;
+}
+
+.showbiz:active {
+    cursor: url(https://mail.google.com/mail/images/2/closedhand.cur), move;
+}
+
+#container .dropdown-menu > li > a:hover,
+#container .dropdown-menu > li > a:focus,
+#container li.current-menu-item a {
+    -ms-filter: none;
+    filter: none;
+}
+
+#container .navbar-nav > li > a {
+    font-size: 1em;
+}
+
+.aq-block-aq_allposttypes_block .news-wrap .post .meta-data {
+    font-size: 0.5em;
+}
+
+#container .container .rating li a {
+    width: 37px;
+}
+
+.textwidget {
+    font-size: 1em;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 23px;
+}
+
+#sidebar h3 {
+    font-size: 26px;
+}
+
+.footer-widgets .block ul li,
+.sidebar-content .block ul li {
+    font-size: 1em;
+}
+
+.latest-reciews-widget a {
+    font-size: 1em;
+}
+
+.half-width-posts a {
+    font-size: 22px;
+}
+
+#container .container .rating li a,
+#container .container .rating li strong a {
+    font-size: 13px;
+}
+
+#container .container .rating li span,
+#container .container .rating li strong span {
+    font-size: 13px;
+}
+
+#calendar_wrap caption,
+#calendar_wrap #wp-calendar thead tr th {
+    font-size: 15px;
+}
+
+#calendar_wrap #wp-calendar tr td {
+    font-size: 15px;
+}
+
+.newsleter-widget .input-newsletter,
+#searchform .search-input {
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.pricing-table-one-top h4 {
+    font-size: 22px;
+}
+
+.pricing-table-one-center span {
+    font-size: 16px;
+}
+
+.shortcodes ul {
+    font-size: 1em;
+}
+
+.products .product a.button:hover,
+ul.products li.product .added_to_cart:hover,
+.products .product a.button.slide {
+    top: 0;
+    bottom: auto;
+}
+
+ul.products li.product .added_to_cart.slide {
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.woocommerce .shop_table,
+.woocommerce .customer_details {
+    font-size: 1em;
+}
+
+table.cart .actions .coupon input.input-text {
+    margin-bottom: 0;
+    height: 30px;
+}
+
+table.cart .actions .coupon input.input-text,
+.shop_table .actions input.button {
+    vertical-align: top;
+}
+
+.quantity .plus,
+.quantity .minus {
+    line-height: 32px;
+}
+
+.full-width-posts a.link-home-images {
+    font-size: 0;
+}
+
+.sly {
+    height: 550px;
+}
+
+.sly li {
+    width: 331px !important;
+}
+
+
