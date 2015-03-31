@@ -142,6 +142,7 @@ define(function (require) {
 			this.Height = obj.height || 480;
 			this.BGColor = obj.bgcolor || '#444444';
 			this.Label = obj.label || 'Canvas';
+			this.Parent = obj.parent || null;
 		} else if (DEBUG)
 			throw ': Argument object not defined in ' + this.ClassType;
 
@@ -151,17 +152,24 @@ define(function (require) {
 	//Methods---
 	Canvas.prototype.append = function () {
 		//actual appending
-		if (this.SVGCanvas === null) {
+		//TODO: change this so it can append to the place i want
+		if (this.Parent) {
+			this.SVGCanvas = d3.select(this.Parent).append("svg")
+				.attr("width", this.Width)
+				.attr("height", this.Height)
+				.classed("canvas", true);
+		}
+		else{
 			this.SVGCanvas = d3.select("body").append("svg")
 				.attr("width", this.Width)
 				.attr("height", this.Height)
 				.classed("canvas", true);
-
-			if (isStyleSourceCode()) {
-				if (this.BGColor === undefined)
-					this.BGColor = "0xAAAAAA";
-			}
 		}
+
+		if (isStyleSourceCode()) {
+			if (this.BGColor === undefined)
+				this.BGColor = "0xAAAAAA";
+			}
 	};
 
 	Canvas.prototype.remove = function () {

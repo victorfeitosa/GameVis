@@ -1,12 +1,11 @@
-//Graphics module
-//Responsible for graphic structures and drawing charts
-
-
+/**
+ * @name: Graphics module
+ * @brief: Responsible for graphic structures and drawing charts
+ */
 define(function (require) {
 	var gamevis = {};
 
 	gamevis.data = require('gamevis/data');
-
 
 	//****************************************************************************
 	//Drawgin-related Structures**************************************************
@@ -428,7 +427,7 @@ define(function (require) {
 				this.canvas = obj.canvas.getCanvas();
 			this.X = obj.x || 0;
 			this.Y = obj.y || 0;
-			this.Radius = obj.radius || 4;
+			this.Radius = obj.radius || 1;
 			this.Fill = obj.fill || '#FFF';
 			this.Stroke = obj.stroke || '#FFF';
 			this.StrokeWidth = obj.stroke_width || 1;
@@ -437,7 +436,7 @@ define(function (require) {
 		} else if (DEBUG)
 			throw ': Argument object not defined in ' + this.ClassType;
 
-		this.DotElement = null;
+		this.Element = null;
 
 		return this.append();
 	}
@@ -448,14 +447,14 @@ define(function (require) {
 
 		//Appending
 		if (this.Canvas !== undefined) {
-			this.DotElement = self.Canvas.append('circle')
+			this.Element = self.Canvas.append('circle')
 				.attr('cx', this.X)
 				.attr('cy', this.Y)
 				.attr('r', this.Radius)
 				.classed('dot-element', true);
 
 			if (gamevis.data.isStyleSourceCode()) {
-				this.DotElement.attr('fill', this.Fill)
+				this.Element.attr('fill', this.Fill)
 					.attr('stroke', this.Stroke)
 					.attr('stroke-width', this.StrokeWidth)
 					.attr('fill-opacity', this.FillOpacity)
@@ -467,34 +466,38 @@ define(function (require) {
 	};
 
 	Dot.prototype.remove = function () {
-		if (this.DotElement !== null) {
-			this.DotElement.remove();
-			this.DotElement = null;
+		if (this.Element !== null) {
+			this.Element.remove();
+			this.Element = null;
 		}
 	};
 
+	Dot.prototype.transition = function(){
+		return this.Element.transition();
+	}
+
 	Dot.prototype.classed = function (c, b) {
-		this.DotElement.classed(c, b);
+		this.Element.classed(c, b);
 		return this;
 	};
 
 	Dot.prototype.on = function (evnt, func) {
-		this.DotElement.on(evnt, func);
+		this.Element.on(evnt, func);
 		return this;
 	};
 
 	Dot.prototype.attr = function (attr, value) {
-		this.DotElement.attr(attr, value);
+		this.Element.attr(attr, value);
 		return this;
 	};
 
 	Dot.prototype.style = function (style, value) {
-		this.DotElement.style(style, value);
+		this.Element.style(style, value);
 		return this;
 	};
 
 	Dot.prototype.get = function () {
-		return this.DotElement;
+		return this.Element;
 	};
 
 	//Status Token class and color literals
@@ -584,9 +587,8 @@ define(function (require) {
 
 			var tokenkind = 'status-token-' + self.Type;
 			var ellipse = self.TokenElement.append('ellipse')
-				.attr('transform', function () {
-					return 'translate(' + x + ', ' + y + ')';
-				})
+				.attr('cx', x)
+				.attr('cy', y)
 				.attr('rx', self.RX)
 				.attr('ry', self.RY)
 				.classed(tokenkind, true);
@@ -744,8 +746,10 @@ define(function (require) {
 			this.ScaleX = obj.scaleX;
 			this.ScaleY = obj.scaleY;
 			this.Ticks = obj.ticks || false;
+			this.TickRadius = obj.tick_radius || 4;
 			this.HalfHeight = (gamevis.data.getResolution().h / 2);
 			this.ToolTips = obj.tooltips || null;
+			this.Transition = obj.transition || false;
 		} else if (DEBUG)
 			throw ': Argument object not defined in ' + this.ClassType;
 
@@ -788,22 +792,39 @@ define(function (require) {
 				.classed('line-graph-tick-group', true);
 		}
 
+		//also defines default transitions, if the user wants to override them its ok
 		for (var i in self.Lines) {
 			self.LineGroup.append('line')
 				.attr('x1', self.Lines[i][0])
-				.attr('y1', self.Lines[i][1])
+				.attr('y1', self.ScaleY(0))
 				.attr('x2', self.Lines[i][2])
-				.attr('y2', self.Lines[i][3])
-				.classed('line-graph-segment', true);
+				.attr('y2', self.ScaleY(0))
+				.classed('line-graph-segment', true)
+				.transition()
+				.duration(500)
+				.delay(300)
+				.ease('quad-out')
+				.attr('y1', self.Lines[i][1])
+				.attr('y2', self.Lines[i][3]);
 
 			//attach ticks
 			if (self.Ticks) {
 				var tick = new Dot({
 					canvas: self.Ticks,
 					x: self.Lines[i][0],
-					y: self.Lines[i][1],
-					radius: 2
-				}).classed('line-graph-tick', true);
+					y: self.ScaleY(0),
+					radius: 1
+				}).classed('line-graph-tick', true)
+				.transition()
+				.duration(500)
+				.delay(300)
+				.ease('quad-out')
+				.attr('cy', self.Lines[i][1])
+				.transition()
+				.delay(800)
+				.duration(600)
+				.ease('bounce-in')
+				.attr('r', this.TickRadius);
 			}
 		}
 		//attach last tick
@@ -812,9 +833,19 @@ define(function (require) {
 			var tick = new Dot({
 				canvas: self.Ticks,
 				x: self.Lines[ml][2],
-				y: self.Lines[ml][3],
-				radius: 2
-			}).classed('line-graph-tick', true);
+				y: self.ScaleY(0),
+				radius: 1
+			}).classed('line-graph-tick', true)
+			.transition()
+			.duration(500)
+			.delay(300)
+			.ease('quad-out')
+			.attr('cy', self.Lines[ml][3])
+			.transition()
+			.delay(800)
+			.duration(600)
+			.ease('bounce-in')
+			.attr('r', this.TickRadius);
 		}
 
 		//appends time axis
@@ -865,7 +896,7 @@ define(function (require) {
 
 	ComparisonGraphLine.prototype.get = function (component) {
 		if (!component)
-			return null;
+			return this.Element;
 		component.toLowerCase();
 		switch (component) {
 		case 'lines':
@@ -896,33 +927,32 @@ define(function (require) {
 				'ERROR: Expected array as an argument in "ComparisonGraphLine.toolTip()".'
 			);
 		} else {
-			self.get('ticks')
-				.each(function (d, i) {
-					var parent = d3.select(this);
-					var px = parent.attr('cx');
-					var py = parent.attr('cy');
+			self.each(function (d, i) {
+				var parent = d3.select(this);
+				var px = parent.attr('cx');
+				var py = parent.attr('cy');
 
-					//attach tooltips if its an string or html
-					if (typeof tooltip[0] !== 'object') {
-						var tip = new ToolTip({
-								parent: parent,
-								tiphtml: tooltip[i],
-								x: px,
-								y: py
-							}).classed('mytooltip', true)
-							.on('mouseover', function () {
-								tip.transition()
-									.style('opacity', 1);
-							}).on('mouseout', function () {
-								tip.transition()
-									.style('opacity', 0);
-							});
-					} else {
-						tooltip[i].Parent = parent;
-						tooltip[i].X = px;
-						tooltip[i].Y = py;
-					}
-				});
+				//attach tooltips if its an string or html
+				if (typeof tooltip[0] !== 'object') {
+					var tip = new ToolTip({
+							parent: parent,
+							tiphtml: tooltip[i],
+							x: px,
+							y: py
+						}).classed('mytooltip', true)
+						.on('mouseover', function () {
+							tip.transition()
+								.style('opacity', 1);
+						}).on('mouseout', function () {
+							tip.transition()
+								.style('opacity', 0);
+						});
+				} else {
+					tooltip[i].Parent = parent;
+					tooltip[i].X = px;
+					tooltip[i].Y = py;
+				}
+			});
 		}
 	};
 
@@ -951,6 +981,7 @@ define(function (require) {
 			this.ScaleX = obj.scaleX;
 			this.ScaleY = obj.scaleY;
 			this.HalfHeight = (obj.canvas.Height) / 2;
+			this.ToolTips = obj.tooltips || false;
 		} else if (DEBUG)
 			throw ': Argument object not defined in ' + this.ClassType;
 
@@ -1022,7 +1053,12 @@ define(function (require) {
 					.classed('bar-info-text', true)
 					.text(self.Match.getDifference(i, self.Type))
 					.style('text-anchor', 'middle')
-					.attr('transform', mtrans);
+					.attr('transform', mtrans)
+					.style('fill-opacity', 0)
+					.transition()
+					.delay(800)
+					.duration(500)
+					.style('fill-opacity', 1);
 			}
 		}
 
@@ -1073,7 +1109,7 @@ define(function (require) {
 
 	ComparisonGraphBar.prototype.get = function (component) {
 		if (!component)
-			return null;
+			return this.Element;
 		component.toLowerCase();
 		switch (component) {
 		case 'bar':
@@ -1107,7 +1143,6 @@ define(function (require) {
 		} else {
 			self.get('bars')
 				.each(function (d, i) {
-					console.log(self.Bars[i]);
 					var parent = d3.select(this);
 					var px = self.Bars[i][0];
 					var py = self.Bars[i][1];
@@ -1235,13 +1270,13 @@ define(function (require) {
 	};
 
 	TeamDetailGraph.prototype.remove = function () {
-		this.Group.remove();
-		this.Group = null;
+		this.Element.remove();
+		this.Element = null;
 	};
 
 	TeamDetailGraph.prototype.get = function (component) {
 		if (!component)
-			return null;
+			return this.Element;
 		component.toLowerCase();
 		switch (component) {
 		case 'player_name':
@@ -1280,10 +1315,11 @@ define(function (require) {
 			this.Scale = obj.scale;
 			this.X = obj.x || 0;
 			this.Y = obj.y || 0;
+			this.ToolTips = obj.tooltips || false;
 		} else if (DEBUG)
 			throw ': Argument object not defined in ' + this.ClassType;
 
-		this.Group = null;
+		this.Element = null;
 		this.StatusTokensGroup = null;
 	}
 
@@ -1295,26 +1331,26 @@ define(function (require) {
 		var gY = self.Y;
 		var res = gamevis.data.getResolution();
 
-		self.Group = self.Canvas.append('g')
+		self.Element = self.Canvas.append('g')
 			.classed('player-match-graph', true)
 			.attr('transform', function () {
 				return 'translate(' + gX + ', ' + gY + ')';
 			});
 
-		self.Group.append('text').text('Player Match History')
+		self.Element.append('text').text('Player Match History')
 			.classed('player-match-title', true)
 			.attr('transform', function () {
 				return 'translate(4, 32)';
 			});
 
-		self.Group.append('text').text(self.Player.Name)
+		self.Element.append('text').text(self.Player.Name)
 			.classed('player-match-name', true)
 			.attr('transform', function () {
 				return 'translate(32, 96)';
 			});
 
 		//Append status tokens
-		self.StatusTokensGroup = self.Group.append('g')
+		self.StatusTokensGroup = self.Element.append('g')
 			.classed('status-tokens-group', true);
 
 		for (var i in self.Player.Status) {
@@ -1350,14 +1386,14 @@ define(function (require) {
 		//put status token group on a feasible position
 		self.StatusTokensGroup.attr('transform', function () {
 			var stgX = 0;
-			var stgY = gY + 180;
+			var stgY = gY + res.h / 2;
 
 			return 'translate(' + stgX + ', ' + stgY + ' )';
 		});
 
 		//put the axis
 		var axis = new TimeAxis({
-			canvas: self.Group,
+			canvas: self.Element,
 			y: gY + res.h - res.h / 20,
 			orientation: 'bottom',
 			scale: self.Scale,
@@ -1367,20 +1403,82 @@ define(function (require) {
 	};
 
 	PlayerMatchGraph.prototype.remove = function () {
-		this.Group.remove();
-		this.Group = null;
+		this.Element.remove();
+		this.Element = null;
 	};
 
-	PlayerMatchGraph.prototype.get = function () {
-
+	PlayerMatchGraph.prototype.get = function (component) {
+		if (!component)
+			return this.Element;
+		component.toLowerCase();
+		switch (component) {
+		case 'player_name':
+			return this.Element.selectAll('text').filter(function () {
+				return d3.select(this).classed('player-match-name');
+			});
+		case 'tokens':
+		case 'token':
+		case 'status_tokens':
+		case 'status_token':
+			return this.StatusTokensGroup.selectAll('ellipse');
+		case 'axis':
+			return this.Element.selectAll('g').filter(function () {
+				return d3.select(this).classed('time-axis');
+			});
+		}
+		return this.Element;
 	};
 
-	PlayerMatchGraph.prototype.toolTips = function () {
+	PlayerMatchGraph.prototype.toolTips = function (tooltip) {
+		var self = this;
+		if (tooltip === undefined) {
+			//return the tooltips
+			return this.ToolTips;
+		}
 
+		if (tooltip.constructor !== Array) {
+			throw ('ERROR: Expected array as an argument in' +
+				'"ComparisonGraphLine.toolTip()".');
+		} else {
+			self.get('tokens')
+				.each(function (d, i) {
+					var res = gamevis.data.getResolution();
+					var parent = d3.select(this);
+					var px = parseInt(d3.select(this).attr('cx')) + parseInt(d3.select(
+						this).attr('rx') / 2);
+					var py = parseInt(d3.select(this).attr('cy')) + res.h / 2;
+
+					//attach tooltips if its an string or html
+					if (typeof tooltip[0] !== 'object') {
+						var tip = new ToolTip({
+								parent: parent,
+								tiphtml: tooltip[i],
+								x: px,
+								y: py
+							}).classed('mytooltip', true)
+							.on('mouseover', function () {
+								tip.transition()
+									.style('opacity', 1);
+							}).on('mouseout', function () {
+								tip.transition()
+									.style('opacity', 0);
+							});
+					} else {
+						tooltip[i].Parent = parent;
+						tooltip[i].X = px;
+						tooltip[i].Y = py;
+					}
+				});
+		}
 	};
 
-	PlayerMatchGraph.prototype.transition = function () {
+	PlayerMatchGraph.prototype.transition = function (component, transition) {
+		if (component && transition)
+			this.get(component).transition().call(transition);
+		else if (component && !transition)
+			return this.get(component).transition();
 
+		return this.Element.transition();
 	};
 
 	//a graph that shows a list of resources and an icon
@@ -1398,6 +1496,7 @@ define(function (require) {
 			this.ScaleY = obj.scaleY;
 			this.X = obj.x || 0;
 			this.Y = obj.y || 0;
+			this.ToolTips = obj.tooltips || false;
 
 			//parent resource, if any (like a player thumbnail or so. Usualy a single resource)
 			this.ParentResource = obj.parent_resource || '';
@@ -1406,7 +1505,7 @@ define(function (require) {
 		} else if (DEBUG)
 			throw ': Argument object not defined in ' + this.ClassType;
 
-		this.TeamResGroup = null;
+		this.Element = null;
 	}
 
 	//Methods------------------
@@ -1417,14 +1516,14 @@ define(function (require) {
 	ResourceListGraph.prototype.append = function () {
 		var self = this;
 
-		self.TeamResGroup = self.Canvas.append('g')
+		self.Element = self.Canvas.append('g')
 			.classed('team-resource-group', true)
 			.attr('transform', function () {
 				return 'translate(' + self.X + ',' + self.Y + ')';
 			});
 		var nPlayers = self.Team.Players.length;
 		for (var i in self.Team.Players) { //loops through players to show resources
-			var resGroup = self.TeamResGroup.append('g')
+			var resGroup = self.Element.append('g')
 				.classed('player-resource-group', true)
 				.attr('transform', function () {
 					var sx = self.ScaleX(0.1);
@@ -1459,7 +1558,7 @@ define(function (require) {
 				var src = self.Team.Players[i].Resources[self.InterestResource][j]
 					.IconURI;
 				var img = interestGroup.append('image')
-					.classed('parent-resource', true)
+					.classed('interest-resource', true)
 					.attr('width', self.ScaleX(0.4))
 					.attr('height', self.ScaleY(0.4))
 					.attr('x', self.ScaleX(j / 2))
@@ -1470,19 +1569,91 @@ define(function (require) {
 	};
 
 	ResourceListGraph.prototype.remove = function () {
-		this.TeamResGroup.remove();
+		this.Element.remove();
 	};
 
-	ResourceListGraph.prototype.get = function () {
-
+	ResourceListGraph.prototype.get = function (component) {
+		if (!component)
+			return this.Element;
+		component.toLowerCase();
+		switch (component) {
+		case 'parent':
+		case 'parent-resource':
+		case 'parent_resource':
+			var ret = this.Element.selectAll('image').filter(function () {
+				return d3.select(this).classed('parent-resource');
+			});
+			return ret;
+		case 'interest':
+		case 'resource':
+		case 'resources':
+		case 'interest-resource':
+		case 'interest-resources':
+		case 'interest_resource':
+		case 'interest_resources':
+			return this.Element.selectAll('g').filter(function () {
+				return d3.select(this).classed('resource-interest-group');
+			}).selectAll('image');
+		case 'name':
+			return this.Element.selectAll('text').filter(function () {
+				return d3.select(this).classed('team-player-info');
+			});
+		}
+		return this.Element;
 	};
 
-	ResourceListGraph.prototype.toolTips = function () {
+	ResourceListGraph.prototype.toolTips = function (component, tooltip) {
+		var self = this;
+		if (!component || (typeof component !== 'string'))
+			throw (
+				'ERROR: Component must be defined for toolTips method of a Resource List Graph!'
+			);
+		if (!tooltip) {
+			//return the tooltips
+			return this.ToolTips;
+		}
 
+		if (tooltip.constructor !== Array) {
+			throw ('ERROR: Expected array as an argument in' +
+				'"ComparisonGraphLine.toolTip()".');
+		} else {
+			self.get(component).each(function (d, i) {
+				var parent = d3.select(this);
+				var rect = this.getBoundingClientRect();
+				var px = rect.left;
+				var py = rect.top - rect.height / 2;
+
+				//attach tooltips if its an string or html
+				if (typeof tooltip[0] !== 'object') {
+					var tip = new ToolTip({
+							parent: parent,
+							tiphtml: tooltip[i],
+							x: px,
+							y: py
+						}).classed('mytooltip', true)
+						.on('mouseover', function () {
+							tip.transition()
+								.style('opacity', 1);
+						}).on('mouseout', function () {
+							tip.transition()
+								.style('opacity', 0);
+						});
+				} else {
+					tooltip[i].Parent = parent;
+					tooltip[i].X = px;
+					tooltip[i].Y = py;
+				}
+			});
+		}
 	};
 
-	ResourceListGraph.prototype.transition = function () {
+	ResourceListGraph.prototype.transition = function (component, transition) {
+		if (component && transition)
+			this.get(component).transition().call(transition);
+		else if (component && !transition)
+			return this.get(component).transition();
 
+		return this.Element.transition();
 	};
 
 	//Ending match results graph
@@ -1503,20 +1674,20 @@ define(function (require) {
 		} else if (DEBUG)
 			throw ': Argument object not defined in ' + this.ClassType;
 
-		this.ResultsGroup = null;
+		this.Element = null;
 	}
 
 	//Methods----------
 	MatchResultsGraph.prototype.append = function () {
 		var self = this;
 		//append results group
-		self.ResultsGroup = self.Canvas.append('g')
+		self.Element = self.Canvas.append('g')
 			.classed('end-results', true)
 			.attr('transform', function () {
 				return 'translate(' + self.X + ',' + self.Y + ')';
 			});
 		//appends team info and data
-		var teamGroup = self.ResultsGroup.selectAll('g')
+		var teamGroup = self.Element.selectAll('g')
 			.data([self.Match.Team[0], self.Match.Team[1]])
 			.enter()
 			.append('g')
@@ -1602,19 +1773,54 @@ define(function (require) {
 	};
 
 	MatchResultsGraph.prototype.remove = function () {
-
+		this.Element.remove();
 	};
 
-	MatchResultsGraph.prototype.get = function () {
-
+	MatchResultsGraph.prototype.get = function (component) {
+		//TODO: this
+		if (!component)
+			return this.Element;
+		component.toLowerCase();
+		switch (component) {
+		case 'team-name':
+		case 'team_name':
+		case 'team-names':
+		case 'team_names':
+			var ret = this.Element.selectAll('image').filter(function () {
+				return d3.select(this).classed('parent-resource');
+			});
+			return ret;
+		case 'average-level':
+		case 'average-levels':
+		case 'average_level':
+		case 'average_levels':
+			return this.Element.selectAll('g').filter(function () {
+				return d3.select(this).classed('resource-interest-group');
+			}).selectAll('image');
+		case 'gold':
+			return this.Element.selectAll('text').filter(function () {
+				return d3.select(this).classed('team-player-info');
+			});
+		case 'kills':
+			return this.Element.selectAll('text').filter(function () {
+				return d3.select(this).classed('team-player-info');
+			});
+		case 'player':
+		case 'players':
+			return this.Element.selectAll('text').filter(function () {
+				return d3.select(this).classed('team-player-info');
+			});
+		}
+		return this.Element;
 	};
 
-	MatchResultsGraph.prototype.toolTips = function () {
+	MatchResultsGraph.prototype.transition = function (component, transition) {
+		if (component && transition)
+			this.get(component).transition().call(transition);
+		else if (component && !transition)
+			return this.get(component).transition();
 
-	};
-
-	MatchResultsGraph.prototype.transition = function () {
-
+		return this.Element.transition();
 	};
 
 	//returns variables and classes

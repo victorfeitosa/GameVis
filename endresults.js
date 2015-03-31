@@ -2,15 +2,15 @@
 requirejs.config({
 	baseUrl: './',
 	paths: {
-		d3: './d3',
-		gamevis: './gamevis',
-		drivers: './gamevis/drivers',
-		matchs: './gamevis/matchs'
+		d3: '/d3',
+		gamevis: '/gamevis',
+		drivers: '/gamevis/drivers',
+		matchs: '/gamevis/matchs'
 	}
 });
 
 //Executes some stuff
-requirejs(['script2'], function () {
+requirejs(['/script2.js'], function () {
 
 	var graph = new gamevis.graphics.MatchResultsGraph({
 		canvas: canvas,

@@ -81,15 +81,8 @@ define(function (require) {
   myMatch.update();
 
   myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
-  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
-  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
-  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
-  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
-  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
-  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
   myMatch.update();
 
-  myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
   myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
 
   myMatch.update();

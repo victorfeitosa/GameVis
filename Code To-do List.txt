@@ -1,4 +1,0 @@
-##To-do stuff in the code##
-
-Graphics.js
- 

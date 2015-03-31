@@ -2,15 +2,15 @@
 requirejs.config({
   baseUrl: './',
   paths: {
-    d3: './d3',
-    gamevis: './gamevis',
-    drivers: './gamevis/drivers',
-    matchs: './gamevis/matchs'
+    d3: '/d3',
+    gamevis: '/gamevis',
+    drivers: '/gamevis/drivers',
+    matchs: '/gamevis/matchs'
   }
 });
 
 //Executes some stuff
-requirejs(['script2'], function () {
+requirejs(['/script2.js'], function () {
 
   var resourceChart = new gamevis.graphics.ResourceListGraph({
     canvas: canvas,
@@ -25,4 +25,5 @@ requirejs(['script2'], function () {
 
 
   resourceChart.append();
+  resourceChart.toolTips('parent', ['item 1', 'item 2', 'item 3', 'item 4', 'item 5', 'item 6']);
 });
