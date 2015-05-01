@@ -4,7 +4,7 @@ Plugin Name: Contact Bank Lite Edition
 Plugin URI: http://tech-banker.com
 Description: Build Complex, Powerful Contact Forms in Just Seconds. No Programming Knowledge Required! Yeah, It's Really That Easy.
 Author: Tech Banker
-Version: 2.0.104
+Version: 2.0.106
 Author URI: http://tech-banker.com
  */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -580,136 +580,154 @@ function frontend_plugin_css_styles_contact_bank()
 }
 if(isset($_REQUEST["action"]))
 {
-    switch($_REQUEST["action"])
-    {
-        case "add_contact_form_library":
-            add_action( "admin_init", "add_contact_form_library");
-            function add_contact_form_library()
-            {
-            	global $wpdb,$current_user,$cb_user_role_permission;
-            	if (is_super_admin())
-            	{
-            		$cb_role = "administrator";
-            	}
-            	else
-            	{
-            		$cb_role = $wpdb->prefix . "capabilities";
-            		$current_user->role = array_keys($current_user->$cb_role);
-            		$cb_role = $current_user->role[0];
-            	}
-            	if(file_exists(CONTACT_BK_PLUGIN_DIR ."/lib/contact_view-class.php"))
-            	{
-                	include_once CONTACT_BK_PLUGIN_DIR . "/lib/contact_view-class.php";
-            	}
-            }
-            break;
-        case "frontend_contact_form_library":
-            add_action( "admin_init", "frontend_contact_form_library");
-            function frontend_contact_form_library()
-            {
-            	if(file_exists(CONTACT_BK_PLUGIN_DIR ."/lib/contact_bank_frontend-class.php"))
-            	{
+	switch($_REQUEST["action"])
+	{
+		case "add_contact_form_library":
+			
+			add_action( "admin_init", "add_contact_form_library");
+			function add_contact_form_library()
+			{
+				global $wpdb,$current_user,$cb_user_role_permission;
+				if (is_super_admin())
+				{
+					$cb_role = "administrator";
+				}
+				else
+				{
+					$cb_role = $wpdb->prefix . "capabilities";
+					$current_user->role = array_keys($current_user->$cb_role);
+					$cb_role = $current_user->role[0];
+				}
+				if(file_exists(CONTACT_BK_PLUGIN_DIR ."/lib/contact_view-class.php"))
+				{
+					include_once CONTACT_BK_PLUGIN_DIR . "/lib/contact_view-class.php";
+				}
+			}
+			
+		break;
+			
+		case "frontend_contact_form_library":
+				
+			add_action( "admin_init", "frontend_contact_form_library");
+			function frontend_contact_form_library()
+			{
+				if(file_exists(CONTACT_BK_PLUGIN_DIR ."/lib/contact_bank_frontend-class.php"))
+				{
 					include_once CONTACT_BK_PLUGIN_DIR . "/lib/contact_bank_frontend-class.php";
-            	}
-            }
-            break;
-        case "email_contact_form_library":
-            add_action( "admin_init", "email_contact_form_library");
-            function email_contact_form_library()
-            {
-            	global $wpdb,$current_user,$cb_user_role_permission;
-           		if (is_super_admin())
-            	{
-            		$cb_role = "administrator";
-            	}
-            	else
-            	{
-            		$cb_role = $wpdb->prefix . "capabilities";
-            		$current_user->role = array_keys($current_user->$cb_role);
-            		$cb_role = $current_user->role[0];
-            	}
-            	if(file_exists(CONTACT_BK_PLUGIN_DIR ."/lib/contact_bank_email-class.php"))
-            	{
-                	include_once CONTACT_BK_PLUGIN_DIR . "/lib/contact_bank_email-class.php";
-            	}
-            }
-            break;
-        case "email_management_contact_form_library":
-            add_action( "admin_init", "email_management_contact_form_library");
-            function email_management_contact_form_library()
-            {
-            	if(file_exists(CONTACT_BK_PLUGIN_DIR ."/lib/contact_bank_email_management.php"))
-            	{
-                	include_once CONTACT_BK_PLUGIN_DIR . "/lib/contact_bank_email_management.php";
-                	
-            	}
-            }
-            break;
-        case "frontend_data_contact_library":
-            add_action( "admin_init", "frontend_data_contact_library");
-            function frontend_data_contact_library()
-            {
-            	global $wpdb,$current_user,$cb_user_role_permission;
-            	if (is_super_admin())
-            	{
-            		$cb_role = "administrator";
-            	}
-            	else
-            	{
-            		$cb_role = $wpdb->prefix . "capabilities";
-            		$current_user->role = array_keys($current_user->$cb_role);
-            		$cb_role = $current_user->role[0];
-            	}
-            	if(file_exists(CONTACT_BK_PLUGIN_DIR ."/lib/contact_frontend_data_class.php"))
-            	{
-                	include CONTACT_BK_PLUGIN_DIR . "/lib/contact_frontend_data_class.php";
-            	}
-            }
-            break;
-        
+				}
+			}
+			
+		break;
+		
+		case "email_contact_form_library":
+			
+			add_action( "admin_init", "email_contact_form_library");
+			function email_contact_form_library()
+			{
+				global $wpdb,$current_user,$cb_user_role_permission;
+				if (is_super_admin())
+				{
+					$cb_role = "administrator";
+				}
+				else
+				{
+					$cb_role = $wpdb->prefix . "capabilities";
+					$current_user->role = array_keys($current_user->$cb_role);
+					$cb_role = $current_user->role[0];
+				}
+				if(file_exists(CONTACT_BK_PLUGIN_DIR ."/lib/contact_bank_email-class.php"))
+				{
+					include_once CONTACT_BK_PLUGIN_DIR . "/lib/contact_bank_email-class.php";
+				}
+			}
+			
+		break;
+		
+		case "email_management_contact_form_library":
+			
+			add_action( "admin_init", "email_management_contact_form_library");
+			function email_management_contact_form_library()
+			{
+				if(file_exists(CONTACT_BK_PLUGIN_DIR ."/lib/contact_bank_email_management.php"))
+				{
+					include_once CONTACT_BK_PLUGIN_DIR . "/lib/contact_bank_email_management.php";
+				}
+			}
+			
+		break;
+		
+		case "frontend_data_contact_library":
+			
+			add_action( "admin_init", "frontend_data_contact_library");
+			function frontend_data_contact_library()
+			{
+				global $wpdb,$current_user,$cb_user_role_permission;
+				if (is_super_admin())
+				{
+					$cb_role = "administrator";
+				}
+				else
+				{
+					$cb_role = $wpdb->prefix . "capabilities";
+					$current_user->role = array_keys($current_user->$cb_role);
+					$cb_role = $current_user->role[0];
+				}
+				if(file_exists(CONTACT_BK_PLUGIN_DIR ."/lib/contact_frontend_data_class.php"))
+				{
+					include CONTACT_BK_PLUGIN_DIR . "/lib/contact_frontend_data_class.php";
+				}
+			}
+			
+		break;
+		
 		case "show_form_control_data_contact_library":
-            add_action( "admin_init", "show_form_control_data_contact_library");
-            function show_form_control_data_contact_library()
-            {
-            	global $wpdb,$current_user,$cb_user_role_permission;
-            	if (is_super_admin())
-            	{
-            		$cb_role = "administrator";
-            	}
-            	else
-            	{
-            		$cb_role = $wpdb->prefix . "capabilities";
-            		$current_user->role = array_keys($current_user->$cb_role);
-            		$cb_role = $current_user->role[0];
-            	}
-            	if(file_exists(CONTACT_BK_PLUGIN_DIR ."/lib/contact_bank_show_form_control_data-class.php"))
-            	{
-                	include CONTACT_BK_PLUGIN_DIR . "/lib/contact_bank_show_form_control_data-class.php";
-            	}
-            }
-            break;
-            case "layout_settings_contact_library":
-            add_action( "admin_init", "layout_settings_contact_library");
-            function layout_settings_contact_library()
-            {
-            	global $wpdb,$current_user,$cb_user_role_permission;
-            	if (is_super_admin())
-            	{
-            		$cb_role = "administrator";
-            	}
-            	else
-            	{
-            		$cb_role = $wpdb->prefix . "capabilities";
-            		$current_user->role = array_keys($current_user->$cb_role);
-            		$cb_role = $current_user->role[0];
-            	}
-            	if(file_exists(CONTACT_BK_PLUGIN_DIR ."/lib/contact_bank_layout_settings-class.php"))
-            	{
-                	include CONTACT_BK_PLUGIN_DIR . "/lib/contact_bank_layout_settings-class.php";
-            	}
-            }
-            break;
-    }
+			
+			add_action( "admin_init", "show_form_control_data_contact_library");
+			function show_form_control_data_contact_library()
+			{
+				global $wpdb,$current_user,$cb_user_role_permission;
+				if (is_super_admin())
+				{
+					$cb_role = "administrator";
+				}
+				else
+				{
+					$cb_role = $wpdb->prefix . "capabilities";
+					$current_user->role = array_keys($current_user->$cb_role);
+					$cb_role = $current_user->role[0];
+				}
+				if(file_exists(CONTACT_BK_PLUGIN_DIR ."/lib/contact_bank_show_form_control_data-class.php"))
+				{
+					include CONTACT_BK_PLUGIN_DIR . "/lib/contact_bank_show_form_control_data-class.php";
+				}
+			}
+		
+		break;
+		
+		case "layout_settings_contact_library":
+			
+			add_action( "admin_init", "layout_settings_contact_library");
+			function layout_settings_contact_library()
+			{
+				global $wpdb,$current_user,$cb_user_role_permission;
+				if (is_super_admin())
+				{
+					$cb_role = "administrator";
+				}
+				else
+				{
+					$cb_role = $wpdb->prefix . "capabilities";
+					$current_user->role = array_keys($current_user->$cb_role);
+					$cb_role = $current_user->role[0];
+				}
+				if(file_exists(CONTACT_BK_PLUGIN_DIR ."/lib/contact_bank_layout_settings-class.php"))
+				{
+					include CONTACT_BK_PLUGIN_DIR . "/lib/contact_bank_layout_settings-class.php";
+				}
+			}
+		
+		break;
+	}
 }
 /*
  * Description : THESE FUNCTIONS USED FOR REPLACING TABLE NAMES
@@ -1212,19 +1230,19 @@ class Contact_Bank_Widget extends WP_Widget
 		?>
         <p><label for="<?php echo $this->get_field_id("title"); ?>"> Widget Title: <input class="widefat" id="<?php echo $this->get_field_id("title"); ?>" name="<?php echo $this->get_field_name("title"); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label></p>
         <p><label for="<?php echo $this->get_field_id("form_id"); ?>"><?php _e("Select Form :", contact_bank); ?></label>
-            <select size="1" name="<?php echo $this->get_field_name("form_id"); ?>" id="<?php echo $this->get_field_id("form_id"); ?>" class="widefat">
-                <option value="0"  ><?php _e("Select Form", contact_bank); ?></option>
-                <?php
-                if($form_data) {
-                    foreach($form_data as $form)
-                    {
-                        echo "<option value=\"" . $form->form_id . "\"";
-                    	if ($form->form_id == $instance["form_id"]) echo "selected=\"selected\"";
-                    	echo ">" . stripslashes(html_entity_decode($form->form_name)) . "</option>" . "\n\t";
-                    }
-                }
-                ?>
-            </select>
+<select size="1" name="<?php echo $this->get_field_name("form_id"); ?>" id="<?php echo $this->get_field_id("form_id"); ?>" class="widefat">
+    <option value="0"  ><?php _e("Select Form", contact_bank); ?></option>
+    <?php
+    if($form_data) {
+        foreach($form_data as $form)
+        {
+echo "<option value=\"" . $form->form_id . "\"";
+        	if ($form->form_id == $instance["form_id"]) echo "selected=\"selected\"";
+        	echo ">" . stripslashes(html_entity_decode($form->form_name)) . "</option>" . "\n\t";
+        }
+    }
+    ?>
+</select>
         </p>
     <?php
     }
@@ -1239,26 +1257,26 @@ class Contact_Bank_Widget extends WP_Widget
     {
         global $wpdb;
         $form_data = $wpdb->get_var
-            (
-                $wpdb->prepare
-                (
-                    "SELECT count(*) FROM " .contact_bank_contact_form() . " WHERE form_id = %d",
-                    $instance["form_id"]
-                )
-            );
+(
+    $wpdb->prepare
+    (
+        "SELECT count(*) FROM " .contact_bank_contact_form() . " WHERE form_id = %d",
+        $instance["form_id"]
+    )
+);
 
         extract($args, EXTR_SKIP);
         echo $before_widget;
         $title = empty($instance["title"]) ? " " : apply_filters("widget_title", $instance["title"]);
         if($form_data > 0)
         {
-            if($instance["form_id"] != 0)
-            {
-                echo $before_title . $title . $after_title;
-                $shortcode_for_contact_bank_form = "[contact_bank form_id=" . $instance["form_id"] . " ]";
-                echo do_shortcode( $shortcode_for_contact_bank_form );
-                echo $after_widget;
-            }
+if($instance["form_id"] != 0)
+{
+    echo $before_title . $title . $after_title;
+    $shortcode_for_contact_bank_form = "[contact_bank form_id=" . $instance["form_id"] . " ]";
+    echo do_shortcode( $shortcode_for_contact_bank_form );
+    echo $after_widget;
+}
         }
     }
 }

@@ -130,13 +130,13 @@ else
 							if(count($options_values) > 0)
 							{
 							?>
-							<div class="layout-control-group" style="overflow: hidden;max-height: 110px;" id="bind_dropdown_<?php echo $dynamicId; ?>">
+								<div class="layout-control-group" style="overflow: hidden;max-height: 110px;" id="bind_dropdown_<?php echo $dynamicId; ?>">
 							<?php
 							}
 							else
 							{
 							?>
-							<div class="layout-control-group" style="overflow: hidden;max-height: 110px;display:none" id="bind_dropdown_<?php echo $dynamicId; ?>">
+								<div class="layout-control-group" style="overflow: hidden;max-height: 110px;display:none" id="bind_dropdown_<?php echo $dynamicId; ?>">
 							<?php
 							}
 							?>

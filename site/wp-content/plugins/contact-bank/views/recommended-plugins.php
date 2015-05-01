@@ -14,7 +14,7 @@ switch($cb_role)
 if (!current_user_can($user_role_permission))
 {
 	return;
-}
+} 
 else
 {
 	include( ABSPATH . "wp-admin/includes/plugin-install.php" );

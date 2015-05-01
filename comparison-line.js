@@ -28,4 +28,13 @@ requirejs(['script'], function (require) {
   });
   lineGraph.build();
   lineGraph.append();
+
+  var kills = [];
+
+  for (var i = 0; i < myMatch.getMatchTime(); i++){
+    var kn = myMatch.getDifference(i, 'kills');
+    kills.push('Kill Difference: ' + kn);
+  }
+  console.log(kills);
+  lineGraph.toolTips(kills);
 });

@@ -79,6 +79,7 @@ else
 				}
 				die();
 			break;
+			
 			case "delete_form":
 				$form_id =  intval($_REQUEST["id"]);
 				$control_id = $wpdb->get_results
@@ -163,7 +164,9 @@ else
 				);
 				die();
 			break;
+			
 			case "delete_forms":
+				
 				global $wpdb;
 				$wpdb->query
 				(
@@ -199,7 +202,9 @@ else
 				);
 				die();
 			break;
+			
 			case "submit_form_messages_settings":
+				
 				$sql= "";
 				$labels_for_email = "";
 				$sql1=array();
@@ -333,11 +338,16 @@ else
 				);	
 				die();
 			break;
+			
 			case "restore_factory_settings":
+				
 				include_once CONTACT_BK_PLUGIN_DIR ."/lib/restore_factory_settings.php";
 				die();
+				
 			break;
+			
 			case "save_text_control":
+				
 				$dynamic_Id = intval($_REQUEST["ux_hd_textbox_dynamic_id"]);
 				$form_id = intval($_REQUEST["form_id"]);
 				$event = esc_attr($_REQUEST["event"]);
@@ -432,7 +442,9 @@ else
 				}
 				die();
 			break;
+						
 			case "save_textarea_control":
+				
 				$dynamic_Id = intval($_REQUEST["ux_hd_textbox_dynamic_id"]);
 				$form_id = intval($_REQUEST["form_id"]);
 				$event = esc_attr($_REQUEST["event"]);
@@ -528,7 +540,9 @@ else
 				}
 				die();
 			break;
+			
 			case "save_email_control":
+				
 				$dynamic_Id = intval($_REQUEST["ux_hd_textbox_dynamic_id"]);
 				$form_id = intval($_REQUEST["form_id"]);
 				$event = esc_attr($_REQUEST["event"]);
@@ -619,7 +633,9 @@ else
 				}
 				die();
 			break;
+			
 			case "save_drop_down_control":
+				
 				$dynamic_Id = intval($_REQUEST["ux_hd_textbox_dynamic_id"]);
 				$form_id = intval($_REQUEST["form_id"]);
 				$event = esc_attr($_REQUEST["event"]);
@@ -713,7 +729,9 @@ else
 				}
 				die();
 			break;
+			
 			case "save_check_box_control":
+				
 				$dynamic_Id = intval($_REQUEST["ux_hd_textbox_dynamic_id"]);
 				$form_id = intval($_REQUEST["form_id"]);
 				$event = esc_attr($_REQUEST["event"]);
@@ -900,7 +918,9 @@ else
 				}
 				die();
 			break;
+			
 			case "":
+				
 				$form_id = intval($_REQUEST["form_id"]);
 				$field_dynamic_id = isset($_REQUEST["field_dynamic_id"]) ? json_decode(stripcslashes($_REQUEST["field_dynamic_id"]),true) : array();
 				$sql= "";
@@ -918,10 +938,13 @@ else
 				);
 				die();
 			break;
+			
 			case "update_option":
+				
 				update_option("contact-bank-info-popup", "no");
 				die();
 			break;
+			
 			case "form_fields_sorting_order":
 				
 				$form_id = intval($_REQUEST["form_id"]);
@@ -941,7 +964,9 @@ else
 				);
 				die();
 			break;
+			
 			case "contact_plugin_updates":
+				
 				$contact_updates = intval($_REQUEST["contact_updates"]);
 				update_option("contact-bank-automatic_update",$contact_updates);
 				die();

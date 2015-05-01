@@ -17,7 +17,7 @@ if (!current_user_can($cb_user_role_permission))
 	return;
 }
 else
-{
+{ 
 	if(isset($_REQUEST["msg"]))
 	{
 		if(esc_attr($_REQUEST["msg"]) == "no") 

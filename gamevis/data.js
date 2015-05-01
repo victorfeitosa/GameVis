@@ -481,14 +481,15 @@ define(function (require) {
 	//return differences according to time
 	Match.prototype.calculateDifference = function (time, what) {
 		var ret = 0;
+		what = what.toLowerCase();
 		switch (what) {
-		case "Gold":
+		case "gold":
 			ret = this.Team[1].getGold() - this.Team[0].getGold();
 			break;
-		case "XP":
+		case "xp":
 			ret = this.Team[1].getXP() - this.Team[0].getXP();
 			break;
-		case "Kills":
+		case "kills":
 			ret = this.Team[1].getKills() - this.Team[0].getKills();
 			break;
 		}
@@ -498,16 +499,17 @@ define(function (require) {
 	Match.prototype.getDifference = function (time, what) {
 		var ret = 0;
 		if (time <= this.EndTime) {
+			what = what.toLowerCase();
 			this.calculateDifference(time, what);
 
 			switch (what) {
-			case "Gold":
+			case "gold":
 				ret = this.GoldDifference[time];
 				break;
-			case "XP":
+			case "xp":
 				ret = this.XPDifference[time];
 				break;
-			case "Kills":
+			case "kills":
 				ret = this.KillDifference[time];
 				break;
 			}

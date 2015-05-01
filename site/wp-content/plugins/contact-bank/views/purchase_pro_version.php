@@ -17,7 +17,7 @@ if (!current_user_can($user_role_permission))
 }
 else
 {
-	?>
+?>
 <form id="frm_purchase_pro" class="layout-form">
 	<div id="poststuff" style="width: 99% !important;">
 		<div id="post-body" class="metabox-holder">

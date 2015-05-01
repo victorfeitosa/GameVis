@@ -273,7 +273,6 @@ $rand_value = RAND(10,10000);
 				<strong><?php echo $form_settings_array[$form_id]["success_message"]; ?></strong>
 			</span>
 		</div>
-		
 		<div>
 			<?php
 				if($show_title == "true")
@@ -392,7 +391,7 @@ $rand_value = RAND(10,10000);
 									?>
 									<div class="layout-controls layout_according_label_position hovertip" data-original-title="<?php echo $control_settings_array[$form_fields[$flag]->column_dynamicId]["cb_tooltip_txt"]; ?>">
 									<?php
-								foreach($rdl_ids as $key => $value )
+										foreach($rdl_ids as $key => $value )
 										{
 											if($key == "0")
 											{

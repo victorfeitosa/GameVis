@@ -1,5 +1,5 @@
 <?php
-    global $wpdb;
+	global $wpdb;
 	$sql = "DROP TABLE " .contact_bank_contact_form();
 	$wpdb->query($sql);
 	
@@ -31,6 +31,6 @@
 	$wpdb->query($sql);
 	
 	delete_option("contact-bank-info-popup");
-    delete_option("contact-bank-version-number");
-    delete_option("contact-bank-automatic_update");
+	delete_option("contact-bank-version-number");
+	delete_option("contact-bank-automatic_update");
 ?>

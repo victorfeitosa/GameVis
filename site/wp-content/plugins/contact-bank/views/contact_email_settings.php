@@ -18,8 +18,7 @@ if (!current_user_can($cb_user_role_permission))
 }
 else
 {
-	?>
-
+?>
 <form id="contact_bank_pricing" class="layout-form">
 	<div id="poststuff" style="width: 99% !important;">
 		<div id="post-body" class="metabox-holder">

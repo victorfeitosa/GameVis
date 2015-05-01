@@ -17,7 +17,7 @@ if (!current_user_can($cb_user_role_permission))
 {
 	return;
 }
-else
+else 
 {
 	$form_id = intval($_REQUEST["form_id"]);
 	isset($_REQUEST["email_id"]) ? $email_id = intval($_REQUEST["email_id"]) : $email_id = "";
@@ -366,7 +366,7 @@ else
 				setTimeout(function()
 				{
 					jQuery("#email_success_message").css("display","none");
-					window.location.href = "admin.php?page=contact_dashboard";
+					window.location.href = "admin.php?page=contact_email";
 				}, 2000);
 			});
 		}

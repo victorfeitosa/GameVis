@@ -29,7 +29,7 @@ if (!current_user_can($cb_user_role_permission))
 }
 else
 {
-	?>
+?>
 
 <div class="layout-control-group div_border" id="div_1_1" style="display: none;">
 	<label class="layout-control-label" id="control_label_">

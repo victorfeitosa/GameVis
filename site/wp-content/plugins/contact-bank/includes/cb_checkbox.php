@@ -21,30 +21,30 @@ else
 	$form_settings = array();
 	$control_id = $wpdb->get_var
 	(
-	    $wpdb->prepare
-	    (
-	        "SELECT control_id FROM " .create_control_Table(). " where form_id= %d and field_id = %d and column_dynamicId = %d",
-	        $form_id,
-	        $field_type,
-	        $dynamicId
-	    )
+		$wpdb->prepare
+		(
+			"SELECT control_id FROM " .create_control_Table(). " where form_id= %d and field_id = %d and column_dynamicId = %d",
+			$form_id,
+			$field_type,
+			$dynamicId
+		)
 	);
 	if(count($control_id) != 0)
 	{
-	    $form_data = $wpdb->get_results
-	    (
-	        $wpdb->prepare
-	        (
-	            "SELECT * FROM " .contact_bank_dynamic_settings_form(). " where dynamicId= %d",
-	            $control_id
-	        )
-	    );
-	    $form_settings[$dynamicId]["dynamic_id"] = $dynamicId;
-	    $form_settings[$dynamicId]["control_type"] = "1";
-	    for($flag = 0; $flag<count($form_data);$flag++)
-	    {
-	        $form_settings[$dynamicId][$form_data[$flag]->dynamic_settings_key] = $form_data[$flag]->dynamic_settings_value;
-	    }
+		$form_data = $wpdb->get_results
+		(
+			$wpdb->prepare
+			(
+				"SELECT * FROM " .contact_bank_dynamic_settings_form(). " where dynamicId= %d",
+				$control_id
+			)
+		);
+		$form_settings[$dynamicId]["dynamic_id"] = $dynamicId;
+		$form_settings[$dynamicId]["control_type"] = "1";
+		for($flag = 0; $flag<count($form_data);$flag++)
+		{
+			$form_settings[$dynamicId][$form_data[$flag]->dynamic_settings_key] = $form_data[$flag]->dynamic_settings_value;
+		}
 	}
 	?>
 	<form id="ux_frm_check_box_control" action="#" method="post" class="layout-form">
@@ -135,37 +135,37 @@ else
 							}
 							else
 							{
-							?>
+								?>
 								<div class="layout-control-group" style="overflow: hidden;max-height: 110px;display:none" id="bind_dropdown_<?php echo $dynamicId; ?>">
+								<?php
+							}
+							?>
+									<div class="layout-controls">
+										<select id="dropdown_ddl_option_<?php echo $dynamicId; ?>" class="layout-span9">
+											<?php
+												foreach(unserialize($form_settings[$dynamicId]["cb_checkbox_option_id"]) as $key => $value )
+												{
+													?>
+													<option value="<?php echo $value; ?>"><?php echo $options_value[$key]; ?></option>
+													<?php
+												}
+											?>
+										</select>
+										<input class="btn btn-info layout-span2" style="margin-left:10px;"  value="<?php _e( "Delete", contact_bank ); ?>" type="button" id="ddl_options_btn_del_<?php echo $dynamicId; ?>" onclick="delete_ddl_options(<?php echo $dynamicId; ?>);"  name="ddl_options_btn_del_<?php echo $dynamicId; ?>" />
+									</div>
+								</div>
 							<?php
 							}
 							?>
+							<div class="layout-control-group">
+								<label class="layout-control-label"><?php _e( "Admin Label", contact_bank ); ?> :</label>
 								<div class="layout-controls">
-									<select id="dropdown_ddl_option_<?php echo $dynamicId; ?>" class="layout-span9">
-										<?php
-											foreach(unserialize($form_settings[$dynamicId]["cb_checkbox_option_id"]) as $key => $value )
-											{
-												?>
-												<option value="<?php echo $value; ?>"><?php echo $options_value[$key]; ?></option>
-												<?php
-											}
-										?>
-									</select>
-									<input class="btn btn-info layout-span2" style="margin-left:10px;"  value="<?php _e( "Delete", contact_bank ); ?>" type="button" id="ddl_options_btn_del_<?php echo $dynamicId; ?>" onclick="delete_ddl_options(<?php echo $dynamicId; ?>);"  name="ddl_options_btn_del_<?php echo $dynamicId; ?>" />
+									<input type="text" value="<?php echo isset($form_settings[$dynamicId]["cb_admin_label"])  ? $form_settings[$dynamicId]["cb_admin_label"] :  _e( "Untitled", contact_bank ); ?>" class="layout-span12" id="ux_admin_label_<?php echo $dynamicId; ?>" class="layout-span12" id="ux_admin_label_<?php echo $dynamicId; ?>" placeholder="<?php _e( "Enter Admin Label", contact_bank ); ?>" name="ux_admin_label_<?php echo $dynamicId; ?>" />
 								</div>
 							</div>
-						<?php
-						}
-						?>
-						<div class="layout-control-group">
-							<label class="layout-control-label"><?php _e( "Admin Label", contact_bank ); ?> :</label>
-							<div class="layout-controls">
-								<input type="text" value="<?php echo isset($form_settings[$dynamicId]["cb_admin_label"])  ? $form_settings[$dynamicId]["cb_admin_label"] :  _e( "Untitled", contact_bank ); ?>" class="layout-span12" id="ux_admin_label_<?php echo $dynamicId; ?>" class="layout-span12" id="ux_admin_label_<?php echo $dynamicId; ?>" placeholder="<?php _e( "Enter Admin Label", contact_bank ); ?>" name="ux_admin_label_<?php echo $dynamicId; ?>" />
-							</div>
-						</div>
-						<div class="layout-control-group">
-							<label class="layout-control-label"><?php _e( "Do not show in the email", contact_bank ); ?> :</label>
-							<div class="layout-controls">
+							<div class="layout-control-group">
+								<label class="layout-control-label"><?php _e( "Do not show in the email", contact_bank ); ?> :</label>
+								<div class="layout-controls">
 								<?php
 									if(isset($form_settings[$dynamicId]["cb_show_email"]))
 									{
@@ -189,11 +189,11 @@ else
 									<?php
 									}
 									?>
+								</div>
 							</div>
+							<input type="hidden" id="ux_hd_textbox_dynamic_id" name="ux_hd_textbox_dynamic_id" value="<?php echo $dynamicId; ?>"/>
 						</div>
-						<input type="hidden" id="ux_hd_textbox_dynamic_id" name="ux_hd_textbox_dynamic_id" value="<?php echo $dynamicId; ?>"/>
 					</div>
-				</div>
 				<div class="layout-control-group">
 					<input type="submit" class="btn btn-info layout-span3" value="<?php _e( "Save Settings", contact_bank ); ?>" />
 				</div>
@@ -201,6 +201,7 @@ else
 		</div>
 	</form>
 	<a class="closeButtonLightbox" onclick="CloseLightbox();"></a>
+	
 	<script type="text/javascript">
 	
 	var dynamicId = "<?php echo $dynamicId; ?>";

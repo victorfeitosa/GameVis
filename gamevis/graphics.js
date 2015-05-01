@@ -266,7 +266,7 @@ define(function (require) {
 						x: tick.attr('cx'),
 						y: tick.attr('cy')
 					})
-					.classed('mytooltip', true)
+					.classed('tooltip', true)
 					.on('mouseover', function () {
 						tip.transition().style('opacity', 0.9);
 					}).on('mouseout', function () {
@@ -927,7 +927,7 @@ define(function (require) {
 				'ERROR: Expected array as an argument in "ComparisonGraphLine.toolTip()".'
 			);
 		} else {
-			self.each(function (d, i) {
+			self.Element.selectAll('circle').each(function (d, i) {
 				var parent = d3.select(this);
 				var px = parent.attr('cx');
 				var py = parent.attr('cy');
@@ -939,7 +939,7 @@ define(function (require) {
 							tiphtml: tooltip[i],
 							x: px,
 							y: py
-						}).classed('mytooltip', true)
+						}).classed('tooltip', true)
 						.on('mouseover', function () {
 							tip.transition()
 								.style('opacity', 1);
@@ -1154,7 +1154,7 @@ define(function (require) {
 								tiphtml: tooltip[i],
 								x: px,
 								y: py
-							}).classed('mytooltip', true)
+							}).classed('tooltip', true)
 							.on('mouseover', function () {
 								tip.transition()
 									.style('opacity', 1);
@@ -1455,7 +1455,7 @@ define(function (require) {
 								tiphtml: tooltip[i],
 								x: px,
 								y: py
-							}).classed('mytooltip', true)
+							}).classed('tooltip', true)
 							.on('mouseover', function () {
 								tip.transition()
 									.style('opacity', 1);
@@ -1630,7 +1630,7 @@ define(function (require) {
 							tiphtml: tooltip[i],
 							x: px,
 							y: py
-						}).classed('mytooltip', true)
+						}).classed('tooltip', true)
 						.on('mouseover', function () {
 							tip.transition()
 								.style('opacity', 1);

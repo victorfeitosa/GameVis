@@ -28,7 +28,7 @@ body .no_sidebar{ width:100%;}
 .header .center{ }
 
 /*Headers4*/
-.header4{width:100%; background:#333; height:auto; float:left;}
+.header4{width:100%; background:#2f2f32; height:auto; float:left;}
 .header4 a{ color:#fff;}
 .header4 .center{ position:relative;}
 .header4 .logoimga{ display:block; float:left;}
@@ -172,23 +172,23 @@ a.sld_buttn:hover{ opacity:0.8;}
 .lastmap{ margin-bottom:0;}
 
 /*Midrow Blocks*/
-.ast_blocks{ margin:0; padding:35px 0; background:#fff;}
+.ast_blocks{ margin:0; padding:35px 0; background:#2f2f32;}
 .midrow{width:100%; float:left;}
 .midrow_wrap{ width:85%; margin:0 auto;}
 
-.midrow_block{width:21%; padding:2%; float:left; text-align:center;}
+.midrow_block{width:20%; padding:2%; float:left; text-align:center; border: solid 2px #2A2A2C; background-color: rgba(0,0,0,0.04);}
 .twoblocks .midrow_block{width:46%;}
 .oneblock .midrow_block{width:92%;}
 .threeblocks .midrow_block{width:29.3%;}
 
 .midrow_block img{ max-width:100%; height:auto;}
 
-.midrow_block:hover{}
+.midrow_block:hover{background-color: rgba(0,0,0,0);}
 .midrow_block:hover .block_img{ border:5px solid #fff;}
 .midrow_block:hover h3{ color:#fff;}
 .midrow_block:hover .icon_wrap i{}
 
-.midrow_block h3{color:#333; font-size:18px;}
+.midrow_block h3{color:#fff; font-size:18px;}
 .midrow_block p{ line-height:2em;}
 
 .block_img{width:70px; height:70px; border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50%; margin:30px auto;border:5px solid rgba(0, 0, 0, 0.15);}
@@ -335,7 +335,7 @@ a img.aligncenter {display: block;margin-left: auto;margin-right: auto}
 
 .meta_comm, .catag_list{ display:inline;}
 .single_metainfo{ padding-bottom:20px;}
-.single_metainfo, .single_post .single_metainfo a{ color:#999; font-size:13px; opacity:0.8;}
+.single_metainfo, .single_post .single_metainfo a{ color:#2f2f32; font-size:13px; opacity:0.8;}
 .single_metainfo i{ opacity:0.6; padding-left:10px; padding-right:5px;}
 .single_metainfo .fa-calendar{ padding-left:0;}
 .post_meta a{ color:#ccc; font-size:13px;}
@@ -472,7 +472,7 @@ h3#comments_ping{color:#333333; font-size:20px;}
 .edit_wrap i:hover{color:#2dcb73;}
 
 .single_wrap{width:68%; float:left;}
-.single_post{ background:#fff; padding:2.5%; position:relative; overflow:hidden;}
+.single_post{ background:#2f2f32; padding:2.5%; position:relative; overflow:hidden;}
 .single_post .postitle{ margin-top:15px; color:#2dcb73;}
 
 

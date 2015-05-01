@@ -196,7 +196,7 @@ div.tooltip{
   pointer-events: none;
 }
 
-.mytooltip{
+.tooltip{
   text-align: center;
   width: '100%';
   height: '100%';

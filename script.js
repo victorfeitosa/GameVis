@@ -15,7 +15,7 @@ define(function (require) {
 
   //Creates scales for this canvas
   scaleX = d3.scale.linear()
-                    .domain([-1, 5])
+                    .domain([0, 14])
                     .range([40, 600]);
 
   scaleY = d3.scale.linear();
@@ -60,7 +60,7 @@ define(function (require) {
   myMatch = new gamevis.data.Match({
     team1: TeamA,
     team2: TeamB,
-    endtime: 5
+    endtime: 15
   });
 
   myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
@@ -87,5 +87,40 @@ define(function (require) {
 
   myMatch.update();
 
-  var d = new gamevis.driver();
+  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
+  myMatch.addPlayerGold(TeamA, PlayerA, 300);
+  myMatch.addPlayerGold(TeamB, PlayerB, 150);
+  myMatch.update();
+
+  myMatch.update();
+  myMatch.update();
+
+  myMatch.addPlayerKill(TeamA, TeamB, PlayerA, PlayerB);
+  myMatch.update();
+
+  myMatch.addPlayerGold(TeamA, PlayerA, 300);
+  myMatch.addPlayerGold(TeamA, PlayerA, 250);
+  myMatch.update();
+
+  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
+  myMatch.update();
+
+  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
+  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
+  myMatch.update();
+
+  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
+  myMatch.update();
+
+  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
+  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
+  myMatch.update();
+
+  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
+  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
+  myMatch.update();
+
+  myMatch.addPlayerKill(TeamB, TeamA, PlayerB, PlayerA);
+  myMatch.addPlayerGold(TeamB, PlayerB, 1250);
+  myMatch.update();
 });

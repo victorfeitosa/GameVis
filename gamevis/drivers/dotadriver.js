@@ -13,6 +13,7 @@ define(function (require) {
 
 		this.ID = 1;
 		this.SourceGame = 'Dota 2';
+		this.GameData = null;
 
 		this.httpGet = function (theUrl) {
 			var xmlHttp = null;
@@ -174,7 +175,7 @@ define(function (require) {
 						id: 0,
 						name: 'No Item',
 						value: 'item',
-						iconuri: ''
+						iconuri: './gamevis/drivers/dota_icon_item.png'
 					}), j);
 				}
 			}
@@ -219,13 +220,15 @@ define(function (require) {
 		var match = new data.Match({team1: radiant, team2: dire, endtime: jsonmatch.duration});
 		gamedata.addGameMatch(match);
 
+		this.GameData = gamedata;
+
 		return gamedata;
 	};
 
 	//Returns a JSON/XML of the built GameData object
 	DotaDriver.prototype.getConvertedData = function (gamedata, format) {
 		//returns the built GameData as a JSON/XML
-		return "";
+		return this.GameData;
 	};
 
 	return DotaDriver;
