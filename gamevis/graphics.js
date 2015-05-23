@@ -34,6 +34,8 @@ define(function (require) {
 			this.FillOpacity = obj.fill_op || 1;
 			this.StrokeOpacity = obj.stroke_op || 1;
 
+			this.RealHeight = this.Height;
+
 		} else if (DEBUG)
 			throw ': Argument object not defined in ' + this.ClassType;
 		//element to operate transition on
@@ -45,12 +47,13 @@ define(function (require) {
 
 	Bar.prototype.append = function () {
 		var self = this;
+		var mx, my;
 
 		//actual appending--------------------------------------------------------
 		//appends in a canvas or group
 		if (self.Canvas !== undefined && self.Element === null) {
-			var mx = self.X - self.Width / 2; //defines the bar X center
-			var my = 0;
+			mx = self.X - self.Width / 2; //defines the bar X center
+		  my = 0;
 			if (self.Height < 0) {
 				my = self.Y;
 				self.Height *= -1;
@@ -79,12 +82,26 @@ define(function (require) {
 					console.log(
 						'Transition not defined for Bar, applying default transition'
 					);
-				self.Element
-					.transition()
-					.attr('height', self.Height)
-					.style('fill', self.FillFinal)
-					.duration(1000)
-					.delay(100);
+					if(self.RealHeight < 0 ){
+						self.Element.transition()
+							.attr('height', self.Height)
+							.style('fill', self.FillFinal)
+							.duration(1000)
+							.delay(100);
+					}
+					else{
+						self.Element.transition()
+							.attr('transform', 'translate(' + self.X + ',' + self.Y + ')')
+							.delay(0)
+							.duration(0);
+
+							self.Element.transition()
+								.attr('height', self.Height)
+								.attr('transform', 'translate(' + self.X + ',' + my + ')')
+								.style('fill', self.FillFinal)
+								.duration(1000)
+								.delay(100);
+					}
 			}
 		}
 
@@ -115,241 +132,6 @@ define(function (require) {
 		return this.Element.classed(c, b);
 	};
 
-	//Status polygon graph element
-	//@attr: canvas, stats, radius, maxVal, x, y, fill, stroke, stroke_width, fill_op, stroke_op
-	function StatPolygon(obj) {
-		//Attributes------------------------------------------------------------
-		this.ClassType = 'StatPolygon';
-
-		if (obj) {
-			this.Stats = obj.stats;
-			this.Radius = obj.radius || 10;
-			this.X = obj.x || 0;
-			this.Y = obj.y || 0;
-			this.Fill = obj.fill || 'blue';
-			this.PolygonFill = obj.polygon_fill || 'red';
-			this.Stroke = obj.stroke || 'dark-blue';
-			this.StrokeWidth = obj.stroke_width || 1;
-			this.FillOpacity = obj.fill_op || 255;
-			this.PolygonOpacity = obj.polygon_opacity || 1;
-			this.StrokeOpacity = obj.stroke_op || 255;
-			this.TextFill = obj.text_fill || 'red';
-			this.TextOpacity = obj.text_op || 1;
-			this.TextStroke = obj.text_stroke || 'red';
-			this.TextStrokeWidth = obj.text_stroke || 0;
-			this.TextStrokeOpacity = obj.text_stroke_op || 1;
-			this.TextFontFaminly = obj.text_font || 'Sans-serif';
-			this.TextFontSize = obj.text_font_size || 14;
-			this.MaxVal = obj.maxVal || 100;
-			this.Transition = obj.transition;
-			this.Option = obj.options || {};
-		} else if (DEBUG)
-			throw ': Argument object not defined in ' + this.ClassType;
-
-		this.NSides = 0;
-		this.Group = null;
-		this.Polygon = null;
-		this.Poly = null;
-		this.Ticks = null;
-		this.StatText = null;
-		this.CircleArea = null;
-
-		if (canvas.ClassType === 'Canvas')
-			this.Canvas = canvas.getCanvas();
-
-		for (var i in this.Stats) {
-			if (this.Stats.hasOwnProperty(i))
-				++this.NSides;
-		}
-	}
-
-	//Methods------------------------------------------------------------------
-	StatPolygon.prototype.append = function () {
-		var self = this;
-
-		self.Group = self.Canvas.append('g').classed('stat-polygon-group',
-			true);
-		self.CircleArea = self.Group.append('g').classed(
-			'stat-polygon-circlegroup', true);
-		self.Polygon = self.Group.append('g').classed(
-			'stat-polygon-polygroup',
-			true);
-		self.Poly = self.Polygon.append('g');
-		self.Ticks = self.Polygon.append('g').classed('stat-polygon-ticks',
-			true);
-		self.StatText = self.Group.append('g').classed('stat-polygon-texts',
-			true);
-
-		//attatch the outter circle area with its stroke (fill maybe?)
-		var circle = this.CircleArea.append('circle')
-			.attr('cx', this.X)
-			.attr('cy', this.Y)
-			.attr('r', this.Radius)
-			.classed('stat-polygon-circle', true);
-		self.CircleArea.append('circle')
-			.attr('cx', this.X)
-			.attr('cy', this.Y)
-			.attr('r', 2 * (this.Radius / 3))
-			.classed('stat-polygon-circle', true);
-		self.CircleArea.append('circle')
-			.attr('cx', this.X)
-			.attr('cy', this.Y)
-			.attr('r', this.Radius / 3)
-			.classed('stat-polygon-circle', true);
-		self.CircleArea.append('circle')
-			.attr('cx', this.X)
-			.attr('cy', this.Y)
-			.attr('r', 2)
-			.classed('stat-polygon-circle', true);
-
-		//attatch the polygon points lines
-		var i = 0;
-		for (var j in self.Stats) {
-			var linegroup = self.CircleArea.append('g')
-				.append('line')
-				.classed('stat-polygon-line', true)
-				.attr('x1', 0)
-				.attr('y1', 0)
-				.attr('x2', self.Radius)
-				.attr('y2', 0);
-			linegroup.attr('transform', function () {
-				var angle = (360 / self.NSides) * i;
-				angle += 90;
-				return 'translate(' + self.X + ',' + self.Y + ')' + 'rotate(' +
-					angle +
-					')';
-			});
-			i++;
-		}
-
-		//attatch the inner polygon area with fill and stroke
-		var points = [];
-		i = 0;
-		for (var j in self.Stats) {
-			var angle = (360 / self.NSides) * i;
-			angle += 90;
-			angle = (angle * Math.PI) / 180; //conversion to radian
-			var val = (self.Stats[j] * self.Radius) / self.MaxVal;
-
-			var px = Math.cos(angle) * val;
-			var py = Math.sin(angle) * val;
-
-			points.push(px);
-			points.push(py);
-
-			var tick = new Dot({
-				canvas: self.Ticks,
-				x: px + self.X,
-				y: py + self.Y,
-				radius: 3
-			}).classed(
-				'point' + i, true).classed('stat-polygon-circle', true);
-
-			i++;
-		}
-
-		self.Poly.attr('transform', function () {
-				return 'translate(' + self.X + ',' + self.Y + ')';
-			})
-			.append('polygon')
-			.attr('points', points)
-			.classed('stat-polygon-poly', true);
-
-		//attatch tooltips if option is set
-		// if (self.Option['AttatchStatsTooltips'] === true) {
-		self.Ticks.selectAll('circle').data(Object.keys(self.Stats))
-			.each(function (d, i) {
-				var tick = d3.select(this);
-				var tip = new ToolTip({
-						parent: tick,
-						tiphtml: d,
-						x: tick.attr('cx'),
-						y: tick.attr('cy')
-					})
-					.classed('tooltip', true)
-					.on('mouseover', function () {
-						tip.transition().style('opacity', 0.9);
-					}).on('mouseout', function () {
-						tip.transition().style('opacity', 0);
-					});
-			});
-		// }
-		// //if option is not set put stats as text
-		// else{
-
-		//Attatchs the text stat name
-		var stattexts = self.StatText.selectAll('g')
-			.data(Object.keys(self.Stats))
-			.enter()
-			.append('text')
-			.classed('stat-polygon-text-element', true)
-			.attr('transform', function (d, i) {
-				var angle = (360 / self.NSides) * i;
-				angle += 90;
-				var rad = (angle * Math.PI) / 180;
-				var val = self.Radius + (d.length * 4);
-
-				var px = (Math.cos(rad) * val) + self.X;
-				var py = (Math.sin(rad) * val) + self.Y;
-
-				if (angle > 90 && angle < 270)
-					angle += 180;
-				if (angle < -90 && angle > -270)
-					angle -= 180;
-				return 'translate(' + px + ',' + py + ')' + 'rotate(' + (angle) +
-					')';
-			})
-			.text(function (d) {
-				return d;
-			});
-		// }
-
-		if (gamevis.data.isStyleSourceCode()) {
-			//set resources color and all
-			self.Group.selectAll('circle')
-				.style('fill', this.Fill)
-				.style('stroke', this.Stroke)
-				.style('stroke-width', this.StrokeWidth)
-				.style('fill-opacity', this.FillOpacity)
-				.style('stroke-opacity', this.StrokeOpacity);
-			self.Group.selectAll('line')
-				.style('stroke', this.Stroke)
-				.style('stroke-width', this.StrokeWidth)
-				.style('stroke-opacity', this.StrokeOpacity);
-			self.Group.selectAll('polygon')
-				.style('fill', this.PolygonFill)
-				.style('stroke', this.Stroke)
-				.style('stroke-width', this.StrokeWidth)
-				.style('fill-opacity', this.PolygonOpacity)
-				.style('stroke-opacity', this.StrokeOpacity);
-			self.Group.selectAll('text')
-				.style('fill', this.TextFill)
-				.style('fill-opacity', this.TextOpacity)
-				.style('stroke', this.TextStroke)
-				.style('stroke-width', this.TextStrokeWidth)
-				.style('stroke-opacity', this.TextStrokeOpacity)
-				.style('font-family', this.TextFamilyFont)
-				.style('font-size', this.TextFontSize);
-		}
-
-		return self;
-	};
-
-	StatPolygon.prototype.get = function (element) {
-		if (element)
-			return this.Group.selectAll(element);
-		return this.Group;
-	};
-
-	StatPolygon.prototype.transition = function (element, filter) {
-		if (filter)
-			return this.get(element).filter(filter).transition();
-		return this.get(element).transition();
-	};
-
-	StatPolygon.prototype.remove = function () {
-
-	};
 
 	//Tooltips, they are attachable to any graphic structure, even within themselves
 	//@attr: parent, tiphtml, x, y, fill, stroke, stroke_width, fill_op, stroke_op
@@ -545,6 +327,7 @@ define(function (require) {
 			this.TextStroke = obj.text_stroke || 'white';
 			this.TextStrokeWidth = obj.stroke_width || 0;
 			this.TextStrokeOpacity = obj.text_stroke_op || 1;
+			this.Transition = obj.transition;
 		} else if (DEBUG)
 			throw ': Argument object not defined in ' + this.ClassType;
 
@@ -621,6 +404,25 @@ define(function (require) {
 					.style('stroke-opacity', self.TextStrokeOpacity)
 					.style('text-anchor', 'middle');
 			}
+
+			if(self.Transition === undefined){
+				//erases attributes
+				self.transition().attr('rx', 0)
+				.attr('ry', 0)
+				.duration(0)
+				.delay(0);
+
+				//sets real transition
+				self.transition().attr('rx', self.RX)
+				.attr('ry', self.RY)
+				.duration(800	)
+				.delay(80)
+				.ease('bounce-in');
+			}
+			else {
+				self.transition().call(self.Transition);
+			}
+
 		} else
 		if (gamevis.data.DEBUG === true)
 			console.log('Error, token ellipse is null');
@@ -779,7 +581,7 @@ define(function (require) {
 		var self = this;
 
 		self.Element = self.Canvas.append('g')
-			.classed('comparison-line-graph', true)
+			.classed('comparison-graph-line', true)
 			.attr('transform', function () {
 				return ('translate(' + self.X + ', ' + self.Y + ')');
 			});
@@ -1011,12 +813,12 @@ define(function (require) {
 
 		//adds the group element
 		self.Element = self.Canvas.append('g')
-			.classed('comparison-bar-graph', true)
+			.classed('comparison-graph-bar', true)
 			.attr('transform', function () {
 				return ('translate(' + self.X + ', ' + self.Y + ')');
 			});
 		self.BarsGroup = self.Element.append('g')
-			.classed('comparison-bar-graph-group', true);
+			.classed('comparison-graph-bar-group', true);
 
 		//adds the bars
 		for (var i in self.Bars) {
@@ -1041,7 +843,9 @@ define(function (require) {
 		//adds the informative text
 		for (i in self.Bars) {
 			var tbar = self.Bars[i];
-			mx = tbar[0];
+			//value to fix text position
+			var val = tbar[3] < 0 ? 0 : tbar[2]/2;
+			mx = tbar[0] + val;
 			if (tbar[3] > 0)
 				my = self.HalfHeight - tbar[3] - 4;
 			else
@@ -1547,7 +1351,7 @@ define(function (require) {
 			}
 			//appends interest resources accordingly if no parent resource is set
 			var interestGroup = resGroup.append('g')
-				.classed('resource-interest-group', true)
+				.classed('interest-resource-group', true)
 				.attr('transform', function () {
 					var sx = self.ParentResource === undefined ? self.ScaleX(-0.6) :
 						self.ScaleX(
@@ -1591,9 +1395,11 @@ define(function (require) {
 		case 'interest-resources':
 		case 'interest_resource':
 		case 'interest_resources':
-			return this.Element.selectAll('g').filter(function () {
-				return d3.select(this).classed('resource-interest-group');
-			}).selectAll('image');
+		case 'child':
+		case 'childrem':
+			return this.Element.selectAll('image').filter(function () {
+				return d3.select(this).classed('interest-resource');
+			});
 		case 'name':
 			return this.Element.selectAll('text').filter(function () {
 				return d3.select(this).classed('team-player-info');
@@ -1671,6 +1477,7 @@ define(function (require) {
 			this.ScaleY = obj.scaleY;
 			this.X = obj.x || 0;
 			this.Y = obj.y || 0;
+			this.PLayerNameLength = obj.player_name_length || 24;
 		} else if (DEBUG)
 			throw ': Argument object not defined in ' + this.ClassType;
 
@@ -1745,9 +1552,10 @@ define(function (require) {
 			.enter()
 			.append('tspan')
 			.classed('team-player-info-value', true)
+			.classed('player-name', true)
 			.text(function (d, i) {
-				var str = d.Name.substr(0, 24);
-				if (d.Name.length > 24)
+				var str = d.Name.substr(0, self.PLayerNameLength);
+				if (d.Name.length > self.PLayerNameLength)
 					str += '...';
 				return str;
 			})
@@ -1770,6 +1578,7 @@ define(function (require) {
 		names.append('tspan').text(function (d) {
 			return 'A: ' + d.CurrentAssists;
 		}).attr('x', '44em');
+
 	};
 
 	MatchResultsGraph.prototype.remove = function () {
@@ -1795,7 +1604,7 @@ define(function (require) {
 		case 'average_level':
 		case 'average_levels':
 			return this.Element.selectAll('g').filter(function () {
-				return d3.select(this).classed('resource-interest-group');
+				return d3.select(this).classed('interest-resource-group');
 			}).selectAll('image');
 		case 'gold':
 			return this.Element.selectAll('text').filter(function () {
@@ -1828,7 +1637,6 @@ define(function (require) {
 		//classes
 		Bar: Bar,
 		ToolTip: ToolTip,
-		StatPolygon: StatPolygon,
 		Dot: Dot,
 		StatusToken: StatusToken,
 		TimeAxis: TimeAxis,

@@ -1,8 +1,8 @@
-/*Canvas style*/
+/* Canvas style */
 .canvas {
 }
 
-/*Stat polygon styles*/
+/* Stat polygon styles */
 .stat-polygon-group {
 }
 .stat-polygon-ticks {
@@ -14,10 +14,124 @@
 .stat-polygon-poly {
 }
 
-/*Tooltip style*/
+/* Tooltip style */
 .tooltip {
 }
 
-/*Dot Tick styles*/
-.dot-element {
+/* Dot Tick styles */
+circle.dot-element {
+}
+
+/* Status Token styles */
+ellipse.status-token {
+}
+  /* these depend on the event types */
+.status-token-score {
+}
+.status-token-gold {
+}
+.status-token-kills {
+}
+
+/* Time axis styles */
+
+g.time-axis {
+}
+
+/* Line comparison graph styles */
+
+g.comparison-graph-line {
+}
+
+g.line-graph-line-group {
+}
+
+g.line-graph-tick-group{
+}
+
+.line-graph-segment{
+}
+
+.line-graph-tick{
+}
+
+.line-graph-title{
+}
+
+.comparison-graph-text{
+}
+
+/* Bar comparison graph styles */
+
+g.comparison-graph-bar {
+}
+
+g.comparison-graph-bar-group{
+}
+
+.bar-info-text{
+}
+
+.bar-graph-title{
+}
+
+.comparison-graph-text{
+}
+
+/* Tooltip styles */
+
+div.tooltip {
+}
+
+/* Team Detail Graph styles */
+
+g.team-detail-graph{
+}
+
+.team-graph-title{
+}
+
+.team-player-info{
+}
+
+.team-player-info-title{
+}
+
+/* Player Match graph styles */
+
+g.player-match-graph{
+}
+
+.player-match-title{
+}
+
+.player-match-name{
+}
+
+/* Resource List graph styles */
+
+g.team-resource-group{
+}
+
+.player-resource-group{
+}
+
+.parent-resource{
+}
+
+.interest-resource-group{
+}
+
+.interest-resource{
+}
+
+/* Match Results graph styles */
+
+g.end-results {
+}
+
+g.team-result-group {
+}
+
+g.interest-resource-group{
 }

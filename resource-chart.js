@@ -25,5 +25,5 @@ requirejs(['/script2.js'], function () {
 
 
   resourceChart.append();
-  resourceChart.toolTips('parent', ['item 1', 'item 2', 'item 3', 'item 4', 'item 5', 'item 6']);
+  resourceChart.toolTips('parent', ['Anti Mage', 'Axe', 'Bane', 'Blood Seeker', 'Crystal Maiden']);
 });
