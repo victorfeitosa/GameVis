@@ -1,9 +1,5 @@
 define(function (require) {
-  require('d3/d3.v3');
-
-  gamevis = {};
-  gamevis.data = require('gamevis/data');
-  gamevis.graphics = require('gamevis/graphics');
+  gamevis = require('gamevis/gamevis.min-');
   gamevis.driver = require('drivers/dotadriver');
 
   canvas = new gamevis.data.Canvas({
