@@ -20,8 +20,6 @@ define(function (require) {
 			//checks if it is a group or a canvas
 			this.Canvas = obj.canvas;
 
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
 			//--------------------------------------
 			this.X = obj.x || 0;
 			this.Y = obj.y || 0;
@@ -205,8 +203,7 @@ define(function (require) {
 
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.canvas = obj.canvas.getCanvas();
+
 			this.X = obj.x || 0;
 			this.Y = obj.y || 0;
 			this.Radius = obj.radius || 1;
@@ -256,7 +253,7 @@ define(function (require) {
 
 	Dot.prototype.transition = function(){
 		return this.Element.transition();
-	}
+	};
 
 	Dot.prototype.classed = function (c, b) {
 		this.Element.classed(c, b);
@@ -308,11 +305,9 @@ define(function (require) {
 
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
 			this.Type = obj.type;
-			this.X = obj.x;
-			this.Y = obj.y;
+			this.X = obj.x || 0;
+			this.Y = obj.y || 0;
 			this.RX = obj.rx || 35;
 			this.RY = obj.ry || 30;
 			this.Fill = obj.fill || 'black';
@@ -456,8 +451,6 @@ define(function (require) {
 		//Attributes------------------------------------------------------
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas;
 			this.Scale = obj.scale || d3.scale.linear()
 				.domain([0, 100])
 				.range([0, 320]);
@@ -539,8 +532,7 @@ define(function (require) {
 		//Attributes-------------------------------------------------
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
+
 			this.Match = obj.match;
 			this.Type = obj.type; //Gold, Kills or XP
 			this.X = obj.x;
@@ -549,7 +541,7 @@ define(function (require) {
 			this.ScaleY = obj.scaleY;
 			this.Ticks = obj.ticks || false;
 			this.TickRadius = obj.tick_radius || 4;
-			this.HalfHeight = (gamevis.data.getResolution().h / 2);
+			this.HalfHeight = this.Canvas.Height/2;
 			this.ToolTips = obj.tooltips || null;
 			this.Transition = obj.transition || false;
 		} else if (DEBUG)
@@ -669,8 +661,7 @@ define(function (require) {
 			.attr('transform', function () {
 				return 'translate(' + mx + ', ' + my + ')';
 			});
-
-		mx = canvas.Width / 2 + self.X;
+		mx = self.Canvas.Width / 2 + self.X;
 		my = self.Y + 64;
 		var textTeam1 = self.Element.append('text')
 			.text('Team ' + self.Match.Team[0].Name)
@@ -679,12 +670,12 @@ define(function (require) {
 				return 'translate(' + mx + ', ' + my + ')';
 			});
 
-		my = canvas.Height - 64 + self.Y;
+		my = self.Canvas.Height - 64 + self.Y;
 		var textTeam2 = self.Element.append('text')
 			.text('Team ' + self.Match.Team[1].Name)
 			.classed('comparison-graph-text', true)
 			.attr('transform', function () {
-				return 'translate(' + canvas.Width / 2 + ', ' + my + ')';
+				return 'translate(' + self.Canvas.Width / 2 + ', ' + my + ')';
 			});
 	};
 
@@ -731,8 +722,9 @@ define(function (require) {
 		} else {
 			self.Element.selectAll('circle').each(function (d, i) {
 				var parent = d3.select(this);
-				var px = parent.attr('cx');
-				var py = parent.attr('cy');
+
+				var px = 0;
+				var py = 0;
 
 				//attach tooltips if its an string or html
 				if (typeof tooltip[0] !== 'object') {
@@ -743,11 +735,23 @@ define(function (require) {
 							y: py
 						}).classed('tooltip', true)
 						.on('mouseover', function () {
+							var matrix = this.getScreenCTM()
+			                .translate(+this.getAttribute("cx"), +this.getAttribute("cy"));
+							var px = window.pageXOffset + matrix.e + 'px';
+							var py = window.pageYOffset + matrix.f - 16 + 'px';
+
+							// var mouseCoords = d3.mouse(parent.node().parentElement);
+							// px = mouseCoords[0] + 'px';
+							// py = mouseCoords[1] + 'px';
 							tip.transition()
 								.style('opacity', 1);
+							tip.style('left', px)
+									.style('top', py);
 						}).on('mouseout', function () {
 							tip.transition()
-								.style('opacity', 0);
+								.style('opacity', 0)
+								.style('left', 0)
+								.style('top', 0);
 						});
 				} else {
 					tooltip[i].Parent = parent;
@@ -774,8 +778,7 @@ define(function (require) {
 		//Attributes-----------------------------------------------------------------
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
+
 			this.Match = obj.match;
 			this.Type = obj.type;
 			this.X = obj.x;
@@ -887,7 +890,7 @@ define(function (require) {
 				return 'translate(' + mx + ', ' + my + ')';
 			});
 
-		mx = canvas.Width / 2 + self.X;
+		mx = self.Canvas.Width / 2 + self.X;
 		my = 64 + self.Y;
 		var textTeam1 = self.Element.append('text')
 			.text('Team ' + self.Match.Team[0].Name)
@@ -896,12 +899,12 @@ define(function (require) {
 				return 'translate(' + mx + ', ' + my + ')';
 			});
 
-		y = canvas.Height - 64 + self.Y;
+		y = self.Canvas.Height - 64 + self.Y;
 		var textTeam2 = self.Element.append('text')
 			.text('Team ' + self.Match.Team[1].Name)
 			.classed('comparison-graph-text', true)
 			.attr('transform', function () {
-				return 'translate(' + canvas.Width / 2 + ', ' + y + ')';
+				return 'translate(' + self.Canvas.Width / 2 + ', ' + y + ')';
 			});
 	};
 
@@ -991,8 +994,7 @@ define(function (require) {
 		//Attributes---------------------------------------------------------
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
+
 			this.Team = obj.team;
 			this.X = obj.x || 0;
 			this.Y = obj.y || 0;
@@ -1005,7 +1007,7 @@ define(function (require) {
 	//Methods-----------------
 	TeamDetailGraph.prototype.append = function () {
 		var self = this;
-		var res = gamevis.data.getResolution();
+		var res = {w: self.Canvas.Width, h: self.Canvas.Height};
 
 		self.Element = self.Canvas.append('g').classed('team-detail-graph',
 				true)
@@ -1113,8 +1115,7 @@ define(function (require) {
 		//Attributes---------------------------------------------------------------
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
+
 			this.Player = obj.player;
 			this.Scale = obj.scale;
 			this.X = obj.x || 0;
@@ -1133,7 +1134,7 @@ define(function (require) {
 
 		var gX = self.X;
 		var gY = self.Y;
-		var res = gamevis.data.getResolution();
+		var res = {w: self.Canvas.Width, h: self.Canvas.Height};
 
 		self.Element = self.Canvas.append('g')
 			.classed('player-match-graph', true)
@@ -1246,7 +1247,7 @@ define(function (require) {
 		} else {
 			self.get('tokens')
 				.each(function (d, i) {
-					var res = gamevis.data.getResolution();
+					var res = {w: self.Canvas.Width, h: self.Canvas.Height};
 					var parent = d3.select(this);
 					var px = parseInt(d3.select(this).attr('cx')) + parseInt(d3.select(
 						this).attr('rx') / 2);
@@ -1293,8 +1294,7 @@ define(function (require) {
 
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
+
 			this.Team = obj.team;
 			this.ScaleX = obj.scaleX;
 			this.ScaleY = obj.scaleY;
@@ -1470,8 +1470,7 @@ define(function (require) {
 
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
+
 			this.Match = obj.match;
 			this.ScaleX = obj.scaleX;
 			this.ScaleY = obj.scaleY;

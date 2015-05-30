@@ -1,7 +1,7 @@
 define(function (require) {
   gamevis = {};
 
-  require('d3/d3.v3');
+  require('d3/d3');
 
   gamevis.data = require('./gamevis/data');
   gamevis.graphics = require('./gamevis/graphics');

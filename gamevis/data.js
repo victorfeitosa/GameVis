@@ -41,14 +41,6 @@ define(function (require) {
 		return (width/height);
 	}
 
-	function getResolution(){
-		var canvas = d3.select('svg');
-		var width = canvas.attr('width');
-		var height = canvas.attr('height');
-
-		return {w: width, h: height};
-	}
-
 	//Classes=======================================================================
 
 	//load and save gamedata functions
@@ -150,9 +142,11 @@ define(function (require) {
 	}
 
 	//Methods---
-	Canvas.prototype.append = function () {
+	Canvas.prototype.append = function (arg) {
+		if (arg !== undefined) {
+			return this.SVGCanvas.append(arg);
+		}
 		//actual appending
-		//TODO: change this so it can append to the place i want
 		if (this.Parent) {
 			this.SVGCanvas = d3.select(this.Parent).append("svg")
 				.attr("width", this.Width)
@@ -596,7 +590,6 @@ define(function (require) {
 		isStyleSourceCode: isStyleSourceCode,
 		setChartStyleSource: setChartStyleSource,
 		getAspect: getAspect,
-		getResolution: getResolution,
 		saveGameData: saveGameData,
 		loadGameData: loadGameData,
 
