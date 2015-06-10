@@ -53,8 +53,6 @@ define(function (require) {
 	StatPolygon.prototype.append = function () {
 		var self = this;
 
-		console.log(self.Canvas);
-
 		self.Group = self.Canvas.append('g').classed('stat-polygon-group',
 			true);
 		self.CircleArea = self.Group.append('g').classed(
@@ -156,7 +154,13 @@ define(function (require) {
 					})
 					.classed('tooltip', true)
 					.on('mouseover', function () {
+						var matrix = this.getScreenCTM()
+										.translate(+this.getAttribute("cx"), +this.getAttribute("cy"));
+						var px = window.pageXOffset + matrix.e + 'px';
+						var py = window.pageYOffset + matrix.f - 16 + 'px';
 						tip.transition().style('opacity', 0.9);
+						tip.style('left', px)
+								.style('top', py);
 					}).on('mouseout', function () {
 						tip.transition().style('opacity', 0);
 					});
