@@ -2,7 +2,9 @@
 //Game stuctures****************************************************************
 //******************************************************************************
 define(function (require) {
-	require('d3/d3.v3.min');
+	gamevis = {};
+
+	require('d3/d3');
 
 	DEBUG = false;
 
@@ -37,18 +39,7 @@ define(function (require) {
 		var width = canvas.attr('width');
 		var height = canvas.attr('height');
 
-		return (width / height);
-	}
-
-	function getResolution() {
-		var canvas = d3.select('svg');
-		var width = canvas.attr('width');
-		var height = canvas.attr('height');
-
-		return {
-			w: width,
-			h: height
-		};
+		return (width/height);
 	}
 
 	//Classes=======================================================================
@@ -152,15 +143,18 @@ define(function (require) {
 	}
 
 	//Methods---
-	Canvas.prototype.append = function () {
+	Canvas.prototype.append = function (arg) {
+		if (arg !== undefined) {
+			return this.SVGCanvas.append(arg);
+		}
 		//actual appending
-		//TODO: change this so it can append to the place i want
 		if (this.Parent) {
 			this.SVGCanvas = d3.select(this.Parent).append("svg")
 				.attr("width", this.Width)
 				.attr("height", this.Height)
 				.classed("canvas", true);
-		} else {
+		}
+		else{
 			this.SVGCanvas = d3.select("body").append("svg")
 				.attr("width", this.Width)
 				.attr("height", this.Height)
@@ -170,7 +164,7 @@ define(function (require) {
 		if (isStyleSourceCode()) {
 			if (this.BGColor === undefined)
 				this.BGColor = "0xAAAAAA";
-		}
+			}
 	};
 
 	Canvas.prototype.remove = function () {
@@ -582,11 +576,6 @@ define(function (require) {
 
 	};
 
-	/**
-	 * @name: Graphics module
-	 * @brief: Responsible for graphic structures and drawing charts
-	 */
-
 	//****************************************************************************
 	//Drawgin-related Structures**************************************************
 	//****************************************************************************
@@ -600,8 +589,6 @@ define(function (require) {
 			//checks if it is a group or a canvas
 			this.Canvas = obj.canvas;
 
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
 			//--------------------------------------
 			this.X = obj.x || 0;
 			this.Y = obj.y || 0;
@@ -633,7 +620,7 @@ define(function (require) {
 		//appends in a canvas or group
 		if (self.Canvas !== undefined && self.Element === null) {
 			mx = self.X - self.Width / 2; //defines the bar X center
-			my = 0;
+		  my = 0;
 			if (self.Height < 0) {
 				my = self.Y;
 				self.Height *= -1;
@@ -649,7 +636,7 @@ define(function (require) {
 				.attr('height', 0)
 				.style('fill', self.Fill);
 
-			if (isStyleSourceCode()) {
+			if (gamevis.data.isStyleSourceCode()) {
 				self.Element.style('stroke', self.Stroke)
 					.style('stroke-width', self.StrokeWidth)
 					.style('fill-opacity', self.FillOpacity)
@@ -662,25 +649,26 @@ define(function (require) {
 					console.log(
 						'Transition not defined for Bar, applying default transition'
 					);
-				if (self.RealHeight < 0) {
-					self.Element.transition()
-						.attr('height', self.Height)
-						.style('fill', self.FillFinal)
-						.duration(1000)
-						.delay(100);
-				} else {
-					self.Element.transition()
-						.attr('transform', 'translate(' + self.X + ',' + self.Y + ')')
-						.delay(0)
-						.duration(0);
+					if(self.RealHeight < 0 ){
+						self.Element.transition()
+							.attr('height', self.Height)
+							.style('fill', self.FillFinal)
+							.duration(1000)
+							.delay(100);
+					}
+					else{
+						self.Element.transition()
+							.attr('transform', 'translate(' + self.X + ',' + self.Y + ')')
+							.delay(0)
+							.duration(0);
 
-					self.Element.transition()
-						.attr('height', self.Height)
-						.attr('transform', 'translate(' + self.X + ',' + my + ')')
-						.style('fill', self.FillFinal)
-						.duration(1000)
-						.delay(100);
-				}
+							self.Element.transition()
+								.attr('height', self.Height)
+								.attr('transform', 'translate(' + self.X + ',' + my + ')')
+								.style('fill', self.FillFinal)
+								.duration(1000)
+								.delay(100);
+					}
 			}
 		}
 
@@ -738,7 +726,7 @@ define(function (require) {
 			.style('position', 'absolute');
 		this.Div.html(this.Html);
 
-		if (isStyleSourceCode()) {
+		if (gamevis.data.isStyleSourceCode()) {
 			this.Div.style('background-color', this.Fill)
 				.style('border-style', 'outset')
 				.style('border-color', this.Stroke)
@@ -784,8 +772,7 @@ define(function (require) {
 
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.canvas = obj.canvas.getCanvas();
+
 			this.X = obj.x || 0;
 			this.Y = obj.y || 0;
 			this.Radius = obj.radius || 1;
@@ -814,7 +801,7 @@ define(function (require) {
 				.attr('r', this.Radius)
 				.classed('dot-element', true);
 
-			if (isStyleSourceCode()) {
+			if (gamevis.data.isStyleSourceCode()) {
 				this.Element.attr('fill', this.Fill)
 					.attr('stroke', this.Stroke)
 					.attr('stroke-width', this.StrokeWidth)
@@ -833,7 +820,7 @@ define(function (require) {
 		}
 	};
 
-	Dot.prototype.transition = function () {
+	Dot.prototype.transition = function(){
 		return this.Element.transition();
 	};
 
@@ -887,11 +874,9 @@ define(function (require) {
 
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
 			this.Type = obj.type;
-			this.X = obj.x;
-			this.Y = obj.y;
+			this.X = obj.x || 0;
+			this.Y = obj.y || 0;
 			this.RX = obj.rx || 35;
 			this.RY = obj.ry || 30;
 			this.Fill = obj.fill || 'black';
@@ -913,7 +898,7 @@ define(function (require) {
 		this.TokenElement = null;
 		this.TText = '';
 
-		if (isStyleSourceCSS()) {
+		if (gamevis.data.isStyleSourceCSS()) {
 			switch (this.Type) {
 			case 'death':
 				this.Fill = TokenColors.Death.Fill;
@@ -965,7 +950,7 @@ define(function (require) {
 				})
 				.classed('status-token-text', true);
 
-			if (isStyleSourceCode()) {
+			if (gamevis.data.isStyleSourceCode()) {
 				//Token Styling
 				ellipse.style('fill', self.Fill)
 					.style('stroke', self.Stroke)
@@ -984,25 +969,26 @@ define(function (require) {
 					.style('text-anchor', 'middle');
 			}
 
-			if (self.Transition === undefined) {
+			if(self.Transition === undefined){
 				//erases attributes
 				self.transition().attr('rx', 0)
-					.attr('ry', 0)
-					.duration(0)
-					.delay(0);
+				.attr('ry', 0)
+				.duration(0)
+				.delay(0);
 
 				//sets real transition
 				self.transition().attr('rx', self.RX)
-					.attr('ry', self.RY)
-					.duration(800)
-					.delay(80)
-					.ease('bounce-in');
-			} else {
+				.attr('ry', self.RY)
+				.duration(800	)
+				.delay(80)
+				.ease('bounce-in');
+			}
+			else {
 				self.transition().call(self.Transition);
 			}
 
 		} else
-		if (DEBUG === true)
+		if (gamevis.data.DEBUG === true)
 			console.log('Error, token ellipse is null');
 
 		return self;
@@ -1034,8 +1020,6 @@ define(function (require) {
 		//Attributes------------------------------------------------------
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas;
 			this.Scale = obj.scale || d3.scale.linear()
 				.domain([0, 100])
 				.range([0, 320]);
@@ -1076,7 +1060,7 @@ define(function (require) {
 					return ('translate(0, ' + self.Y + ')');
 				});
 
-			if (isStyleSourceCode()) {
+			if (gamevis.data.isStyleSourceCode()) {
 				this.Group.style('stroke-width', this.StrokeWidth)
 					.style('stroke', this.Stroke)
 					.style('stroke-opacity', this.StrokeOpacity);
@@ -1117,8 +1101,7 @@ define(function (require) {
 		//Attributes-------------------------------------------------
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
+
 			this.Match = obj.match;
 			this.Type = obj.type; //Gold, Kills or XP
 			this.X = obj.x;
@@ -1127,7 +1110,7 @@ define(function (require) {
 			this.ScaleY = obj.scaleY;
 			this.Ticks = obj.ticks || false;
 			this.TickRadius = obj.tick_radius || 4;
-			this.HalfHeight = (getResolution().h / 2);
+			this.HalfHeight = this.Canvas.Height/2;
 			this.ToolTips = obj.tooltips || null;
 			this.Transition = obj.transition || false;
 		} else if (DEBUG)
@@ -1190,29 +1173,8 @@ define(function (require) {
 			//attach ticks
 			if (self.Ticks) {
 				var tick = new Dot({
-						canvas: self.Ticks,
-						x: self.Lines[i][0],
-						y: self.ScaleY(0),
-						radius: 1
-					}).classed('line-graph-tick', true)
-					.transition()
-					.duration(500)
-					.delay(300)
-					.ease('quad-out')
-					.attr('cy', self.Lines[i][1])
-					.transition()
-					.delay(800)
-					.duration(600)
-					.ease('bounce-in')
-					.attr('r', this.TickRadius);
-			}
-		}
-		//attach last tick
-		if (self.Ticks) {
-			var ml = self.Match.EndTime - 2;
-			var tick = new Dot({
 					canvas: self.Ticks,
-					x: self.Lines[ml][2],
+					x: self.Lines[i][0],
 					y: self.ScaleY(0),
 					radius: 1
 				}).classed('line-graph-tick', true)
@@ -1220,12 +1182,33 @@ define(function (require) {
 				.duration(500)
 				.delay(300)
 				.ease('quad-out')
-				.attr('cy', self.Lines[ml][3])
+				.attr('cy', self.Lines[i][1])
 				.transition()
 				.delay(800)
 				.duration(600)
 				.ease('bounce-in')
 				.attr('r', this.TickRadius);
+			}
+		}
+		//attach last tick
+		if (self.Ticks) {
+			var ml = self.Match.EndTime - 2;
+			var tick = new Dot({
+				canvas: self.Ticks,
+				x: self.Lines[ml][2],
+				y: self.ScaleY(0),
+				radius: 1
+			}).classed('line-graph-tick', true)
+			.transition()
+			.duration(500)
+			.delay(300)
+			.ease('quad-out')
+			.attr('cy', self.Lines[ml][3])
+			.transition()
+			.delay(800)
+			.duration(600)
+			.ease('bounce-in')
+			.attr('r', this.TickRadius);
 		}
 
 		//appends time axis
@@ -1247,8 +1230,7 @@ define(function (require) {
 			.attr('transform', function () {
 				return 'translate(' + mx + ', ' + my + ')';
 			});
-
-		mx = canvas.Width / 2 + self.X;
+		mx = self.Canvas.Width / 2 + self.X;
 		my = self.Y + 64;
 		var textTeam1 = self.Element.append('text')
 			.text('Team ' + self.Match.Team[0].Name)
@@ -1257,12 +1239,12 @@ define(function (require) {
 				return 'translate(' + mx + ', ' + my + ')';
 			});
 
-		my = canvas.Height - 64 + self.Y;
+		my = self.Canvas.Height - 64 + self.Y;
 		var textTeam2 = self.Element.append('text')
 			.text('Team ' + self.Match.Team[1].Name)
 			.classed('comparison-graph-text', true)
 			.attr('transform', function () {
-				return 'translate(' + canvas.Width / 2 + ', ' + my + ')';
+				return 'translate(' + self.Canvas.Width / 2 + ', ' + my + ')';
 			});
 	};
 
@@ -1309,8 +1291,9 @@ define(function (require) {
 		} else {
 			self.Element.selectAll('circle').each(function (d, i) {
 				var parent = d3.select(this);
-				var px = parent.attr('cx');
-				var py = parent.attr('cy');
+
+				var px = 0;
+				var py = 0;
 
 				//attach tooltips if its an string or html
 				if (typeof tooltip[0] !== 'object') {
@@ -1321,11 +1304,20 @@ define(function (require) {
 							y: py
 						}).classed('tooltip', true)
 						.on('mouseover', function () {
+							var matrix = this.getScreenCTM()
+			                .translate(+this.getAttribute("cx"), +this.getAttribute("cy"));
+							var px = window.pageXOffset + matrix.e + 'px';
+							var py = window.pageYOffset + matrix.f - 16 + 'px';
+
 							tip.transition()
 								.style('opacity', 1);
+							tip.style('left', px)
+									.style('top', py);
 						}).on('mouseout', function () {
 							tip.transition()
-								.style('opacity', 0);
+								.style('opacity', 0)
+								.style('left', 0)
+								.style('top', 0);
 						});
 				} else {
 					tooltip[i].Parent = parent;
@@ -1352,8 +1344,7 @@ define(function (require) {
 		//Attributes-----------------------------------------------------------------
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
+
 			this.Match = obj.match;
 			this.Type = obj.type;
 			this.X = obj.x;
@@ -1422,7 +1413,7 @@ define(function (require) {
 		for (i in self.Bars) {
 			var tbar = self.Bars[i];
 			//value to fix text position
-			var val = tbar[3] < 0 ? 0 : tbar[2] / 2;
+			var val = tbar[3] < 0 ? 0 : tbar[2]/2;
 			mx = tbar[0] + val;
 			if (tbar[3] > 0)
 				my = self.HalfHeight - tbar[3] - 4;
@@ -1465,7 +1456,7 @@ define(function (require) {
 				return 'translate(' + mx + ', ' + my + ')';
 			});
 
-		mx = canvas.Width / 2 + self.X;
+		mx = self.Canvas.Width / 2 + self.X;
 		my = 64 + self.Y;
 		var textTeam1 = self.Element.append('text')
 			.text('Team ' + self.Match.Team[0].Name)
@@ -1474,12 +1465,12 @@ define(function (require) {
 				return 'translate(' + mx + ', ' + my + ')';
 			});
 
-		y = canvas.Height - 64 + self.Y;
+		y = self.Canvas.Height - 64 + self.Y;
 		var textTeam2 = self.Element.append('text')
 			.text('Team ' + self.Match.Team[1].Name)
 			.classed('comparison-graph-text', true)
 			.attr('transform', function () {
-				return 'translate(' + canvas.Width / 2 + ', ' + y + ')';
+				return 'translate(' + self.Canvas.Width / 2 + ', ' + y + ')';
 			});
 	};
 
@@ -1569,8 +1560,7 @@ define(function (require) {
 		//Attributes---------------------------------------------------------
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
+
 			this.Team = obj.team;
 			this.X = obj.x || 0;
 			this.Y = obj.y || 0;
@@ -1583,7 +1573,7 @@ define(function (require) {
 	//Methods-----------------
 	TeamDetailGraph.prototype.append = function () {
 		var self = this;
-		var res = getResolution();
+		var res = {w: self.Canvas.Width, h: self.Canvas.Height};
 
 		self.Element = self.Canvas.append('g').classed('team-detail-graph',
 				true)
@@ -1691,8 +1681,7 @@ define(function (require) {
 		//Attributes---------------------------------------------------------------
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
+
 			this.Player = obj.player;
 			this.Scale = obj.scale;
 			this.X = obj.x || 0;
@@ -1711,7 +1700,7 @@ define(function (require) {
 
 		var gX = self.X;
 		var gY = self.Y;
-		var res = getResolution();
+		var res = {w: self.Canvas.Width, h: self.Canvas.Height};
 
 		self.Element = self.Canvas.append('g')
 			.classed('player-match-graph', true)
@@ -1752,7 +1741,7 @@ define(function (require) {
 				ty = ry * res.h / 200 * 4 - res.h / 6;
 				break;
 			}
-			if (DEBUG === true)
+			if (gamevis.data.DEBUG === true)
 				console.log('Status: ' + status);
 			var token = new StatusToken({
 				canvas: self.StatusTokensGroup,
@@ -1824,7 +1813,7 @@ define(function (require) {
 		} else {
 			self.get('tokens')
 				.each(function (d, i) {
-					var res = getResolution();
+					var res = {w: self.Canvas.Width, h: self.Canvas.Height};
 					var parent = d3.select(this);
 					var px = parseInt(d3.select(this).attr('cx')) + parseInt(d3.select(
 						this).attr('rx') / 2);
@@ -1871,8 +1860,7 @@ define(function (require) {
 
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
+
 			this.Team = obj.team;
 			this.ScaleX = obj.scaleX;
 			this.ScaleY = obj.scaleY;
@@ -2004,8 +1992,10 @@ define(function (require) {
 			self.get(component).each(function (d, i) {
 				var parent = d3.select(this);
 				var rect = this.getBoundingClientRect();
-				var px = rect.left;
-				var py = rect.top - rect.height / 2;
+				var matrix = this.getScreenCTM()
+								.translate(+this.getAttribute("cx"), +this.getAttribute("cy"));
+				var px = window.pageXOffset + matrix.e + 'px';
+				var py = window.pageYOffset + matrix.f - 16 + 'px';
 
 				//attach tooltips if its an string or html
 				if (typeof tooltip[0] !== 'object') {
@@ -2016,8 +2006,15 @@ define(function (require) {
 							y: py
 						}).classed('tooltip', true)
 						.on('mouseover', function () {
+							var matrix = this.getScreenCTM()
+			                .translate(+this.getAttribute("cx"), +this.getAttribute("cy"));
+							var px = window.pageXOffset + matrix.e + 'px';
+							var py = window.pageYOffset + matrix.f - 16 + 'px';
+
 							tip.transition()
 								.style('opacity', 1);
+							tip.style('left', px)
+									.style('top', py);
 						}).on('mouseout', function () {
 							tip.transition()
 								.style('opacity', 0);
@@ -2048,8 +2045,7 @@ define(function (require) {
 
 		if (obj) {
 			this.Canvas = obj.canvas;
-			if (this.Canvas.ClassType === 'Canvas')
-				this.Canvas = obj.canvas.getCanvas();
+
 			this.Match = obj.match;
 			this.ScaleX = obj.scaleX;
 			this.ScaleY = obj.scaleY;
@@ -2209,7 +2205,8 @@ define(function (require) {
 
 		return this.Element.transition();
 	};
-	gamevis = {};
+
+
 	gamevis.data = {
 		//variables
 		DEBUG: DEBUG,
@@ -2224,7 +2221,6 @@ define(function (require) {
 		isStyleSourceCode: isStyleSourceCode,
 		setChartStyleSource: setChartStyleSource,
 		getAspect: getAspect,
-		getResolution: getResolution,
 		saveGameData: saveGameData,
 		loadGameData: loadGameData,
 

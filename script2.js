@@ -8,7 +8,7 @@ define(function (require) {
 		parent: '#canvas'
   });
   canvas.append();
-
+  
   //Creates scales for this canvas
   scaleX = d3.scale.linear();
   scaleX.domain([0, 4]).range([canvas.Width/20, canvas.Width - canvas.Width/20]);
@@ -19,8 +19,5 @@ define(function (require) {
   d = new gamevis.driver();
   gdata = d.buildData('./gamevis/matches/players.json');
 
-  // console.log(gdata);
-
   console.log('Successfully loaded the stuff needed\n');
-
 });

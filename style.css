@@ -181,6 +181,7 @@ line.line-graph-segment {
 	fill-opacity: 0.9;
 	text-anchor: middle;
 	pointer-events: none;
+	font-size: 12px;
 }
 
 div.tooltip{

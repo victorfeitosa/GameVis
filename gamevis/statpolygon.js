@@ -1,7 +1,6 @@
 define(function (require) {
 
-	var gamevis = {};
-	gamevis.data = require('gamevis/data');
+	var gamevis = require('gamevis/gamevis.min-');
 
 	//Status polygon graph element
 	//@attr: canvas, stats, radius, maxVal, x, y, fill, stroke, stroke_width, fill_op, stroke_op
@@ -10,6 +9,7 @@ define(function (require) {
 		this.ClassType = 'StatPolygon';
 
 		if (obj) {
+			this.Canvas = obj.canvas;
 			this.Stats = obj.stats;
 			this.Radius = obj.radius || 10;
 			this.X = obj.x || 0;
@@ -30,6 +30,7 @@ define(function (require) {
 			this.TextFontSize = obj.text_font_size || 14;
 			this.MaxVal = obj.maxVal || 100;
 			this.Transition = obj.transition;
+			this.Spacing = obj.spacing || 4;
 			this.Option = obj.options || {};
 		} else if (DEBUG)
 			throw ': Argument object not defined in ' + this.ClassType;
@@ -42,9 +43,6 @@ define(function (require) {
 		this.StatText = null;
 		this.CircleArea = null;
 
-		if (canvas.ClassType === 'Canvas')
-			this.Canvas = canvas.getCanvas();
-
 		for (var i in this.Stats) {
 			if (this.Stats.hasOwnProperty(i))
 				++this.NSides;
@@ -54,6 +52,8 @@ define(function (require) {
 	//Methods------------------------------------------------------------------
 	StatPolygon.prototype.append = function () {
 		var self = this;
+
+		console.log(self.Canvas);
 
 		self.Group = self.Canvas.append('g').classed('stat-polygon-group',
 			true);
@@ -125,7 +125,7 @@ define(function (require) {
 			points.push(px);
 			points.push(py);
 
-			var tick = new Dot({
+			var tick = new gamevis.graphics.Dot({
 				canvas: self.Ticks,
 				x: px + self.X,
 				y: py + self.Y,
@@ -148,7 +148,7 @@ define(function (require) {
 		self.Ticks.selectAll('circle').data(Object.keys(self.Stats))
 			.each(function (d, i) {
 				var tick = d3.select(this);
-				var tip = new ToolTip({
+				var tip = new gamevis.graphics.ToolTip({
 						parent: tick,
 						tiphtml: d,
 						x: tick.attr('cx'),
@@ -175,7 +175,7 @@ define(function (require) {
 				var angle = (360 / self.NSides) * i;
 				angle += 90;
 				var rad = (angle * Math.PI) / 180;
-				var val = self.Radius + (d.length * 4);
+				var val = self.Radius + (d.length * self.Spacing);
 
 				var px = (Math.cos(rad) * val) + self.X;
 				var py = (Math.sin(rad) * val) + self.Y;
@@ -238,6 +238,8 @@ define(function (require) {
 	StatPolygon.prototype.remove = function () {
 
 	};
+
+	gamevis.graphics.StatPolygon = StatPolygon;
 
 	return StatPolygon;
 });

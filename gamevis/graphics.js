@@ -740,9 +740,6 @@ define(function (require) {
 							var px = window.pageXOffset + matrix.e + 'px';
 							var py = window.pageYOffset + matrix.f - 16 + 'px';
 
-							// var mouseCoords = d3.mouse(parent.node().parentElement);
-							// px = mouseCoords[0] + 'px';
-							// py = mouseCoords[1] + 'px';
 							tip.transition()
 								.style('opacity', 1);
 							tip.style('left', px)
@@ -1426,8 +1423,10 @@ define(function (require) {
 			self.get(component).each(function (d, i) {
 				var parent = d3.select(this);
 				var rect = this.getBoundingClientRect();
-				var px = rect.left;
-				var py = rect.top - rect.height / 2;
+				var matrix = this.getScreenCTM()
+								.translate(+this.getAttribute("cx"), +this.getAttribute("cy"));
+				var px = window.pageXOffset + matrix.e + 'px';
+				var py = window.pageYOffset + matrix.f - 16 + 'px';
 
 				//attach tooltips if its an string or html
 				if (typeof tooltip[0] !== 'object') {
@@ -1438,8 +1437,15 @@ define(function (require) {
 							y: py
 						}).classed('tooltip', true)
 						.on('mouseover', function () {
+							var matrix = this.getScreenCTM()
+			                .translate(+this.getAttribute("cx"), +this.getAttribute("cy"));
+							var px = window.pageXOffset + matrix.e + 'px';
+							var py = window.pageYOffset + matrix.f - 16 + 'px';
+
 							tip.transition()
 								.style('opacity', 1);
+							tip.style('left', px)
+									.style('top', py);
 						}).on('mouseout', function () {
 							tip.transition()
 								.style('opacity', 0);
