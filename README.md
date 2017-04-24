@@ -21,4 +21,4 @@ GameVis
 <p align="center" font-style="italic" font-size=12px>(GameVis Architecture Diagram)</p>
 
 ### Paper on Game Data Visualization and Gamevis
-![GameVis: Game Data Visualization for the Web](http://bit.ly/gamevis-article)
+<a href="http://bit.ly/gamevis-article">GameVis: Game Data Visualization for the Web</a>
