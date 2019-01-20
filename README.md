@@ -3,7 +3,7 @@ GameVis
 
 ---
 
-#### Competitive Game Visualization API in Javascript and HTML5.
+#### ESports Visualization API in Javascript and D3.
 
 ### Features
 
